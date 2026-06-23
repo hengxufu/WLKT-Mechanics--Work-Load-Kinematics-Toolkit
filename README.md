@@ -1,4 +1,4 @@
-# WLKT-Work-Load-Kinematics-Toolkit
+# WLKT Mechanics: Work-Load-Kinematics-Toolkit
 For Future Aerospace, there is no retreat; in fundamental mechanics, every problem must be solved clearly.
 
 **WLKT Mechanics 即将上线**
@@ -8,5 +8,7 @@ For Future Aerospace, there is no retreat; in fundamental mechanics, every probl
 WLKT Mechanics 是一款面向材料力学学习场景的交互式求解器，旨在将典型题目的分析过程工具化、可视化和流程化。它不只给出答案，更希望展示从载荷识别、内力分析、公式选取到结果校核的完整路径。
 
 **No Retreat. Mechanics Must Made Clear.**
+
+**欢迎加入WLKT开发者计划**
 
 敬请期待。
