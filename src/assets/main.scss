@@ -1,0 +1,463 @@
+// assets/vuetifyTheme.scss
+$font: "Barlow", sans-serif;
+
+@use "vuetify" with (
+  $body-font-family: $font
+);
+
+@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,700|Lobster&display=swap");
+
+:root {
+  --mx-menu-backgroud-radius: 8px;
+}
+
+.v-main {
+  height: 100dvh !important; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--dvh, 1dvh) * 100 - 48px) !important;
+}
+
+.app-title, .edubeam {
+  font-family: "Lobster", "Barlow", sans-serif;
+  font-weight: normal;
+}
+
+html,
+body,
+#app,
+.v-application,
+.v-application__wrap,
+.v-navigation-drawer {
+  height: 100dvh !important; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--dvh, 1dvh) * 100) !important;
+  min-height: 100dvh !important; /* Fallback for browsers that do not support Custom Properties */
+  min-height: calc(var(--dvh, 1dvh) * 100) !important;
+  overflow: hidden;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+/* Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Popper Transition */
+
+.v-popper__popper {
+  font-size: 14px !important;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c9d1d4;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+.inline-edit {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: thin solid #ddd;
+  border-radius: 4px;
+  box-sizing: content-box;
+  width: 100%;
+
+  .v-selection-control--density-compact {
+    margin-right: 8px;
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
+
+.hinges .v-selection-control--density-compact {
+  height: 20px !important;
+  width: 20px !important;
+
+  > * {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
+
+input.inline-edit  {
+  padding: 1px 6px;
+}
+
+div.inline-edit.fw {
+  width: 90px;
+}
+
+.inline-edit-group {
+  display: flex;
+  &:has(.input-before) .inline-edit {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:has(.input-after) {
+    .inline-edit {
+      border-right: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.inline-edit-group.load {
+  .input-before, .input-after {
+    min-width: 28px;
+  }
+  &:has(.input-before) .inline-edit {
+    width: 60px;
+  }
+
+  &:has(.input-after) {
+    .input-after {
+      width: 48px;
+    }
+  }
+}
+
+.input-before, .input-after {
+  border: thin solid #ddd;
+  border-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: #eee;
+  padding: 0 5px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.input-after {
+  border-radius: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-weight: normal;
+  background: #fff;
+}
+
+select.mini-select {
+  background-color: white;
+  border: thin solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 1px 6px;
+  padding-right: 24px;
+  min-width: 100px;
+
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 12px) calc(0.5em + 2px),
+    calc(100% - 7px) calc(0.5em + 2px),
+    calc(100% - 1.5em) 0em;
+  background-size:
+    5.25px 5px,
+    5.25px 5px,
+    1px 1.75em;
+  background-repeat: no-repeat;
+}
+
+.v-btn {
+  letter-spacing: -0.5px;
+  word-spacing: 2px;
+}
+
+.v-label {
+  letter-spacing: -0.5px;
+}
+
+.v-data-table-footer {
+  display: none !important;
+}
+
+.no-overlay {
+  .v-overlay__scrim {
+    display: none !important;
+  }
+
+  justify-content: start;
+  align-items: start;
+}
+
+.selection-tooltip {
+  //border: thin solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  z-index: 101;
+  width: 210px;
+}
+
+.v-window__container {
+  transition: none;
+}
+
+.v-tabs.bg-primary {
+  .v-tab-item--selected,
+  .v-tab.v-tab--selected {
+    background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06)) !important;
+    box-shadow: inset 0 -3px 0 rgba(255,255,255,0.35);
+  }
+}
+
+// Bottom bar table
+.v-table {
+  --v-table-header-height: 26px;
+  --v-table-row-height: 32px;
+  --fixed-column-size: 48px;
+  overflow-x: visible;
+  position: relative;
+  .v-table__wrapper {
+    overflow-x: auto;
+    //padding-left: var(--fixed-column-size);
+  }
+  table {
+    border-bottom: 1px solid #ddd;
+  }
+  thead {
+
+  }
+  table tr:nth-child(even) td {
+    background: #ffffff !important;
+  }
+  table tr:nth-child(odd) td {
+    background: #f8f8f8 !important;
+  }
+  table tr:hover td {
+    background: #eee !important;
+  }
+  &.fixed-left-col
+  {
+    th:nth-of-type(1), td:nth-of-type(1)
+    {
+      position: sticky !important;
+      min-width: var(--fixed-column-size);
+      left: 0px;
+      z-index: 1;
+    }
+  }
+  th {
+    z-index: 2;
+  }
+}
+
+.v-table table tr.selected td {
+  background: #ecedf7 !important;
+}
+
+.v-table > .v-table__wrapper > table > tbody > tr > td,
+.v-table > .v-table__wrapper > table > tbody > tr > th,
+.v-table > .v-table__wrapper > table > thead > tr > td,
+.v-table > .v-table__wrapper > table > thead > tr > th,
+.v-table > .v-table__wrapper > table > tfoot > tr > td,
+.v-table > .v-table__wrapper > table > tfoot > tr > th {
+  //padding: 0 4px;
+}
+
+.v-toolbar.w-auto .v-toolbar__content {
+  width: auto !important;
+}
+
+.v-table {
+  //min-width: fit-content !important;
+  //overflow-x: auto !important;
+
+  th {
+    white-space: nowrap;
+  }
+}
+
+.widget__modal-container__item.modal-container {
+  display: none;
+}
+
+.draggable .drag-handle {
+  cursor: pointer;
+}
+
+.draggable {
+  top: 0;
+  position: absolute;
+
+  z-index: 300 !important;
+  &:hover {
+    z-index: 1000 !important;
+  }
+}
+
+.menu-select .v-field {
+  border-radius: 0 !important;
+}
+
+.mx-context-menu {
+  padding: 0;
+  //overflow: hidden;
+  box-shadow: 0px 2px 1px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)), 0px 1px 1px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)), 0px 1px 3px 0px var(--v-shadow-key-ambient-opacity, rgba(0, 0, 0, 0.12)) !important;
+  .mx-context-menu-items {
+    .mx-context-menu-item-wrapper:first-child .mx-context-menu-item {
+      border-top-left-radius: var(--mx-menu-backgroud-radius);
+      border-top-right-radius: var(--mx-menu-backgroud-radius);
+    }
+    .mx-context-menu-item-wrapper:last-child .mx-context-menu-item {
+      border-bottom-left-radius: var(--mx-menu-backgroud-radius);
+      border-bottom-right-radius: var(--mx-menu-backgroud-radius);
+    }
+  }
+
+  .mx-context-menu-item-sperator {
+    padding: 0;
+  }
+
+  .mx-context-menu-item .mx-item-row:first-child {
+    flex-grow: 1;
+  }
+}
+
+.v-list-item--density-compact.v-list-item--one-line {
+  min-height: 33px;
+}
+
+// fix dialog
+.v-dialog > .v-overlay__content > .v-card > .v-card-text, .v-dialog > .v-overlay__content > form > .v-card > .v-card-text {
+  padding: 0px 16px 10px;
+  letter-spacing: normal;
+}
+
+.v-dialog > .v-overlay__content > .v-card > .v-card-title {
+  font-weight: bold;
+}
+
+
+// onboarding
+:root {
+  --v-onboarding-overlay-z: 1000;
+  --v-onboarding-step-z: 1001;
+}
+
+// TODO: Hack, v-window-item has inline style of display none, unable to determine why
+.v-window-item.v-window-item--active {
+  display: block !important;
+}
+
+.warning {
+  position: absolute;
+  top: 64px;
+  left: 24px;
+  z-index: 55;
+}
+
+// Prevent line wrap in selection label
+.v-selection-control .v-label {
+  white-space: nowrap !important;
+}
+
+// SVGViewer related classes
+// TODO: Must be moved here from scoped component styles
+
+.dimensioning {
+  pointer-events: none;
+
+  polyline.drawable {
+    stroke: #000;
+    stroke-width: 1px;
+    fill: none;
+    vector-effect: non-scaling-stroke;
+  }
+
+  text {
+    text-anchor: middle;
+    dominant-baseline: text-bottom;
+    pointer-events: visiblePainted;
+    cursor: inherit;
+  }
+
+  &.dimensioning--interactive {
+    pointer-events: auto;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &:hover:not(.selected) {
+      polyline.drawable {
+        stroke: #222;
+        stroke-width: 2px;
+      }
+
+      text {
+        fill: #222;
+      }
+    }
+  }
+
+  &.selected {
+    polyline.drawable {
+      stroke-width: 2px;
+      stroke: rgb(0, 94, 255);
+    }
+
+    text {
+      fill: rgb(0, 94, 255);
+      font-weight: 600;
+    }
+  }
+
+  .handle {
+    pointer-events: stroke;
+  }
+
+  .endpoint {
+    stroke: #000;
+    stroke-width: 1.5px;
+    fill: #fff;
+    vector-effect: non-scaling-stroke;
+    pointer-events: all;
+    cursor: move;
+
+    &.snapped {
+      fill: rgb(0, 94, 255);
+      stroke: rgb(0, 94, 255);
+    }
+  }
+
+  &.selected {
+    .endpoint.free {
+      stroke: rgb(0, 94, 255);
+    }
+  }
+}
+
+#sentry-feedback {
+  --background: rgb(var(--v-theme-primary));
+  --font-size: 14px;
+  --font-family: "Barlow", sans-serif;
+}

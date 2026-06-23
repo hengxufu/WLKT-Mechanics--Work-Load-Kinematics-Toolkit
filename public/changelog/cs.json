@@ -1,0 +1,108 @@
+{
+  "releases": [
+    {
+      "version": "1.0.6",
+      "title": "Přepracované vrácení a zopakování akcí",
+      "date": "21. května 2026",
+      "highlights": [
+        "Undo (Ctrl+Z) a Redo (Ctrl+Shift+Z) bylo přepracováno, aby se v celé aplikaci chovalo konzistentněji.",
+        "Operace kopírování, vkládání a mazání by nyní měly fungovat správně a vracet se tak, jak uživatel očekává."
+      ],
+      "tag": "Aktuální",
+      "media": []
+    },
+    {
+      "version": "1.0.5",
+      "title": "Momentová osamělá zatížení na prvcích",
+      "date": "20. května 2026",
+      "highlights": [
+        "Přidána podpora pro osamělá momentová zatížení na prvcích.",
+        "Náhled zatížení prvku nyní správně zobrazuje symbol a hodnotu osamělého momentu.",
+        "Hodnoty v náhledu nyní respektují aktivní jednotky síly a momentu včetně kN a odvozených momentových jednotek."
+      ],
+      "media": [
+        {
+          "src": "/changelog/media/element-concentrated-moment-load.png",
+          "alt": "Náhled osamělého momentového zatížení na prvku",
+          "caption": "Osamělé momentové zatížení na prvku"
+        }
+      ]
+    },
+    {
+      "version": "1.0.4",
+      "title": "Kótování na libovolné body",
+      "date": "19. března 2026",
+      "highlights": [
+        "Kóty nyní mohou začínat a končit v libovolném bodě obrazovky bez vytváření nevyužitých FE uzlů.",
+        "Koncové body kót nyní viditelně zobrazují body uchopení a lze je přímo přetahovat.",
+        "Přichytávání koncových bodů nyní funguje spolehlivě při vytváření i přetahování, a to pro volné body i uzly.",
+        "Kontextové menu kót nyní umožňuje obrátit pořadí koncových bodů a přímo upravit jejich souřadnice."
+      ],
+      "media": [
+        {
+          "src": "/changelog/media/freedimpoints.gif",
+          "alt": "Kótování na libovolné body",
+          "caption": "Kótování na libovolné body"
+        }
+      ]
+    },
+    {
+    "version": "1.0.3",
+      "title": "Lineárně proměnné zatížení & kóty",
+      "date": "19. prosince 2025",
+      "highlights": [
+        "Přidána podpora pro lineárně proměnné zatížení na prvcích.",
+        "Opravena možnost přidávání, mazání a výběru kót mezi uzly.",
+        "Kóty lze posouvat myší pro lepší přehlednost."
+      ],
+      "media": [
+        {
+          "src": "/changelog/media/trapezoidal1.png",
+          "alt": "Lineárně proměnné zatížení - trojúhelníkové",
+          "caption": "Lineárně proměnné zatížení - trojúhelníkové"
+        },
+        {
+          "src": "/changelog/media/trapezoidal2.png",
+          "alt": "Lineárně proměnné zatížení - lichoběžníkové",
+          "caption": "Lineárně proměnné zatížení - lichoběžníkové"
+        },
+        {
+          "src": "/changelog/media/trapezoidal3.png",
+          "alt": "Lineárně proměnné zatížení - kladné a záporné",
+          "caption": "Lineárně proměnné zatížení - kladné a záporné"
+        },
+        {
+          "src": "/changelog/media/dimlines1.gif",
+          "alt": "Posouvání kót myší",
+          "caption": "Posouvání kót myší"
+        },
+        {
+          "src": "/changelog/media/dimlines2.gif",
+          "alt": "Posouvání kót myší",
+          "caption": "Posouvání kót myší"
+        }
+      ]
+    },
+    {
+      "version": "1.0.2",
+      "title": "Skládání zatížení pro větší přehlednost",
+      "date": "5. prosince 2025",
+      "highlights": [
+        "Spojitá zatížení na se nyní skládají nad sebe při umístění více zatížení na stejný prvek.",
+        "Uzlová zatížení ve stejném směru se nyní skládají nad sebe pro lepší přehlednost."
+      ],
+      "media": [
+        {
+          "src": "/changelog/media/stacked-loads.png",
+          "alt": "Skládání uzlových zatížení",
+          "caption": "Skládání uzlových zatížení"
+        },
+        {
+          "src": "/changelog/media/stacked-loads2.png",
+          "alt": "Skládání spojitých zatížení",
+          "caption": "Skládání spojitých zatížení"
+        }
+      ]
+    }
+  ]
+}

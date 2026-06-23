@@ -1,0 +1,318 @@
+{
+  "tabView": {
+    "viewer": "โปรแกรมดู",
+    "settings": "การตั้งค่า",
+    "results": "ผลลัพธ์"
+  },
+  "common": {
+    "label": "ชื่อ",
+    "node": "โหนด",
+    "element": "องค์ประกอบ",
+    "crossSection": "หน้าตัด",
+    "material": "วัสดุ",
+    "settings": "การตั้งค่า",
+    "actions": "การดำเนินการ",
+    "coords": "พิกัด",
+    "type": "ประเภท",
+    "nodes": "โหนด",
+    "endHinges": "ข้อต่ออิสระปลาย",
+    "massMatrix": "เมทริกซ์มวล",
+    "target": "เป้าหมาย",
+    "components": "ส่วนประกอบ",
+    "loadCase": "กรณีโหลด",
+    "loads": "แรงกระทำ",
+    "clearMesh": "ลบ Mesh",
+    "shareModel": "แชร์โมเดล",
+    "documentation": "เอกสาร",
+    "addUsingDialog": "เพิ่มด้วยกล่องโต้ตอบ",
+    "addUsingMouse": "เพิ่มด้วยเมาส์",
+    "edit": "แก้ไข",
+    "copy": "คัดลอก",
+    "delete": "ลบ",
+    "stiffnessMatrix": "เมทริกซ์ความแข็ง",
+    "normalForce": "แรงปกติ",
+    "shearForce": "แรงเฉือน",
+    "bendingMoment": "โมเมนต์ดัด",
+    "deformedShape": "รูปร่างที่เสียรูป",
+    "reactions": "แรงปฏิกิริยา",
+    "elements": "องค์ประกอบ",
+    "confirm": "ยืนยัน",
+    "saveProject": "บันทึกโปรเจค",
+    "openProject": "เปิดโปรเจค",
+    "lcs": "ระบบพิกัดท้องถิ่น",
+    "paste": "วาง",
+    "addNew": "เพิ่มใหม่",
+    "reverse_orientation": "พลิกมิติ"
+  },
+  "nodes": {
+    "addNode": "เพิ่มโหนด",
+    "editNode": "แก้ไขโหนด",
+    "defineSupports": "การรองรับโหนด",
+    "lcsAngle": "มุมระบบพิกัดท้องถิ่นของโหนด"
+  },
+  "elements": {
+    "addElement": "เพิ่มองค์ประกอบ",
+    "editElement": "แก้ไของค์ประกอบ",
+    "swapNodeOrder": "สลับโหนด"
+  },
+  "loads": {
+    "addNodalLoad": "เพิ่มแรงกระทำที่โหนด",
+    "addElementLoad": "เพิ่มแรงกระทำที่องค์ประกอบ",
+    "addLoad": "เพิ่มแรงกระทำ",
+    "nodalLoad": "แรงกระทำที่โหนด",
+    "elementLoad": "แรงกระทำที่องค์ประกอบ",
+    "prescribedDisplacement": "การให้ค่าการกระจัด",
+    "addPrescribedDisplacement": "กำหนดการให้ค่าการกระจัด",
+    "UDL": "แรงกระจายสม่ำเสมอ",
+    "forceMoment": "แรงและโมเมนต์",
+    "editLoad": "แก้ไขแรงกระทำ",
+    "loadPositionOnBeam": "ตำแหน่งโหลดจากโหนดเริ่มต้น",
+    "temperatureAxial": "ΔT<sub>b</sub>-ΔT<sub>t</sub> ... การเปลี่ยนแปลงอุณหภูมิของเส้นใยล่างลบเส้นใยบน",
+    "temperatureBending": "ΔT<sub>s</sub> ... การเปลี่ยนแปลงอุณหภูมิตามแนวแกน",
+    "temperatureDeltaTbt": "ΔT<sub>b</sub>-ΔT<sub>t</sub>",
+    "temperatureDeltaTs": "ΔT<sub>s</sub>",
+    "temperatureDeltaTbtNoHTML": "ΔTb-ΔTt"
+  },
+  "tabs": {
+    "nodes": "โหนด",
+    "elements": "องค์ประกอบ",
+    "loads": "แรงกระทำ",
+    "materials": "วัสดุ",
+    "crossSections": "หน้าตัด",
+    "results": "ผลลัพธ์"
+  },
+  "crossSection": {
+    "area": "พื้นที่",
+    "h": "ความสูง",
+    "iy": "Iy",
+    "k": "สัมประสิทธิ์เฉือน"
+  },
+  "material": {
+    "e": "E",
+    "g": "G",
+    "density": "ความหนาแน่น",
+    "alphaT": "α_T"
+  },
+  "settings": {
+    "results_scale": "ขนาดผลลัพธ์",
+    "grid_snap_step": "ระยะจับตาข่าย",
+    "snap_to_grid": "จับติดตาข่าย",
+    "language": "ภาษา",
+    "language_and_locale": "ภาษาและภูมิภาค",
+    "show_normal_force": "แสดงแรงปกติ",
+    "show_shear_force": "แสดงแรงเฉือน",
+    "show_bending_moment": "แสดงโมเมนต์ดัด",
+    "show_deformed_shape": "แสดงรูปร่างที่เสียรูป",
+    "show_loads": "แสดงแรงกระทำ",
+    "units": {
+      "units": "หน่วย",
+      "length": "ความยาว",
+      "mass": "มวล",
+      "force": "แรง",
+      "pressure": "แรงดัน",
+      "area": "พื้นที่",
+      "areaM2": "โมเมนต์ความเฉื่อยของหน้าตัด"
+    },
+    "grid": "ตาข่าย",
+    "show_grid": "แสดงตาข่าย",
+    "mouse": {
+      "mouse": "เมาส์",
+      "pan_button": "เลื่อนโดยใช้",
+      "wheel": "ล้อเมาส์",
+      "right_button": "ปุ่มขวา"
+    },
+    "colors": {
+      "colors": "สี"
+    },
+    "results": {
+      "results": "ผลลัพธ์"
+    },
+    "viewer_settings": "การตั้งค่าโปรแกรมดู",
+    "controls_and_shortcuts": "การควบคุมและทางลัด",
+    "language_and_locale_subtitle": "การตั้งค่าภาษา ท้องถิ่น และหน่วย",
+    "viewer_settings_subtitle": "ขนาด สี ตาข่าย และอื่นๆ",
+    "controls_and_shortcuts_subtitle": "การตั้งค่าแป้นพิมพ์และเมาส์",
+    "viewer_preview": "ตัวอย่างโปรแกรมดู",
+    "language_description": "เลือกภาษาที่ต้องการสำหรับอินเทอร์เฟซ",
+    "units_description": "เลือกหน่วยการวัดที่ต้องการ",
+    "reset_settings": "รีเซ็ตการตั้งค่า",
+    "sizes": {
+      "sizes": "ขนาด",
+      "supportSize": "ขนาดจุดรองรับ"
+    },
+    "font_size": "ขนาดตัวอักษร",
+    "result_label_orientation": "ทิศทางป้ายผลลัพธ์",
+    "result_label_orientation_axis": "ตั้งฉากกับแผนภาพ",
+    "result_label_orientation_horizontal": "แนวนอนเสมอ"
+  },
+  "sideSettings": {
+    "showDeformedShape": "รูปร่างที่เสียรูป",
+    "supports": "จุดรองรับ",
+    "loads": "แรงกระทำ",
+    "nodeLabels": "ป้ายโหนด",
+    "elementLabels": "ป้ายองค์ประกอบ",
+    "more_settings": "การตั้งค่าเพิ่มเติม",
+    "showReactions": "แรงปฏิกิริยา"
+  },
+  "dofs": {
+    "bcs": "องศาความเป็นอิสระที่รองรับ"
+  },
+  "results": {
+    "results": "ผลลัพธ์",
+    "nodal_results": "ผลลัพธ์ที่โหนด",
+    "element_results": "ผลลัพธ์ที่องค์ประกอบ",
+    "end_forces": "แรงปลาย (ในระบบพิกัดท้องถิ่น)"
+  },
+  "materials": {
+    "addMaterial": "เพิ่มวัสดุ",
+    "material_library": "ไลบรารีวัสดุ",
+    "section_library": "ไลบรารีหน้าตัด"
+  },
+  "crossSections": {
+    "addCrossSection": "เพิ่มหน้าตัด"
+  },
+  "dialogs": {
+    "addNode": {
+      "addNewNode": "เพิ่มโหนดใหม่",
+      "coordinate_x": "พิกัด X",
+      "coordinate_z": "พิกัด Z",
+      "addNode": "เพิ่มโหนด"
+    },
+    "common": {
+      "cancel": "ยกเลิก",
+      "orChooseFromLibrary": "หรือเลือกจากไลบรารี"
+    },
+    "addElement": {
+      "fromNodeId": "โหนดเริ่มต้น",
+      "toNodeId": "โหนดปลาย",
+      "addElement": "เพิ่มองค์ประกอบ",
+      "addNewElement": "เพิ่มองค์ประกอบใหม่",
+      "material": "วัสดุ",
+      "crossSection": "หน้าตัด"
+    },
+    "addNodalLoad": {
+      "addNewNodalLoad": "เพิ่มแรงกระทำที่โหนดใหม่",
+      "addNodalLoad": "เพิ่มแรงกระทำที่โหนด"
+    },
+    "addElementLoad": {
+      "addNewElementLoad": "เพิ่มแรงกระทำที่องค์ประกอบใหม่",
+      "addElementLoad": "เพิ่มแรงกระทำที่องค์ประกอบ"
+    },
+    "addMaterial": {
+      "addNewMaterial": "เพิ่มวัสดุใหม่",
+      "addMaterial": "เพิ่มวัสดุ",
+      "E": "E - มอดูลัสยัง",
+      "G": "G - มอดูลัสเฉือน",
+      "density": "ρ - ความหนาแน่น",
+      "alphaT": "α - สัมประสิทธิ์การขยายตัวเนื่องจากความร้อน"
+    },
+    "addCrossSection": {
+      "addNewCrossSection": "เพิ่มหน้าตัดใหม่",
+      "addCrossSection": "เพิ่มหน้าตัด"
+    },
+    "editNodalLoad": {
+      "editNodalLoad": "แก้ไขแรงกระทำที่โหนด"
+    },
+    "editElementLoad": {
+      "editElementLoad": "แก้ไขแรงกระทำที่องค์ประกอบ"
+    },
+    "update": {
+      "title": "มีการอัปเดต",
+      "update": "อัปเดต",
+      "text1": "เรากำลังอัปเดตแอปพลิเคชันซึ่งจำเป็นต้องรีเซ็ตแอป หมายความว่าความคืบหน้าทั้งหมดจะสูญหาย",
+      "text2": "หากคุณต้องการเก็บความคืบหน้าปัจจุบัน คุณสามารถยกเลิกการอัปเดตได้"
+    },
+    "editNode": {
+      "editNode": "แก้ไขโหนด"
+    }
+  },
+  "tooltip": {
+    "materials": {},
+    "material": {
+      "alphaT": "สัมประสิทธิ์การขยายตัวเนื่องจากความร้อนอธิบายการเปลี่ยนแปลงขนาดของวัตถุเมื่ออุณหภูมิเปลี่ยนแปลง",
+      "e": "มอดูลัสยังวัดความแข็งแรงต่อการดึงหรือบีบอัดเมื่อแรงกระทำตามแนวยาว",
+      "g": "มอดูลัสเฉือนเป็นคุณสมบัติที่วัดความต้านทานต่อการเสียรูปภายใต้ความเค้นเฉือน แสดงความแข็งของวัสดุในการตอบสนองต่อแรงที่กระทำขนานกับพื้นผิว",
+      "density": "ความหนาแน่นเป็นการวัดมวลที่มีอยู่ในปริมาตรหนึ่งของสาร"
+    }
+  },
+  "footer": {
+    "reportIssue": "รายงานปัญหา",
+    "requestFeature": "ขอคุณสมบัติ",
+    "released": "เผยแพร่"
+  },
+  "sharing": {
+    "shareViaURL": "แชร์โมเดลผ่าน URL",
+    "instructions": "Click anywhere inside the field to copy the link, then send it to your collaborators.",
+    "copyCue": "Copy link",
+    "openLink": "Open link",
+    "nativeShare": "Share via system dialog",
+    "linkCopied": "Link copied to clipboard",
+    "copyFailed": "Could not copy automatically. Please use your keyboard shortcuts."
+  },
+  "tour": {
+    "startTour": "เริ่มทัวร์",
+    "skipTour": "ข้ามไปก่อน",
+    "viewerControls": {
+      "title": "ปุ่มควบคุมโปรแกรมดู",
+      "description": "การควบคุมโปรแกรมดูเป็นวิธีจัดกึ่งกลางหรือปรับโครงสร้างให้พอดีกับหน้าจอ และเลือกสิ่งที่จะแสดง"
+    },
+    "viewerSettings": {
+      "title": "ปรับแต่งตัวเลือกการแสดงผล",
+      "description": "เลือกสิ่งที่จะแสดง ไม่ว่าจะเป็นแรงปกติ แรงเฉือน โมเมนต์ดัด รูปร่างที่เสียรูป หรือทุกอย่างรวมกัน"
+    },
+    "bottomBar": {
+      "title": "เพิ่ม ลบ และแก้ไขเอนทิตี",
+      "description": "ศูนย์กลางที่ทุกแง่มุมของโครงสร้างของคุณสามารถเปลี่ยนแปลงได้อย่างง่ายดาย ตั้งแต่โหนดไปจนถึงองค์ประกอบ โหลด วัสดุ และหน้าตัด เป็นสถานที่สำหรับการเปลี่ยนแปลงที่รวดเร็วและครอบคลุม"
+    },
+    "previousButton": "ก่อนหน้า",
+    "nextButton": "ถัดไป",
+    "finishButton": "เสร็จสิ้น"
+  },
+  "welcome": {
+    "title": "ยินดีต้อนรับสู่ <span class=\"edubeam\">edubeam</span>! 🚀",
+    "description": "เพื่อช่วยให้คุณเริ่มต้น เราได้เตรียมทัวร์การปฐมนิเทศอย่างรวดเร็วที่จะแนะนำคุณผ่านคุณสมบัติและฟังก์ชันของโปรแกรมของเรา"
+  },
+  "confirmation": {
+    "clearMesh": {
+      "message": "คุณแน่ใจหรือไม่ว่าต้องการลบ Mesh? การกระทำนี้ไม่สามารถยกเลิกได้",
+      "title": "ลบ Mesh?",
+      "materials": "ลบวัสดุ",
+      "crossSections": "ลบหน้าตัด"
+    },
+    "resetSettings": {
+      "title": "รีเซ็ตการตั้งค่า?",
+      "message": "คุณแน่ใจหรือไม่ว่าต้องการรีเซ็ตการตั้งค่าทั้งหมดกลับเป็นค่าเริ่มต้น? การกระทำนี้ไม่สามารถยกเลิกได้"
+    },
+    "splitElementAndPlaceNode": {
+      "title": "การยืนยันการวางโหนด",
+      "message": "<p>ดูเหมือนคุณกำลังวางโหนดบนคาน {label}</p><p class=\"mt-3\">คุณต้องการแยกองค์ประกอบและเชื่อมต่อโหนด หรือวางโหนดโดยไม่เชื่อมต่อกับโครงสร้าง?</p>",
+      "split": "เชื่อมต่อกับโครงสร้าง"
+    },
+    "placeIndividualNode": "วางโหนดแยกต่างหาก"
+  },
+  "selection": {
+    "node": "โหนด",
+    "element": "องค์ประกอบ",
+    "dimension": "เส้นมิติ",
+    "nodal-load": "แรงกระทำที่โหนด",
+    "element-load": "แรงกระทำที่องค์ประกอบ",
+    "prescribedbc-load": "การให้ค่าการกระจัด"
+  },
+  "validators": {
+    "enterValue": "ใส่ค่า",
+    "invalidNumber": "ตัวเลขไม่ถูกต้อง"
+  },
+  "loadType": {
+    "loadType": "ประเภทแรงกระทำ",
+    "concentrated": "แรงกระทำเข้มข้น",
+    "udl": "แรงกระจายสม่ำเสมอ",
+    "temperature": "แรงกระทำเนื่องจากอุณหภูมิ"
+  },
+  "dimensioning": {
+    "add_dimension": "เพิ่มมิติ"
+  },
+  "warnings": {
+    "noMaterialsDefined": "ไม่มีการกำหนดวัสดุ",
+    "noCrossSectionsDefined": "ไม่มีการกำหนดหน้าตัด"
+  }
+}

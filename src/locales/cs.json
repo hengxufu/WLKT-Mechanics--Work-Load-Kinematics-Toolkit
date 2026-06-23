@@ -1,0 +1,322 @@
+{
+  "common": {
+    "label": "Označení",
+    "node": "Uzel",
+    "crossSection": "Průřez",
+    "element": "Prvek",
+    "material": "Materiál",
+    "settings": "Nastavení",
+    "actions": "Akce",
+    "coords": "Souřadnice",
+    "components": "Složky",
+    "endHinges": "Koncové klouby",
+    "loadCase": "Zatěžovací stav",
+    "massMatrix": "Matice hmotnosti",
+    "nodes": "Uzly",
+    "target": "Působiště",
+    "type": "Typ",
+    "loads": "Zatížení",
+    "clearMesh": "Smazat konstrukci",
+    "documentation": "Dokumentace",
+    "shareModel": "Sdílet konstrukci",
+    "delete": "Smazat",
+    "copy": "Kopírovat",
+    "edit": "Upravit",
+    "stiffnessMatrix": "Matice tuhosti",
+    "addUsingDialog": "Přidat dialogem",
+    "addUsingMouse": "Přidat myší",
+    "elements": "Prvky",
+    "shearForce": "Posouvající síla",
+    "reactions": "Reakce",
+    "normalForce": "Normálová síla",
+    "deformedShape": "Deformovaný tvar",
+    "bendingMoment": "Ohybový moment",
+    "confirm": "Potvrdit",
+    "openProject": "Otevřít projekt",
+    "saveProject": "Uložit projekt",
+    "lcs": "Lokální souřadný systém",
+    "paste": "Vložit",
+    "addNew": "Přidat",
+    "whatisnew": "Co je nového?",
+    "reverse_orientation": "Převrátit kótu"
+  },
+  "tabs": {
+    "nodes": "Uzly",
+    "elements": "Prvky",
+    "loads": "Zatížení",
+    "materials": "Materiály",
+    "crossSections": "Průřezy",
+    "results": "Výsledky"
+  },
+  "crossSection": {
+    "area": "Plocha",
+    "h": "Výška",
+    "iy": "Iy",
+    "k": "Smykový součinitel"
+  },
+  "settings": {
+    "results_scale": "Měřítko výsledků",
+    "snap_to_grid": "Přichytávat k mřížce",
+    "grid_snap_step": "Krok příchytu k mřížce",
+    "language": "Jazyk",
+    "show_bending_moment": "Kreslit ohybový moment",
+    "show_deformed_shape": "Kreslit deformovaný tvar",
+    "show_loads": "Kreslit zatížení",
+    "show_normal_force": "Kreslit normálovou sílu",
+    "show_shear_force": "Kreslit posouvající sílu",
+    "language_and_locale": "Jazyk a prostředí",
+    "grid": "Mřížka",
+    "units": {
+      "area": "Plocha",
+      "areaM2": "Moment setrvačnosti",
+      "length": "Délka",
+      "force": "Síla",
+      "moment": "Ohybový moment",
+      "mass": "Hmotnost",
+      "pressure": "Napětí",
+      "units": "Jednotky"
+    },
+    "show_grid": "Zobrazit mřížku",
+    "mouse": {
+      "mouse": "Myš",
+      "pan_button": "Posun zobrazení pomocí",
+      "wheel": "Kolečko myši",
+      "right_button": "Pravé tlačítko"
+    },
+    "results": {
+      "results": "Výsledky"
+    },
+    "colors": {
+      "colors": "Barvy"
+    },
+    "viewer_settings": "Nastavení zobrazení",
+    "controls_and_shortcuts": "Ovládání & zkratky",
+    "controls_and_shortcuts_subtitle": "Nastavení klávesnice a myši",
+    "language_and_locale_subtitle": "Nastavení jazyka, lokalizace a jednotek",
+    "viewer_settings_subtitle": "Měřítko, barvy, mřížka a další",
+    "viewer_preview": "Náhled zobrazení",
+    "language_description": "Vyberte preferovaný jazyk uživatelského prostředí.",
+    "units_description": "Vyberte si vámi preferované měrné jednotky.",
+    "reset_settings": "Obnovit výchozí nastavení",
+    "sizes": {
+      "sizes": "Velikost",
+      "supportSize": "Velikost podpor"
+    },
+    "font_size": "Velikost písma",
+    "result_label_orientation": "Orientace popisků výsledků",
+    "result_label_orientation_axis": "Kolmo k vykreslení grafu",
+    "result_label_orientation_horizontal": "Vždy vodorovně"
+  },
+  "elements": {
+    "addElement": "Přidat prvek",
+    "swapNodeOrder": "Přehodit pořadí uzlů",
+    "editElement": "Upravit prvek"
+  },
+  "loads": {
+    "addElementLoad": "Přidat prvkové zatížení",
+    "addNodalLoad": "Přidat uzlové zatížení",
+    "nodalLoad": "Uzlové zatížení",
+    "elementLoad": "Prvkové zatížení",
+    "prescribedDisplacement": "Předepsané posunutí",
+    "addLoad": "Přidat zatížení",
+    "addPrescribedDisplacement": "Předepsat posunutí",
+    "forceMoment": "Síla/moment",
+    "editLoad": "Upravit zatížení",
+    "loadPositionOnBeam": "Vzdálenost od počátečního uzlu",
+    "temperatureAxial": "ΔT<sub>d</sub>-ΔT<sub>h</sub> ... Rozdíl oteplení dolních a horních vláken",
+    "temperatureBending": "ΔT<sub>s</sub> ... Oteplení střednice",
+    "temperatureDeltaTbt": "ΔT<sub>d</sub>-ΔT<sub>h</sub>",
+    "temperatureDeltaTbtNoHTML": "ΔTd-ΔTh"
+  },
+  "material": {
+    "alphaT": "α_T",
+    "density": "Hustota",
+    "e": "E",
+    "g": "G"
+  },
+  "nodes": {
+    "addNode": "Přidat uzel",
+    "editNode": "Upravit uzel",
+    "defineSupports": "Podepření uzlu",
+    "lcsAngle": "Pootočení systému souřadnic"
+  },
+  "tabView": {
+    "results": "Výsledky",
+    "settings": "Nastavení",
+    "viewer": "Konstrukce"
+  },
+  "sideSettings": {
+    "showDeformedShape": "Deformovaný tvar",
+    "elementLabels": "Popisky prvků",
+    "loads": "Zatížení",
+    "nodeLabels": "Popisky uzlů",
+    "supports": "Podpory",
+    "more_settings": "Všechna nastavení",
+    "showReactions": "Reakce"
+  },
+  "dofs": {
+    "bcs": "Podepřené stupně volnosti"
+  },
+  "materials": {
+    "addMaterial": "Přidat materiál",
+    "material_library": "Knihovna materiálů",
+    "section_library": "Knihovna průřezů"
+  },
+  "crossSections": {
+    "addCrossSection": "Přidat průřez"
+  },
+  "results": {
+    "results": "Výsledky",
+    "nodal_results": "Výsledky v uzlech",
+    "element_results": "Výsledky na prvcích",
+    "end_forces": "Koncové síly (v lokálních souřadnicích)"
+  },
+  "dialogs": {
+    "addNode": {
+      "addNewNode": "Přidat nový uzel",
+      "coordinate_x": "Souřadnice X",
+      "coordinate_z": "Souřadnice Z",
+      "addNode": "Přidat uzel"
+    },
+    "common": {
+      "cancel": "Zrušit",
+      "orChooseFromLibrary": "Nebo vybrat z knihovny"
+    },
+    "addElement": {
+      "fromNodeId": "Počáteční uzel",
+      "toNodeId": "Koncový uzel",
+      "addElement": "Přidat prvek",
+      "addNewElement": "Přidat nový prvek",
+      "material": "Materiál",
+      "crossSection": "Průřez"
+    },
+    "addNodalLoad": {
+      "addNewNodalLoad": "Přidat nové uzlové zatížení",
+      "addNodalLoad": "Přidat uzlové zatížení"
+    },
+    "addElementLoad": {
+      "addNewElementLoad": "Přidat nové prvkové zatížení",
+      "addElementLoad": "Přidat prvkové zatížení"
+    },
+    "addMaterial": {
+      "addNewMaterial": "Přidat nový materiál",
+      "addMaterial": "Přidat materiál",
+      "E": "E - modul pružnosti",
+      "G": "G - Smykový modul",
+      "density": "ρ - hustota",
+      "alphaT": "α - Součinitel teplotní roztažnosti"
+    },
+    "addCrossSection": {
+      "addNewCrossSection": "Přidat nový průřez",
+      "addCrossSection": "Přidat průřez"
+    },
+    "editNodalLoad": {
+      "editNodalLoad": "Upravit uzlové zatížení"
+    },
+    "editElementLoad": {
+      "editElementLoad": "Upravit prvkové zatížení"
+    },
+    "update": {
+      "title": "Aktualizace je k dispozici",
+      "text1": " K dispozici je aktualizace, která vyžaduje restartování aplikace. To znamená, že veškeré úpravy budou ztraceny.",
+      "text2": "Pokud si přejete zachovat svůj aktuální postup, můžete aktualizaci zrušit.",
+      "update": "Aktualizovat"
+    },
+    "editNode": {
+      "editNode": "Upravit uzel"
+    },
+    "changelog": {
+      "title": "Co je nového?",
+      "description": "Novinky, vylepšení a ukázky toho, co chystáme dál."
+    }
+  },
+  "tooltip": {
+    "material": {
+      "alphaT": " Teplotní součinitel délkové roztažnosti popisuje, jak se mění délkové rozměry tělesa změnou teploty.",
+      "density": "Hustota je mírou toho, kolik hmoty je obsaženo v daném objemu látky.",
+      "e": "Youngův modul pružnosti vyjadřuje závilosti mezi napětím a deformací v tahu a tlaku.",
+      "g": "Smykový modul je vlastnost, která měří odolnost vůči deformaci při smykovém napětí, indikující tuhost materiálu v reakci na síly působící rovnoběžně s jeho povrchem."
+    }
+  },
+  "footer": {
+    "released": "vydáno",
+    "reportIssue": "Nahlásit problém",
+    "requestFeature": "Navrhnout novou funkci"
+  },
+  "sharing": {
+    "shareViaURL": "Sdílejte konstrukci pomocí odkazu",
+    "instructions": "Kliknutím kamkoli do pole zkopírujete odkaz a poté jej odešlete svým spolupracovníkům.",
+    "copyCue": "Kopírovat odkaz",
+    "openLink": "Otevřít odkaz",
+    "nativeShare": "Sdílet přes systémové dialogové okno",
+    "linkCopied": "Odkaz zkopírován do schránky",
+    "copyFailed": "Nepodařilo se automaticky zkopírovat. Použijte prosím klávesové zkratky."
+  },
+  "tour": {
+    "skipTour": "Přeskočit",
+    "startTour": "Začít prohlídku",
+    "viewerControls": {
+      "title": "Tlačítka zobrazení",
+      "description": "Ovládací prvky zobrazení slouží k vycentrování nebo přizpůsobení konstrukce obrazovce a k výběru toho, co se má zobrazovat."
+    },
+    "viewerSettings": {
+      "title": "Přizpůsobit možnosti zobrazení",
+      "description": "Vyberte, co se má zobrazit - normálová síla, posouvající síla, ohybový moment, deformovaný tvar, nebo vše dohromady."
+    },
+    "bottomBar": {
+      "title": "Přidávání, odebírání a úprava entit",
+      "description": " Ústředí edubeamu, kde lze jednodušše měnit každý aspekt vaší konstrukce. Od uzlů po prvky, zatížení, materiály a průřezy - je to místo, kde můžete provádět rychlé a komplexní změny."
+    },
+    "previousButton": "Předchozí",
+    "nextButton": "Další",
+    "finishButton": "Dokončit prohlídku"
+  },
+  "welcome": {
+    "title": "Vítejte v <span class=\"edubeam\">edubeamu</span>! 🚀",
+    "description": "Abychom vám usnadnili začátek, připravili jsme pro vás rychlou úvodní prohlídku, která vás seznámí s vlastnostmi a funkcemi našeho programu."
+  },
+  "confirmation": {
+    "clearMesh": {
+      "title": "Smazat konstrukci?",
+      "message": "Jste si jisti, že chcete smazat konstrukci? Tuto akci nelze vrátit zpět.",
+      "materials": "Smazat materiály",
+      "crossSections": "Smazat průřezy"
+    },
+    "resetSettings": {
+      "message": "Opravdu chcete obnovit všechna výchozí nastavení? Tuto akci nelze vrátit zpět.",
+      "title": "Obnovit výchozí nastavení?"
+    },
+    "splitElementAndPlaceNode": {
+      "message": "<p>Vypadá to, že umisťujete uzel na nosník {label}.</p><p class=\"mt-3\">Chcete prvek rozdělit a uzel připojit, nebo umístit uzel nepřipojený na konstrukci?</p>",
+      "title": "Potvrdit umístění uzlu",
+      "split": "Připojit ke konstrukci"
+    },
+    "placeIndividualNode": "Umístit samostatný uzel"
+  },
+  "selection": {
+    "element": "Prvek",
+    "node": "Uzel",
+    "dimension": "Kóta",
+    "nodal-load": "Uzlové zatížení",
+    "element-load": "Prvkové zatížení",
+    "prescribedbc-load": "Předepsané posunutí"
+  },
+  "validators": {
+    "enterValue": "Zadejte hodnotu",
+    "invalidNumber": "Neplatné číslo"
+  },
+  "loadType": {
+    "concentrated": "Osamělá síla",
+    "udl": "Spojité rovnoměrné zatížení",
+    "trapezoidal": "Lineárně proměnné zatížení",
+    "temperature": "Změna teploty",
+    "loadType": "Typ zatížení"
+  },
+  "dimensioning": {
+    "add_dimension": "Přidat kótu"
+  },
+  "warnings": {
+    "noMaterialsDefined": "Není definovaný žádný materiál",
+    "noCrossSectionsDefined": "Není definovaný žádný průřez"
+  }
+}
