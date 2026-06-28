@@ -1,6 +1,6 @@
 <template>
-  <div id="bottomBar" style="border-top: 1px solid #ddd" :style="`min-height: ${props.height}px; overflow: hidden`">
-    <div class="d-flex justify-space-between bg-primary">
+  <div id="bottomBar" class="bottom-workbench" :style="`min-height: ${props.height}px; overflow: hidden`">
+    <div class="bottom-workbench__tabs d-flex justify-space-between bg-primary">
       <v-tabs
         v-model="appStore.bottomBarTab"
         bg-color="primary"
@@ -20,7 +20,7 @@
           <template v-if="'count' in tab && tab.count() > 0" #append>{{ tab.count() }}</template>
         </v-tab>
       </v-tabs>
-      <div class="bg-primary d-flex align-center">
+      <div class="bg-primary d-flex align-center bottom-workbench__toggle">
         <v-btn
           color="primary"
           density="compact"
@@ -1701,12 +1701,12 @@ const formatElementLoadsAtElement = (item: Beam2D): [number, string][] => {
 const addElementUsingMouse = () => {
   // check if we have material and CS to assign
   if (projStore.solver.domain.materials.size === 0) {
-    alert('Please add some material first.');
+    alert(t('warnings.addMaterialFirst'));
     return;
   }
 
   if (projStore.solver.domain.crossSections.size === 0) {
-    alert('Please add some cross section first.');
+    alert(t('warnings.addCrossSectionFirst'));
     return;
   }
 

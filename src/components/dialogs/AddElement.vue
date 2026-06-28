@@ -111,8 +111,10 @@ import { closeModal, openModal } from 'jenesius-vue-modal';
 import { executeModelMutationWithUndo } from '@/utils';
 import AddMaterialDialog from './AddMaterial.vue';
 import AddCrossSectionDialog from './AddCrossSection.vue';
+import { useI18n } from 'vue-i18n';
 
 const projectStore = useProjectStore();
+const { t } = useI18n();
 
 const open = ref(true);
 
@@ -139,7 +141,7 @@ onMounted(() => {
 const addElement = () => {
   // check if material and cross section are selected
   if (newElementMat.value === '' || newElementCS.value === '') {
-    return alert('Please select a material and cross section');
+    return alert(t('warnings.selectMaterialAndCrossSection'));
   }
 
   useProjectStore().solver.loadCases[0].solved = false;

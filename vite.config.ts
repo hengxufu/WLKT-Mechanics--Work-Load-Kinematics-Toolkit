@@ -1,4 +1,3 @@
-import { sentryVitePlugin } from '@sentry/vite-plugin';
 // Plugins
 import vue from '@vitejs/plugin-vue';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
@@ -13,15 +12,23 @@ import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
 import { execSync } from 'child_process';
 
-const commitDate = execSync('git log -1 --format=%cI').toString().trimEnd();
-const commitHash = execSync('git rev-parse HEAD').toString().trimEnd();
+const readGitValue = (command: string, fallback: string) => {
+  try {
+    return execSync(command).toString().trimEnd();
+  } catch {
+    return fallback;
+  }
+};
+
+const commitDate = readGitValue('git log -1 --format=%cI', new Date().toISOString());
+const commitHash = readGitValue('git rev-parse HEAD', 'local-build');
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue({
       template: { transformAssetUrls },
-    }), // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+    }),
     vuetify({
       autoImport: true,
     }),
@@ -31,20 +38,34 @@ export default defineConfig({
       strictMessage: false,
     }),
     VitePWA({
-      mode: 'development',
-      //registerType: "autoUpdate",
+      registerType: 'autoUpdate',
       injectRegister: 'script',
+      includeAssets: ['favicon.ico', 'robots.txt', 'docs/*.html', 'changelog/**/*'],
       manifest: {
-        name: 'edubeam',
-        short_name: 'edubeam',
-        description:
-          'Explore 2D structural analysis directly in your web browser – tailored for students and educators alike. Solve beam and truss structures.',
+        name: 'WLKT Mechanics 材料力学求解器',
+        short_name: 'WLKT Mechanics',
+        description: '面向材料力学和结构力学学习的本地离线二维杆系、梁和桁架求解工具。',
         theme_color: '#111133',
+        background_color: '#ffffff',
+        display: 'standalone',
+        start_url: '/',
+        scope: '/',
+        lang: 'zh-CN',
+        icons: [
+          {
+            src: '/favicon.ico',
+            sizes: '48x48 72x72 96x96 128x128 256x256',
+            type: 'image/x-icon',
+            purpose: 'any',
+          },
+        ],
       },
-    }),
-    sentryVitePlugin({
-      org: 'ctu-prague',
-      project: 'edubeam-app',
+      workbox: {
+        cleanupOutdatedCaches: true,
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,gif,jpg,json,woff2,ttf}'],
+        maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
+        navigateFallback: '/index.html',
+      },
     }),
   ],
 
@@ -67,6 +88,6 @@ export default defineConfig({
   },
 
   build: {
-    sourcemap: true,
+    sourcemap: false,
   },
 });

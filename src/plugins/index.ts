@@ -4,8 +4,6 @@
  * Automatically included in `./src/main.ts`
  */
 
-// Plugins
-import { loadFonts } from './webfontloader';
 import vuetify from './vuetify';
 import pinia from '../store';
 import { i18n } from './i18n';
@@ -21,8 +19,6 @@ import 'floating-vue/dist/style.css';
 import type { App } from 'vue';
 
 export function registerPlugins(app: App) {
-  loadFonts();
-
   app.use(vuetify);
   app.use(pinia);
   app.use(i18n);

@@ -19,7 +19,7 @@
       <div class="changelog-scroll">
         <div v-if="loading" class="changelog-state">
           <v-progress-circular indeterminate color="primary" size="28" class="mr-2" />
-          <span>Loading changelog…</span>
+          <span>{{ $t('dialogs.changelog.loading') }}</span>
         </div>
 
         <v-alert v-else-if="error" type="warning" variant="tonal" border="start" class="mb-4">
@@ -68,11 +68,11 @@
           </section>
 
           <div v-if="!releases.length" class="changelog-state text-medium-emphasis">
-            Nothing to show yet. Please add entries to <code>public/changelog/{{ resolvedLocale }}.json</code>.
+            {{ $t('dialogs.changelog.empty', { locale: resolvedLocale }) }}
           </div>
 
           <section v-if="upcoming.length" class="changelog-upcoming">
-            <div class="text-overline text-medium-emphasis">Coming soon</div>
+            <div class="text-overline text-medium-emphasis">{{ $t('dialogs.changelog.comingSoon') }}</div>
             <div v-for="feature in upcoming" :key="feature.title" class="upcoming-card">
               <div class="font-weight-medium">{{ feature.title }}</div>
               <div class="text-body-2 text-medium-emphasis">{{ feature.detail }}</div>
@@ -123,7 +123,7 @@ const loading = ref(false);
 const error = ref('');
 const resolvedLocale = ref('');
 
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const appStore = useAppStore();
 const currentAppVersion = APP_VERSION;
 
@@ -223,7 +223,7 @@ const loadChangelog = async () => {
   if (!baseData) {
     releases.value = [];
     upcoming.value = [];
-    error.value = 'Missing base changelog at public/changelog/en.json.';
+    error.value = t('dialogs.changelog.missingBase');
     loading.value = false;
     return;
   }

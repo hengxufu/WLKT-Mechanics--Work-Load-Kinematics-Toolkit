@@ -4,6 +4,24 @@
     "settings": "Settings",
     "results": "Results"
   },
+  "app": {
+    "subtitle": "Interactive mechanics solver"
+  },
+  "workflow": {
+    "title": "Workflow",
+    "library": "Library",
+    "libraryTip": "Manage materials and cross sections",
+    "nodes": "Nodes",
+    "nodesTip": "Enter node placement mode",
+    "elements": "Elements",
+    "elementsTip": "Enter element connection mode",
+    "loads": "Loads",
+    "loadsTip": "Manage nodal and element loads",
+    "results": "Results",
+    "resultsTip": "Solve and review forces, deformation, and reactions",
+    "fitView": "Fit view",
+    "selectMode": "Select mode"
+  },
   "common": {
     "label": "Label",
     "node": "Node",
@@ -23,7 +41,7 @@
     "loads": "Loads",
     "clearMesh": "Clear mesh",
     "shareModel": "Share model",
-    "documentation": "Documentation",
+    "documentation": "Local guide",
     "addUsingDialog": "Add using dialog",
     "addUsingMouse": "Add using mouse",
     "edit": "Edit",
@@ -230,7 +248,11 @@
     },
     "changelog": {
       "title": "What's New?",
-      "description": "New features, improvements, and sneak peeks of what we’re working on."
+      "description": "New features, improvements, and sneak peeks of what we’re working on.",
+      "loading": "Loading changelog…",
+      "empty": "Nothing to show yet. Please add entries to public/changelog/{locale}.json.",
+      "comingSoon": "Coming soon",
+      "missingBase": "Missing base changelog at public/changelog/en.json."
     }
   },
   "tooltip": {
@@ -276,8 +298,8 @@
     "finishButton": "Finish"
   },
   "welcome": {
-    "title": "Welcome to <span class=\"edubeam\">edubeam</span>! 🚀",
-    "description": "To help you get started, we've prepared a quick onboarding tour that will guide you through the features and functionalities of our program."
+    "title": "Welcome to <span class=\"edubeam\">WLKT Mechanics</span>! 🚀",
+    "description": "To help you get started, we've prepared a quick onboarding tour that will guide you through the local mechanics solver."
   },
   "confirmation": {
     "clearMesh": {
@@ -321,6 +343,12 @@
   },
   "warnings": {
     "noMaterialsDefined": "No materials defined.",
-    "noCrossSectionsDefined": "No cross sections defined."
+    "noCrossSectionsDefined": "No cross sections defined.",
+    "selectMaterialAndCrossSection": "Please select a material and cross section.",
+    "prescribedDisplacementExists": "A prescribed displacement already exists for this node. Please remove it first.",
+    "addMaterialFirst": "Please add a material first.",
+    "addCrossSectionFirst": "Please add a cross section first.",
+    "labelAlreadyUsed": "Label {label} is already used.",
+    "importFailed": "Could not import the file. Please check the file format."
   }
 }

@@ -18,7 +18,7 @@ export default {
 <script setup lang="ts">
 import { onMounted, ref, computed } from 'vue';
 import { DofID } from 'ts-fem';
-import { setLocale, availableLocales } from './plugins/i18n';
+import { resolveLocale, setLocale, availableLocales, toIntlLocale } from './plugins/i18n';
 
 import Welcome from '@/components/dialogs/Welcome.vue';
 import Share from '@/components/dialogs/Share.vue';
@@ -138,8 +138,9 @@ onMounted(() => {
     return;
   }
 
-  if (lang && availableLocales.findIndex((l) => l.code === lang) >= 0) {
-    appStore.locale = lang;
+  const resolvedLang = resolveLocale(lang);
+  if (lang && availableLocales.findIndex((l) => l.code === resolvedLang) >= 0) {
+    appStore.locale = resolvedLang;
     const url = document.location.href;
     window.history.pushState({}, '', url.split('?')[0]);
   }
@@ -244,6 +245,7 @@ const maybeShowChangelog = () => {
 };
 
 onMounted(() => {
+  appStore.locale = resolveLocale(appStore.locale);
   setLocale(appStore.locale);
 });
 
@@ -270,7 +272,7 @@ function onDrop(e) {
         importJSON(JSON.parse(text));
         solve();
       } catch (e) {
-        alert('Could not import the file. Please check the file format.');
+        alert(t('warnings.importFailed'));
       }
     };
     reader.readAsText(file);
@@ -291,7 +293,7 @@ function openFile(e) {
       importJSON(JSON.parse(text));
       solve();
     } catch (e) {
-      alert('Could not import the file. Please check the file format.');
+      alert(t('warnings.importFailed'));
     }
 
     appStore.tab = 0;
@@ -360,13 +362,18 @@ const app_commit = APP_COMMIT;
       </template>
     </VOnboardingWrapper>
 
-    <v-app-bar v-if="!appStore.inViewerMode" clipped-lefs clipped-right app color="primary" density="compact">
+    <v-app-bar v-if="!appStore.inViewerMode" clipped-lefs clipped-right app color="primary" density="compact" class="app-bar-buaa">
       <v-app-bar-nav-icon @click="appStore.drawerOpen = !appStore.drawerOpen"></v-app-bar-nav-icon>
 
-      <div class="app-title ml-3 d-flex align-center" style="user-select: none">edubeam</div>
+      <div class="app-brand ml-2" style="user-select: none">
+        <span class="app-brand__mark">BUAA</span>
+        <span class="app-brand__name">WLKT Mechanics</span>
+        <span class="app-brand__sub d-none d-md-inline">{{ $t('app.subtitle') }}</span>
+      </div>
 
       <v-btn
-        class="d-none d-sm-inline-flex ml-3"
+        class="d-none d-sm-inline-flex ml-4"
+        variant="tonal"
         @click="
           openModal(Confirmation, {
             title: t('confirmation.clearMesh.title'),
@@ -389,23 +396,27 @@ const app_commit = APP_COMMIT;
 
       <v-spacer></v-spacer>
 
-      <v-btn class="d-none d-sm-inline-flex" @click="openChangelog">
+      <v-btn class="d-none d-sm-inline-flex" variant="tonal" @click="openChangelog">
         <v-icon class="mr-1">mdi-history</v-icon>
         <span>{{ $t('common.whatisnew') }}</span>
       </v-btn>
 
-      <v-btn class="d-inline-flex" href="https://edubeam.app" target="_blank">
+      <v-btn class="d-inline-flex" variant="tonal" href="/docs/local-app.html" target="_blank">
         {{ $t('common.documentation') }}
         <v-icon class="ml-1">mdi-open-in-new</v-icon>
       </v-btn>
-
-      <v-btn class="d-none d-sm-inline-flex" icon href="https://github.com/janvorisek/edubeam" target="_blank">
-        <v-icon>mdi-github</v-icon>
-      </v-btn>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="appStore.drawerOpen" temporary>
+    <v-navigation-drawer v-model="appStore.drawerOpen" temporary class="app-drawer">
       <!-- <v-list-item prepend-avatar="https://randomuser.me/api/portraits/women/9.jpg" title="Jane Doe"></v-list-item> -->
+
+      <div class="drawer-brand">
+        <div class="drawer-brand__mark">BUAA</div>
+        <div>
+          <div class="drawer-brand__title">WLKT Mechanics</div>
+          <div class="drawer-brand__subtitle">{{ $t('app.subtitle') }}</div>
+        </div>
+      </div>
 
       <v-divider></v-divider>
 
@@ -447,8 +458,8 @@ const app_commit = APP_COMMIT;
       </v-list>
       <v-divider />
       <div class="pa-3 text-grey-darken-2" style="font-size: 12px">
-        v{{ app_version }}<br />{{ new Date(app_released).toLocaleDateString(appStore.locale) }}
-        {{ new Date(app_released).toLocaleTimeString(appStore.locale) }}<br />
+        v{{ app_version }}<br />{{ new Date(app_released).toLocaleDateString(toIntlLocale(appStore.locale)) }}
+        {{ new Date(app_released).toLocaleTimeString(toIntlLocale(appStore.locale)) }}<br />
         <span style="font-size: 10px">{{ app_commit }}</span>
       </div>
     </v-navigation-drawer>

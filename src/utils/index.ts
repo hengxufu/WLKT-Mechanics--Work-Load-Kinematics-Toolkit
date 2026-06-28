@@ -12,7 +12,7 @@ import {
   PrescribedDisplacement,
 } from 'ts-fem';
 import { Ref } from 'vue';
-import { availableLocales, i18n } from '../plugins/i18n';
+import { availableLocales, DEFAULT_LOCALE, i18n, resolveLocale } from '../plugins/i18n';
 import { useProjectStore } from '../store/project';
 import { Command, IKeyValue, undoRedoManager } from '../CommandManager';
 import { useViewerStore } from '../store/viewer';
@@ -424,10 +424,11 @@ export const suggestLanguage = () => {
   const langs = navigator.languages || [navigator.language];
 
   for (const lang of langs) {
-    if (availableLocales.some((l) => l.code === lang)) return lang;
+    const resolved = resolveLocale(lang);
+    if (availableLocales.some((l) => l.code === resolved)) return resolved;
   }
 
-  return 'en';
+  return DEFAULT_LOCALE;
 };
 
 export const parseFloat2 = (s: string | number) => {
@@ -560,7 +561,7 @@ export const changeLabel = (map: string, item: EntityWithLabel, el?: HTMLInputEl
 
   //if (isNaN(parseInt(el.value))) return;
   if (useProjectStore().solver.domain[map].has(el.value)) {
-    alert('ERROR: Label ' + el.value + ' already used!');
+    alert(i18n.global.t('warnings.labelAlreadyUsed', { label: el.value }));
     el.value = item.label;
     return;
   }

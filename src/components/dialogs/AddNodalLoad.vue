@@ -105,9 +105,11 @@ import { closeModal } from 'jenesius-vue-modal';
 import { useAppStore } from '@/store/app';
 import { checkNumber, executeModelMutationWithUndo, parseFloat2, numberRules } from '@/utils';
 import Vector2DHelper from '../Vector2DHelper.vue';
+import { useI18n } from 'vue-i18n';
 
 const projectStore = useProjectStore();
 const appStore = useAppStore();
+const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
@@ -162,7 +164,7 @@ const addNodalLoad = () => {
     // check if the node already has a prescribed displacement
     for (const load of projectStore.solver.loadCases[0].prescribedBC) {
       if (load.target === loadNodeId.value) {
-        alert('Prescribed displacement already exists for this node. Please remove it first.');
+        alert(t('warnings.prescribedDisplacementExists'));
         closeModal();
         return;
       }

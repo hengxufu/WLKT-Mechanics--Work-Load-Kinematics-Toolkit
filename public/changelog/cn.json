@@ -1,0 +1,118 @@
+{
+  "releases": [
+    {
+      "version": "1.0.6",
+      "title": "撤销/重做机制优化",
+      "date": "2026年5月21日",
+      "highlights": [
+        "撤销和重做行为已重构，在应用各处表现更加一致。",
+        "复制、粘贴和删除操作现在会被正确记录，并可按预期撤销。"
+      ],
+      "tag": "最新",
+      "media": []
+    },
+    {
+      "version": "1.0.5",
+      "title": "单元集中力矩荷载",
+      "date": "2026年5月20日",
+      "highlights": [
+        "新增梁单元集中力矩荷载支持。",
+        "单元荷载预览现在会正确显示集中力矩符号和数值。",
+        "预览标签会遵循当前力和力矩单位，包括 kN 及派生力矩单位。"
+      ],
+      "media": [
+        {
+          "src": "/changelog/media/element-concentrated-moment-load.png",
+          "alt": "单元集中力矩荷载预览",
+          "caption": "单元集中力矩荷载"
+        }
+      ]
+    },
+    {
+      "version": "1.0.4",
+      "title": "自由点尺寸标注",
+      "date": "2026年3月19日",
+      "highlights": [
+        "尺寸标注可以从屏幕上的任意点开始或结束，不再需要创建无用有限元节点。",
+        "尺寸端点会显示捕捉点，并可直接拖拽。",
+        "创建和拖拽过程中的端点捕捉更可靠，支持自由点和节点捕捉。",
+        "尺寸标注的右键菜单支持翻转端点顺序，并可直接编辑端点坐标。"
+      ],
+      "media": [
+        {
+          "src": "/changelog/media/freedimpoints.gif",
+          "alt": "自由点尺寸标注演示",
+          "caption": "自由点尺寸标注演示"
+        }
+      ]
+    },
+    {
+      "version": "1.0.3",
+      "title": "线性变化荷载与尺寸标注",
+      "date": "2025年12月19日",
+      "highlights": [
+        "新增单元线性变化荷载支持。",
+        "修复了节点间尺寸标注的添加、删除和选择能力。",
+        "尺寸标注可用鼠标移动，便于整理图面。"
+      ],
+      "media": [
+        {
+          "src": "/changelog/media/trapezoidal1.png",
+          "alt": "线性变化荷载：三角形",
+          "caption": "线性变化荷载：三角形"
+        },
+        {
+          "src": "/changelog/media/trapezoidal2.png",
+          "alt": "线性变化荷载：梯形",
+          "caption": "线性变化荷载：梯形"
+        },
+        {
+          "src": "/changelog/media/trapezoidal3.png",
+          "alt": "线性变化荷载：正负组合",
+          "caption": "线性变化荷载：正负组合"
+        },
+        {
+          "src": "/changelog/media/dimlines1.gif",
+          "alt": "用鼠标移动尺寸标注",
+          "caption": "用鼠标移动尺寸标注"
+        },
+        {
+          "src": "/changelog/media/dimlines2.gif",
+          "alt": "用鼠标移动尺寸标注",
+          "caption": "用鼠标移动尺寸标注"
+        }
+      ]
+    },
+    {
+      "version": "1.0.2",
+      "title": "荷载堆叠以提升可读性",
+      "date": "2025年12月5日",
+      "highlights": [
+        "当多个分布荷载位于同一单元时，现在会正确堆叠显示。",
+        "同方向节点荷载会相互错开堆叠，便于观察。"
+      ],
+      "media": [
+        {
+          "src": "/changelog/media/stacked-loads.png",
+          "alt": "节点荷载堆叠示意",
+          "caption": "节点荷载堆叠"
+        },
+        {
+          "src": "/changelog/media/stacked-loads2.png",
+          "alt": "分布荷载堆叠示意",
+          "caption": "分布荷载堆叠"
+        }
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "title": "更新日志",
+      "date": "2025年12月4日",
+      "highlights": [
+        "应用更新后会显示更新日志弹窗，提供有用的版本信息。",
+        "更新日志支持根据用户语言显示不同内容。"
+      ],
+      "media": []
+    }
+  ]
+}

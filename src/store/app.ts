@@ -6,7 +6,7 @@ import SVGViewer from '../components/SVGViewer.vue';
 // import Results from "../components/Results.vue";
 import Settings from '../components/settings/Settings.vue';
 import { MouseMode } from '@/mouse';
-import { setLocale } from '@/plugins/i18n';
+import { resolveLocale, setLocale, toIntlLocale } from '@/plugins/i18n';
 import { openModal } from 'jenesius-vue-modal';
 import SettingsModal from '../components/dialogs/Settings.vue';
 import Qty from 'js-quantities';
@@ -25,9 +25,9 @@ export const useAppStore = defineStore(
     const bottomBarOpen = ref(!isMobile());
     const bottomBarHeight = ref(226);
 
-    const locale = ref(suggestLanguage());
+    const locale = ref(resolveLocale(suggestLanguage()));
     const numberFormatter = ref(
-      new Intl.NumberFormat(locale.value, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+      new Intl.NumberFormat(toIntlLocale(locale.value), { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     );
 
     // The converter cant handle moment units, so we store them separately and call the converter for length and force separately
@@ -135,8 +135,17 @@ export const useAppStore = defineStore(
     const lastSeenChangelogVersion = ref('');
 
     watch(locale, (newLocale) => {
-      setLocale(newLocale);
-      numberFormatter.value = new Intl.NumberFormat(newLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const resolvedLocale = resolveLocale(newLocale);
+      if (resolvedLocale !== newLocale) {
+        locale.value = resolvedLocale;
+        return;
+      }
+
+      setLocale(resolvedLocale);
+      numberFormatter.value = new Intl.NumberFormat(toIntlLocale(resolvedLocale), {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
     });
 
     const dialogs = reactive({

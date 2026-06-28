@@ -1,11 +1,12 @@
 <template>
-  <div class="d-flex flex-column fill-height">
+  <div class="editor-shell d-flex flex-column fill-height">
     <div style="height: 100%; width: 100%; position: absolute; pointer-events: none">
       <TransitionGroup name="fade">
         <Widget v-for="widget of layoutStore.widgets" :key="widget.title" :widget="widget" />
       </TransitionGroup>
     </div>
     <HelloWorld class="fill-height" style="min-height: 0" />
+    <QuickWorkflow v-if="!appStore.inViewerMode" />
     <div class="resizer" data-direction="vertical"></div>
     <BottomBar v-if="!appStore.inViewerMode" :height="computedBottomBarHeight" class="d-block" />
   </div>
@@ -15,6 +16,7 @@
 import HelloWorld from '@/components/HelloWorld.vue';
 import BottomBar from '@/components/BottomBar.vue';
 import Widget from '@/components/Widget.vue';
+import QuickWorkflow from '@/components/QuickWorkflow.vue';
 
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useAppStore } from '@/store/app';

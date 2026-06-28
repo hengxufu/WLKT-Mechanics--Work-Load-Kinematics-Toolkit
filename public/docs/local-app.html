@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WLKT Mechanics 本地说明</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-serif;
+        color: #1f2933;
+        background: #f6f8fb;
+      }
+
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      h1,
+      h2 {
+        color: #111133;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 30px;
+      }
+
+      p,
+      li {
+        line-height: 1.8;
+      }
+
+      code {
+        padding: 2px 6px;
+        border-radius: 4px;
+        background: #e8edf5;
+      }
+
+      .note {
+        border-left: 4px solid #111133;
+        background: #fff;
+        padding: 12px 14px;
+        margin: 18px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>WLKT Mechanics 本地说明</h1>
+      <p>本版本面向本地离线使用：界面资源、更新日志、说明页和计算逻辑都由本机加载，不依赖云端服务器。</p>
+
+      <h2>安装为本地 App</h2>
+      <ol>
+        <li>在项目根目录执行 <code>npm install</code> 安装依赖。</li>
+        <li>执行 <code>npm run app:build</code> 生成离线构建。</li>
+        <li>执行 <code>npm run app:preview</code>，浏览器打开 <code>http://127.0.0.1:4173</code>。</li>
+        <li>在 Edge 或 Chrome 地址栏右侧选择“安装应用”，安装后即可从开始菜单或桌面启动。</li>
+      </ol>
+
+      <div class="note">
+        首次安装需要本机预览服务提供安装入口。安装并打开过一次后，应用资源会被 service worker 缓存，可在离线状态下继续使用。
+      </div>
+
+      <h2>离线使用注意</h2>
+      <ul>
+        <li>模型文件通过“保存项目”和“打开项目”在本地 JSON 文件中交换。</li>
+        <li>分享链接只编码当前模型，不上传模型数据；在完全离线环境下建议优先使用项目 JSON 文件。</li>
+        <li>本版本已移除 Google Analytics、Sentry 和远程字体加载。</li>
+      </ul>
+
+      <h2>适合材料力学教学的后续改进</h2>
+      <ul>
+        <li>增加轴力、剪力、弯矩、挠度和转角的分步推导面板，显示平衡方程、边界条件和符号约定。</li>
+        <li>加入典型题库模板，例如悬臂梁、简支梁、外伸梁、刚架、桁架、组合杆和温度荷载案例。</li>
+        <li>为结果添加危险截面自动识别，标出最大正应力、最大剪应力、最大挠度和安全系数。</li>
+        <li>提供单位一致性检查和量纲提示，减少 MPa、N、kN、mm、m 混用导致的输入错误。</li>
+        <li>增加报告导出功能，将模型图、荷载、支反力、内力图和关键公式导出为 PDF。</li>
+      </ul>
+    </main>
+  </body>
+</html>
