@@ -1,0 +1,52 @@
+name: Build Offline Package
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build local static app
+        run: npm run build
+
+      - name: Prepare package directory
+        run: npm run package:offline
+
+      - name: Create ZIP package
+        run: |
+          cd release
+          zip -r wlkt-mechanics-offline.zip wlkt-mechanics-offline
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wlkt-mechanics-offline
+          path: release/wlkt-mechanics-offline.zip
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" release/wlkt-mechanics-offline.zip \
+            --title "${GITHUB_REF_NAME}" \
+            --notes "Offline static package for WLKT Mechanics. All solving and project data handling run on the user's own device."

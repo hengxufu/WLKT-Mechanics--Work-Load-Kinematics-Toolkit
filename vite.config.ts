@@ -22,9 +22,12 @@ const readGitValue = (command: string, fallback: string) => {
 
 const commitDate = readGitValue('git log -1 --format=%cI', new Date().toISOString());
 const commitHash = readGitValue('git rev-parse HEAD', 'local-build');
+const basePath = process.env.VITE_BASE_PATH || '/';
+const normalizedBasePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: normalizedBasePath,
   plugins: [
     vue({
       template: { transformAssetUrls },
@@ -48,12 +51,12 @@ export default defineConfig({
         theme_color: '#111133',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/',
-        scope: '/',
+        start_url: normalizedBasePath,
+        scope: normalizedBasePath,
         lang: 'zh-CN',
         icons: [
           {
-            src: '/favicon.ico',
+            src: `${normalizedBasePath}favicon.ico`,
             sizes: '48x48 72x72 96x96 128x128 256x256',
             type: 'image/x-icon',
             purpose: 'any',
@@ -64,7 +67,7 @@ export default defineConfig({
         cleanupOutdatedCaches: true,
         globPatterns: ['**/*.{js,css,html,ico,png,svg,gif,jpg,json,woff2,ttf}'],
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
-        navigateFallback: '/index.html',
+        navigateFallback: `${normalizedBasePath}index.html`,
       },
     }),
   ],

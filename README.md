@@ -60,6 +60,52 @@ http://127.0.0.1:4173
 
 浏览器地址栏右侧会出现“安装应用”入口。安装后，WLKT Mechanics 可以像本地 App 一样从系统启动菜单打开。首次安装需要本地预览服务提供安装入口；安装并打开过一次后，应用资源会被 service worker 缓存，可在离线状态继续使用。当前版本不包含外部遥测、云端计算或周期性自动更新检查，结构求解、符号表达式和项目文件处理均在用户本机完成。
 
+## 分享与发布
+
+推荐使用 GitHub Pages 发布静态版本，或使用 GitHub Release 提供离线压缩包。两种方式都不会调用发布者电脑的算力、信息或存储空间。
+
+### GitHub Pages 静态版
+
+仓库已内置 `.github/workflows/pages.yml`。启用步骤：
+
+1. 在 GitHub 仓库进入 `Settings -> Pages`。
+2. 将 `Build and deployment` 的 Source 设为 `GitHub Actions`。
+3. 推送 `main` 分支，等待 `Deploy GitHub Pages` 工作流完成。
+4. 分享工作流生成的 Pages 地址。
+
+GitHub Pages 只负责提供静态文件，结构求解、符号表达式、项目文件打开与保存都在访问者自己的浏览器中完成。
+
+### 离线压缩包
+
+仓库已内置 `.github/workflows/offline-package.yml`。可以在 Actions 中手动运行 `Build Offline Package`，也可以推送 `v*` 标签自动生成 Release 附件。
+
+本地生成离线包：
+
+```bash
+npm run build
+npm run package:offline
+```
+
+生成目录：
+
+```text
+release/wlkt-mechanics-offline
+```
+
+对方下载后在自己的电脑上运行：
+
+```bash
+node serve-local.mjs app 4173
+```
+
+然后打开：
+
+```text
+http://127.0.0.1:4173/
+```
+
+`serve-local.mjs` 默认只监听 `127.0.0.1`，不会把使用者的电脑暴露为公网服务。更多说明见 [分享与隐私保证](docs/share-and-privacy.md)。
+
 ## 常用命令
 
 ```bash
@@ -67,6 +113,8 @@ npm run dev          # 启动开发服务器
 npm run build        # 构建生产版本
 npm run app:build    # 构建本地离线 App
 npm run app:preview  # 预览生产构建并用于浏览器安装
+npm run package:offline # 生成离线分享目录
+npm run serve:dist   # 使用 127.0.0.1 预览 dist
 npm run test:run     # 运行单元测试
 npm run lint         # 运行代码检查
 ```
@@ -105,6 +153,8 @@ src/
 public/
   changelog/         # 本地更新日志与媒体资源
   docs/              # 本地说明页
+.github/workflows/   # GitHub Pages 与离线包发布工作流
+scripts/             # 本地静态服务与离线包脚本
 ```
 
 ## 已完成的本地化与离线化改造
@@ -115,6 +165,7 @@ public/
 - 配置 PWA manifest 与 service worker。
 - 移除周期性自动更新检查，运行时不连接外部服务器。
 - 增加本地符号参数表与表达式求值能力。
+- 增加 GitHub Pages 静态部署与离线压缩包工作流。
 - 更新依赖锁文件，生产依赖审计通过。
 
 ## 后续路线图

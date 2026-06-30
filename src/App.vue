@@ -308,6 +308,7 @@ const saveProject = () => {
 const app_version = currentAppVersion;
 const app_released = APP_RELEASED;
 const app_commit = APP_COMMIT;
+const localDocsUrl = `${import.meta.env.BASE_URL}docs/local-app.html`;
 </script>
 
 <template>
@@ -400,7 +401,7 @@ const app_commit = APP_COMMIT;
         <span>{{ $t('common.whatisnew') }}</span>
       </v-btn>
 
-      <v-btn class="d-inline-flex" variant="tonal" href="/docs/local-app.html" target="_blank">
+      <v-btn class="d-inline-flex" variant="tonal" :href="localDocsUrl" target="_blank">
         {{ $t('common.documentation') }}
         <v-icon class="ml-1">mdi-open-in-new</v-icon>
       </v-btn>
