@@ -21,6 +21,7 @@ import { loadType } from './loadType';
 import { ensureDimensionId, createDimensionId } from './id';
 import { deserializeModel, serializeModel } from './serializeModel';
 import { createDimensionPoint, createDimensionPointFromNode, type DimensionPoint } from '@/types/dimension';
+import { evaluateNumericExpression, isNumericExpression } from './expression';
 
 export type EntityWithLabel = { label: string & { [key: string]: unknown } };
 
@@ -171,13 +172,11 @@ export const checkNumber = (e: KeyboardEvent) => {
     e.key === 'ArrowRight' ||
     e.key === 'ArrowLeft' ||
     e.key === 'End' ||
-    e.key === 'Home' ||
-    e.key === 'e' ||
-    e.key === '-';
+    e.key === 'Home';
 
-  const isComma = e.key === ',' || e.key === '.';
+  const isExpressionToken = /^[A-Za-z_+\-*/^().,]$/.test(e.key);
 
-  if (isNumber || isActionKey || isComma) return;
+  if (isNumber || isActionKey || isExpressionToken) return;
 
   e.stopPropagation();
   e.preventDefault();
@@ -432,18 +431,11 @@ export const suggestLanguage = () => {
 };
 
 export const parseFloat2 = (s: string | number) => {
-  s = s.toString();
-
-  if (s === '') return 0;
-  if (s === '-') return 0;
-
-  s = s.replaceAll(/\s/g, '');
-
-  let tmp = parseFloat(s.replace(',', '.'));
-
-  tmp = isNaN(tmp) ? 0 : tmp;
-
-  return tmp;
+  try {
+    return evaluateNumericExpression(s);
+  } catch {
+    return 0;
+  }
 };
 
 export const setUnsolved = () => {
@@ -474,8 +466,12 @@ export const changeSetArrayItem = (
 
   if (el.value === '') el.value = '0';
 
-  const val = parseFloat(el.value.replace(/\s/g, '').replace(',', '.'));
-  if (isNaN(val)) return (el.value = item[set][value]);
+  let val: number;
+  try {
+    val = evaluateNumericExpression(el.value);
+  } catch {
+    return (el.value = item[set][value]);
+  }
 
   if (formatter) item[set][value] = formatter(val);
   else item[set][value] = val;
@@ -501,20 +497,18 @@ export const changeSetArrayItem = (
 };
 
 export const changeRefNumValue = (value: string) => {
-  const val = parseFloat(value.replace(/\s/g, '').replace(',', '.'));
-  if (isNaN(val)) return 0;
-
-  return val;
+  try {
+    return evaluateNumericExpression(value);
+  } catch {
+    return 0;
+  }
 };
 
 export const numberRules = [
   (v: string) => {
     if (v === '') return i18n.global.t('validators.enterValue');
 
-    const tmp = v.replace(/\s/g, '').replace(',', '.');
-
-    // isNaN accepts a string, the types are wrong
-    if (isNaN(tmp as unknown as number)) return i18n.global.t('validators.invalidNumber');
+    if (!isNumericExpression(v)) return i18n.global.t('validators.invalidNumber');
 
     return true;
   },
@@ -527,8 +521,12 @@ export const changeItem = (item: object, value: string, el?: HTMLInputElement, f
 
   if (el.value === '') el.value = '0';
 
-  const val = parseFloat(el.value.replace(/\s/g, '').replace(',', '.'));
-  //if (isNaN(val)) return (el.value = item[value]);
+  let val: number;
+  try {
+    val = evaluateNumericExpression(el.value);
+  } catch {
+    return (el.value = item[value]);
+  }
 
   if (formatter) item[value] = formatter(val);
   else item[value] = val;

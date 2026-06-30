@@ -98,6 +98,7 @@
     "loads": "荷载",
     "materials": "材料",
     "crossSections": "截面",
+    "symbols": "符号",
     "results": "结果"
   },
   "crossSection": {
@@ -191,6 +192,14 @@
   },
   "crossSections": {
     "addCrossSection": "添加截面"
+  },
+  "symbols": {
+    "add": "新增符号",
+    "reset": "恢复默认",
+    "symbol": "字母",
+    "value": "数值",
+    "description": "含义",
+    "examples": "可在输入框中使用 2F、M/L、E*I/L^3、0.6fy 等表达式。"
   },
   "dialogs": {
     "addNode": {
@@ -329,7 +338,7 @@
   },
   "validators": {
     "enterValue": "请输入数值",
-    "invalidNumber": "无效数字"
+    "invalidNumber": "无效数字或表达式"
   },
   "loadType": {
     "loadType": "荷载类型",

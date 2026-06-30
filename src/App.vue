@@ -5,7 +5,6 @@ import { provide, nextTick } from 'vue';
 import { undoRedoManager } from './CommandManager';
 import { useViewerStore } from './store/viewer';
 import Confirmation from './components/dialogs/Confirmation.vue';
-import ReloadPrompt from './components/ReloadPrompt.vue';
 import { createDimensionId } from './utils/id';
 import { createDimensionPointFromNode } from './types/dimension';
 
@@ -496,7 +495,6 @@ const app_commit = APP_COMMIT;
       </div>
       <div>edubeam v{{ app_version }} {{ $t("footer.released") }} {{ app_released }}</div>
     </div> -->
-    <ReloadPrompt />
     <input ref="file" type="file" style="display: none" @change="openFile" />
   </v-app>
 </template>

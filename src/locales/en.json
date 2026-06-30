@@ -98,6 +98,7 @@
     "loads": "Loads",
     "materials": "Materials",
     "crossSections": "Cross sections",
+    "symbols": "Symbols",
     "results": "Results"
   },
   "crossSection": {
@@ -191,6 +192,14 @@
   },
   "crossSections": {
     "addCrossSection": "Add cross section"
+  },
+  "symbols": {
+    "add": "Add symbol",
+    "reset": "Reset defaults",
+    "symbol": "Symbol",
+    "value": "Value",
+    "description": "Meaning",
+    "examples": "Use expressions such as 2F, M/L, E*I/L^3, or 0.6fy in numeric inputs."
   },
   "dialogs": {
     "addNode": {
@@ -329,7 +338,7 @@
   },
   "validators": {
     "enterValue": "Enter a value",
-    "invalidNumber": "Invalid number"
+    "invalidNumber": "Invalid number or expression"
   },
   "loadType": {
     "loadType": "Load type",

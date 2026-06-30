@@ -1210,6 +1210,14 @@
         </v-data-table>
       </v-window-item>
       <v-window-item
+        :value="'tab-symbols'"
+        :style="`height: ${props.height - 36}px`"
+        :transition="false"
+        :reverse-transition="false"
+      >
+        <SymbolParameters :height="props.height - 36" />
+      </v-window-item>
+      <v-window-item
         :value="'tab-results'"
         :style="`height: ${props.height - 36}px`"
         :transition="false"
@@ -1471,8 +1479,10 @@ import AddCrossSectionDialog from './dialogs/AddCrossSection.vue';
 import MaterialLibraryDialog from './dialogs/MaterialLibrary.vue';
 import CrossSectionLibraryDialog from './dialogs/CrossSectionLibrary.vue';
 import EditNode from './dialogs/EditNode.vue';
+import SymbolParameters from './SymbolParameters.vue';
 
 import { useLayoutStore } from '@/store/layout';
+import { useSymbolStore } from '@/store/symbols';
 import StiffnessMatrix from '@/components/StiffnessMatrix.vue';
 import { float2String } from '../utils/index';
 
@@ -1482,6 +1492,7 @@ const { t } = useI18n();
 const appStore = useAppStore();
 const projStore = useProjectStore();
 const layoutStore = useLayoutStore();
+const symbolStore = useSymbolStore();
 
 const props = defineProps({
   height: {
@@ -1741,6 +1752,12 @@ const tabs = reactive([
     title: 'tabs.crossSections',
     icon: 'mdi-pentagon-outline',
     count: () => projStore.solver.domain.crossSections.size,
+  },
+  {
+    id: 'symbols',
+    title: 'tabs.symbols',
+    icon: 'mdi-alpha-f-box-outline',
+    count: () => symbolStore.parameters.length,
   },
   {
     id: 'results',

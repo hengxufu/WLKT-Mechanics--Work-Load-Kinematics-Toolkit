@@ -2,7 +2,7 @@
 import { openModal } from 'jenesius-vue-modal';
 import AddNodalLoadDialog from './dialogs/AddNodalLoad.vue';
 import { useProjectStore } from '@/store/project';
-import { deleteNode, setUnsolved, solve, toggleSet } from '@/utils';
+import { deleteNode, parseFloat2, setUnsolved, solve, toggleSet } from '@/utils';
 import { computed, onMounted, ref } from 'vue';
 import { Node } from 'ts-fem';
 
@@ -17,7 +17,7 @@ onMounted(() => {
 const lcsChange = () => {
   setUnsolved();
 
-  const ang = parseFloat(lcs.value) * (Math.PI / 180);
+  const ang = parseFloat2(lcs.value) * (Math.PI / 180);
 
   if (isNaN(ang) || Math.abs(ang) < 1e-8) {
     node.value.lcs = undefined;

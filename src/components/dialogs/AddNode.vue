@@ -113,7 +113,14 @@ import { Node } from 'ts-fem';
 import { closeModal } from 'jenesius-vue-modal';
 import { useAppStore } from '@/store/app';
 import SupportHelper from '../svg/SupportHelper.vue';
-import { checkNumber, changeRefNumValue, executeModelMutationWithUndo, numberRules, toggleSet } from '../../utils';
+import {
+  checkNumber,
+  changeRefNumValue,
+  executeModelMutationWithUndo,
+  numberRules,
+  parseFloat2,
+  toggleSet,
+} from '../../utils';
 
 const projectStore = useProjectStore();
 const appStore = useAppStore();
@@ -127,12 +134,12 @@ const nodalAngle = ref('0');
 const tmpNode = ref(new Node('tmp', undefined, [0, 0, 0]));
 
 const angleVal = computed(() => {
-  const val = parseFloat(nodalAngle.value);
+  const val = parseFloat2(nodalAngle.value);
   return isNaN(val) ? 0 : val;
 });
 
 const minMax = (v) => {
-  const val = parseFloat(v);
+  const val = parseFloat2(v);
   if (val < -180 || val > 180) {
     return 'Enter value between -180 and 180.';
   }
@@ -152,7 +159,7 @@ const addNode = () => {
 
   const nx = appStore.convertInverseLength(changeRefNumValue(newNodeX.value.toString()));
   const nz = appStore.convertInverseLength(changeRefNumValue(newNodeZ.value.toString()));
-  const ang = parseFloat(nodalAngle.value) * (Math.PI / 180);
+  const ang = parseFloat2(nodalAngle.value) * (Math.PI / 180);
 
   executeModelMutationWithUndo(() => {
     const node = domain.createNode(nid, [nx, 0.0, nz], [...tmpNode.value.bcs.values()]);

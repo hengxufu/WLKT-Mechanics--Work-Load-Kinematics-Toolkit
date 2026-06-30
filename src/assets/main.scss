@@ -245,6 +245,58 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
   border-left: 1px solid rgba(255, 255, 255, 0.24);
 }
 
+.symbol-parameters {
+  overflow: hidden;
+}
+
+.symbol-parameters__hint {
+  margin-left: 12px;
+  color: var(--buaa-muted);
+  font-size: 12px;
+}
+
+.symbol-parameters__body {
+  overflow: auto;
+}
+
+.symbol-parameters__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+
+  th,
+  td {
+    height: 30px;
+    padding: 2px 8px;
+    border-bottom: 1px solid rgba(0, 59, 122, 0.1);
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f4f8fc;
+    color: var(--buaa-ink);
+    font-weight: 700;
+  }
+}
+
+.symbol-parameters__symbol {
+  width: 96px;
+  font-weight: 700;
+}
+
+.symbol-parameters__value {
+  width: 160px;
+  font-variant-numeric: tabular-nums;
+}
+
+.symbol-parameters__description {
+  min-width: 260px;
+}
+
 html,
 body,
 #app,

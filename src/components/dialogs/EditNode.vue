@@ -144,12 +144,12 @@ const newNodeZ = ref('0');
 const nodalAngle = ref('0');
 
 const angleVal = computed(() => {
-  const val = parseFloat(nodalAngle.value);
+  const val = parseFloat2(nodalAngle.value);
   return isNaN(val) ? 0 : val;
 });
 
 const minMax = (v) => {
-  const val = parseFloat(v);
+  const val = parseFloat2(v);
   if (val < -180 || val > 180) {
     return 'Enter value between -180 and 180.';
   }
@@ -181,7 +181,7 @@ const edit = () => {
 
   setUnsolved();
 
-  const ang = parseFloat(nodalAngle.value) * (Math.PI / 180);
+  const ang = parseFloat2(nodalAngle.value) * (Math.PI / 180);
 
   if (isNaN(ang) || Math.abs(ang) < 1e-8) {
     node.value.lcs = undefined;

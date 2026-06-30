@@ -38,7 +38,7 @@ export default defineConfig({
       strictMessage: false,
     }),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       injectRegister: 'script',
       includeAssets: ['favicon.ico', 'robots.txt', 'docs/*.html', 'changelog/**/*'],
       manifest: {
