@@ -99,6 +99,7 @@
     "materials": "材料",
     "crossSections": "截面",
     "symbols": "符号",
+    "education": "教学助手",
     "results": "结果"
   },
   "crossSection": {
@@ -200,6 +201,73 @@
     "value": "数值",
     "description": "含义",
     "examples": "可在输入框中使用 2F、M/L、E*I/L^3、0.6fy 等表达式。"
+  },
+  "education": {
+    "solveAndCheck": "求解并识别",
+    "views": {
+      "templates": "典型题库",
+      "derivation": "分步推导",
+      "critical": "危险截面"
+    },
+    "templates": {
+      "replaceConfirm": "将用典型题库模板替换当前模型，是否继续？",
+      "cantilever": {
+        "title": "悬臂梁",
+        "description": "固定端、自由端集中力与端弯矩，用于弯矩图和挠度趋势训练。"
+      },
+      "simplySupported": {
+        "title": "简支梁",
+        "description": "两端简支、中点集中力，适合反力和平衡方程入门。"
+      },
+      "overhanging": {
+        "title": "外伸梁",
+        "description": "双支座加外伸端荷载，用于识别负弯矩和危险截面。"
+      },
+      "portalFrame": {
+        "title": "刚架",
+        "description": "双柱门式刚架，含水平力和竖向力，观察轴力、剪力、弯矩耦合。"
+      },
+      "truss": {
+        "title": "桁架",
+        "description": "三角桁架模板，构件端部释放转动，用于轴力路径分析。"
+      },
+      "compositeRod": {
+        "title": "组合杆",
+        "description": "钢-铝组合杆承受轴向拉力，用于比较 EA 与轴向变形。"
+      },
+      "temperatureBeam": {
+        "title": "温度荷载",
+        "description": "两端固定梁受均匀温升，用于理解约束温度应力。"
+      }
+    },
+    "derivation": {
+      "equilibrium": "平衡方程",
+      "globalEquilibrium": "整体平衡：ΣFx = 0，ΣFz = 0，ΣMy = 0。",
+      "modelStats": "当前模型：{nodes} 个节点，{elements} 个单元，{nodalLoads} 个节点荷载，{elementLoads} 个单元荷载，{prescribed} 个位移约束。",
+      "elementEquilibrium": "梁单元微分关系：dN/dx + qx = 0，dV/dx + qz = 0，dM/dx - V = 0。",
+      "symbolConvention": "符号约定",
+      "symbolX": "x 为单元局部轴，沿起点节点指向终点节点。",
+      "symbolForces": "N 为轴力，V 为剪力，My 为绕 y 轴弯矩；正负号遵循求解器局部坐标约定。",
+      "symbolStress": "危险截面估算采用 σ = |N|/A + |M|h/(2I)，τ≈1.5|V|/A。",
+      "boundaryConditions": "边界条件",
+      "fixed": "约束",
+      "free": "自由",
+      "internalForceEquations": "内力方程摘要",
+      "span": "区间"
+    },
+    "critical": {
+      "title": "危险截面识别",
+      "notSolved": "当前模型尚未求解。请点击“求解并识别”。",
+      "item": "项目",
+      "value": "数值",
+      "limit": "限值",
+      "ratio": "利用率/系数",
+      "maxNormalStress": "最大正应力",
+      "maxShearStress": "最大剪应力",
+      "maxDeflection": "最大挠度",
+      "safetyFactor": "最小安全系数",
+      "note": "正应力限值取符号 fy，剪应力限值取符号 tau，默认单位按 MPa 理解；挠度限值按 L/250 估算。"
+    }
   },
   "dialogs": {
     "addNode": {

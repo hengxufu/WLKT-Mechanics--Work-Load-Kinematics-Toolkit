@@ -99,6 +99,7 @@
     "materials": "Materials",
     "crossSections": "Cross sections",
     "symbols": "Symbols",
+    "education": "Teaching",
     "results": "Results"
   },
   "crossSection": {
@@ -200,6 +201,73 @@
     "value": "Value",
     "description": "Meaning",
     "examples": "Use expressions such as 2F, M/L, E*I/L^3, or 0.6fy in numeric inputs."
+  },
+  "education": {
+    "solveAndCheck": "Solve & Check",
+    "views": {
+      "templates": "Templates",
+      "derivation": "Derivation",
+      "critical": "Critical"
+    },
+    "templates": {
+      "replaceConfirm": "This template will replace the current model. Continue?",
+      "cantilever": {
+        "title": "Cantilever beam",
+        "description": "Fixed end with free-end force and moment for bending and deflection practice."
+      },
+      "simplySupported": {
+        "title": "Simply supported beam",
+        "description": "Two supports with a mid-span point load for reaction and equilibrium practice."
+      },
+      "overhanging": {
+        "title": "Overhanging beam",
+        "description": "Two supports with an overhanging load for negative moment and critical-section checks."
+      },
+      "portalFrame": {
+        "title": "Portal frame",
+        "description": "Two-column rigid frame with horizontal and vertical loads."
+      },
+      "truss": {
+        "title": "Truss",
+        "description": "Triangular truss with released member rotations for axial-force path study."
+      },
+      "compositeRod": {
+        "title": "Composite rod",
+        "description": "Steel-aluminum axial rod for comparing EA and axial deformation."
+      },
+      "temperatureBeam": {
+        "title": "Temperature load",
+        "description": "Fixed-fixed beam under uniform temperature rise."
+      }
+    },
+    "derivation": {
+      "equilibrium": "Equilibrium Equations",
+      "globalEquilibrium": "Global equilibrium: ΣFx = 0, ΣFz = 0, ΣMy = 0.",
+      "modelStats": "Current model: {nodes} nodes, {elements} elements, {nodalLoads} nodal loads, {elementLoads} element loads, {prescribed} prescribed displacements.",
+      "elementEquilibrium": "Beam differential relations: dN/dx + qx = 0, dV/dx + qz = 0, dM/dx - V = 0.",
+      "symbolConvention": "Symbol Convention",
+      "symbolX": "x is the member local axis from start node to end node.",
+      "symbolForces": "N is axial force, V is shear force, and My is bending moment about y.",
+      "symbolStress": "Critical-section estimates use σ = |N|/A + |M|h/(2I), τ≈1.5|V|/A.",
+      "boundaryConditions": "Boundary Conditions",
+      "fixed": "Fixed",
+      "free": "Free",
+      "internalForceEquations": "Internal Force Summary",
+      "span": "Span"
+    },
+    "critical": {
+      "title": "Critical Section Detection",
+      "notSolved": "The current model is not solved. Click Solve & Check.",
+      "item": "Item",
+      "value": "Value",
+      "limit": "Limit",
+      "ratio": "Ratio / Factor",
+      "maxNormalStress": "Max normal stress",
+      "maxShearStress": "Max shear stress",
+      "maxDeflection": "Max deflection",
+      "safetyFactor": "Minimum safety factor",
+      "note": "Normal stress limit uses symbol fy and shear stress limit uses symbol tau, interpreted as MPa by default. Deflection limit is estimated as L/250."
+    }
   },
   "dialogs": {
     "addNode": {

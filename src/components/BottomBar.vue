@@ -1218,6 +1218,14 @@
         <SymbolParameters :height="props.height - 36" />
       </v-window-item>
       <v-window-item
+        :value="'tab-education'"
+        :style="`height: ${props.height - 36}px`"
+        :transition="false"
+        :reverse-transition="false"
+      >
+        <EducationPanel :height="props.height - 36" />
+      </v-window-item>
+      <v-window-item
         :value="'tab-results'"
         :style="`height: ${props.height - 36}px`"
         :transition="false"
@@ -1480,6 +1488,7 @@ import MaterialLibraryDialog from './dialogs/MaterialLibrary.vue';
 import CrossSectionLibraryDialog from './dialogs/CrossSectionLibrary.vue';
 import EditNode from './dialogs/EditNode.vue';
 import SymbolParameters from './SymbolParameters.vue';
+import EducationPanel from './EducationPanel.vue';
 
 import { useLayoutStore } from '@/store/layout';
 import { useSymbolStore } from '@/store/symbols';
@@ -1758,6 +1767,12 @@ const tabs = reactive([
     title: 'tabs.symbols',
     icon: 'mdi-alpha-f-box-outline',
     count: () => symbolStore.parameters.length,
+  },
+  {
+    id: 'education',
+    title: 'tabs.education',
+    icon: 'mdi-school-outline',
+    count: () => projStore.beams.length,
   },
   {
     id: 'results',
