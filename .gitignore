@@ -1,6 +1,10 @@
 .env
 .DS_Store
 node_modules
+.npm-cache
+.electron-cache
+.electron-builder-cache
+.desktop-app
 /dist
 /release
 

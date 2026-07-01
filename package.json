@@ -1,7 +1,10 @@
 {
   "name": "wlkt-mechanics",
-  "version": "1.0.6",
+  "version": "1.0.7",
+  "description": "Offline mechanics of materials and structural analysis toolkit for local teaching workflows.",
+  "author": "WLKT Mechanics Contributors",
   "type": "module",
+  "main": "electron/main.cjs",
   "engines": {
     "node": ">=20.x"
   },
@@ -12,7 +15,14 @@
     "build:pages": "vite build",
     "app:build": "vite build",
     "app:preview": "vite preview --host 127.0.0.1 --port 4173",
+    "desktop:build": "node scripts/build-desktop.mjs",
+    "desktop:dev": "npm run desktop:build && electron electron/main.cjs",
+    "desktop:stage": "node scripts/prepare-desktop-app.mjs",
+    "desktop:pack": "npm run desktop:build && npm run desktop:stage && node scripts/run-electron-builder.mjs --projectDir .desktop-app --dir",
+    "desktop:dist": "npm run desktop:build && npm run desktop:stage && node scripts/run-electron-builder.mjs --projectDir .desktop-app",
+    "desktop:dist:win": "npm run desktop:build && npm run desktop:stage && node scripts/run-electron-builder.mjs --projectDir .desktop-app --win nsis",
     "package:offline": "node scripts/package-offline.mjs",
+    "release:checksums": "node scripts/create-checksums.mjs",
     "serve:dist": "node scripts/serve-dist.mjs dist 4173",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -48,6 +58,78 @@
     "vue-router": "^4.6.4",
     "vuetify": "^3.11.4"
   },
+  "build": {
+    "appId": "cn.buaa.wlkt.mechanics",
+    "productName": "WLKT Mechanics 材料力学求解器",
+    "copyright": "Copyright © 2026 WLKT Mechanics",
+    "directories": {
+      "output": "release/desktop",
+      "buildResources": "public"
+    },
+    "files": [
+      {
+        "from": "dist",
+        "to": "dist",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "electron",
+        "to": "electron",
+        "filter": [
+          "**/*"
+        ]
+      },
+      "package.json",
+      {
+        "from": "LICENSE",
+        "to": "LICENSE"
+      },
+      {
+        "from": "README.md",
+        "to": "README.md"
+      },
+      {
+        "from": "docs/windows-installer.md",
+        "to": "docs/windows-installer.md"
+      }
+    ],
+    "extraMetadata": {
+      "main": "electron/main.cjs",
+      "dependencies": {},
+      "devDependencies": {}
+    },
+    "asar": true,
+    "compression": "maximum",
+    "npmRebuild": false,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "public/favicon.ico",
+      "requestedExecutionLevel": "highestAvailable",
+      "signAndEditExecutable": true,
+      "verifyUpdateCodeSignature": true,
+      "artifactName": "WLKT-Mechanics-${version}-${arch}-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "WLKT Mechanics 材料力学求解器",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false
+    }
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@mdi/font": "^7.4.47",
@@ -58,6 +140,8 @@
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/test-utils": "^2.4.6",
+    "electron": "^43.0.0",
+    "electron-builder": "^26.15.3",
     "eslint": "^9.39.2",
     "eslint-plugin-vue": "^10.6.2",
     "globals": "^16.5.0",

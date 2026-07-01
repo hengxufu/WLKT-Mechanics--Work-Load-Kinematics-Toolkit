@@ -63,7 +63,7 @@ http://127.0.0.1:4173
 
 ## 分享与发布
 
-推荐使用 GitHub Pages 发布静态版本，或使用 GitHub Release 提供离线压缩包。两种方式都不会调用发布者电脑的算力、信息或存储空间。
+推荐使用 GitHub Pages 发布静态版本，或使用 GitHub Release 提供 Windows 一键安装包与离线压缩包。三种方式都不会调用发布者电脑的算力、信息或存储空间。
 
 ### GitHub Pages 静态版
 
@@ -107,6 +107,28 @@ http://127.0.0.1:4173/
 
 `serve-local.mjs` 默认只监听 `127.0.0.1`，不会把使用者的电脑暴露为公网服务。更多说明见 [分享与隐私保证](docs/share-and-privacy.md)。
 
+### Windows 一键安装包
+
+仓库已内置 `.github/workflows/windows-installer.yml`。可以在 Actions 中手动运行 `Build Windows Installer`，也可以推送 `v*` 标签自动生成 Release 附件。
+
+本地生成安装包：
+
+```powershell
+$env:Path = "$PWD\.local-tools\node-v22.22.2-win-x64;$env:Path"
+$env:ELECTRON_MIRROR = "https://npmmirror.com/mirrors/electron/"
+.\.local-tools\node-v22.22.2-win-x64\npm.cmd run desktop:dist:win
+.\.local-tools\node-v22.22.2-win-x64\npm.cmd run release:checksums
+```
+
+生成文件：
+
+```text
+release/desktop/WLKT-Mechanics-<version>-x64-Setup.exe
+release/desktop/SHA256SUMS.txt
+```
+
+正式公开分发前建议接入 Windows 代码签名证书。没有证书时，安装包可以安装使用，但只能依赖 `SHA256SUMS.txt` 识别篡改；有证书后，被修改的 `.exe` 会显示签名失效。更多说明见 [Windows 安装包与防篡改发布](docs/windows-installer.md)。
+
 ## 常用命令
 
 ```bash
@@ -115,6 +137,8 @@ npm run build        # 构建生产版本
 npm run app:build    # 构建本地离线 App
 npm run app:preview  # 预览生产构建并用于浏览器安装
 npm run package:offline # 生成离线分享目录
+npm run desktop:dist:win # 生成 Windows 一键安装包
+npm run release:checksums # 生成 Release 文件 SHA256 校验
 npm run serve:dist   # 使用 127.0.0.1 预览 dist
 npm run test:run     # 运行单元测试
 npm run lint         # 运行代码检查

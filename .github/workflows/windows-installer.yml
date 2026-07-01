@@ -1,0 +1,55 @@
+name: Build Windows Installer
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  installer:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Windows installer
+        env:
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+        run: npm run desktop:dist:win
+
+      - name: Create checksums
+        run: npm run release:checksums
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wlkt-mechanics-windows-installer
+          path: |
+            release/desktop/*.exe
+            release/desktop/SHA256SUMS.txt
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view "${env:GITHUB_REF_NAME}" 2>$null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create "${env:GITHUB_REF_NAME}" --title "${env:GITHUB_REF_NAME}" --notes "WLKT Mechanics Windows installer. All computation and project data handling run on the user's own device."
+          }
+          gh release upload "${env:GITHUB_REF_NAME}" release/desktop/*.exe release/desktop/SHA256SUMS.txt --clobber
