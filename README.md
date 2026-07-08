@@ -125,6 +125,14 @@ $env:ELECTRON_MIRROR = "https://npmmirror.com/mirrors/electron/"
 ```text
 release/desktop/WLKT-Mechanics-<version>-x64-Setup.exe
 release/desktop/SHA256SUMS.txt
+release/desktop/release-manifest.json
+```
+
+校验安装包：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\release\desktop\verify-installer.ps1 .\release\desktop
+Get-AuthenticodeSignature .\release\desktop\WLKT-Mechanics-<version>-x64-Setup.exe
 ```
 
 正式公开分发前建议接入 Windows 代码签名证书。没有证书时，安装包可以安装使用，但只能依赖 `SHA256SUMS.txt` 识别篡改；有证书后，被修改的 `.exe` 会显示签名失效。更多说明见 [Windows 安装包与防篡改发布](docs/windows-installer.md)。
@@ -139,6 +147,7 @@ npm run app:preview  # 预览生产构建并用于浏览器安装
 npm run package:offline # 生成离线分享目录
 npm run desktop:dist:win # 生成 Windows 一键安装包
 npm run release:checksums # 生成 Release 文件 SHA256 校验
+powershell -ExecutionPolicy Bypass -File .\release\desktop\verify-installer.ps1 .\release\desktop
 npm run serve:dist   # 使用 127.0.0.1 预览 dist
 npm run test:run     # 运行单元测试
 npm run lint         # 运行代码检查

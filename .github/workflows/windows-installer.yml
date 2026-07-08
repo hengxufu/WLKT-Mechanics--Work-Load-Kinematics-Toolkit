@@ -40,7 +40,10 @@ jobs:
           name: wlkt-mechanics-windows-installer
           path: |
             release/desktop/*.exe
+            release/desktop/*.blockmap
             release/desktop/SHA256SUMS.txt
+            release/desktop/release-manifest.json
+            release/desktop/verify-installer.ps1
 
       - name: Publish GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
@@ -52,4 +55,4 @@ jobs:
           if ($LASTEXITCODE -ne 0) {
             gh release create "${env:GITHUB_REF_NAME}" --title "${env:GITHUB_REF_NAME}" --notes "WLKT Mechanics Windows installer. All computation and project data handling run on the user's own device."
           }
-          gh release upload "${env:GITHUB_REF_NAME}" release/desktop/*.exe release/desktop/SHA256SUMS.txt --clobber
+          gh release upload "${env:GITHUB_REF_NAME}" release/desktop/*.exe release/desktop/*.blockmap release/desktop/SHA256SUMS.txt release/desktop/release-manifest.json release/desktop/verify-installer.ps1 --clobber

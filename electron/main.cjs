@@ -1,8 +1,36 @@
-const { app, BrowserWindow, Menu, session } = require('electron');
+const { app, BrowserWindow, Menu, protocol, session } = require('electron');
+const { existsSync, readFileSync, statSync } = require('node:fs');
 const path = require('node:path');
-const { pathToFileURL } = require('node:url');
 
-const allowedSchemes = new Set(['file:', 'data:', 'blob:', 'devtools:']);
+const appScheme = 'wlkt';
+const appHost = 'app';
+const allowedSchemes = new Set([`${appScheme}:`, 'data:', 'blob:', 'devtools:']);
+const mimeTypes = new Map([
+  ['.css', 'text/css; charset=utf-8'],
+  ['.html', 'text/html; charset=utf-8'],
+  ['.ico', 'image/x-icon'],
+  ['.js', 'text/javascript; charset=utf-8'],
+  ['.json', 'application/json; charset=utf-8'],
+  ['.map', 'application/json; charset=utf-8'],
+  ['.png', 'image/png'],
+  ['.svg', 'image/svg+xml; charset=utf-8'],
+  ['.ttf', 'font/ttf'],
+  ['.webmanifest', 'application/manifest+json; charset=utf-8'],
+  ['.woff', 'font/woff'],
+  ['.woff2', 'font/woff2'],
+]);
+
+protocol.registerSchemesAsPrivileged([
+  {
+    scheme: appScheme,
+    privileges: {
+      standard: true,
+      secure: true,
+      supportFetchAPI: true,
+      corsEnabled: false,
+    },
+  },
+]);
 
 function isAllowedLocalUrl(rawUrl) {
   try {
@@ -23,9 +51,47 @@ function hardenLocalSession() {
   });
 }
 
+function createProtocolResponse(status, body, contentType = 'text/plain; charset=utf-8') {
+  return new Response(body, {
+    status,
+    headers: {
+      'content-type': contentType,
+      'cache-control': 'no-store',
+    },
+  });
+}
+
+function registerAppProtocol() {
+  const distRoot = path.resolve(app.getAppPath(), 'dist');
+  const distRootWithSeparator = `${distRoot}${path.sep}`.toLowerCase();
+
+  protocol.handle(appScheme, (request) => {
+    const url = new URL(request.url);
+    if (url.hostname !== appHost) {
+      return createProtocolResponse(404, 'Not found');
+    }
+
+    const requestPath = decodeURIComponent(url.pathname);
+    const relativePath = requestPath === '/' ? 'index.html' : requestPath.replace(/^\/+/, '');
+    const targetPath = path.resolve(distRoot, relativePath);
+    const normalizedTargetPath = targetPath.toLowerCase();
+
+    if (normalizedTargetPath !== distRoot.toLowerCase() && !normalizedTargetPath.startsWith(distRootWithSeparator)) {
+      return createProtocolResponse(403, 'Forbidden');
+    }
+
+    if (!existsSync(targetPath) || statSync(targetPath).isDirectory()) {
+      return createProtocolResponse(404, 'Not found');
+    }
+
+    const extension = path.extname(targetPath).toLowerCase();
+    const contentType = mimeTypes.get(extension) || 'application/octet-stream';
+    return createProtocolResponse(200, readFileSync(targetPath), contentType);
+  });
+}
+
 function createWindow() {
   const preloadPath = path.join(__dirname, 'preload.cjs');
-  const indexPath = path.join(app.getAppPath(), 'dist', 'index.html');
 
   const win = new BrowserWindow({
     width: 1360,
@@ -50,17 +116,21 @@ function createWindow() {
   });
 
   win.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
+  win.webContents.on('will-attach-webview', (event) => {
+    event.preventDefault();
+  });
   win.webContents.on('will-navigate', (event, url) => {
     if (!isAllowedLocalUrl(url)) {
       event.preventDefault();
     }
   });
 
-  win.loadURL(pathToFileURL(indexPath).toString());
+  win.loadURL(`${appScheme}://${appHost}/index.html`);
 }
 
 app.whenReady().then(() => {
   Menu.setApplicationMenu(null);
+  registerAppProtocol();
   hardenLocalSession();
   createWindow();
 
@@ -76,4 +146,3 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
-

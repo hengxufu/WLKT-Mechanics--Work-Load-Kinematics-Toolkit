@@ -65,9 +65,16 @@ $env:ELECTRON_MIRROR = "https://npmmirror.com/mirrors/electron/"
 ```text
 release/desktop/WLKT-Mechanics-<version>-x64-Setup.exe
 release/desktop/SHA256SUMS.txt
+release/desktop/release-manifest.json
 ```
 
 对方下载 `.exe` 后在自己的电脑上安装运行。结构求解和项目数据处理仍然只在对方电脑本地完成。发布时同时提供 `SHA256SUMS.txt`，对方可以用 `Get-FileHash` 校验安装包是否被替换或篡改。
+
+仓库也会把 `verify-installer.ps1` 复制到 `release/desktop`，可直接运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\verify-installer.ps1 .
+```
 
 ## 不要这样分享
 

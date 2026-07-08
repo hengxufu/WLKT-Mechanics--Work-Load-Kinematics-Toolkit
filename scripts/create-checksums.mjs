@@ -1,11 +1,15 @@
 import { createHash } from 'node:crypto';
-import { createReadStream, existsSync, readdirSync, writeFileSync } from 'node:fs';
+import { copyFileSync, createReadStream, existsSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
 
 const repoRoot = process.cwd();
 const releaseDir = resolve(repoRoot, 'release', 'desktop');
 const checksumFile = resolve(releaseDir, 'SHA256SUMS.txt');
+const manifestFile = resolve(releaseDir, 'release-manifest.json');
+const verifierSource = resolve(repoRoot, 'scripts', 'verify-installer.ps1');
+const verifierTarget = resolve(releaseDir, 'verify-installer.ps1');
 const extensions = new Set(['.exe', '.msi', '.zip', '.7z', '.blockmap']);
+const packageJson = JSON.parse(readFileSync(resolve(repoRoot, 'package.json'), 'utf8'));
 
 function fileExtension(fileName) {
   const index = fileName.lastIndexOf('.');
@@ -35,11 +39,41 @@ if (artifacts.length === 0) {
 }
 
 const lines = [];
+const manifestArtifacts = [];
 for (const artifact of artifacts) {
   const artifactPath = resolve(releaseDir, artifact);
-  lines.push(`${await sha256(artifactPath)}  ${basename(artifactPath)}`);
+  const digest = await sha256(artifactPath);
+  lines.push(`${digest}  ${basename(artifactPath)}`);
+  manifestArtifacts.push({
+    file: basename(artifactPath),
+    sha256: digest,
+    sizeBytes: statSync(artifactPath).size,
+  });
 }
 
 writeFileSync(checksumFile, `${lines.join('\n')}\n`);
-console.log(`Wrote ${checksumFile}`);
+writeFileSync(
+  manifestFile,
+  `${JSON.stringify(
+    {
+      name: packageJson.name,
+      version: packageJson.version,
+      generatedAt: new Date().toISOString(),
+      artifacts: manifestArtifacts,
+      verification: {
+        checksumFile: basename(checksumFile),
+        powershellScript: basename(verifierTarget),
+        authenticode: 'Use Get-AuthenticodeSignature on Windows. Official releases should be signed with an OV or EV code-signing certificate.',
+      },
+    },
+    null,
+    2,
+  )}\n`,
+);
 
+if (existsSync(verifierSource)) {
+  copyFileSync(verifierSource, verifierTarget);
+}
+
+console.log(`Wrote ${checksumFile}`);
+console.log(`Wrote ${manifestFile}`);
