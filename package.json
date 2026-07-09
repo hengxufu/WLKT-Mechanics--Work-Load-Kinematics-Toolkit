@@ -1,6 +1,6 @@
 {
   "name": "wlkt-mechanics",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Offline mechanics of materials and structural analysis toolkit for local teaching workflows.",
   "author": "WLKT Mechanics Contributors",
   "type": "module",
