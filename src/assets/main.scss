@@ -325,6 +325,10 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
   gap: 10px;
 }
 
+.education-panel__grid--wide {
+  grid-template-columns: minmax(420px, 1.3fr) minmax(320px, 0.9fr);
+}
+
 .education-panel__block {
   margin-bottom: 10px;
   border: 1px solid rgba(0, 59, 122, 0.12);
@@ -361,6 +365,13 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
   margin: 8px 10px 10px;
   color: var(--buaa-muted);
   font-size: 12px;
+}
+
+.education-combined-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  padding: 10px;
 }
 
 .education-template-grid {

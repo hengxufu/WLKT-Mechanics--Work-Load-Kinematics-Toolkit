@@ -116,6 +116,71 @@
         </div>
       </section>
 
+      <section v-else-if="activeView === 'combined'" class="education-panel__section">
+        <div class="education-panel__grid education-panel__grid--wide">
+          <div class="education-panel__block">
+            <h3>{{ $t('education.combined.inputs') }}</h3>
+            <div class="education-combined-form">
+              <v-text-field
+                v-for="field in combinedInputFields"
+                :key="field.key"
+                v-model="combinedInputs[field.key]"
+                density="compact"
+                variant="outlined"
+                hide-details="auto"
+                :label="$t(field.label)"
+                :suffix="field.suffix"
+                :rounded="0"
+                @keydown="checkNumber($event)"
+              ></v-text-field>
+            </div>
+            <p class="education-panel__note">{{ $t('education.combined.inputNote') }}</p>
+          </div>
+
+          <div class="education-panel__block">
+            <h3>{{ $t('education.combined.formulas') }}</h3>
+            <ul>
+              <li>{{ $t('education.combined.formulaNormal') }}</li>
+              <li>{{ $t('education.combined.formulaShear') }}</li>
+              <li>{{ $t('education.combined.formulaVonMises') }}</li>
+              <li>{{ $t('education.combined.formulaDeformation') }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div v-if="!combinedAnalysis.ok" class="education-panel__empty">
+          <v-icon size="24">mdi-alert-circle-outline</v-icon>
+          <span>{{ $t('education.combined.invalid') }}</span>
+        </div>
+
+        <div v-else class="education-panel__block">
+          <h3>{{ $t('education.combined.results') }}</h3>
+          <table class="education-table">
+            <thead>
+              <tr>
+                <th>{{ $t('education.combined.item') }}</th>
+                <th>{{ $t('education.combined.expression') }}</th>
+                <th>{{ $t('education.combined.value') }}</th>
+                <th>{{ $t('education.combined.meaning') }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="row in combinedRows"
+                :key="row.key"
+                :class="{ 'education-table__warn': row.warn }"
+              >
+                <td>{{ row.label }}</td>
+                <td>{{ row.expression }}</td>
+                <td>{{ row.value }}</td>
+                <td>{{ row.meaning }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="education-panel__note">{{ $t('education.combined.note') }}</p>
+        </div>
+      </section>
+
       <section v-else class="education-panel__section">
         <div v-if="!critical.solved" class="education-panel__empty">
           <v-icon size="24">mdi-alert-circle-outline</v-icon>
@@ -170,7 +235,12 @@ import { useAppStore } from '@/store/app';
 import { useProjectStore } from '@/store/project';
 import { useSymbolStore } from '@/store/symbols';
 import { eventBus, EventType } from '@/EventBus';
-import { formatScientificNumber } from '@/utils';
+import { checkNumber, formatScientificNumber } from '@/utils';
+import {
+  calculateCombinedDeformation,
+  type CombinedDeformationInputKey,
+  type CombinedDeformationResult,
+} from '@/utils/combinedDeformation';
 import { analyzeCriticalSections, buildDerivationSummary, type CriticalResult } from '@/utils/educationAnalysis';
 import { applyEducationTemplate, educationTemplates, type EducationTemplateId } from '@/utils/educationTemplates';
 
@@ -185,13 +255,48 @@ const { t } = useI18n();
 const appStore = useAppStore();
 const projectStore = useProjectStore();
 const symbolStore = useSymbolStore();
-const activeView = ref<'templates' | 'derivation' | 'critical'>('templates');
+const activeView = ref<'templates' | 'derivation' | 'combined' | 'critical'>('templates');
 
 const views = [
   { id: 'templates', label: 'education.views.templates', icon: 'mdi-view-grid-plus' },
   { id: 'derivation', label: 'education.views.derivation', icon: 'mdi-format-list-numbered' },
+  { id: 'combined', label: 'education.views.combined', icon: 'mdi-axis-arrow' },
   { id: 'critical', label: 'education.views.critical', icon: 'mdi-shield-alert-outline' },
 ] as const;
+
+const combinedInputs = ref<Record<CombinedDeformationInputKey, string>>({
+  N: '10e3',
+  M: '2e3',
+  T: '1e3',
+  A: '2e-3',
+  W: '4e-5',
+  Wt: '8e-5',
+  I: '8e-6',
+  J: '1.6e-5',
+  E: '210e9',
+  G: '80e9',
+  L: '1.5',
+  fy: '235e6',
+});
+
+const combinedInputFields: Array<{
+  key: CombinedDeformationInputKey;
+  label: string;
+  suffix: string;
+}> = [
+  { key: 'N', label: 'education.combined.fields.N', suffix: 'N' },
+  { key: 'M', label: 'education.combined.fields.M', suffix: 'N·m' },
+  { key: 'T', label: 'education.combined.fields.T', suffix: 'N·m' },
+  { key: 'A', label: 'education.combined.fields.A', suffix: 'm²' },
+  { key: 'W', label: 'education.combined.fields.W', suffix: 'm³' },
+  { key: 'Wt', label: 'education.combined.fields.Wt', suffix: 'm³' },
+  { key: 'I', label: 'education.combined.fields.I', suffix: 'm⁴' },
+  { key: 'J', label: 'education.combined.fields.J', suffix: 'm⁴' },
+  { key: 'E', label: 'education.combined.fields.E', suffix: 'Pa' },
+  { key: 'G', label: 'education.combined.fields.G', suffix: 'Pa' },
+  { key: 'L', label: 'education.combined.fields.L', suffix: 'm' },
+  { key: 'fy', label: 'education.combined.fields.fy', suffix: 'Pa' },
+];
 
 const derivation = computed(() => buildDerivationSummary());
 const critical = computed(() =>
@@ -203,6 +308,10 @@ const formatForce = (value: number) => `${formatScientificNumber(appStore.conver
 const formatMoment = (value: number) => `${formatScientificNumber(appStore.convertMoment(value))} ${appStore.units.Moment}`;
 const formatPressure = (value: number) =>
   `${formatScientificNumber(appStore.convertPressure(value))} ${appStore.units.Pressure}`;
+const formatStrain = (value: number) => formatScientificNumber(value);
+const formatCurvature = (value: number) => `${formatScientificNumber(value)} 1/m`;
+const formatAngle = (value: number, valueDeg: number) =>
+  `${formatScientificNumber(value)} rad (${formatScientificNumber(valueDeg)}°)`;
 
 const supportText = (fixed: boolean) => (fixed ? t('education.derivation.fixed') : t('education.derivation.free'));
 
@@ -269,6 +378,112 @@ const criticalRows = computed(() => [
     warn: (critical.value.safetyFactor?.ratio ?? 1) < 1,
   },
 ]);
+
+const combinedAnalysis = computed<
+  | { ok: true; result: CombinedDeformationResult }
+  | {
+      ok: false;
+      error: unknown;
+    }
+>(() => {
+  try {
+    return {
+      ok: true,
+      result: calculateCombinedDeformation(combinedInputs.value, symbolStore.scope),
+    };
+  } catch (error) {
+    return { ok: false, error };
+  }
+});
+
+const combinedRows = computed(() => {
+  if (!combinedAnalysis.value.ok) return [];
+
+  const result = combinedAnalysis.value.result;
+
+  return [
+    {
+      key: 'axialStress',
+      label: t('education.combined.rows.axialStress'),
+      expression: 'σN = N / A',
+      value: formatPressure(result.axialStress),
+      meaning: t('education.combined.meanings.axialStress'),
+      warn: false,
+    },
+    {
+      key: 'bendingStress',
+      label: t('education.combined.rows.bendingStress'),
+      expression: 'σM = M / W',
+      value: formatPressure(result.bendingStress),
+      meaning: t('education.combined.meanings.bendingStress'),
+      warn: false,
+    },
+    {
+      key: 'criticalNormalStress',
+      label: t('education.combined.rows.criticalNormalStress'),
+      expression: 'σmax = N/A ± |M/W|',
+      value: formatPressure(result.criticalNormalStress),
+      meaning: t('education.combined.meanings.criticalNormalStress'),
+      warn: Math.abs(result.criticalNormalStress) > result.values.fy,
+    },
+    {
+      key: 'torsionalShearStress',
+      label: t('education.combined.rows.torsionalShearStress'),
+      expression: 'τT = T / Wt',
+      value: formatPressure(result.torsionalShearStress),
+      meaning: t('education.combined.meanings.torsionalShearStress'),
+      warn: false,
+    },
+    {
+      key: 'vonMisesStress',
+      label: t('education.combined.rows.vonMisesStress'),
+      expression: 'σe = √(σmax² + 3τT²)',
+      value: formatPressure(result.vonMisesStress),
+      meaning: t('education.combined.meanings.vonMisesStress'),
+      warn: result.utilization > 1,
+    },
+    {
+      key: 'safetyFactor',
+      label: t('education.combined.rows.safetyFactor'),
+      expression: 'n = fy / σe',
+      value: `${formatScientificNumber(result.safetyFactor)}x`,
+      meaning: t('education.combined.meanings.safetyFactor'),
+      warn: result.safetyFactor < 1,
+    },
+    {
+      key: 'axialDeformation',
+      label: t('education.combined.rows.axialDeformation'),
+      expression: 'ΔL = NL / EA',
+      value: formatLength(result.axialDeformation),
+      meaning: t('education.combined.meanings.axialDeformation'),
+      warn: false,
+    },
+    {
+      key: 'axialStrain',
+      label: t('education.combined.rows.axialStrain'),
+      expression: 'ε = σN / E',
+      value: formatStrain(result.axialStrain),
+      meaning: t('education.combined.meanings.axialStrain'),
+      warn: false,
+    },
+    {
+      key: 'bendingCurvature',
+      label: t('education.combined.rows.bendingCurvature'),
+      expression: 'κ = M / EI',
+      value: formatCurvature(result.bendingCurvature),
+      meaning: t('education.combined.meanings.bendingCurvature'),
+      warn: false,
+    },
+    {
+      key: 'twistAngle',
+      label: t('education.combined.rows.twistAngle'),
+      expression: 'φ = TL / GJ',
+      value: formatAngle(result.twistAngle, result.twistAngleDeg),
+      meaning: t('education.combined.meanings.twistAngle'),
+      warn: false,
+    },
+  ];
+});
 
 const focusElement = (label: string) => {
   projectStore.clearSelection2();

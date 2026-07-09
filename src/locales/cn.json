@@ -207,6 +207,7 @@
     "views": {
       "templates": "典型题库",
       "derivation": "分步推导",
+      "combined": "组合变形",
       "critical": "危险截面"
     },
     "templates": {
@@ -267,6 +268,60 @@
       "maxDeflection": "最大挠度",
       "safetyFactor": "最小安全系数",
       "note": "正应力限值取符号 fy，剪应力限值取符号 tau，默认单位按 MPa 理解；挠度限值按 L/250 估算。"
+    },
+    "combined": {
+      "inputs": "拉伸-弯曲-扭转输入",
+      "formulas": "组合变形公式",
+      "results": "组合校核结果",
+      "item": "项目",
+      "expression": "表达式",
+      "value": "结果",
+      "meaning": "说明",
+      "invalid": "输入表达式无效，或 A、W、Wt、I、J、E、G、L、fy 中存在非正值。",
+      "inputNote": "输入采用基础单位：N、N·m、m、m²、m³、m⁴、Pa。可使用符号表达式，例如 2F、0.5M、E*I。",
+      "note": "该页用于材料力学截面级学习校核。当前 2D 梁求解器不含三维扭转自由度，因此这里的 T、J、Wt 为独立输入，不从平面模型自动求得。",
+      "formulaNormal": "拉伸与弯曲正应力：σ = N/A ± M/W。",
+      "formulaShear": "圆轴或等效截面扭转剪应力：τ = T/Wt。",
+      "formulaVonMises": "强度校核采用 von Mises：σe = √(σ² + 3τ²)。",
+      "formulaDeformation": "轴向变形 ΔL = NL/EA，扭转角 φ = TL/GJ，弯曲曲率 κ = M/EI。",
+      "fields": {
+        "N": "轴力 N",
+        "M": "弯矩 M",
+        "T": "扭矩 T",
+        "A": "截面面积 A",
+        "W": "抗弯截面模量 W",
+        "Wt": "抗扭截面模量 Wt",
+        "I": "截面惯性矩 I",
+        "J": "极惯性矩/扭转常数 J",
+        "E": "弹性模量 E",
+        "G": "剪切模量 G",
+        "L": "杆件长度 L",
+        "fy": "屈服强度 fy"
+      },
+      "rows": {
+        "axialStress": "拉伸正应力",
+        "bendingStress": "弯曲正应力",
+        "criticalNormalStress": "最大组合正应力",
+        "torsionalShearStress": "扭转剪应力",
+        "vonMisesStress": "等效应力",
+        "safetyFactor": "安全系数",
+        "axialDeformation": "轴向伸长",
+        "axialStrain": "轴向应变",
+        "bendingCurvature": "弯曲曲率",
+        "twistAngle": "扭转角"
+      },
+      "meanings": {
+        "axialStress": "由轴向拉压产生，拉为正、压为负。",
+        "bendingStress": "由截面边缘弯曲正应力估算。",
+        "criticalNormalStress": "取截面拉压两侧绝对值较大的正应力。",
+        "torsionalShearStress": "由扭矩产生的最大或等效剪应力。",
+        "vonMisesStress": "用于延性材料组合强度校核。",
+        "safetyFactor": "小于 1 表示超过屈服强度。",
+        "axialDeformation": "轴向拉压导致的长度变化。",
+        "axialStrain": "轴向线应变。",
+        "bendingCurvature": "梁轴线弯曲程度。",
+        "twistAngle": "杆件端部相对扭转角。"
+      }
     }
   },
   "dialogs": {
