@@ -29,10 +29,6 @@ WLKT Mechanics 的目标不是简单给出答案，而是把典型问题的分�
 ## 快速开始
 
 项目需要 Node.js 20 或更高版本。仓库中也可以配合本地 Node 工具链使用。
-如若没有相关配置，可以使用打包好的安装包，直接运行即可。
-```
-MACHANICS-OF-MATERIALS-main\release\desktop\WLKT-Mechanics-1.0.9-x64-Setup.exe
-```
 
 ```bash
 npm install

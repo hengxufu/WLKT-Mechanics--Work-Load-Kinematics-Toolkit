@@ -208,6 +208,7 @@
       "templates": "典型题库",
       "derivation": "分步推导",
       "combined": "组合变形",
+      "space3d": "三维有限元",
       "critical": "危险截面"
     },
     "templates": {
@@ -268,6 +269,25 @@
       "maxDeflection": "最大挠度",
       "safetyFactor": "最小安全系数",
       "note": "正应力限值取符号 fy，剪应力限值取符号 tau，默认单位按 MPa 理解；挠度限值按 L/250 估算。"
+    },
+    "space3d": {
+      "modelTitle": "三维空间刚架示例",
+      "modelNodes": "节点 A 固定，节点 B 为自由端，构成一根空间悬臂梁。",
+      "modelElement": "单元 AB 采用每节点 6 自由度的空间梁/刚架单元。",
+      "modelLoad": "自由端施加 Fx、Fy、Fz 和 Tx，用于同时观察拉伸、双向弯曲和扭转。",
+      "modelSection": "截面参数使用 A3D、Iy3D、Iz3D、J3D、Wy3D、Wz3D、Wt3D，可在符号表中覆盖。",
+      "extremeTitle": "三维极值摘要",
+      "criticalTitle": "三维危险位置",
+      "component": "分量",
+      "maxDisplacement": "最大位移",
+      "maxAxialForce": "最大轴力",
+      "maxShearForce": "最大剪力",
+      "maxTorque": "最大扭矩",
+      "maxBendingMoment": "最大弯矩",
+      "maxNormalStress": "最大正应力",
+      "maxShearStress": "最大剪应力",
+      "minSafetyFactor": "最小安全系数",
+      "note": "该页调用本地三维空间刚架求解器和后处理核心。当前展示为教学示例模型，后续三维建模器接入后可直接显示用户模型的危险节点与危险杆端。"
     },
     "combined": {
       "inputs": "拉伸-弯曲-扭转输入",

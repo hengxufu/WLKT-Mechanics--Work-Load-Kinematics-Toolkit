@@ -208,6 +208,7 @@
       "templates": "Templates",
       "derivation": "Derivation",
       "combined": "Combined",
+      "space3d": "3D FEM",
       "critical": "Critical"
     },
     "templates": {
@@ -268,6 +269,25 @@
       "maxDeflection": "Max deflection",
       "safetyFactor": "Minimum safety factor",
       "note": "Normal stress limit uses symbol fy and shear stress limit uses symbol tau, interpreted as MPa by default. Deflection limit is estimated as L/250."
+    },
+    "space3d": {
+      "modelTitle": "3D Space Frame Example",
+      "modelNodes": "Node A is fixed and node B is the free end of a cantilever member.",
+      "modelElement": "Member AB uses a 6-DOF-per-node 3D beam/frame element.",
+      "modelLoad": "Fx, Fy, Fz, and Tx are applied at the free end to show axial, biaxial bending, and torsion behavior.",
+      "modelSection": "Section parameters use A3D, Iy3D, Iz3D, J3D, Wy3D, Wz3D, and Wt3D; they can be overridden in the symbol table.",
+      "extremeTitle": "3D Extreme Summary",
+      "criticalTitle": "3D Critical Locations",
+      "component": "Component",
+      "maxDisplacement": "Max displacement",
+      "maxAxialForce": "Max axial force",
+      "maxShearForce": "Max shear force",
+      "maxTorque": "Max torque",
+      "maxBendingMoment": "Max bending moment",
+      "maxNormalStress": "Max normal stress",
+      "maxShearStress": "Max shear stress",
+      "minSafetyFactor": "Minimum safety factor",
+      "note": "This panel calls the local 3D space-frame solver and postprocessor. It currently displays a teaching example; once the 3D modeler is connected, it can show critical nodes and member ends from the user model."
     },
     "combined": {
       "inputs": "Axial-Bending-Torsion Inputs",

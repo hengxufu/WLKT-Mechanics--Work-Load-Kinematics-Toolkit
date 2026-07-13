@@ -374,6 +374,40 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
   padding: 10px;
 }
 
+.education-3d-extremes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px;
+}
+
+.education-3d-extreme {
+  display: grid;
+  gap: 3px;
+  min-height: 72px;
+  padding: 8px 10px;
+  border: 1px solid rgba(0, 59, 122, 0.12);
+  border-radius: 6px;
+  background: #fff;
+  font-variant-numeric: tabular-nums;
+
+  strong {
+    color: var(--buaa-blue);
+    font-size: 14px;
+  }
+
+  span:last-child {
+    color: var(--buaa-muted);
+    font-size: 12px;
+  }
+}
+
+.education-3d-extreme__label {
+  color: var(--buaa-ink);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .education-template-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

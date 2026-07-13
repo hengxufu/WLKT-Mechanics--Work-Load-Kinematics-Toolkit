@@ -181,6 +181,58 @@
         </div>
       </section>
 
+      <section v-else-if="activeView === 'space3d'" class="education-panel__section">
+        <div class="education-panel__grid education-panel__grid--wide">
+          <div class="education-panel__block">
+            <h3>{{ $t('education.space3d.modelTitle') }}</h3>
+            <ul>
+              <li>{{ $t('education.space3d.modelNodes') }}</li>
+              <li>{{ $t('education.space3d.modelElement') }}</li>
+              <li>{{ $t('education.space3d.modelLoad') }}</li>
+              <li>{{ $t('education.space3d.modelSection') }}</li>
+            </ul>
+          </div>
+
+          <div class="education-panel__block">
+            <h3>{{ $t('education.space3d.extremeTitle') }}</h3>
+            <div class="education-3d-extremes">
+              <div v-for="item in space3dExtremeCards" :key="item.key" class="education-3d-extreme">
+                <span class="education-3d-extreme__label">{{ item.label }}</span>
+                <strong>{{ item.value }}</strong>
+                <span>{{ item.location }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="education-panel__block">
+          <h3>{{ $t('education.space3d.criticalTitle') }}</h3>
+          <table class="education-table">
+            <thead>
+              <tr>
+                <th>{{ $t('education.critical.item') }}</th>
+                <th>{{ $t('common.element') }}</th>
+                <th>{{ $t('common.node') }}</th>
+                <th>x</th>
+                <th>{{ $t('education.critical.value') }}</th>
+                <th>{{ $t('education.space3d.component') }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in space3dRows" :key="row.key" :class="{ 'education-table__warn': row.warn }">
+                <td>{{ row.label }}</td>
+                <td>{{ row.element }}</td>
+                <td>{{ row.node }}</td>
+                <td>{{ row.position }}</td>
+                <td>{{ row.value }}</td>
+                <td>{{ row.component }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="education-panel__note">{{ $t('education.space3d.note') }}</p>
+        </div>
+      </section>
+
       <section v-else class="education-panel__section">
         <div v-if="!critical.solved" class="education-panel__empty">
           <v-icon size="24">mdi-alert-circle-outline</v-icon>
@@ -235,7 +287,14 @@ import { useAppStore } from '@/store/app';
 import { useProjectStore } from '@/store/project';
 import { useSymbolStore } from '@/store/symbols';
 import { eventBus, EventType } from '@/EventBus';
-import { checkNumber, formatScientificNumber } from '@/utils';
+import {
+  analyzeSpaceFrame3DPostprocess,
+  checkNumber,
+  formatScientificNumber,
+  solveSpaceFrame3D,
+  type CriticalLocation3D,
+  type SpaceFrameModelInput,
+} from '@/utils';
 import {
   calculateCombinedDeformation,
   type CombinedDeformationInputKey,
@@ -255,12 +314,13 @@ const { t } = useI18n();
 const appStore = useAppStore();
 const projectStore = useProjectStore();
 const symbolStore = useSymbolStore();
-const activeView = ref<'templates' | 'derivation' | 'combined' | 'critical'>('templates');
+const activeView = ref<'templates' | 'derivation' | 'combined' | 'space3d' | 'critical'>('templates');
 
 const views = [
   { id: 'templates', label: 'education.views.templates', icon: 'mdi-view-grid-plus' },
   { id: 'derivation', label: 'education.views.derivation', icon: 'mdi-format-list-numbered' },
   { id: 'combined', label: 'education.views.combined', icon: 'mdi-axis-arrow' },
+  { id: 'space3d', label: 'education.views.space3d', icon: 'mdi-cube-scan' },
   { id: 'critical', label: 'education.views.critical', icon: 'mdi-shield-alert-outline' },
 ] as const;
 
@@ -303,6 +363,42 @@ const critical = computed(() =>
   analyzeCriticalSections(Number(symbolStore.scope.fy ?? 235) * 1e6, Number(symbolStore.scope.tau ?? 120) * 1e6)
 );
 
+const demoSpaceFrameModel = computed<SpaceFrameModelInput>(() => ({
+  nodes: [
+    { label: 'A', coords: [0, 0, 0], constraints: { ux: true, uy: true, uz: true, rx: true, ry: true, rz: true } },
+    { label: 'B', coords: ['L3D', 0, 0] },
+  ],
+  materials: [{ label: 'steel', E: 'E3D', G: 'G3D', yieldStrength: 'fy3D' }],
+  sections: [{ label: 'box', A: 'A3D', Iy: 'Iy3D', Iz: 'Iz3D', J: 'J3D', Wy: 'Wy3D', Wz: 'Wz3D', Wt: 'Wt3D' }],
+  elements: [{ label: 'AB', nodes: ['A', 'B'], material: 'steel', section: 'box' }],
+  nodalLoads: [{ node: 'B', values: ['Fx3D', 'Fy3D', 'Fz3D', 'Tx3D', 0, 0] }],
+  symbols: {
+    L3D: Number(symbolStore.scope.L3D ?? 2),
+    E3D: Number(symbolStore.scope.E3D ?? 210e9),
+    G3D: Number(symbolStore.scope.G3D ?? 80e9),
+    fy3D: Number(symbolStore.scope.fy3D ?? 235e6),
+    A3D: Number(symbolStore.scope.A3D ?? 0.01),
+    Iy3D: Number(symbolStore.scope.Iy3D ?? 1e-5),
+    Iz3D: Number(symbolStore.scope.Iz3D ?? 2e-5),
+    J3D: Number(symbolStore.scope.J3D ?? 3e-5),
+    Wy3D: Number(symbolStore.scope.Wy3D ?? 2e-4),
+    Wz3D: Number(symbolStore.scope.Wz3D ?? 4e-4),
+    Wt3D: Number(symbolStore.scope.Wt3D ?? 3e-4),
+    Fx3D: Number(symbolStore.scope.Fx3D ?? 10_000),
+    Fy3D: Number(symbolStore.scope.Fy3D ?? 5_000),
+    Fz3D: Number(symbolStore.scope.Fz3D ?? 3_000),
+    Tx3D: Number(symbolStore.scope.Tx3D ?? 2_000),
+  },
+}));
+
+const space3dResult = computed(() => solveSpaceFrame3D(demoSpaceFrameModel.value));
+const space3dAnalysis = computed(() =>
+  analyzeSpaceFrame3DPostprocess(space3dResult.value, {
+    normalStressLimit: Number(demoSpaceFrameModel.value.symbols.fy3D),
+    shearStressLimit: Number(symbolStore.scope.tau3D ?? 120e6),
+  })
+);
+
 const formatLength = (value: number) => `${formatScientificNumber(appStore.convertLength(value))} ${appStore.units.Length}`;
 const formatForce = (value: number) => `${formatScientificNumber(appStore.convertForce(value))} ${appStore.units.Force}`;
 const formatMoment = (value: number) => `${formatScientificNumber(appStore.convertMoment(value))} ${appStore.units.Moment}`;
@@ -314,6 +410,25 @@ const formatAngle = (value: number, valueDeg: number) =>
   `${formatScientificNumber(value)} rad (${formatScientificNumber(valueDeg)}°)`;
 
 const supportText = (fixed: boolean) => (fixed ? t('education.derivation.fixed') : t('education.derivation.free'));
+
+const formatSpace3DValue = (item: CriticalLocation3D | null) => {
+  if (!item) return '-';
+  if (item.kind === 'displacement') return formatLength(item.value);
+  if (item.kind === 'normalStress' || item.kind === 'shearStress') return formatPressure(item.value);
+  if (item.kind === 'bendingMoment' || item.kind === 'torque') return formatMoment(item.value);
+  if (item.kind === 'safetyFactor') return `${formatScientificNumber(item.value)}x`;
+  return formatForce(item.value);
+};
+
+const formatSpace3DLocation = (item: CriticalLocation3D | null) => {
+  if (!item) return '-';
+  if (item.nodeLabel) return `${t('common.node')} ${item.nodeLabel}`;
+  if (item.elementLabel) return `${t('common.element')} ${item.elementLabel}`;
+  return '-';
+};
+
+const formatSpace3DPosition = (item: CriticalLocation3D | null) =>
+  item?.position !== undefined ? formatLength(item.position) : '-';
 
 const solveAndShowCritical = () => {
   projectStore.solve();
@@ -378,6 +493,66 @@ const criticalRows = computed(() => [
     warn: (critical.value.safetyFactor?.ratio ?? 1) < 1,
   },
 ]);
+
+const space3dExtremeCards = computed(() => [
+  {
+    key: 'displacement',
+    label: t('education.space3d.maxDisplacement'),
+    value: formatSpace3DValue(space3dAnalysis.value.maxDisplacement),
+    location: formatSpace3DLocation(space3dAnalysis.value.maxDisplacement),
+  },
+  {
+    key: 'normalStress',
+    label: t('education.space3d.maxNormalStress'),
+    value: formatSpace3DValue(space3dAnalysis.value.maxNormalStress),
+    location: formatSpace3DLocation(space3dAnalysis.value.maxNormalStress),
+  },
+  {
+    key: 'shearStress',
+    label: t('education.space3d.maxShearStress'),
+    value: formatSpace3DValue(space3dAnalysis.value.maxShearStress),
+    location: formatSpace3DLocation(space3dAnalysis.value.maxShearStress),
+  },
+  {
+    key: 'safetyFactor',
+    label: t('education.space3d.minSafetyFactor'),
+    value: formatSpace3DValue(space3dAnalysis.value.minSafetyFactor),
+    location: formatSpace3DLocation(space3dAnalysis.value.minSafetyFactor),
+  },
+]);
+
+const space3dKindLabel = (item: CriticalLocation3D) => {
+  const labels: Record<CriticalLocation3D['kind'], string> = {
+    displacement: t('education.space3d.maxDisplacement'),
+    axialForce: t('education.space3d.maxAxialForce'),
+    shearForce: t('education.space3d.maxShearForce'),
+    torque: t('education.space3d.maxTorque'),
+    bendingMoment: t('education.space3d.maxBendingMoment'),
+    normalStress: t('education.space3d.maxNormalStress'),
+    shearStress: t('education.space3d.maxShearStress'),
+    safetyFactor: t('education.space3d.minSafetyFactor'),
+  };
+
+  return labels[item.kind];
+};
+
+const space3dRows = computed(() =>
+  space3dAnalysis.value.criticalLocations.map((item, index) => ({
+    key: `${item.kind}-${index}`,
+    label: space3dKindLabel(item),
+    element: item.elementLabel ?? '-',
+    node: item.nodeLabel ?? '-',
+    position: formatSpace3DPosition(item),
+    value: formatSpace3DValue(item),
+    component: item.component ?? '-',
+    warn:
+      (item.kind === 'normalStress' || item.kind === 'shearStress') && item.ratio !== undefined
+        ? item.ratio > 1
+        : item.kind === 'safetyFactor'
+          ? item.value < 1
+          : false,
+  }))
+);
 
 const combinedAnalysis = computed<
   | { ok: true; result: CombinedDeformationResult }

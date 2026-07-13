@@ -37,6 +37,56 @@ export { loadType } from './loadType';
 export { loadXmlFile } from './loadXmlFile';
 
 export { formatScientificNumber } from './formatScientificNumber';
+export {
+  DenseGlobalMatrix,
+  SparseAssemblyMatrix,
+  createGlobalMatrix,
+  matVecDense,
+  solveLinearSystem,
+  solveReducedSystem,
+  zeroMatrix,
+  type GlobalMatrix,
+  type LinearSolveOptions,
+  type MatrixBackendType,
+} from './femLinearAlgebra';
+export {
+  computeSpaceTruss3DElementStiffness,
+  solveSpaceTruss3D,
+  type SpaceTruss3DResult,
+  type SpaceTrussElementInput,
+  type SpaceTrussElementResult,
+  type SpaceTrussLoadInput,
+  type SpaceTrussMaterialInput,
+  type SpaceTrussModelInput,
+  type SpaceTrussNodeInput,
+  type SpaceTrussSectionInput,
+} from './spaceTruss3D';
+export {
+  computeSpaceFrame3DLocalAxes,
+  computeSpaceFrame3DLocalStiffness,
+  computeSpaceFrame3DTransformation,
+  solveSpaceFrame3D,
+  transformSpaceFrame3DStiffnessToGlobal,
+  type FrameConstraint3D,
+  type FrameDof3D,
+  type SpaceFrame3DResult,
+  type SpaceFrameElementForces,
+  type SpaceFrameElementInput,
+  type SpaceFrameElementResult,
+  type SpaceFrameLoadInput,
+  type SpaceFrameMaterialInput,
+  type SpaceFrameModelInput,
+  type SpaceFrameNodeInput,
+  type SpaceFrameSectionInput,
+} from './spaceFrame3D';
+export {
+  analyzeSpaceFrame3DPostprocess,
+  analyzeSpaceTruss3DPostprocess,
+  type Critical3DKind,
+  type CriticalLocation3D,
+  type SpacePostprocess3DOptions,
+  type SpacePostprocess3DResult,
+} from './spacePostprocess3D';
 
 type ProjectSnapshot = {
   model: string | null;
