@@ -39,9 +39,9 @@ const stagedPackage = {
   dependencies: {},
   devDependencies: {},
   build: {
-    appId: 'cn.buaa.wlkt.mechanics',
-    productName: 'WLKT Mechanics 材料力学求解器',
-    copyright: 'Copyright © 2026 WLKT Mechanics',
+    appId: 'cn.buaa.layawanniu.master',
+    productName: '拉压弯扭大师',
+    copyright: 'Copyright © 2026 拉压弯扭大师',
     electronVersion,
     directories: {
       output: '../release/desktop',
@@ -69,7 +69,7 @@ const stagedPackage = {
       requestedExecutionLevel: 'highestAvailable',
       signAndEditExecutable: true,
       verifyUpdateCodeSignature: true,
-      artifactName: 'WLKT-Mechanics-${version}-${arch}-Setup.${ext}',
+      artifactName: '拉压弯扭大师-${version}-${arch}-Setup.${ext}',
     },
     nsis: {
       oneClick: true,
@@ -78,7 +78,7 @@ const stagedPackage = {
       allowToChangeInstallationDirectory: false,
       createDesktopShortcut: true,
       createStartMenuShortcut: true,
-      shortcutName: 'WLKT Mechanics 材料力学求解器',
+      shortcutName: '拉压弯扭大师',
       runAfterFinish: true,
       deleteAppDataOnUninstall: false,
     },
@@ -87,4 +87,3 @@ const stagedPackage = {
 
 writeFileSync(resolve(stageRoot, 'package.json'), `${JSON.stringify(stagedPackage, null, 2)}\n`);
 console.log(`Prepared desktop staging app at ${stageRoot}`);
-

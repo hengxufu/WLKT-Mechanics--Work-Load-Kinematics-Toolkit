@@ -367,7 +367,7 @@ const localDocsUrl = `${import.meta.env.BASE_URL}docs/local-app.html`;
 
       <div class="app-brand ml-2" style="user-select: none">
         <span class="app-brand__mark">BUAA</span>
-        <span class="app-brand__name">WLKT Mechanics</span>
+        <span class="app-brand__name">拉压弯扭大师</span>
         <span class="app-brand__sub d-none d-md-inline">{{ $t('app.subtitle') }}</span>
       </div>
 
@@ -413,7 +413,7 @@ const localDocsUrl = `${import.meta.env.BASE_URL}docs/local-app.html`;
       <div class="drawer-brand">
         <div class="drawer-brand__mark">BUAA</div>
         <div>
-          <div class="drawer-brand__title">WLKT Mechanics</div>
+          <div class="drawer-brand__title">拉压弯扭大师</div>
           <div class="drawer-brand__subtitle">{{ $t('app.subtitle') }}</div>
         </div>
       </div>

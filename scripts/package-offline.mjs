@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const distDir = resolve(repoRoot, 'dist');
 const releaseRoot = resolve(repoRoot, 'release');
-const packageDir = resolve(releaseRoot, 'wlkt-mechanics-offline');
+const packageDir = resolve(releaseRoot, 'layawanniu-master-offline');
 const appDir = resolve(packageDir, 'app');
 
 if (!existsSync(distDir)) {
@@ -27,7 +27,7 @@ cpSync(resolve(repoRoot, 'scripts/serve-dist.mjs'), resolve(packageDir, 'serve-l
 
 writeFileSync(
   resolve(packageDir, 'START_HERE.md'),
-  `# WLKT Mechanics Offline Package
+  `# 拉压弯扭大师离线包
 
 This package runs on the user's own computer. It does not call the publisher's computer for computation, storage, or project data.
 

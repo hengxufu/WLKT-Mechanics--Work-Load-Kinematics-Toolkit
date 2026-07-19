@@ -1,8 +1,8 @@
 {
-  "name": "wlkt-mechanics",
+  "name": "laya-wan-niu-master",
   "version": "1.0.9",
-  "description": "Offline mechanics of materials and structural analysis toolkit for local teaching workflows.",
-  "author": "WLKT Mechanics Contributors",
+  "description": "Offline axial-compression-bending-torsion mechanics learning and solving toolkit.",
+  "author": "拉压弯扭大师 Contributors",
   "type": "module",
   "main": "electron/main.cjs",
   "engines": {
@@ -59,9 +59,9 @@
     "vuetify": "^3.11.4"
   },
   "build": {
-    "appId": "cn.buaa.wlkt.mechanics",
-    "productName": "WLKT Mechanics 材料力学求解器",
-    "copyright": "Copyright © 2026 WLKT Mechanics",
+    "appId": "cn.buaa.layawanniu.master",
+    "productName": "拉压弯扭大师",
+    "copyright": "Copyright © 2026 拉压弯扭大师",
     "directories": {
       "output": "release/desktop",
       "buildResources": "public"
@@ -116,7 +116,7 @@
       "requestedExecutionLevel": "highestAvailable",
       "signAndEditExecutable": true,
       "verifyUpdateCodeSignature": true,
-      "artifactName": "WLKT-Mechanics-${version}-${arch}-Setup.${ext}"
+      "artifactName": "拉压弯扭大师-${version}-${arch}-Setup.${ext}"
     },
     "nsis": {
       "oneClick": true,
@@ -125,7 +125,7 @@
       "allowToChangeInstallationDirectory": false,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "WLKT Mechanics 材料力学求解器",
+      "shortcutName": "拉压弯扭大师",
       "runAfterFinish": true,
       "deleteAppDataOnUninstall": false
     }

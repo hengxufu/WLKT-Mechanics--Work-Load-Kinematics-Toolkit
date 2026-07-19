@@ -497,7 +497,7 @@
     "finishButton": "Finish"
   },
   "welcome": {
-    "title": "Welcome to <span class=\"edubeam\">WLKT Mechanics</span>! 🚀",
+    "title": "Welcome to <span class=\"edubeam\">拉压弯扭大师</span>!",
     "description": "To help you get started, we've prepared a quick onboarding tour that will guide you through the local mechanics solver."
   },
   "confirmation": {

@@ -1,28 +1,28 @@
-# 分享与隐私保证
+# 分享与隐私说明
 
-WLKT Mechanics 可以通过 GitHub Pages 静态站点、Windows 一键安装包或离线压缩包分享给其他人。这些方式都不会调用发布者电脑的算力、信息或存储空间。
+拉压弯扭大师可以通过 GitHub Pages 静态站点、Windows 一键安装包或离线压缩包分享给其他人。这些方式都不会调用发布者电脑的算力、信息或存储空间。
 
-## 推荐方式一：GitHub Pages
+## 推荐方式一：Windows 安装包
 
-仓库包含 `.github/workflows/pages.yml`。推送到 `main` 后，GitHub Actions 会构建 `dist` 并部署到 GitHub Pages。
+将以下文件上传到 GitHub Release 或其他文件分发平台：
 
-启用方式：
+```text
+release/desktop/拉压弯扭大师-<version>-x64-Setup.exe
+release/desktop/SHA256SUMS.txt
+release/desktop/release-manifest.json
+```
 
-1. 打开 GitHub 仓库的 `Settings -> Pages`。
-2. 将 `Build and deployment` 的 Source 设为 `GitHub Actions`。
-3. 推送 `main` 分支，等待 `Deploy GitHub Pages` 工作流完成。
-4. 将 Pages 地址分享给其他人。
+接收者下载后在自己的电脑上安装和运行。所有计算都在接收者本机完成。
 
-用户访问 Pages 时，HTML、JS、CSS 等静态文件由 GitHub 提供；结构求解、符号表达式、项目 JSON 读写都在用户自己的浏览器中完成。
+## 推荐方式二：GitHub Pages
 
-## 推荐方式二：离线压缩包
+GitHub Pages 只负责提供静态文件。结构求解、字母公式计算、项目文件打开与保存都在访问者自己的浏览器中完成。
 
-仓库包含 `.github/workflows/offline-package.yml`。可以手动运行 `Build Offline Package` 工作流，或推送 `v*` 标签自动创建 Release。
+## 推荐方式三：离线压缩包
 
-本地生成方式：
+本地生成离线包：
 
 ```bash
-npm ci
 npm run build
 npm run package:offline
 ```
@@ -30,10 +30,10 @@ npm run package:offline
 生成目录：
 
 ```text
-release/wlkt-mechanics-offline
+release/layawanniu-master-offline
 ```
 
-对方下载后，在自己的电脑上运行：
+对方下载后在自己的电脑运行：
 
 ```bash
 node serve-local.mjs app 4173
@@ -45,48 +45,8 @@ node serve-local.mjs app 4173
 http://127.0.0.1:4173/
 ```
 
-`serve-local.mjs` 默认只监听 `127.0.0.1`，不会把对方电脑暴露成公网服务。
+`serve-local.mjs` 默认只监听 `127.0.0.1`，不会把使用者电脑暴露为公网服务。
 
-## 推荐方式三：Windows 一键安装包
+## 发布者电脑不会被调用
 
-仓库包含 `.github/workflows/windows-installer.yml`。可以手动运行 `Build Windows Installer` 工作流，或推送 `v*` 标签自动创建 Release。
-
-本地生成方式：
-
-```powershell
-$env:Path = "$PWD\.local-tools\node-v22.22.2-win-x64;$env:Path"
-$env:ELECTRON_MIRROR = "https://npmmirror.com/mirrors/electron/"
-.\.local-tools\node-v22.22.2-win-x64\npm.cmd run desktop:dist:win
-.\.local-tools\node-v22.22.2-win-x64\npm.cmd run release:checksums
-```
-
-生成文件：
-
-```text
-release/desktop/WLKT-Mechanics-<version>-x64-Setup.exe
-release/desktop/SHA256SUMS.txt
-release/desktop/release-manifest.json
-```
-
-对方下载 `.exe` 后在自己的电脑上安装运行。结构求解和项目数据处理仍然只在对方电脑本地完成。发布时同时提供 `SHA256SUMS.txt`，对方可以用 `Get-FileHash` 校验安装包是否被替换或篡改。
-
-仓库也会把 `verify-installer.ps1` 复制到 `release/desktop`，可直接运行：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\verify-installer.ps1 .
-```
-
-## 不要这样分享
-
-- 不要分享你本机的 `http://127.0.0.1:3000/` 或 `http://localhost:3000/`。
-- 不要把开发服务器绑定到公网地址。
-- 不要配置路由器端口转发、内网穿透、反向代理到你的电脑。
-- 不要让别人通过你的 IP 地址访问开发服务。
-- 不要把未校验来源的安装包当作正式版本分发。
-
-## 本地数据边界
-
-- 结构求解在用户浏览器本地执行。
-- 项目文件由用户手动保存为本地 JSON。
-- 符号参数、界面语言和单位设置保存在用户自己的浏览器本地存储。
-- 项目不需要云端账号、数据库或后端计算服务。
+只要不要把开发服务器地址、远程 API 地址或本机共享目录发给别人，别人使用安装包、离线包或 GitHub Pages 时都不会访问发布者电脑。发布者只负责提供可下载文件；运行时的计算和存储发生在使用者本机。

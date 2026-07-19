@@ -99,7 +99,7 @@ function createWindow() {
     minWidth: 1120,
     minHeight: 720,
     show: false,
-    title: 'WLKT Mechanics 材料力学求解器',
+    title: '拉压弯扭大师',
     backgroundColor: '#f4f7fb',
     webPreferences: {
       preload: preloadPath,

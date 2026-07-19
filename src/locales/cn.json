@@ -497,7 +497,7 @@
     "finishButton": "完成"
   },
   "welcome": {
-    "title": "欢迎使用 <span class=\"edubeam\">WLKT Mechanics</span>！ 🚀",
+    "title": "欢迎使用 <span class=\"edubeam\">拉压弯扭大师</span>！",
     "description": "为了帮助你快速上手，我们准备了一个简短的入门导览，带你了解本地材料力学求解器的主要功能。"
   },
   "confirmation": {
