@@ -44,6 +44,7 @@ export {
   matVecDense,
   solveLinearSystem,
   solveReducedSystem,
+  solveSparseLinearSystem,
   zeroMatrix,
   type GlobalMatrix,
   type LinearSolveOptions,

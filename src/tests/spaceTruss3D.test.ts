@@ -81,7 +81,7 @@ describe('spaceTruss3D', () => {
     expect(result.displacements.B[0]).toBeCloseTo((10_000 * 2) / (210e9 * 0.01));
   });
 
-  it('matches dense and sparse-assembly backends', () => {
+  it('matches dense, sparse-assembly, and sparse-lu backends', () => {
     const model = {
       nodes: [
         { label: 'A', coords: [0, 0, 0], constraints: { x: true, y: true, z: true } },
@@ -92,9 +92,13 @@ describe('spaceTruss3D', () => {
     } as const;
     const dense = solveSpaceTruss3D({ ...model, matrixBackend: 'dense' });
     const sparse = solveSpaceTruss3D({ ...model, matrixBackend: 'sparse-assembly' });
+    const sparseLu = solveSpaceTruss3D({ ...model, matrixBackend: 'sparse-lu' });
 
     expect(sparse.displacements.B[0]).toBeCloseTo(dense.displacements.B[0]);
     expect(sparse.reactions.A[0]).toBeCloseTo(dense.reactions.A[0]);
     expect(sparse.elements[0].axialForce).toBeCloseTo(dense.elements[0].axialForce);
+    expect(sparseLu.displacements.B[0]).toBeCloseTo(dense.displacements.B[0]);
+    expect(sparseLu.reactions.A[0]).toBeCloseTo(dense.reactions.A[0]);
+    expect(sparseLu.elements[0].axialForce).toBeCloseTo(dense.elements[0].axialForce);
   });
 });

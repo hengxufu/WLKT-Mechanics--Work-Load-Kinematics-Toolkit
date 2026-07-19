@@ -117,7 +117,7 @@ describe('spaceFrame3D', () => {
     expect(result.displacements.B[0]).toBeCloseTo((10_000 * 2) / (210e9 * 0.01));
   });
 
-  it('matches dense and sparse-assembly backends', () => {
+  it('matches dense, sparse-assembly, and sparse-lu backends', () => {
     const model = {
       nodes: [
         { label: 'A', coords: [0, 0, 0], constraints: fixedNode },
@@ -128,10 +128,15 @@ describe('spaceFrame3D', () => {
     } as const;
     const dense = solveSpaceFrame3D({ ...model, matrixBackend: 'dense' });
     const sparse = solveSpaceFrame3D({ ...model, matrixBackend: 'sparse-assembly' });
+    const sparseLu = solveSpaceFrame3D({ ...model, matrixBackend: 'sparse-lu' });
 
     expect(sparse.displacements.B[0]).toBeCloseTo(dense.displacements.B[0]);
     expect(sparse.displacements.B[1]).toBeCloseTo(dense.displacements.B[1]);
     expect(sparse.displacements.B[2]).toBeCloseTo(dense.displacements.B[2]);
     expect(sparse.elements[0].localEndForces.start[0]).toBeCloseTo(dense.elements[0].localEndForces.start[0]);
+    expect(sparseLu.displacements.B[0]).toBeCloseTo(dense.displacements.B[0]);
+    expect(sparseLu.displacements.B[1]).toBeCloseTo(dense.displacements.B[1]);
+    expect(sparseLu.displacements.B[2]).toBeCloseTo(dense.displacements.B[2]);
+    expect(sparseLu.elements[0].localEndForces.start[0]).toBeCloseTo(dense.elements[0].localEndForces.start[0]);
   });
 });

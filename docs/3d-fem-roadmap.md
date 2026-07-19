@@ -160,19 +160,21 @@ type SpaceTrussModelInput = {
 建议：
 
 - 小模型保留 dense solver 作为参考实现
-- 大模型切换 sparse matrix backend
+- 大模型切换 sparse matrix backend，并优先使用 sparse LU 求解
 - 求解放入 Web Worker，避免界面卡死
-- 后续可接入 WASM 稀疏求解器
+- 后续可接入 WASM Cholesky/LDLT 求解器作为对称正定系统的性能增强
 
 当前状态：
 
 - 已新增 `src/utils/femLinearAlgebra.ts`
-- 已抽象全局矩阵后端：`dense` 与 `sparse-assembly`
+- 已抽象全局矩阵后端：`dense`、`sparse-assembly` 与 `sparse-lu`
 - 已将空间桁架和空间梁/刚架求解器接入统一矩阵后端
 - 已保留 dense 求解作为默认参考实现
-- 已增加后端等价性测试，确保 dense 与 sparse-assembly 装配结果一致
-- 当前 `sparse-assembly` 负责稀疏装配和矩阵向量乘法，线性方程仍通过 dense `lusolve` 求解
-- 真正面向大模型的稀疏 LU/Cholesky 或 WASM 求解器仍待接入
+- 已增加后端等价性测试，确保 dense、sparse-assembly 与 sparse-lu 结果一致
+- 已接入 `mathjs` `SparseMatrix` + `lusolve(A, b, order, threshold)` 的 sparse LU 路径
+- `sparse-lu` 后端在自由自由子矩阵上直接构造 SparseMatrix，并使用 sparse LU 求解位移
+- `sparse-assembly` 保留为兼容后端，负责稀疏装配和矩阵向量乘法
+- 真正面向更大规模模型的 WASM Cholesky/LDLT 求解器、Web Worker 调度和分块装配仍可继续增强
 
 ## 测试基准
 
