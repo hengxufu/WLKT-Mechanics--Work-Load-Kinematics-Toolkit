@@ -34,6 +34,12 @@ describe('numeric expression support', () => {
     expect(evaluateNumericExpression('1e-3')).toBe(0.001);
   });
 
+  it('keeps supported math function calls intact', () => {
+    expect(evaluateNumericExpression('sqrt(4)')).toBe(2);
+    expect(evaluateNumericExpression('2sqrt(9)')).toBe(6);
+    expect(evaluateNumericExpression('sin(0)')).toBe(0);
+  });
+
   it('rejects unsupported characters and unknown symbols', () => {
     expect(isNumericExpression('fetch(1)')).toBe(false);
     expect(isNumericExpression('unknownSymbol + 1')).toBe(false);

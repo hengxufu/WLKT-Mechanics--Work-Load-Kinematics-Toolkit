@@ -88,6 +88,22 @@ export {
   type SpacePostprocess3DOptions,
   type SpacePostprocess3DResult,
 } from './spacePostprocess3D';
+export {
+  calculateCombinedDeformation,
+  type CombinedDeformationInputKey,
+  type CombinedDeformationInputs,
+  type CombinedDeformationResult,
+  type CombinedDeformationValues,
+} from './combinedDeformation';
+export {
+  evaluateSymbolicMechanicsExpression,
+  evaluateSymbolicMechanicsFormulas,
+  symbolicMechanicsFormulas,
+  type SymbolicMechanicsFormula,
+  type SymbolicMechanicsFormulaKey,
+  type SymbolicMechanicsFormulaResult,
+  type SymbolicMechanicsUnit,
+} from './symbolicMechanics';
 
 type ProjectSnapshot = {
   model: string | null;

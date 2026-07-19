@@ -2,6 +2,20 @@ import { evaluate } from 'mathjs';
 import { useSymbolStore } from '@/store/symbols';
 
 const allowedExpression = /^[0-9A-Za-z_+\-*/^().,\s]+$/;
+const allowedFunctionNames = new Set([
+  'abs',
+  'acos',
+  'asin',
+  'atan',
+  'cos',
+  'exp',
+  'log',
+  'max',
+  'min',
+  'sin',
+  'sqrt',
+  'tan',
+]);
 
 export const normalizeNumericExpression = (input: string) => {
   const scientificNumbers: string[] = [];
@@ -14,7 +28,10 @@ export const normalizeNumericExpression = (input: string) => {
       return `#${scientificNumbers.length - 1}#`;
     })
     .replace(/(\d|\))(?=[A-Za-z_])/g, '$1*')
-    .replace(/([A-Za-z_][A-Za-z0-9_]*|\))(?=\()/g, '$1*');
+    .replace(/([A-Za-z_][A-Za-z0-9_]*|\))(?=\()/g, (token) => {
+      if (token !== ')' && allowedFunctionNames.has(token)) return token;
+      return `${token}*`;
+    });
 
   return scientificNumbers.reduce(
     (currentExpression, value, index) => currentExpression.replace(`#${index}#`, value),

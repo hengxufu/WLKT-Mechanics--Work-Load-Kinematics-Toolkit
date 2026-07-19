@@ -207,6 +207,7 @@
     "views": {
       "templates": "典型题库",
       "derivation": "分步推导",
+      "symbols": "字母计算",
       "combined": "组合变形",
       "space3d": "三维有限元",
       "critical": "危险截面"
@@ -256,6 +257,52 @@
       "free": "自由",
       "internalForceEquations": "内力方程摘要",
       "span": "区间"
+    },
+    "symbolic": {
+      "parameters": "字母参数表",
+      "symbol": "符号",
+      "value": "数值",
+      "description": "含义",
+      "parameterNote": "所有参数均在本地保存和计算。符号区分显示大小写，同时自动提供小写别名，例如 F 与 f 可得到相同数值。",
+      "customTitle": "自定义公式",
+      "customExpression": "输入公式",
+      "customResult": "计算结果",
+      "customNote": "支持 +、-、*、/、^、括号和常用函数，例如 sqrt(...)。示例：F*L^3/(3*E*I)。",
+      "library": "材料力学常用公式",
+      "libraryNote": "公式采用基础 SI 单位。修改左侧字母参数后，本表自动重新计算。",
+      "invalid": "表达式无效",
+      "formulas": {
+        "axialStress": "轴向正应力",
+        "bendingStress": "弯曲正应力",
+        "combinedNormalStress": "拉弯组合正应力",
+        "torsionalShearStress": "扭转剪应力",
+        "vonMisesStress": "等效应力",
+        "axialDeformation": "轴向变形",
+        "cantileverTipDeflection": "悬臂梁端部挠度",
+        "simplySupportedMidspanDeflection": "简支梁跨中挠度",
+        "twistAngle": "扭转角",
+        "bendingCurvature": "弯曲曲率",
+        "axialRigidity": "轴向刚度 EA",
+        "bendingRigidity": "弯曲刚度 EI",
+        "temperatureStress": "约束温度应力",
+        "safetyFactor": "安全系数"
+      },
+      "descriptions": {
+        "axialStress": "拉压杆件的平均正应力。",
+        "bendingStress": "梁截面边缘弯曲正应力。",
+        "combinedNormalStress": "轴力与弯矩叠加后的截面边缘正应力。",
+        "torsionalShearStress": "扭矩作用下的最大或等效剪应力。",
+        "vonMisesStress": "拉伸、弯曲和扭转组合下的强度校核指标。",
+        "axialDeformation": "轴向拉压引起的长度变化。",
+        "cantileverTipDeflection": "悬臂梁自由端集中力对应的端部挠度。",
+        "simplySupportedMidspanDeflection": "简支梁跨中集中力对应的最大挠度。",
+        "twistAngle": "圆轴或等效杆件两端相对扭转角。",
+        "bendingCurvature": "梁轴线弯曲程度。",
+        "axialRigidity": "杆件抵抗轴向拉压变形的能力。",
+        "bendingRigidity": "梁抵抗弯曲变形的能力。",
+        "temperatureStress": "两端约束时温度变化引起的热应力估算。",
+        "safetyFactor": "屈服强度与等效应力的比值。"
+      }
     },
     "critical": {
       "title": "危险截面识别",

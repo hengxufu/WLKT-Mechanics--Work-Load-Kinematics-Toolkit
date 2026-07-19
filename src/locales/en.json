@@ -207,6 +207,7 @@
     "views": {
       "templates": "Templates",
       "derivation": "Derivation",
+      "symbols": "Symbols",
       "combined": "Combined",
       "space3d": "3D FEM",
       "critical": "Critical"
@@ -256,6 +257,52 @@
       "free": "Free",
       "internalForceEquations": "Internal Force Summary",
       "span": "Span"
+    },
+    "symbolic": {
+      "parameters": "Symbol Parameters",
+      "symbol": "Symbol",
+      "value": "Value",
+      "description": "Meaning",
+      "parameterNote": "All parameters are stored and evaluated locally. Symbols keep their displayed case and also get a lowercase alias, so F and f resolve to the same value.",
+      "customTitle": "Custom Formula",
+      "customExpression": "Expression",
+      "customResult": "Result",
+      "customNote": "Supports +, -, *, /, ^, parentheses, and common functions such as sqrt(...). Example: F*L^3/(3*E*I).",
+      "library": "Mechanics Formula Library",
+      "libraryNote": "Formulas use base SI units. Changing the symbol table recalculates this table automatically.",
+      "invalid": "Invalid expression",
+      "formulas": {
+        "axialStress": "Axial normal stress",
+        "bendingStress": "Bending normal stress",
+        "combinedNormalStress": "Combined axial-bending stress",
+        "torsionalShearStress": "Torsional shear stress",
+        "vonMisesStress": "Equivalent stress",
+        "axialDeformation": "Axial deformation",
+        "cantileverTipDeflection": "Cantilever tip deflection",
+        "simplySupportedMidspanDeflection": "Simply supported midspan deflection",
+        "twistAngle": "Twist angle",
+        "bendingCurvature": "Bending curvature",
+        "axialRigidity": "Axial rigidity EA",
+        "bendingRigidity": "Bending rigidity EI",
+        "temperatureStress": "Restrained thermal stress",
+        "safetyFactor": "Safety factor"
+      },
+      "descriptions": {
+        "axialStress": "Average normal stress in an axial member.",
+        "bendingStress": "Section edge normal stress caused by bending.",
+        "combinedNormalStress": "Section edge normal stress from axial force plus bending moment.",
+        "torsionalShearStress": "Maximum or equivalent shear stress caused by torque.",
+        "vonMisesStress": "Strength check measure under axial, bending, and torsional action.",
+        "axialDeformation": "Length change caused by axial tension or compression.",
+        "cantileverTipDeflection": "Tip deflection of a cantilever under a free-end point force.",
+        "simplySupportedMidspanDeflection": "Maximum deflection of a simply supported beam under a midspan point force.",
+        "twistAngle": "Relative twist between two member ends.",
+        "bendingCurvature": "Curvature of the member axis.",
+        "axialRigidity": "Resistance to axial deformation.",
+        "bendingRigidity": "Resistance to bending deformation.",
+        "temperatureStress": "Thermal stress estimate for restrained ends.",
+        "safetyFactor": "Yield strength divided by equivalent stress."
+      }
     },
     "critical": {
       "title": "Critical Section Detection",

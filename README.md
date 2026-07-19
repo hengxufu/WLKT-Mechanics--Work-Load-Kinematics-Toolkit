@@ -146,6 +146,10 @@ http://127.0.0.1:4173/
 ### Windows 一键安装包
 
 仓库已内置 `.github/workflows/windows-installer.yml`。可以在 Actions 中手动运行 `Build Windows Installer`，也可以推送 `v*` 标签自动生成 Release 附件。
+仓库提供预发布版本
+```
+MACHANICS-OF-MATERIALS-main\release\desktop-current\WLKT-Mechanics-1.0.9-x64-Setup.exe
+```
 
 本地生成安装包：
 

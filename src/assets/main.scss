@@ -374,6 +374,48 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
   padding: 10px;
 }
 
+.education-symbol-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 59, 122, 0.1);
+  background: #f4f8fc;
+
+  h3 {
+    border-bottom: 0;
+  }
+}
+
+.education-symbol-table {
+  .v-field {
+    min-height: 32px;
+  }
+
+  .v-field__input {
+    min-height: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+  }
+}
+
+.education-symbol-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(0, 59, 122, 0.12);
+  border-radius: 6px;
+  background: #fff;
+  font-variant-numeric: tabular-nums;
+
+  strong {
+    color: var(--buaa-blue);
+  }
+}
+
 .education-3d-extremes {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

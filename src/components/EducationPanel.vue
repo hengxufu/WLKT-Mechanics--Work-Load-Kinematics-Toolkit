@@ -116,6 +116,112 @@
         </div>
       </section>
 
+      <section v-else-if="activeView === 'symbols'" class="education-panel__section">
+        <div class="education-panel__grid education-panel__grid--wide">
+          <div class="education-panel__block">
+            <div class="education-symbol-actions">
+              <h3>{{ $t('education.symbolic.parameters') }}</h3>
+              <div>
+                <v-btn density="compact" variant="text" icon="mdi-plus" @click="symbolStore.addParameter"></v-btn>
+                <v-btn density="compact" variant="text" icon="mdi-restore" @click="symbolStore.resetDefaults"></v-btn>
+              </div>
+            </div>
+            <table class="education-table education-symbol-table">
+              <thead>
+                <tr>
+                  <th>{{ $t('education.symbolic.symbol') }}</th>
+                  <th>{{ $t('education.symbolic.value') }}</th>
+                  <th>{{ $t('education.symbolic.description') }}</th>
+                  <th>{{ $t('common.actions') }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(parameter, index) in symbolStore.parameters" :key="`${parameter.symbol}-${index}`">
+                  <td>
+                    <v-text-field
+                      v-model="parameter.symbol"
+                      density="compact"
+                      variant="outlined"
+                      hide-details
+                      :rounded="0"
+                    ></v-text-field>
+                  </td>
+                  <td>
+                    <v-text-field
+                      v-model="parameter.value"
+                      density="compact"
+                      variant="outlined"
+                      hide-details
+                      :rounded="0"
+                      @keydown="checkNumber($event)"
+                    ></v-text-field>
+                  </td>
+                  <td>
+                    <v-text-field
+                      v-model="parameter.description"
+                      density="compact"
+                      variant="outlined"
+                      hide-details
+                      :rounded="0"
+                    ></v-text-field>
+                  </td>
+                  <td>
+                    <v-btn
+                      density="compact"
+                      variant="text"
+                      icon="mdi-delete-outline"
+                      @click="symbolStore.removeParameter(index)"
+                    ></v-btn>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="education-panel__note">{{ $t('education.symbolic.parameterNote') }}</p>
+          </div>
+
+          <div class="education-panel__block">
+            <h3>{{ $t('education.symbolic.customTitle') }}</h3>
+            <v-text-field
+              v-model="symbolicExpression"
+              density="compact"
+              variant="outlined"
+              hide-details="auto"
+              :label="$t('education.symbolic.customExpression')"
+              :rounded="0"
+              @keydown="checkNumber($event)"
+            ></v-text-field>
+            <div class="education-symbol-result">
+              <span>{{ $t('education.symbolic.customResult') }}</span>
+              <strong>{{ symbolicExpressionResult }}</strong>
+            </div>
+            <p class="education-panel__note">{{ $t('education.symbolic.customNote') }}</p>
+          </div>
+        </div>
+
+        <div class="education-panel__block">
+          <h3>{{ $t('education.symbolic.library') }}</h3>
+          <table class="education-table">
+            <thead>
+              <tr>
+                <th>{{ $t('education.combined.item') }}</th>
+                <th>{{ $t('education.combined.expression') }}</th>
+                <th>{{ $t('education.combined.value') }}</th>
+                <th>{{ $t('education.combined.meaning') }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in symbolicFormulaRows" :key="row.key" :class="{ 'education-table__warn': row.warn }">
+                <td>{{ row.label }}</td>
+                <td>{{ row.expression }}</td>
+                <td>{{ row.value }}</td>
+                <td>{{ row.meaning }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="education-panel__note">{{ $t('education.symbolic.libraryNote') }}</p>
+        </div>
+      </section>
+
       <section v-else-if="activeView === 'combined'" class="education-panel__section">
         <div class="education-panel__grid education-panel__grid--wide">
           <div class="education-panel__block">
@@ -290,10 +396,13 @@ import { eventBus, EventType } from '@/EventBus';
 import {
   analyzeSpaceFrame3DPostprocess,
   checkNumber,
+  evaluateSymbolicMechanicsExpression,
+  evaluateSymbolicMechanicsFormulas,
   formatScientificNumber,
   solveSpaceFrame3D,
   type CriticalLocation3D,
   type SpaceFrameModelInput,
+  type SymbolicMechanicsUnit,
 } from '@/utils';
 import {
   calculateCombinedDeformation,
@@ -314,30 +423,33 @@ const { t } = useI18n();
 const appStore = useAppStore();
 const projectStore = useProjectStore();
 const symbolStore = useSymbolStore();
-const activeView = ref<'templates' | 'derivation' | 'combined' | 'space3d' | 'critical'>('templates');
+const activeView = ref<'templates' | 'derivation' | 'symbols' | 'combined' | 'space3d' | 'critical'>('templates');
 
 const views = [
   { id: 'templates', label: 'education.views.templates', icon: 'mdi-view-grid-plus' },
   { id: 'derivation', label: 'education.views.derivation', icon: 'mdi-format-list-numbered' },
+  { id: 'symbols', label: 'education.views.symbols', icon: 'mdi-alpha-f-box-outline' },
   { id: 'combined', label: 'education.views.combined', icon: 'mdi-axis-arrow' },
   { id: 'space3d', label: 'education.views.space3d', icon: 'mdi-cube-scan' },
   { id: 'critical', label: 'education.views.critical', icon: 'mdi-shield-alert-outline' },
 ] as const;
 
 const combinedInputs = ref<Record<CombinedDeformationInputKey, string>>({
-  N: '10e3',
-  M: '2e3',
-  T: '1e3',
-  A: '2e-3',
-  W: '4e-5',
-  Wt: '8e-5',
-  I: '8e-6',
-  J: '1.6e-5',
-  E: '210e9',
-  G: '80e9',
-  L: '1.5',
-  fy: '235e6',
+  N: 'N',
+  M: 'M',
+  T: 'T',
+  A: 'A',
+  W: 'W',
+  Wt: 'Wt',
+  I: 'I',
+  J: 'J',
+  E: 'E',
+  G: 'G',
+  L: 'L',
+  fy: 'fy',
 });
+
+const symbolicExpression = ref('F*L^3/(3*E*I)');
 
 const combinedInputFields: Array<{
   key: CombinedDeformationInputKey;
@@ -408,6 +520,24 @@ const formatStrain = (value: number) => formatScientificNumber(value);
 const formatCurvature = (value: number) => `${formatScientificNumber(value)} 1/m`;
 const formatAngle = (value: number, valueDeg: number) =>
   `${formatScientificNumber(value)} rad (${formatScientificNumber(valueDeg)}°)`;
+
+const formatSymbolicValue = (value: number, unit: SymbolicMechanicsUnit) => {
+  if (unit === 'force') return formatForce(value);
+  if (unit === 'moment' || unit === 'stiffness') return formatMoment(value);
+  if (unit === 'pressure') return formatPressure(value);
+  if (unit === 'length') return formatLength(value);
+  if (unit === 'angle') return `${formatScientificNumber(value)} rad`;
+  if (unit === 'curvature') return formatCurvature(value);
+  return formatScientificNumber(value);
+};
+
+const symbolicExpressionResult = computed(() => {
+  try {
+    return formatScientificNumber(evaluateSymbolicMechanicsExpression(symbolicExpression.value, symbolStore.scope));
+  } catch {
+    return t('education.symbolic.invalid');
+  }
+});
 
 const supportText = (fixed: boolean) => (fixed ? t('education.derivation.fixed') : t('education.derivation.free'));
 
@@ -553,6 +683,21 @@ const space3dRows = computed(() =>
           : false,
   }))
 );
+
+const symbolicFormulaRows = computed(() => {
+  try {
+    return evaluateSymbolicMechanicsFormulas(symbolStore.scope).map((row) => ({
+      key: row.key,
+      label: t(row.labelKey),
+      expression: row.expression,
+      value: formatSymbolicValue(row.value, row.unit),
+      meaning: t(row.descriptionKey),
+      warn: row.key === 'safetyFactor' ? row.value < 1 : false,
+    }));
+  } catch {
+    return [];
+  }
+});
 
 const combinedAnalysis = computed<
   | { ok: true; result: CombinedDeformationResult }
