@@ -89,6 +89,23 @@ export {
   type SpacePostprocess3DResult,
 } from './spacePostprocess3D';
 export {
+  computeSolidTetra3DElasticMatrix,
+  computeSolidTetra3DElementStiffness,
+  computeSolidTetra3DGeometry,
+  computeSolidTetra3DStrainDisplacement,
+  computeVonMisesStress3D,
+  solveSolidTetra3D,
+  type SolidConstraint3D,
+  type SolidDof3D,
+  type SolidTetra3DResult,
+  type SolidTetraElementInput,
+  type SolidTetraElementResult,
+  type SolidTetraLoadInput,
+  type SolidTetraMaterialInput,
+  type SolidTetraModelInput,
+  type SolidTetraNodeInput,
+} from './solidTetra3D';
+export {
   calculateCombinedDeformation,
   type CombinedDeformationInputKey,
   type CombinedDeformationInputs,
