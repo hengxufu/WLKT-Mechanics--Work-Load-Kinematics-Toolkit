@@ -123,7 +123,7 @@ export const analyzeSpaceTruss3DPostprocess = (
     }
   }
 
-  const analysis = {
+  const analysis: SpacePostprocess3DResult = {
     maxDisplacement,
     maxAxialForce,
     maxShearForce: null,
@@ -133,7 +133,7 @@ export const analyzeSpaceTruss3DPostprocess = (
     maxShearStress: null,
     minSafetyFactor,
     criticalLocations: [],
-  } satisfies SpacePostprocess3DResult;
+  };
 
   analysis.criticalLocations = collectResult(analysis);
   return analysis;

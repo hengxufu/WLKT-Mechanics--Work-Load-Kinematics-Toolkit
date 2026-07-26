@@ -5,10 +5,15 @@
         <Widget v-for="widget of layoutStore.widgets" :key="widget.title" :widget="widget" />
       </TransitionGroup>
     </div>
-    <HelloWorld class="fill-height" style="min-height: 0" />
-    <QuickWorkflow v-if="!appStore.inViewerMode" />
-    <div class="resizer" data-direction="vertical"></div>
-    <BottomBar v-if="!appStore.inViewerMode" :height="computedBottomBarHeight" class="d-block" />
+    <AnalysisViewportSwitch v-if="!appStore.inViewerMode" />
+    <HelloWorld class="editor-shell__workspace" />
+    <QuickWorkflow v-if="!appStore.inViewerMode && isPlanarAnalysis" />
+    <div v-if="isPlanarAnalysis" class="resizer" data-direction="vertical"></div>
+    <BottomBar
+      v-if="!appStore.inViewerMode && isPlanarAnalysis"
+      :height="computedBottomBarHeight"
+      class="d-block"
+    />
   </div>
 </template>
 
@@ -17,15 +22,19 @@ import HelloWorld from '@/components/HelloWorld.vue';
 import BottomBar from '@/components/BottomBar.vue';
 import Widget from '@/components/Widget.vue';
 import QuickWorkflow from '@/components/QuickWorkflow.vue';
+import AnalysisViewportSwitch from '@/components/AnalysisViewportSwitch.vue';
 
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useAppStore } from '@/store/app';
 import { useProjectStore } from '@/store/project';
 import { useLayoutStore } from '@/store/layout';
+import { useWorkspaceStore } from '@/store/workspace';
 
 const appStore = useAppStore();
 const projectStore = useProjectStore();
 const layoutStore = useLayoutStore();
+const workspaceStore = useWorkspaceStore();
+const isPlanarAnalysis = computed(() => workspaceStore.analysisDimension === '2d');
 
 const drag = ref(false);
 
@@ -72,6 +81,11 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss">
+.editor-shell__workspace {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 .resizer[data-direction='horizontal'] {
   background-color: #cbd5e0;
   cursor: ew-resize;

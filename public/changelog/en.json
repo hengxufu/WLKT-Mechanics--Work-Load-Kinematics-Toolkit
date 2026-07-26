@@ -1,6 +1,19 @@
 {
   "releases": [
     {
+      "version": "2.0.0",
+      "title": "Unified 2D/3D Workspace and Local Worker Solver",
+      "date": "July 26, 2026",
+      "highlights": [
+        "Added independent 2D/3D analysis and 2D/3D/split viewport controls with shared model selection.",
+        "Moved unified space truss and space frame solving into a local Web Worker with visible CPU fallback.",
+        "Added real WebGPU capability detection without claiming that the experimental GPU numerical kernel is active.",
+        "Completed space-frame inputs for six constraints, nodal moments, E/G materials, and A/Iy/Iz/J sections."
+      ],
+      "tag": "Latest",
+      "media": []
+    },
+    {
       "version": "1.0.6",
       "title": "Undo/Redo Rework",
       "date": "May 21, 2026",
@@ -8,7 +21,6 @@
         "Undo and redo have been reworked to behave more consistently across the app.",
         "Copy, paste, and delete operations should now be tracked properly and undo as expected."
       ],
-      "tag": "Latest",
       "media": []
     },
     {

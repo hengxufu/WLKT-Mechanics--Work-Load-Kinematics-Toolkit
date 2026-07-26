@@ -17,6 +17,11 @@ export const useViewerStore = defineStore(
     const showBendingMoment = ref(true);
     const showDeformedShape = ref(true);
     const showReactions = ref(true);
+    const showLocalAxes = ref(false);
+    const showDeformedOverlay = ref(true);
+    const showDistributedLoads = ref(true);
+    const showMoments = ref(true);
+    const threeDResultMode = ref<'model' | 'normal' | 'shear' | 'moment' | 'displacement'>('model');
 
     const colors = reactive({
       normalForce: '#2222ff', // used
@@ -52,6 +57,11 @@ export const useViewerStore = defineStore(
       showBendingMoment.value = true;
       showDeformedShape.value = true;
       showReactions.value = true;
+      showLocalAxes.value = false;
+      showDeformedOverlay.value = true;
+      showDistributedLoads.value = true;
+      showMoments.value = true;
+      threeDResultMode.value = 'model';
 
       colors.normalForce = '#2222ff';
       colors.shearForce = '#00af00';
@@ -85,6 +95,11 @@ export const useViewerStore = defineStore(
       showBendingMoment,
       showDeformedShape,
       showReactions,
+      showLocalAxes,
+      showDeformedOverlay,
+      showDistributedLoads,
+      showMoments,
+      threeDResultMode,
 
       showGrid,
       snapToGrid,

@@ -1,6 +1,11 @@
 {
+  "$vuetify": {
+    "close": "关闭"
+  },
   "tabView": {
+    "workspace": "结构工作区",
     "viewer": "视图",
+    "spaceAnalysis": "空间分析",
     "settings": "设置",
     "results": "结果"
   },

@@ -234,6 +234,14 @@ export const solveSolidTetra3D = (model: SolidTetraModelInput): SolidTetra3DResu
     });
   });
 
+  const resolveDofIndex = (nodeLabel: string, dof: (typeof dofs)[number]) => {
+    const index = dofIndex.get(`${nodeLabel}:${dof}`);
+    if (index === undefined) {
+      throw new Error(`Solid tetra degree of freedom "${nodeLabel}:${dof}" was not found.`);
+    }
+    return index;
+  };
+
   const resolveNodeCoords = (label: string): [number, number, number] => {
     const node = nodeMap.get(label);
     if (!node) throw new Error(`Solid tetra node "${label}" was not found.`);
@@ -272,13 +280,8 @@ export const solveSolidTetra3D = (model: SolidTetraModelInput): SolidTetra3DResu
     const coords = element.nodes.map(resolveNodeCoords);
     const { E, nu, yieldStrength } = getElementProperties(element);
     const elementResult = computeSolidTetra3DElementStiffness(coords, E, nu);
-    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => dofIndex.get(`${nodeLabel}:${dof}`)));
-
-    if (location.some((index) => index === undefined)) {
-      throw new Error(`Solid tetra element "${element.label}" references an unknown node.`);
-    }
-
-    globalK.addSubmatrix(location as number[], elementResult.stiffness);
+    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => resolveDofIndex(nodeLabel, dof)));
+    globalK.addSubmatrix(location, elementResult.stiffness);
     elementState.set(element.label, {
       volume: elementResult.volume,
       centroid: elementResult.centroid,
@@ -292,7 +295,7 @@ export const solveSolidTetra3D = (model: SolidTetraModelInput): SolidTetra3DResu
     if (!nodeMap.has(load.node)) throw new Error(`Solid tetra load references unknown node "${load.node}".`);
 
     dofs.forEach((dof, index) => {
-      force[dofIndex.get(`${load.node}:${dof}`)] += valueOf(load.values[index], symbols);
+      force[resolveDofIndex(load.node, dof)] += valueOf(load.values[index], symbols);
     });
   }
 
@@ -303,7 +306,7 @@ export const solveSolidTetra3D = (model: SolidTetraModelInput): SolidTetra3DResu
       const constraint = node.constraints?.[dof];
       if (constraint === undefined) return;
 
-      const index = dofIndex.get(`${node.label}:${dof}`);
+      const index = resolveDofIndex(node.label, dof);
       constrained.add(index);
       displacement[index] = constraint === true ? 0 : valueOf(constraint, symbols);
     });
@@ -329,7 +332,7 @@ export const solveSolidTetra3D = (model: SolidTetraModelInput): SolidTetra3DResu
   let maxDisplacement = { node: null as string | null, value: 0 };
 
   for (const node of model.nodes) {
-    const indices = dofs.map((dof) => dofIndex.get(`${node.label}:${dof}`));
+    const indices = dofs.map((dof) => resolveDofIndex(node.label, dof));
     const nodeDisplacement = indices.map((index) => displacement[index]) as [number, number, number];
     const nodeReaction = indices.map((index) => (constrained.has(index) ? residual[index] : 0)) as [
       number,
@@ -351,7 +354,10 @@ export const solveSolidTetra3D = (model: SolidTetraModelInput): SolidTetra3DResu
 
   const elements = model.elements.map((element) => {
     const state = elementState.get(element.label);
-    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => dofIndex.get(`${nodeLabel}:${dof}`))) as number[];
+    if (!state) {
+      throw new Error(`Solid tetra element state "${element.label}" was not assembled.`);
+    }
+    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => resolveDofIndex(nodeLabel, dof)));
     const elementDisplacement = location.map((index) => displacement[index]);
     const strain = matVecDense(state.strainDisplacement, elementDisplacement) as [
       number,

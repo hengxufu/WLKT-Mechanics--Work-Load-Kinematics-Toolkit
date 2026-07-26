@@ -2,9 +2,7 @@
 import { defineStore } from 'pinia';
 import { reactive, ref, markRaw, type Ref, watch, Raw, Component, computed, nextTick } from 'vue';
 
-import SVGViewer from '../components/SVGViewer.vue';
-// import Results from "../components/Results.vue";
-import Settings from '../components/settings/Settings.vue';
+import StructuralWorkspace from '../components/StructuralWorkspace.vue';
 import { MouseMode } from '@/mouse';
 import { resolveLocale, setLocale, toIntlLocale } from '@/plugins/i18n';
 import { openModal } from 'jenesius-vue-modal';
@@ -159,7 +157,7 @@ export const useAppStore = defineStore(
 
     const zooming = ref(false);
 
-    const tab = ref(null);
+    const tab = ref(0);
     const bottomBarTab = ref(null);
 
     const mouseMode = ref<MouseMode>(MouseMode.NONE);
@@ -173,12 +171,14 @@ export const useAppStore = defineStore(
         closable: boolean;
       }[]
     > = ref([
-      { title: 'tabView.viewer', component: markRaw(SVGViewer), props: { id: 'viewer' }, closable: false },
-      //{ title: "tabView.results", component: markRaw(Results), props: {}, closable: true },
-      { title: 'tabView.settings', component: markRaw(Settings), props: { id: 'settings' }, closable: true },
+      { title: 'tabView.workspace', component: markRaw(StructuralWorkspace), props: { id: 'workspace' }, closable: false },
     ]);
 
-    const openedTab = computed(() => tabs.value[tab.value] || null);
+    watch(tab, (value) => {
+      if (!Number.isInteger(value) || value < 0 || value >= tabs.value.length) tab.value = 0;
+    });
+
+    const openedTab = computed(() => tabs.value[tab.value] || tabs.value[0] || null);
 
     const openSettings = () => {
       openModal(SettingsModal);

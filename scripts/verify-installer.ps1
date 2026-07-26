@@ -15,7 +15,7 @@ if (-not (Test-Path -LiteralPath $ChecksumFile)) {
 }
 
 $failed = $false
-$lines = Get-Content -LiteralPath $ChecksumFile
+$lines = Get-Content -LiteralPath $ChecksumFile -Encoding UTF8
 
 foreach ($line in $lines) {
   if ([string]::IsNullOrWhiteSpace($line)) {

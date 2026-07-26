@@ -270,6 +270,14 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
     });
   });
 
+  const resolveDofIndex = (nodeLabel: string, dof: (typeof dofs)[number]) => {
+    const index = dofIndex.get(`${nodeLabel}:${dof}`);
+    if (index === undefined) {
+      throw new Error(`Space frame degree of freedom "${nodeLabel}:${dof}" was not found.`);
+    }
+    return index;
+  };
+
   const resolveNodeCoords = (label: string): [number, number, number] => {
     const node = nodeMap.get(label);
     if (!node) throw new Error(`Space frame node "${label}" was not found.`);
@@ -326,13 +334,8 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
     const localStiffness = computeSpaceFrame3DLocalStiffness({ length, ...props });
     const transformation = computeSpaceFrame3DTransformation(localAxes);
     const stiffness = transformSpaceFrame3DStiffnessToGlobal(localStiffness, transformation);
-    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => dofIndex.get(`${nodeLabel}:${dof}`)));
-
-    if (location.some((index) => index === undefined)) {
-      throw new Error(`Space frame element "${element.label}" references an unknown node.`);
-    }
-
-    globalK.addSubmatrix(location as number[], stiffness);
+    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => resolveDofIndex(nodeLabel, dof)));
+    globalK.addSubmatrix(location, stiffness);
     elementState.set(element.label, {
       length,
       localAxes,
@@ -351,7 +354,7 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
     if (!nodeMap.has(load.node)) throw new Error(`Space frame load references unknown node "${load.node}".`);
 
     dofs.forEach((dof, index) => {
-      force[dofIndex.get(`${load.node}:${dof}`)] += valueOf(load.values[index], symbols);
+      force[resolveDofIndex(load.node, dof)] += valueOf(load.values[index], symbols);
     });
   }
 
@@ -362,7 +365,7 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
       const constraint = node.constraints?.[dof];
       if (constraint === undefined) return;
 
-      const index = dofIndex.get(`${node.label}:${dof}`);
+      const index = resolveDofIndex(node.label, dof);
       constrained.add(index);
       displacement[index] = constraint === true ? 0 : valueOf(constraint, symbols);
     });
@@ -388,7 +391,7 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
   let maxDisplacement = { node: null as string | null, value: 0 };
 
   for (const node of model.nodes) {
-    const indices = dofs.map((dof) => dofIndex.get(`${node.label}:${dof}`));
+    const indices = dofs.map((dof) => resolveDofIndex(node.label, dof));
     const nodeDisplacement = indices.map((index) => displacement[index]) as [number, number, number, number, number, number];
     const nodeReaction = indices.map((index) => (constrained.has(index) ? residual[index] : 0)) as [
       number,
@@ -410,7 +413,10 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
 
   const elements = model.elements.map((element) => {
     const state = elementState.get(element.label);
-    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => dofIndex.get(`${nodeLabel}:${dof}`))) as number[];
+    if (!state) {
+      throw new Error(`Space frame element state "${element.label}" was not assembled.`);
+    }
+    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => resolveDofIndex(nodeLabel, dof)));
     const globalElementDisplacement = location.map((index) => displacement[index]);
     const localElementDisplacement = matVecDense(state.transformation, globalElementDisplacement);
     const localEndForceVector = matVecDense(state.localStiffness, localElementDisplacement);

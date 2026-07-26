@@ -134,6 +134,14 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
     });
   });
 
+  const resolveDofIndex = (nodeLabel: string, dof: (typeof dofs)[number]) => {
+    const index = dofIndex.get(`${nodeLabel}:${dof}`);
+    if (index === undefined) {
+      throw new Error(`Space truss degree of freedom "${nodeLabel}:${dof}" was not found.`);
+    }
+    return index;
+  };
+
   const resolveNodeCoords = (label: string): [number, number, number] => {
     const node = nodeMap.get(label);
     if (!node) throw new Error(`Space truss node "${label}" was not found.`);
@@ -174,13 +182,8 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
     const end = resolveNodeCoords(element.nodes[1]);
     const { E, A, yieldStrength } = getElementProperties(element);
     const { length, direction, stiffness } = computeSpaceTruss3DElementStiffness(start, end, E, A);
-    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => dofIndex.get(`${nodeLabel}:${dof}`)));
-
-    if (location.some((index) => index === undefined)) {
-      throw new Error(`Space truss element "${element.label}" references an unknown node.`);
-    }
-
-    globalK.addSubmatrix(location as number[], stiffness);
+    const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => resolveDofIndex(nodeLabel, dof)));
+    globalK.addSubmatrix(location, stiffness);
     elementGeometry.set(element.label, { length, direction, E, A, yieldStrength });
   }
 
@@ -188,7 +191,7 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
     if (!nodeMap.has(load.node)) throw new Error(`Space truss load references unknown node "${load.node}".`);
 
     dofs.forEach((dof, index) => {
-      force[dofIndex.get(`${load.node}:${dof}`)] += valueOf(load.values[index], symbols);
+      force[resolveDofIndex(load.node, dof)] += valueOf(load.values[index], symbols);
     });
   }
 
@@ -199,7 +202,7 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
       const constraint = node.constraints?.[dof];
       if (constraint === undefined) return;
 
-      const index = dofIndex.get(`${node.label}:${dof}`);
+      const index = resolveDofIndex(node.label, dof);
       constrained.add(index);
       displacement[index] = constraint === true ? 0 : valueOf(constraint, symbols);
     });
@@ -225,7 +228,7 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
   let maxDisplacement = { node: null as string | null, value: 0 };
 
   for (const node of model.nodes) {
-    const indices = dofs.map((dof) => dofIndex.get(`${node.label}:${dof}`));
+    const indices = dofs.map((dof) => resolveDofIndex(node.label, dof));
     const nodeDisplacement = indices.map((index) => displacement[index]) as [number, number, number];
     const nodeReaction = indices.map((index) => (constrained.has(index) ? residual[index] : 0)) as [
       number,
@@ -244,6 +247,9 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
 
   const elements = model.elements.map((element) => {
     const geometry = elementGeometry.get(element.label);
+    if (!geometry) {
+      throw new Error(`Space truss element state "${element.label}" was not assembled.`);
+    }
     const start = element.nodes[0];
     const end = element.nodes[1];
     const u1 = displacements[start];

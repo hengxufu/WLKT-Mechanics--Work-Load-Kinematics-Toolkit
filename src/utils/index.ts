@@ -38,6 +38,35 @@ export { loadXmlFile } from './loadXmlFile';
 
 export { formatScientificNumber } from './formatScientificNumber';
 export {
+  addVector3,
+  calculateAutoDeformationScale,
+  createMemberLocalAxes3D,
+  createStructureSceneModel3D,
+  crossVector3,
+  dotVector3,
+  globalToLocalVector3,
+  legacyCoordsToNode3D,
+  legacyVectorToGlobal3D,
+  localToGlobalVector3,
+  normalizeVector3,
+  scaleVector3,
+  subtractVector3,
+  vector3,
+  vector3Length,
+} from './model3d';
+export type {
+  DistributedLoad3D,
+  Member3D,
+  MemberForce3D,
+  MemberLocalAxes3D,
+  NodalLoad3D,
+  Node3D,
+  NodeConstraint3D,
+  NodeDisplacement3D,
+  StructureSceneModel3D,
+  Vector3Data,
+} from '@/types/model3d';
+export {
   DenseGlobalMatrix,
   SparseAssemblyMatrix,
   createGlobalMatrix,

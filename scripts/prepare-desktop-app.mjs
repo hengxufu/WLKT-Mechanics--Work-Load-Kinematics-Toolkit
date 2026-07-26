@@ -5,6 +5,7 @@ const repoRoot = process.cwd();
 const stageRoot = resolve(repoRoot, '.desktop-app');
 const rootPackage = JSON.parse(readFileSync(resolve(repoRoot, 'package.json'), 'utf8'));
 const electronPackagePath = resolve(repoRoot, 'node_modules', 'electron', 'package.json');
+const localElectronDistPath = resolve(repoRoot, 'node_modules', 'electron', 'dist');
 const electronVersion = existsSync(electronPackagePath)
   ? JSON.parse(readFileSync(electronPackagePath, 'utf8')).version
   : '43.0.0';
@@ -43,6 +44,7 @@ const stagedPackage = {
     productName: '拉压弯扭大师',
     copyright: 'Copyright © 2026 拉压弯扭大师',
     electronVersion,
+    electronDist: existsSync(localElectronDistPath) ? localElectronDistPath : undefined,
     directories: {
       output: '../release/desktop',
       buildResources: 'public',

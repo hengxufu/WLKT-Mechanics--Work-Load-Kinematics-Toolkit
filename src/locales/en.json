@@ -1,6 +1,11 @@
 {
+  "$vuetify": {
+    "close": "Close"
+  },
   "tabView": {
+    "workspace": "Structural Workspace",
     "viewer": "Viewer",
+    "spaceAnalysis": "Spatial Analysis",
     "settings": "Settings",
     "results": "Results"
   },

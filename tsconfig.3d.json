@@ -1,0 +1,37 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "types": ["node", "vitest/globals", "pinia-plugin-persistedstate"],
+    "noEmit": true
+  },
+  "include": [
+    "src/types/computeBackend.ts",
+    "src/types/model3d.ts",
+    "src/types/structuralAnalysis.ts",
+    "src/types/webgpu.d.ts",
+    "src/types/workspace.ts",
+    "src/utils/expression.ts",
+    "src/utils/computeBackends.ts",
+    "src/utils/femLinearAlgebra.ts",
+    "src/utils/model3d.ts",
+    "src/utils/modelDimension.ts",
+    "src/utils/spaceTruss3D.ts",
+    "src/utils/spaceFrame3D.ts",
+    "src/utils/solidTetra3D.ts",
+    "src/utils/spacePostprocess3D.ts",
+    "src/utils/structuralModel.ts",
+    "src/utils/structuralAdapters.ts",
+    "src/utils/webgpuCapability.ts",
+    "src/store/solver.ts",
+    "src/store/structural.ts",
+    "src/workers/solverWorkerProtocol.ts",
+    "src/workers/structuralSolver.worker.ts",
+    "src/tests/model3d.test.ts",
+    "src/tests/computeBackends.test.ts",
+    "src/tests/modelDimension.test.ts",
+    "src/tests/structuralModel.test.ts",
+    "src/tests/spaceTrussAdapter.test.ts"
+  ],
+  "exclude": ["node_modules"]
+}
