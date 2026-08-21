@@ -15,17 +15,20 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref, computed, watch } from 'vue';
 import { DofID } from 'ts-fem';
-import { resolveLocale, setLocale, availableLocales, toIntlLocale } from './plugins/i18n';
+import { resolveLocale, setLocale, availableLocales } from './plugins/i18n';
+import { useTheme } from 'vuetify';
 
 import Welcome from '@/components/dialogs/Welcome.vue';
 import Share from '@/components/dialogs/Share.vue';
 import Changelog from '@/components/dialogs/Changelog.vue';
 import Editor from '@/views/Editor.vue';
 import Dialogs from '@/components/Dialogs.vue';
+import AppHeader from '@/components/layout/AppHeader.vue';
 import { useProjectStore } from './store/project';
 import { useAppStore } from './store/app';
+import { useUiStore } from './store/ui';
 
 import { VOnboardingWrapper, VOnboardingStep } from 'v-onboarding';
 import 'v-onboarding/dist/style.css';
@@ -39,7 +42,7 @@ const viewerStore = useViewerStore();
 const onboardingWrapper = ref(null);
 provide('onboardingWrapper', onboardingWrapper);
 
-const file = ref(null);
+const file = ref<HTMLInputElement | null>(null);
 
 const steps = computed(() => [
   {
@@ -109,6 +112,17 @@ onMounted(() => {
 });
 
 const appStore = useAppStore();
+const uiStore = useUiStore();
+const vuetifyTheme = useTheme();
+
+watch(
+  () => uiStore.theme,
+  (theme) => {
+    vuetifyTheme.change(theme);
+    document.documentElement.dataset.caeTheme = theme;
+  },
+  { immediate: true }
+);
 
 onMounted(() => {
   const solver = useProjectStore().solver;
@@ -227,6 +241,18 @@ const clearMesh = (clearMaterials = false, clearCrossSects = false) => {
   undoRedoManager.clearHistory();
 };
 
+const confirmClearMesh = () => {
+  openModal(Confirmation, {
+    title: t('confirmation.clearMesh.title'),
+    message: t('confirmation.clearMesh.message'),
+    success: (params) => clearMesh(params.checkboxes[0].value, params.checkboxes[1].value),
+    checkboxes: [
+      { label: t('confirmation.clearMesh.materials'), value: false },
+      { label: t('confirmation.clearMesh.crossSections'), value: false },
+    ],
+  });
+};
+
 const shareMesh = () => {
   openModal(Share);
 };
@@ -305,6 +331,8 @@ const saveProject = () => {
   download('project.json', JSON.stringify(exportJSON()));
 };
 
+const requestOpenProject = () => file.value?.click();
+
 const app_version = currentAppVersion;
 const app_released = APP_RELEASED;
 const app_commit = APP_COMMIT;
@@ -312,7 +340,7 @@ const localDocsUrl = `${import.meta.env.BASE_URL}docs/local-app.html`;
 </script>
 
 <template>
-  <v-app @drop.prevent="onDrop">
+  <v-app :data-cae-theme="uiStore.theme" @drop.prevent="onDrop">
     <VOnboardingWrapper
       ref="onboardingWrapper"
       :steps="steps"
@@ -362,113 +390,17 @@ const localDocsUrl = `${import.meta.env.BASE_URL}docs/local-app.html`;
       </template>
     </VOnboardingWrapper>
 
-    <v-app-bar v-if="!appStore.inViewerMode" clipped-lefs clipped-right app color="primary" density="compact" class="app-bar-buaa">
-      <v-app-bar-nav-icon @click="appStore.drawerOpen = !appStore.drawerOpen"></v-app-bar-nav-icon>
+    <AppHeader
+      v-if="!appStore.inViewerMode"
+      :docs-url="localDocsUrl"
+      @open-project="requestOpenProject"
+      @save-project="saveProject"
+      @share-project="shareMesh"
+      @clear-project="confirmClearMesh"
+      @changelog="openChangelog"
+    />
 
-      <div class="app-brand ml-2" style="user-select: none">
-        <span class="app-brand__mark">BUAA</span>
-        <span class="app-brand__name">拉压弯扭大师</span>
-        <span class="app-brand__sub d-none d-md-inline">{{ $t('app.subtitle') }}</span>
-      </div>
-
-      <v-btn
-        class="d-none d-sm-inline-flex ml-4"
-        variant="tonal"
-        @click="
-          openModal(Confirmation, {
-            title: t('confirmation.clearMesh.title'),
-            message: t('confirmation.clearMesh.message'),
-            success: (params) => clearMesh(params.checkboxes[0].value, params.checkboxes[1].value),
-            checkboxes: [
-              { label: t('confirmation.clearMesh.materials'), value: false },
-              { label: t('confirmation.clearMesh.crossSections'), value: false },
-            ],
-          })
-        "
-      >
-        <v-icon>mdi-delete-empty</v-icon>
-        <span>{{ $t('common.clearMesh') }}</span>
-      </v-btn>
-
-      <v-btn class="d-none d-sm-inline-flex" @click="shareMesh">
-        <v-icon>mdi-share</v-icon> {{ $t('common.shareModel') }}
-      </v-btn>
-
-      <v-spacer></v-spacer>
-
-      <v-btn class="d-none d-sm-inline-flex" variant="tonal" @click="openChangelog">
-        <v-icon class="mr-1">mdi-history</v-icon>
-        <span>{{ $t('common.whatisnew') }}</span>
-      </v-btn>
-
-      <v-btn class="d-inline-flex" variant="tonal" :href="localDocsUrl" target="_blank">
-        {{ $t('common.documentation') }}
-        <v-icon class="ml-1">mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-navigation-drawer v-model="appStore.drawerOpen" temporary class="app-drawer">
-      <!-- <v-list-item prepend-avatar="https://randomuser.me/api/portraits/women/9.jpg" title="Jane Doe"></v-list-item> -->
-
-      <div class="drawer-brand">
-        <div class="drawer-brand__mark">BUAA</div>
-        <div>
-          <div class="drawer-brand__title">拉压弯扭大师</div>
-          <div class="drawer-brand__subtitle">{{ $t('app.subtitle') }}</div>
-        </div>
-      </div>
-
-      <v-divider></v-divider>
-
-      <v-list density="compact" nav>
-        <v-list-item
-          prepend-icon="mdi-folder-open-outline"
-          :title="$t('common.openProject')"
-          value="home"
-          @click="$refs.file.click()"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-folder-arrow-down-outline"
-          :title="$t('common.saveProject')"
-          value="about"
-          @click="saveProject"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-share"
-          :title="$t('common.shareModel')"
-          value="share"
-          @click="shareMesh"
-        ></v-list-item>
-        <v-list-item
-          prepend-icon="mdi-delete-empty"
-          :title="$t('common.clearMesh')"
-          value="clear"
-          @click="
-            openModal(Confirmation, {
-              title: t('confirmation.clearMesh.title'),
-              message: t('confirmation.clearMesh.message'),
-              success: (params) => clearMesh(params.checkboxes[0].value, params.checkboxes[1].value),
-              checkboxes: [
-                { label: t('confirmation.clearMesh.materials'), value: false },
-                { label: t('confirmation.clearMesh.crossSections'), value: false },
-              ],
-            })
-          "
-        ></v-list-item>
-      </v-list>
-      <v-divider />
-      <div class="pa-3 text-grey-darken-2" style="font-size: 12px">
-        v{{ app_version }}<br />{{ new Date(app_released).toLocaleDateString(toIntlLocale(appStore.locale)) }}
-        {{ new Date(app_released).toLocaleTimeString(toIntlLocale(appStore.locale)) }}<br />
-        <span style="font-size: 10px">{{ app_commit }}</span>
-      </div>
-    </v-navigation-drawer>
-
-    <v-navigation-drawer v-model="appStore.rightDrawerOpen" location="right" temporary :scrim="false">
-      -
-    </v-navigation-drawer>
-
-    <v-main>
+    <v-main class="cae-main">
       <Editor />
     </v-main>
 

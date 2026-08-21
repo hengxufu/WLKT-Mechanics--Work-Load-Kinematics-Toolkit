@@ -17,17 +17,34 @@ import { useI18n } from 'vue-i18n';
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
+    defaultTheme: 'dark',
     themes: {
       light: {
+        dark: false,
         colors: {
-          primary: '#003b7a',
-          secondary: '#eef3f8',
-          accent: '#c7952d',
-          surface: '#ffffff',
-          background: '#f4f7fb',
-          info: '#2f80c9',
-          warning: '#c7952d',
-          success: '#14745f',
+          primary: '#0f60a8',
+          secondary: '#e4e9ef',
+          accent: '#b67b16',
+          surface: '#f5f7f9',
+          background: '#e9edf2',
+          info: '#2f7fbd',
+          warning: '#b67b16',
+          success: '#287c5d',
+          error: '#c74842',
+        },
+      },
+      dark: {
+        dark: true,
+        colors: {
+          primary: '#3b8bd9',
+          secondary: '#303640',
+          accent: '#e0ad4f',
+          surface: '#202329',
+          background: '#17191d',
+          info: '#69bce7',
+          warning: '#e0ad4f',
+          success: '#56b58a',
+          error: '#eb6a63',
         },
       },
     },

@@ -4,13 +4,17 @@ import ComputeBackendPanel from './ComputeBackendPanel.vue';
 import StructuralViewportHost from './StructuralViewportHost.vue';
 import { useSolverStore } from '@/store/solver';
 import { useStructuralStore } from '@/store/structural';
+import { useUiStore } from '@/store/ui';
 import { emptyConstraints } from '@/utils/structuralModel';
 import type { AnalysisModelType, StructuralDof } from '@/types/structuralAnalysis';
 
-defineProps<{ id: string }>();
+const props = withDefaults(defineProps<{ id: string; inspectorOnly?: boolean }>(), {
+  inspectorOnly: false,
+});
 
 const structuralStore = useStructuralStore();
 const solverStore = useSolverStore();
+const uiStore = useUiStore();
 const activePanel = ref<string[]>(['model', 'nodes', 'members', 'loads']);
 const uiError = ref('');
 
@@ -245,7 +249,7 @@ const solve = async () => {
 </script>
 
 <template>
-  <div class="space-workbench">
+  <div class="space-workbench" :class="{ 'space-workbench--inspector': props.inspectorOnly }">
     <aside class="space-workbench__editor">
       <header class="space-workbench__header">
         <div>
@@ -255,6 +259,7 @@ const solve = async () => {
         <div class="space-workbench__actions">
           <v-btn icon="mdi-flask-outline" size="small" variant="text" title="载入校核模型" @click="structuralStore.loadSpaceTrussVerificationModel" />
           <v-btn icon="mdi-delete-outline" size="small" variant="text" title="清空空间模型" @click="structuralStore.clear" />
+          <v-btn v-if="props.inspectorOnly" icon="mdi-chevron-double-right" size="small" variant="text" title="折叠属性面板" @click="uiStore.rightSidebarCollapsed = true" />
         </div>
       </header>
 
@@ -511,7 +516,7 @@ const solve = async () => {
       </div>
     </aside>
 
-    <main class="space-workbench__viewer">
+    <main v-if="!props.inspectorOnly" class="space-workbench__viewer">
       <StructuralViewportHost id="space-analysis-viewer" />
       <div v-if="structuralStore.model.nodes.length === 0" class="empty-viewer">
         <v-icon icon="mdi-vector-polyline" size="34" />
@@ -531,13 +536,47 @@ const solve = async () => {
   background: rgb(var(--v-theme-surface));
 }
 
+.space-workbench--inspector {
+  display: block;
+  height: 100%;
+  background: var(--bg-panel);
+}
+
+.space-workbench--inspector .space-workbench__editor {
+  width: 100%;
+  height: 100%;
+  border-right: 0;
+  background: var(--bg-panel);
+}
+
+.space-workbench--inspector .space-workbench__header {
+  min-height: 56px;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border-strong);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+.space-workbench--inspector .space-workbench__scroll { padding: 10px; }
+.space-workbench--inspector .space-workbench__header .text-subtitle-1 { font-size: 14px !important; }
+.space-workbench--inspector .space-workbench__header .text-caption { color: var(--text-muted) !important; font-size: 10px !important; }
+.space-workbench--inspector :deep(.v-expansion-panel) { background: var(--bg-panel); color: var(--text-primary); }
+.space-workbench--inspector :deep(.v-expansion-panel-title) { min-height: 38px; padding: 0 10px; font-size: 12px; }
+.space-workbench--inspector :deep(.v-expansion-panel-text__wrapper) { padding: 9px 8px 11px; }
+.space-workbench--inspector :deep(.v-field) { background: var(--bg-input); font-size: 11px; }
+.space-workbench--inspector :deep(input) { font-family: var(--font-mono); font-size: 11px; }
+.space-workbench--inspector :deep(.v-label) { font-size: 11px; letter-spacing: 0; }
+.space-workbench--inspector :deep(.v-table) { background: var(--bg-panel); color: var(--text-secondary); }
+.space-workbench--inspector :deep(.v-table th) { background: var(--bg-toolbar) !important; color: var(--text-secondary); }
+.space-workbench--inspector :deep(.v-table td) { background: var(--bg-panel) !important; color: var(--text-secondary); }
+.space-workbench--inspector :deep(.v-table tr:hover td) { background: var(--bg-hover) !important; }
+
 .space-workbench__editor {
   display: flex;
   flex-direction: column;
   min-width: 0;
   min-height: 0;
-  border-right: 1px solid rgba(0, 53, 122, 0.16);
-  background: rgb(var(--v-theme-background));
+  border-right: 1px solid var(--border-default);
+  background: var(--bg-panel);
 }
 
 .space-workbench__header {
@@ -546,7 +585,7 @@ const solve = async () => {
   justify-content: space-between;
   min-height: 58px;
   padding: 8px 14px;
-  border-bottom: 3px solid #0068b7;
+  border-bottom: 1px solid var(--border-strong);
 }
 
 .space-workbench__actions,
@@ -590,20 +629,20 @@ const solve = async () => {
   min-width: 28px;
   padding: 2px 6px;
   border-radius: 4px;
-  background: rgba(0, 104, 183, 0.1);
-  color: #005a9c;
+  background: var(--bg-selected);
+  color: var(--accent-strong);
   font-size: 11px;
   text-align: center;
 }
 
 .data-table {
-  border: 1px solid rgba(0, 53, 122, 0.12);
+  border: 1px solid var(--border-default);
   font-size: 12px;
 }
 
 .data-table th {
   white-space: nowrap;
-  background: rgba(0, 104, 183, 0.06);
+  background: var(--bg-toolbar);
 }
 
 .data-table tr { cursor: pointer; }
@@ -617,9 +656,9 @@ const solve = async () => {
   gap: 12px;
   margin: 12px -12px 8px;
   padding: 10px 14px;
-  border-top: 1px solid rgba(0, 53, 122, 0.16);
-  border-bottom: 1px solid rgba(0, 53, 122, 0.16);
-  background: rgb(var(--v-theme-surface));
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-panel);
 }
 
 .solve-section__status { gap: 6px; font-size: 13px; }

@@ -1,0 +1,121 @@
+:root {
+  --font-ui: Inter, "Segoe UI", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", Consolas, "Microsoft YaHei", monospace;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --header-height: 40px;
+  --toolbar-height: 38px;
+  --statusbar-height: 24px;
+  --sidebar-width: 244px;
+  --inspector-width: 320px;
+
+  --accent: #3b8bd9;
+  --accent-strong: #66a9ea;
+  --success: #56b58a;
+  --warning: #e0ad4f;
+  --danger: #eb6a63;
+  --semantic-geometry: #d7dde5;
+  --semantic-node: #69bce7;
+  --semantic-load: #f0a340;
+  --semantic-constraint: #58b88b;
+  --semantic-selected: #58a6e7;
+  --semantic-hover: #f0f4f8;
+  --semantic-result: #b78be2;
+}
+
+[data-cae-theme='dark'] {
+  color-scheme: dark;
+  --bg-app: #17191d;
+  --bg-panel: #202329;
+  --bg-toolbar: #25292f;
+  --bg-elevated: #2a2f36;
+  --bg-input: #1b1e23;
+  --bg-hover: #303640;
+  --bg-selected: rgba(59, 139, 217, 0.2);
+  --bg-viewport: #181b20;
+  --border-default: #363c45;
+  --border-strong: #4a535f;
+  --text-primary: #edf1f5;
+  --text-secondary: #b0b8c3;
+  --text-muted: #7f8995;
+  --shadow-panel: 0 8px 24px rgba(0, 0, 0, 0.22);
+  --grid-minor: rgba(125, 139, 154, 0.12);
+  --grid-major: rgba(125, 139, 154, 0.22);
+}
+
+[data-cae-theme='light'] {
+  color-scheme: light;
+  --bg-app: #e9edf2;
+  --bg-panel: #f5f7f9;
+  --bg-toolbar: #eef1f4;
+  --bg-elevated: #ffffff;
+  --bg-input: #ffffff;
+  --bg-hover: #e4e9ef;
+  --bg-selected: rgba(15, 96, 168, 0.13);
+  --bg-viewport: #f3f5f7;
+  --border-default: #cbd2da;
+  --border-strong: #aeb8c4;
+  --text-primary: #20262d;
+  --text-secondary: #515d69;
+  --text-muted: #77828e;
+  --shadow-panel: 0 8px 24px rgba(32, 43, 55, 0.12);
+  --grid-minor: rgba(69, 83, 98, 0.1);
+  --grid-major: rgba(69, 83, 98, 0.18);
+  --semantic-geometry: #37424e;
+  --semantic-hover: #101820;
+}
+
+.cae-surface {
+  background: var(--bg-panel);
+  color: var(--text-primary);
+}
+
+.cae-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 34px;
+  padding: 0 var(--spacing-sm);
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-toolbar);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.cae-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: 120ms ease;
+}
+
+.cae-icon-button:hover {
+  border-color: var(--border-default);
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.cae-icon-button:focus-visible,
+.cae-focusable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.cae-number {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}

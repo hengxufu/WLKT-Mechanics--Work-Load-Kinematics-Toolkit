@@ -230,7 +230,7 @@ onUnmounted(() => {
 
 onMounted(() => {
   window.setTimeout(() => {
-    //fitContent();
+    fitContent();
   }, 100);
 });
 
@@ -1689,7 +1689,7 @@ defineExpose({ centerContent, fitContent });
     <!-- <div style="position: absolute; top: 0; left: 0; background: red; z-index: 101">{{ intersected }}</div> -->
     <div
       v-if="!appStore.inViewerMode"
-      class="text-body-2 d-flex ga-1 line-height-1"
+      class="svg-viewer__legacy-status text-body-2 d-flex ga-1 line-height-1"
       style="position: absolute; z-index: 100; bottom: 16px; right: 16px"
     >
       <div v-if="!mobile" class="d-flex align-center ga-1">
@@ -1746,7 +1746,7 @@ defineExpose({ centerContent, fitContent });
         </v-chip>
       </v-chip-group> -->
     </div>
-    <div v-if="!appStore.inViewerMode" id="undoRedo" style="position: absolute; top: 24px; left: 24px; z-index: 100">
+    <div v-if="!appStore.inViewerMode" id="undoRedo" class="svg-viewer__legacy-controls" style="position: absolute; top: 24px; left: 24px; z-index: 100">
       <v-btn
         icon="mdi:mdi-undo"
         size="32"
@@ -1766,7 +1766,7 @@ defineExpose({ centerContent, fitContent });
         @click="undoRedoManager.redo()"
       ></v-btn>
     </div>
-    <div id="viewerControls" class="text-black d-flex" style="position: absolute; z-index: 100; top: 24px; right: 24px">
+    <div class="svg-viewer__legacy-controls text-black d-flex" style="position: absolute; z-index: 100; top: 24px; right: 24px">
       <v-btn
         icon="mdi:mdi-image-filter-center-focus"
         size="32"
@@ -1979,7 +1979,7 @@ defineExpose({ centerContent, fitContent });
           :support-size="viewerStore.supportSize"
           :scale="scale"
         />
-        <g ref="viewport" :class="{ disablePointerEvents: isZooming || isPanning }">
+        <g ref="viewport" data-panzoom-content :class="{ disablePointerEvents: isZooming || isPanning }">
           <g
             v-if="
               appStore.mouseMode === MouseMode.ADD_NODE ||
@@ -2371,8 +2371,8 @@ defineExpose({ centerContent, fitContent });
       </div>
     </div>
 
-    <div v-if="viewerStore.settingsOpen" class="" style="position: absolute; right: 24px; top: 64px; z-index: 600">
-      <div id="viewerSettings" class="d-flex flex-sm-column pa-1 overflow-y-auto ga-2 align-end justify-end">
+    <div v-if="viewerStore.settingsOpen" class="svg-viewer__legacy-settings" style="position: absolute; right: 24px; top: 64px; z-index: 600">
+      <div class="d-flex flex-sm-column pa-1 overflow-y-auto ga-2 align-end justify-end">
         <div
           color="grey-lighten-5"
           rounded="lg"
@@ -2473,6 +2473,11 @@ defineExpose({ centerContent, fitContent });
   pointer-events: none;
 }
 
+.svg-viewer {
+  position: relative;
+  background: var(--bg-viewport);
+}
+
 .svg-viewer :deep(*) {
   .element-load.load-1d {
     text {
@@ -2521,20 +2526,20 @@ defineExpose({ centerContent, fitContent });
 
     &.selected {
       text {
-        fill: rgb(0, 55, 149);
+        fill: var(--semantic-selected);
       }
 
       polygon.drawable,
       path.drawable {
-        stroke: rgb(0, 94, 255);
+        stroke: var(--semantic-selected);
         stroke-width: 4px;
         stroke-linejoin: round;
-        fill: rgba(0, 55, 149, 0.15);
+        fill: color-mix(in srgb, var(--semantic-selected) 15%, transparent);
       }
 
       use {
         stroke-width: 3px; /* affects the referenced element */
-        stroke: rgb(0, 94, 255);
+        stroke: var(--semantic-selected);
       }
     }
   }
@@ -2542,7 +2547,7 @@ defineExpose({ centerContent, fitContent });
   .element.element-1d {
     polyline {
       fill: none;
-      stroke: black;
+      stroke: var(--semantic-geometry);
       stroke-width: 2px;
 
       &.handle {
@@ -2558,14 +2563,14 @@ defineExpose({ centerContent, fitContent });
 
     &:hover {
       & polyline.drawable {
-        stroke: black;
+        stroke: var(--semantic-hover);
         stroke-width: 5px;
       }
     }
 
     &.selected {
       & polyline.drawable {
-        stroke: rgb(0, 94, 255);
+        stroke: var(--semantic-selected);
         stroke-width: 5px;
       }
     }
@@ -2621,7 +2626,7 @@ defineExpose({ centerContent, fitContent });
 
   .node {
     polyline {
-      stroke: #000;
+      stroke: var(--semantic-geometry);
       stroke-linecap: square;
       stroke-width: 6px;
       vector-effect: non-scaling-stroke;
@@ -2643,12 +2648,12 @@ defineExpose({ centerContent, fitContent });
     }
 
     &:hover polyline.drawable {
-      stroke: black;
+      stroke: var(--semantic-hover);
       stroke-width: 10px;
     }
 
     &.selected polyline.drawable {
-      stroke: rgb(0, 55, 149);
+      stroke: var(--semantic-selected);
       stroke-width: 8px;
     }
   }
@@ -2720,7 +2725,7 @@ defineExpose({ centerContent, fitContent });
 
     &.selected {
       text {
-        fill: rgb(0, 55, 149);
+        fill: var(--semantic-selected);
       }
     }
   }

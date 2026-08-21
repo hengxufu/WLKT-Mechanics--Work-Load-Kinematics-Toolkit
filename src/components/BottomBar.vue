@@ -1,5 +1,5 @@
 <template>
-  <div id="bottomBar" class="bottom-workbench" :style="`min-height: ${props.height}px; overflow: hidden`">
+  <div id="dataDock" class="bottom-workbench" :style="`min-height: ${props.height}px; overflow: hidden`">
     <div class="bottom-workbench__tabs d-flex justify-space-between bg-primary">
       <v-tabs
         v-model="appStore.bottomBarTab"

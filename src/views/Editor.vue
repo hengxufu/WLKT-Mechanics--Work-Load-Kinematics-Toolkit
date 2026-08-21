@@ -1,19 +1,28 @@
 <template>
   <div class="editor-shell d-flex flex-column fill-height">
-    <div style="height: 100%; width: 100%; position: absolute; pointer-events: none">
+    <div class="editor-shell__widgets">
       <TransitionGroup name="fade">
         <Widget v-for="widget of layoutStore.widgets" :key="widget.title" :widget="widget" />
       </TransitionGroup>
     </div>
-    <AnalysisViewportSwitch v-if="!appStore.inViewerMode" />
-    <HelloWorld class="editor-shell__workspace" />
-    <QuickWorkflow v-if="!appStore.inViewerMode && isPlanarAnalysis" />
-    <div v-if="isPlanarAnalysis" class="resizer" data-direction="vertical"></div>
-    <BottomBar
-      v-if="!appStore.inViewerMode && isPlanarAnalysis"
-      :height="computedBottomBarHeight"
-      class="d-block"
-    />
+    <template v-if="appStore.inViewerMode">
+      <HelloWorld class="editor-shell__workspace" />
+    </template>
+    <template v-else>
+      <MainToolbar />
+      <WorkspaceLayout>
+        <template #left><ModelTree /></template>
+        <HelloWorld class="editor-shell__workspace" />
+        <template #right><InspectorPanel /></template>
+      </WorkspaceLayout>
+      <div v-if="isPlanarAnalysis && appStore.bottomBarOpen" class="resizer" data-direction="vertical"></div>
+      <BottomBar
+        v-if="isPlanarAnalysis && appStore.bottomBarOpen"
+        :height="appStore.bottomBarHeight"
+        class="d-block editor-shell__data-dock"
+      />
+      <StatusBar />
+    </template>
   </div>
 </template>
 
@@ -21,8 +30,11 @@
 import HelloWorld from '@/components/HelloWorld.vue';
 import BottomBar from '@/components/BottomBar.vue';
 import Widget from '@/components/Widget.vue';
-import QuickWorkflow from '@/components/QuickWorkflow.vue';
-import AnalysisViewportSwitch from '@/components/AnalysisViewportSwitch.vue';
+import MainToolbar from '@/components/layout/MainToolbar.vue';
+import ModelTree from '@/components/layout/ModelTree.vue';
+import InspectorPanel from '@/components/layout/InspectorPanel.vue';
+import StatusBar from '@/components/layout/StatusBar.vue';
+import WorkspaceLayout from '@/components/layout/WorkspaceLayout.vue';
 
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useAppStore } from '@/store/app';
@@ -37,12 +49,6 @@ const workspaceStore = useWorkspaceStore();
 const isPlanarAnalysis = computed(() => workspaceStore.analysisDimension === '2d');
 
 const drag = ref(false);
-
-const computedBottomBarHeight = computed(() => {
-  if (appStore.inViewerMode) return 0;
-
-  return appStore.bottomBarOpen ? appStore.bottomBarHeight : 36;
-});
 
 const mouseMove = (e: MouseEvent) => {
   if (drag.value) {
@@ -81,9 +87,35 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss">
+.editor-shell {
+  min-width: 0;
+  min-height: 0;
+  background: var(--bg-app);
+}
+
+.editor-shell__widgets {
+  position: absolute;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 .editor-shell__workspace {
   flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
   min-height: 0;
+  background: var(--bg-viewport);
+}
+
+.editor-shell__workspace > .v-window {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.editor-shell__data-dock {
+  flex: 0 0 auto;
 }
 
 .resizer[data-direction='horizontal'] {

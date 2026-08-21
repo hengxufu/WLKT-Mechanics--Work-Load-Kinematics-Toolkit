@@ -23,6 +23,7 @@ const planarComponent = computed(() =>
     <Structure3DViewer
       v-else-if="workspaceStore.viewportMode === '3d'"
       :id="`${id}-3d`"
+      :show-properties="false"
     />
     <div v-else class="viewport-host__split">
       <section class="viewport-host__pane">
@@ -33,7 +34,7 @@ const planarComponent = computed(() =>
       </section>
       <section class="viewport-host__pane">
         <span class="viewport-host__label">三维结构</span>
-        <Structure3DViewer :id="`${id}-split-3d`" />
+        <Structure3DViewer :id="`${id}-split-3d`" :show-properties="false" />
       </section>
     </div>
   </div>
@@ -57,7 +58,7 @@ const planarComponent = computed(() =>
 .viewport-host__pane {
   position: relative;
   overflow: hidden;
-  border-right: 1px solid rgba(0, 55, 149, 0.18);
+  border-right: 1px solid var(--border-default);
 }
 
 .viewport-host__pane:last-child { border-right: 0; }
@@ -68,10 +69,10 @@ const planarComponent = computed(() =>
   left: 10px;
   z-index: 5;
   padding: 3px 7px;
-  border: 1px solid rgba(0, 55, 149, 0.14);
+  border: 1px solid var(--border-default);
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #123766;
+  background: color-mix(in srgb, var(--bg-panel) 92%, transparent);
+  color: var(--text-secondary);
   font-size: 12px;
   font-weight: 700;
   pointer-events: none;

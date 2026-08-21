@@ -22,10 +22,6 @@ const addedDofPolicy = ref<AddedDofPolicy>('suggest-planar');
 
 const hasPlanarModel = computed(() => projectStore.solver.domain.nodes.size > 0);
 const hasPreservedSpatialModel = computed(() => structuralStore.model.nodes.length > 0);
-const statusText = computed(
-  () => `${workspaceStore.currentAnalysisLabel} · ${workspaceStore.currentViewportLabel}`
-);
-
 const requestDimension = (dimension: AnalysisDimension) => {
   if (dimension === workspaceStore.analysisDimension) return;
   workspaceStore.lastSwitchError = '';
@@ -52,68 +48,17 @@ const returnToPreservedPlanarModel = () => {
   planarWarningDialog.value = false;
 };
 
-const setViewport = (mode: ViewportMode) => workspaceStore.setViewportMode(mode);
 </script>
 
 <template>
-  <section class="mode-switch" aria-label="分析与视图模式">
-    <div class="mode-switch__brand">
-      <span class="mode-switch__version">2.0</span>
-      <span class="mode-switch__status">{{ statusText }}</span>
-    </div>
-
-    <div class="mode-switch__controls">
-      <div class="mode-group">
-        <span class="mode-group__label">分析</span>
-        <v-btn-toggle
-          :model-value="workspaceStore.analysisDimension"
-          mandatory
-          density="compact"
-          color="primary"
-          variant="outlined"
-          divided
-        >
-          <v-btn value="2d" size="small" prepend-icon="mdi-axis-arrow" @click="requestDimension('2d')">
-            二维
-          </v-btn>
-          <v-btn value="3d" size="small" prepend-icon="mdi-axis-arrow-info" @click="requestDimension('3d')">
-            三维
-          </v-btn>
-        </v-btn-toggle>
-      </div>
-
-      <div class="mode-group">
-        <span class="mode-group__label">视图</span>
-        <v-btn-toggle
-          :model-value="workspaceStore.viewportMode"
-          mandatory
-          density="compact"
-          color="primary"
-          variant="outlined"
-          divided
-        >
-          <v-btn value="2d" size="small" icon="mdi-view-dashboard-outline" title="二维视图" @click="setViewport('2d')" />
-          <v-btn value="3d" size="small" icon="mdi-cube-outline" title="三维视图" @click="setViewport('3d')" />
-          <v-btn value="split" size="small" icon="mdi-view-split-vertical" title="二维/三维分屏" @click="setViewport('split')" />
-        </v-btn-toggle>
-      </div>
-
-      <v-btn-toggle
-        v-if="workspaceStore.analysisDimension === '3d' && workspaceStore.viewportMode !== '3d'"
-        v-model="workspaceStore.activeWorkPlane"
-        mandatory
-        density="compact"
-        color="secondary"
-        variant="outlined"
-        divided
-        aria-label="二维投影工作平面"
-      >
-        <v-btn value="xy" size="small">XY</v-btn>
-        <v-btn value="xz" size="small">XZ</v-btn>
-        <v-btn value="yz" size="small">YZ</v-btn>
-      </v-btn-toggle>
-    </div>
-  </section>
+  <div class="analysis-switch" aria-label="分析维度">
+    <button :class="{ active: workspaceStore.analysisDimension === '2d' }" type="button" title="二维分析" @click="requestDimension('2d')">2D</button>
+    <button :class="{ active: workspaceStore.analysisDimension === '3d' }" type="button" title="三维分析" @click="requestDimension('3d')">3D</button>
+    <v-menu v-if="workspaceStore.analysisDimension === '3d' && workspaceStore.viewportMode !== '3d'" location="bottom end">
+      <template #activator="{ props }"><button v-bind="props" class="analysis-switch__plane" type="button">{{ workspaceStore.activeWorkPlane.toUpperCase() }}</button></template>
+      <v-list density="compact" class="plane-menu"><v-list-item v-for="plane in ['xy', 'xz', 'yz']" :key="plane" :title="`${plane.toUpperCase()} 工作平面`" @click="workspaceStore.activeWorkPlane = plane as 'xy' | 'xz' | 'yz'" /></v-list>
+    </v-menu>
+  </div>
 
   <v-dialog v-model="dimensionDialog" max-width="560">
     <v-card>
@@ -213,70 +158,10 @@ const setViewport = (mode: ViewportMode) => workspaceStore.setViewportMode(mode)
 </template>
 
 <style scoped>
-.mode-switch {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 50px;
-  padding: 6px 14px;
-  border-bottom: 1px solid rgba(0, 55, 149, 0.18);
-  background: rgb(var(--v-theme-surface));
-}
-
-.mode-switch__brand,
-.mode-switch__controls,
-.mode-group {
-  display: flex;
-  align-items: center;
-}
-
-.mode-switch__brand { min-width: 0; gap: 9px; }
-.mode-switch__controls { flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
-.mode-group { gap: 6px; }
-
-.mode-switch__version {
-  min-width: 34px;
-  padding: 3px 6px;
-  border-radius: 4px;
-  background: #003b7a;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.mode-switch__status {
-  overflow: hidden;
-  color: #183b67;
-  font-size: 13px;
-  font-weight: 600;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.mode-group__label {
-  color: rgba(20, 43, 72, 0.7);
-  font-size: 12px;
-}
-
-@media (max-width: 760px) {
-  .mode-switch {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 6px;
-    padding: 6px 8px;
-  }
-
-  .mode-switch__controls {
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 2px;
-  }
-  .mode-switch__status { max-width: calc(100vw - 70px); }
-  .mode-group__label { display: none; }
-}
+.analysis-switch { display: inline-flex; align-items: center; height: 27px; border: 1px solid #4a535f; border-radius: 3px; overflow: hidden; background: #171a1f; }
+.analysis-switch > button { min-width: 36px; height: 100%; padding: 0 8px; border: 0; border-right: 1px solid #3c444e; background: transparent; color: #aeb8c4; font: 11px var(--font-mono); cursor: pointer; }
+.analysis-switch > button.active { background: rgba(59, 139, 217, 0.24); color: #8ec6f2; box-shadow: inset 0 -2px 0 var(--accent); }
+.analysis-switch > button:hover { color: #fff; }
+.analysis-switch .analysis-switch__plane { min-width: 34px; border-right: 0; color: var(--warning); }
+.plane-menu { min-width: 150px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); }
 </style>

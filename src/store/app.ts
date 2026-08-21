@@ -20,7 +20,7 @@ export const useAppStore = defineStore(
     const drawerOpen = ref(false);
     const rightDrawerOpen = ref(false);
 
-    const bottomBarOpen = ref(!isMobile());
+    const bottomBarOpen = ref(false);
     const bottomBarHeight = ref(226);
 
     const locale = ref(resolveLocale(suggestLanguage()));

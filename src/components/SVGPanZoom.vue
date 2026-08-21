@@ -71,6 +71,9 @@ const updateMatrix = (zooming = false): void => {
   props.onUpdate(zooming);
 };
 
+const getContentGroup = (svgEl: SVGElement): SVGGElement | null =>
+  svgEl.querySelector<SVGGElement>('[data-panzoom-content]') ?? svgEl.getElementsByTagName('g')[0] ?? null;
+
 const zoom = (mx: number, my: number, deltaY: number): void => {
   if (deltaY === 0) return;
 
@@ -190,7 +193,8 @@ const onMouseMove = (event: MouseEvent): void => {
 const centerContent = (): void => {
   if (!svgRef.value) return;
 
-  const rootG = (svgRef.value as SVGElement).getElementsByTagName('g')[0] as SVGGElement;
+  const rootG = getContentGroup(svgRef.value as SVGElement);
+  if (!rootG) return;
   const bBox = rootG.getBBox();
 
   viewBox.x = -viewBox.w / 2 + bBox.x + bBox.width / 2;
@@ -256,7 +260,8 @@ const fitContent = (n = 0) => {
   const FIT_CONTENT_PADDING = window.innerWidth > 768 ? props.padding : props.mobilePadding;
 
   const svgEl = svgRef.value as SVGElement;
-  const rootG = svgEl.getElementsByTagName('g')[0] as SVGGElement;
+  const rootG = getContentGroup(svgEl);
+  if (!rootG) return;
 
   const bBoxW = rootG.getBBox().width * scale.value;
   const bBoxH = rootG.getBBox().height * scale.value;

@@ -2,8 +2,10 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { eventBus, EventType } from '@/EventBus';
 import { useProjectStore } from '@/store/project';
 import { useStructuralStore } from '@/store/structural';
+import { useUiStore } from '@/store/ui';
 import { useViewerStore } from '@/store/viewer';
 import { useWorkspaceStore } from '@/store/workspace';
 import { createStructureSceneModel3D, calculateAutoDeformationScale, createMemberLocalAxes3D } from '@/utils/model3d';
@@ -11,15 +13,19 @@ import { createStructureSceneModelFromStructuralAnalysis } from '@/utils/structu
 import { executeModelMutationWithUndo } from '@/utils';
 import type { Member3D, Node3D, NodeConstraint3D, Vector3Data } from '@/types/model3d';
 
-defineProps<{ id: string }>();
+const props = withDefaults(defineProps<{ id: string; showProperties?: boolean }>(), {
+  showProperties: true,
+});
 
 type ViewPreset = 'front' | 'back' | 'left' | 'right' | 'top' | 'bottom' | 'axonometric' | 'reset';
 
 const projectStore = useProjectStore();
 const structuralStore = useStructuralStore();
+const uiStore = useUiStore();
 const viewerStore = useViewerStore();
 const workspaceStore = useWorkspaceStore();
 const host = ref<HTMLDivElement | null>(null);
+const gizmoAxes = ref<HTMLDivElement | null>(null);
 const renderError = ref('');
 const cursorWorld = ref<Vector3Data | null>(null);
 const selectedNodeCoordinates = ref({ x: 0, y: 0, z: 0 });
@@ -125,18 +131,22 @@ const textSprite = (text: string, color = '#102a5e') => {
   canvas.height = 96;
   const context = canvas.getContext('2d');
   if (!context) return new THREE.Sprite();
+  const dark = uiStore.theme === 'dark';
   context.clearRect(0, 0, canvas.width, canvas.height);
-  context.font = 'bold 34px Arial';
+  context.font = '600 30px "Segoe UI", Arial';
   context.textAlign = 'center';
   context.textBaseline = 'middle';
-  context.fillStyle = 'rgba(255,255,255,0.9)';
-  context.fillRect(8, 20, 240, 56);
-  context.fillStyle = color;
+  context.fillStyle = dark ? 'rgba(31,35,41,0.9)' : 'rgba(255,255,255,0.88)';
+  context.strokeStyle = dark ? 'rgba(96,108,122,0.88)' : 'rgba(168,178,190,0.88)';
+  context.lineWidth = 2;
+  context.fillRect(12, 22, 232, 52);
+  context.strokeRect(12, 22, 232, 52);
+  context.fillStyle = dark ? '#e8edf3' : color;
   context.fillText(text, 128, 48);
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, depthTest: false }));
-  sprite.scale.set(0.6, 0.225, 1);
+  sprite.scale.set(0.42, 0.158, 1);
   return sprite;
 };
 
@@ -578,14 +588,39 @@ const animate = (now: number) => {
     if (progress >= 1) cameraAnimation = null;
   }
   controls.update();
+  if (gizmoAxes.value) {
+    const rotation = new THREE.Matrix4().makeRotationFromQuaternion(camera.quaternion.clone().invert());
+    gizmoAxes.value.style.transform = `matrix3d(${rotation.elements.join(',')})`;
+  }
   renderer.render(scene, camera);
+};
+
+const createReferenceGrid = () => {
+  if (!scene) return;
+  const previous = scene.getObjectByName('global-grid');
+  if (previous) {
+    scene.remove(previous);
+    disposeObject(previous);
+  }
+  const dark = uiStore.theme === 'dark';
+  const grid = new THREE.GridHelper(20, 20, dark ? 0x56616e : 0x8996a5, dark ? 0x30363e : 0xcbd3dc);
+  grid.rotation.x = Math.PI / 2;
+  grid.visible = viewerStore.showGrid;
+  grid.name = 'global-grid';
+  scene.add(grid);
+};
+
+const applyViewportTheme = () => {
+  if (!scene) return;
+  scene.background = new THREE.Color(uiStore.theme === 'dark' ? 0x181b20 : 0xf3f5f7);
+  createReferenceGrid();
 };
 
 const setupScene = () => {
   if (!host.value) return;
   try {
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(document.documentElement.classList.contains('v-theme--dark') ? 0x101722 : 0xf7f9fc);
+    scene.background = new THREE.Color(uiStore.theme === 'dark' ? 0x181b20 : 0xf3f5f7);
     camera = new THREE.PerspectiveCamera(42, 1, 0.01, 10000);
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -602,11 +637,7 @@ const setupScene = () => {
     const light = new THREE.DirectionalLight(0xffffff, 2.2);
     light.position.set(4, 8, 6);
     scene.add(light);
-    const grid = new THREE.GridHelper(20, 20, 0x9faebf, 0xd5dde7);
-    grid.rotation.x = Math.PI / 2;
-    grid.visible = viewerStore.showGrid;
-    grid.name = 'global-grid';
-    scene.add(grid);
+    createReferenceGrid();
     const axes = new THREE.AxesHelper(1.15);
     axes.name = 'global-axes';
     scene.add(axes);
@@ -651,6 +682,10 @@ watch(
   () => nextTick(buildModel),
   { deep: true }
 );
+watch(() => uiStore.theme, () => {
+  applyViewportTheme();
+  nextTick(buildModel);
+});
 watch(selectedNode, syncSelectedNode, { immediate: true });
 watch(
   () => viewerStore.showGrid,
@@ -659,8 +694,14 @@ watch(
   }
 );
 
-onMounted(setupScene);
+const handleFitRequest = () => fitToStructure();
+
+onMounted(() => {
+  setupScene();
+  eventBus.on(EventType.FIT_CONTENT, handleFitRequest);
+});
 onBeforeUnmount(() => {
+  eventBus.off(EventType.FIT_CONTENT, handleFitRequest);
   cancelAnimationFrame(animationFrame);
   if (resizeFitTimer) globalThis.clearTimeout(resizeFitTimer);
   resizeObserver?.disconnect();
@@ -710,10 +751,14 @@ onBeforeUnmount(() => {
     </div>
 
     <div class="structure-3d-orientation" aria-label="坐标方向指示器">
-      <button class="axis-x" title="沿 X 轴观察" @click="setCameraPosition('right')">X</button>
-      <button class="axis-y" title="沿 Y 轴观察" @click="setCameraPosition('top')">Y</button>
-      <button class="axis-z" title="沿 Z 轴观察" @click="setCameraPosition('front')">Z</button>
-      <span>XYZ</span>
+      <div ref="gizmoAxes" class="structure-3d-gizmo-axes">
+        <span class="gizmo-line gizmo-line--x" />
+        <span class="gizmo-line gizmo-line--y" />
+        <span class="gizmo-line gizmo-line--z" />
+        <button class="axis-x" title="沿 X 轴观察" @click="setCameraPosition('right')">X</button>
+        <button class="axis-y" title="沿 Y 轴观察" @click="setCameraPosition('top')">Y</button>
+        <button class="axis-z" title="沿 Z 轴观察" @click="setCameraPosition('front')">Z</button>
+      </div>
     </div>
 
     <div class="structure-3d-result-panel">
@@ -741,7 +786,7 @@ onBeforeUnmount(() => {
       />
     </div>
 
-    <v-card v-if="selectedNode" class="structure-3d-properties" elevation="4">
+    <v-card v-if="props.showProperties && selectedNode" class="structure-3d-properties" elevation="4">
       <v-card-title class="text-subtitle-2">节点 {{ selectedNode.id }} 坐标</v-card-title>
       <v-card-text class="pb-2">
         <v-text-field v-model.number="selectedNodeCoordinates.x" label="X" density="compact" type="number" hide-details class="mb-2" />
@@ -786,7 +831,7 @@ onBeforeUnmount(() => {
   height: 100%;
   min-height: 360px;
   overflow: hidden;
-  background: rgb(var(--v-theme-surface));
+  background: var(--bg-viewport);
 }
 
 .structure-3d-canvas,
@@ -809,77 +854,105 @@ onBeforeUnmount(() => {
 }
 
 .structure-3d-toolbar {
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
   display: flex;
-  gap: 6px;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-toolbar) 92%, transparent);
 }
 
 .structure-3d-views {
-  top: 58px;
-  left: 12px;
+  top: 10px;
+  right: 10px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(34px, auto));
-  gap: 4px;
+  grid-template-columns: repeat(3, 34px);
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-toolbar) 92%, transparent);
 }
 
 .structure-3d-result-panel {
-  top: 12px;
-  right: 12px;
+  top: 92px;
+  right: 10px;
   width: 178px;
   padding: 8px;
-  border: 1px solid rgba(0, 55, 149, 0.2);
-  background: rgba(var(--v-theme-surface), 0.94);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-panel) 94%, transparent);
 }
 
 .structure-3d-properties {
   right: 12px;
   bottom: 54px;
   width: 220px;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
 .structure-3d-orientation {
-  left: 14px;
-  bottom: 48px;
-  width: 72px;
-  height: 72px;
-  border: 1px solid rgba(0, 55, 149, 0.25);
+  right: 14px;
+  bottom: 42px;
+  width: 76px;
+  height: 76px;
+  border: 1px solid var(--border-default);
   border-radius: 50%;
-  background: rgba(var(--v-theme-surface), 0.92);
+  background: color-mix(in srgb, var(--bg-panel) 90%, transparent);
   font-size: 11px;
+  perspective: 180px;
+}
+
+.structure-3d-gizmo-axes {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 40ms linear;
 }
 
 .structure-3d-orientation button {
   position: absolute;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  padding: 0;
   border: 0;
-  background: transparent;
+  border-radius: 50%;
+  background: var(--bg-elevated);
   font-weight: 700;
+  font-size: 10px;
   cursor: pointer;
 }
 
-.structure-3d-orientation span { position: absolute; left: 24px; top: 29px; font-weight: 700; color: #26374d; }
-.axis-x { right: 6px; top: 27px; color: #d62828; }
-.axis-y { left: 31px; top: 4px; color: #15803d; }
-.axis-z { left: 7px; bottom: 9px; color: #1d4ed8; }
+.gizmo-line { position: absolute; left: 37px; top: 37px; width: 27px; height: 2px; transform-origin: left center; }
+.gizmo-line--x { background: #ef6461; }
+.gizmo-line--y { background: #55b981; transform: rotate(-90deg); }
+.gizmo-line--z { background: #65a9e8; transform: rotate(135deg); }
+.axis-x { right: 1px; top: 29px; color: #ef6461; }
+.axis-y { left: 29px; top: 1px; color: #55b981; }
+.axis-z { left: 4px; bottom: 4px; color: #65a9e8; }
 
 .structure-3d-status {
-  right: 0;
-  bottom: 0;
-  left: 0;
+  bottom: 8px;
+  left: 8px;
   display: flex;
-  gap: 18px;
-  padding: 5px 12px;
-  background: rgba(11, 32, 64, 0.88);
-  color: #fff;
-  font-size: 12px;
+  gap: 12px;
+  max-width: calc(100% - 110px);
+  padding: 4px 7px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-toolbar) 90%, transparent);
+  color: var(--text-secondary);
+  font: 10px var(--font-mono);
 }
 
 .structure-3d-disclaimer {
   right: 12px;
   bottom: 32px;
   max-width: min(560px, calc(100% - 110px));
-  color: #40546e;
+  color: var(--text-muted);
   font-size: 11px;
   text-align: right;
 }
@@ -896,10 +969,27 @@ onBeforeUnmount(() => {
 
 .structure-3d-menu { min-width: 170px; }
 
+.structure-3d-toolbar :deep(.v-btn),
+.structure-3d-views :deep(.v-btn) {
+  min-width: 30px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.structure-3d-toolbar :deep(.v-btn:hover),
+.structure-3d-views :deep(.v-btn:hover) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
 @media (max-width: 760px) {
-  .structure-3d-result-panel { top: auto; right: 10px; bottom: 42px; width: 150px; }
+  .structure-3d-result-panel { display: none; }
   .structure-3d-properties { top: 120px; right: 8px; bottom: auto; width: 190px; }
-  .structure-3d-status { gap: 8px; overflow: hidden; white-space: nowrap; font-size: 10px; }
+  .structure-3d-views { display: none; }
+  .structure-3d-status { gap: 8px; overflow: hidden; white-space: nowrap; font-size: 9px; }
   .structure-3d-disclaimer { display: none; }
 }
 </style>

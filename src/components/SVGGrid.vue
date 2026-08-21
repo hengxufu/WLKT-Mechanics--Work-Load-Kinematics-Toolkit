@@ -3,7 +3,7 @@
     <g class="grid">
       <rect class="chartBorder" x="16" y="16" width="100%" height="100%" />
       <path
-        stroke="#ccc"
+        stroke="var(--grid-minor)"
         vector-effect="non-scaling-stroke"
         :d="gridPath"
         :transform="`translate(${gridTX} ${gridTY})`"
@@ -11,10 +11,10 @@
     </g>
 
     <g class="grid">
-      <rect fill="white" x="0" y="0" height="100%" width="16" />
-      <rect fill="white" x="100%" y="0" height="100%" width="16" transform="translate(-16 0)" />
-      <rect fill="white" x="0" y="0" width="100%" height="16" />
-      <rect fill="white" x="0" y="100%" width="100%" height="16" transform="translate(0 -16)" />
+      <rect fill="var(--bg-viewport)" x="0" y="0" height="100%" width="16" />
+      <rect fill="var(--bg-viewport)" x="100%" y="0" height="100%" width="16" transform="translate(-16 0)" />
+      <rect fill="var(--bg-viewport)" x="0" y="0" width="100%" height="16" />
+      <rect fill="var(--bg-viewport)" x="0" y="100%" width="100%" height="16" transform="translate(0 -16)" />
       <g v-for="(item, i) in xGridTexts" :key="`x${i}`" :transform="`translate(${item.x + gridTX} ${item.y})`">
         <text text-anchor="middle" alignment-baseline="middle">
           {{ (Number(item.value) + trueOffsetX).toFixed(2) }}
@@ -181,7 +181,7 @@ defineExpose({ refreshGrid });
 
   .chartBorder {
     fill: transparent;
-    stroke: #666;
+    stroke: var(--grid-major);
     stroke-width: 1px;
   }
 }

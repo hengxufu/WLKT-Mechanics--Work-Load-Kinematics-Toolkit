@@ -4,6 +4,7 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
 @use "vuetify" with (
   $body-font-family: $font
 );
+@use "./design-system";
 
 :root {
   --mx-menu-backgroud-radius: 8px;
@@ -16,14 +17,24 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
   --buaa-muted: #607184;
 }
 
+html,
+body,
+#app,
+.v-application {
+  overflow: hidden;
+  font-family: var(--font-ui);
+}
+
+.v-application[data-cae-theme] {
+  background: var(--bg-app);
+  color: var(--text-primary);
+}
+
 .v-main {
-  height: 100dvh !important; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--dvh, 1dvh) * 100 - 48px) !important;
-  background:
-    linear-gradient(90deg, rgba(0, 59, 122, 0.035) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(0, 59, 122, 0.03) 1px, transparent 1px),
-    #f4f7fb;
-  background-size: 28px 28px;
+  flex: 1 1 auto !important;
+  height: auto !important;
+  min-height: 0;
+  background: var(--bg-app);
 }
 
 .app-title, .edubeam {
@@ -106,7 +117,7 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
 
 .editor-shell {
   position: relative;
-  background: rgba(244, 247, 251, 0.72);
+  background: var(--bg-app);
 }
 
 .quick-workflow {
@@ -228,21 +239,26 @@ $font: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-ser
 }
 
 .bottom-workbench {
-  border-top: 1px solid rgba(0, 59, 122, 0.2);
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 -10px 24px rgba(0, 38, 84, 0.08);
+  border-top: 1px solid var(--border-strong);
+  background: var(--bg-panel);
+  color: var(--text-primary);
+  box-shadow: 0 -8px 22px rgba(0, 0, 0, 0.18);
 }
 
 .bottom-workbench__tabs {
-  border-bottom: 3px solid var(--buaa-gold);
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-toolbar) !important;
 }
 
 .bottom-workbench .v-tab {
-  font-weight: 700;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 650;
 }
 
 .bottom-workbench__toggle {
-  border-left: 1px solid rgba(255, 255, 255, 0.24);
+  border-left: 1px solid var(--border-default);
+  background: var(--bg-toolbar) !important;
 }
 
 .symbol-parameters {
@@ -965,11 +981,11 @@ select.mini-select {
   &.selected {
     polyline.drawable {
       stroke-width: 2px;
-      stroke: rgb(0, 94, 255);
+      stroke: var(--semantic-selected);
     }
 
     text {
-      fill: rgb(0, 94, 255);
+      fill: var(--semantic-selected);
       font-weight: 600;
     }
   }
@@ -987,14 +1003,69 @@ select.mini-select {
     cursor: move;
 
     &.snapped {
-      fill: rgb(0, 94, 255);
-      stroke: rgb(0, 94, 255);
+      fill: var(--semantic-selected);
+      stroke: var(--semantic-selected);
     }
   }
 
   &.selected {
     .endpoint.free {
-      stroke: rgb(0, 94, 255);
+      stroke: var(--semantic-selected);
     }
   }
+}
+
+// The editor now owns these commands in the main CAD toolbar and inspector.
+.workspace-layout .svg-viewer__legacy-status,
+.workspace-layout .svg-viewer__legacy-controls,
+.workspace-layout .svg-viewer__legacy-settings {
+  display: none !important;
+}
+
+.workspace-layout .svg-viewer text {
+  fill: var(--text-secondary);
+}
+
+.workspace-layout .svg-viewer .support path,
+.workspace-layout .svg-viewer .support line,
+.workspace-layout .svg-viewer .support polyline,
+.workspace-layout .svg-viewer .support polygon {
+  stroke: var(--semantic-constraint);
+}
+
+.workspace-layout .svg-viewer .support polygon {
+  fill: color-mix(in srgb, var(--semantic-constraint) 16%, transparent);
+}
+
+.v-overlay-container .v-card,
+.v-overlay-container .v-list,
+.v-overlay-container .v-menu > .v-overlay__content {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md) !important;
+  background: var(--bg-elevated) !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow-panel) !important;
+}
+
+.v-overlay-container .v-card-title {
+  border-bottom: 1px solid var(--border-default);
+  font-size: 14px !important;
+  letter-spacing: 0 !important;
+}
+
+.v-overlay-container .v-field,
+.bottom-workbench .v-field,
+.bottom-workbench .v-table {
+  background: var(--bg-input) !important;
+  color: var(--text-primary) !important;
+}
+
+.bottom-workbench .v-table table tr:nth-child(even) td,
+.bottom-workbench .v-table table tr:nth-child(odd) td {
+  background: var(--bg-panel) !important;
+  color: var(--text-secondary);
+}
+
+.bottom-workbench .v-table table tr:hover td {
+  background: var(--bg-hover) !important;
 }
