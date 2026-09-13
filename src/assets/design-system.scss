@@ -17,6 +17,8 @@
 
   --accent: #3b8bd9;
   --accent-strong: #66a9ea;
+  --brand-blue: #07579f;
+  --brand-gold: #d1a247;
   --success: #56b58a;
   --warning: #e0ad4f;
   --danger: #eb6a63;
@@ -38,12 +40,17 @@
   --bg-input: #1b1e23;
   --bg-hover: #303640;
   --bg-selected: rgba(59, 139, 217, 0.2);
+  --bg-control-hover: #343b46;
   --bg-viewport: #181b20;
   --border-default: #363c45;
   --border-strong: #4a535f;
   --text-primary: #edf1f5;
   --text-secondary: #b0b8c3;
   --text-muted: #7f8995;
+  --header-bg: #132b43;
+  --header-border: #285274;
+  --status-bg: #182633;
+  --focus-ring: rgba(102, 169, 234, 0.38);
   --shadow-panel: 0 8px 24px rgba(0, 0, 0, 0.22);
   --grid-minor: rgba(125, 139, 154, 0.12);
   --grid-major: rgba(125, 139, 154, 0.22);
@@ -58,12 +65,17 @@
   --bg-input: #ffffff;
   --bg-hover: #e4e9ef;
   --bg-selected: rgba(15, 96, 168, 0.13);
+  --bg-control-hover: #dce5ed;
   --bg-viewport: #f3f5f7;
   --border-default: #cbd2da;
   --border-strong: #aeb8c4;
   --text-primary: #20262d;
   --text-secondary: #515d69;
   --text-muted: #77828e;
+  --header-bg: #123a60;
+  --header-border: #376587;
+  --status-bg: #243a4d;
+  --focus-ring: rgba(15, 96, 168, 0.24);
   --shadow-panel: 0 8px 24px rgba(32, 43, 55, 0.12);
   --grid-minor: rgba(69, 83, 98, 0.1);
   --grid-major: rgba(69, 83, 98, 0.18);
@@ -87,6 +99,7 @@
   color: var(--text-primary);
   font-size: 12px;
   font-weight: 650;
+  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--accent) 78%, transparent);
 }
 
 .cae-icon-button {
@@ -109,10 +122,15 @@
   color: var(--text-primary);
 }
 
+.cae-icon-button:active {
+  transform: translateY(1px);
+}
+
 .cae-icon-button:focus-visible,
 .cae-focusable:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: -2px;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .cae-number {

@@ -58,8 +58,9 @@ onBeforeUnmount(stop);
 .workspace-layout__sidebar.collapsed { display: flex; align-items: flex-start; justify-content: center; }
 .workspace-layout__viewport { position: relative; min-width: 0; min-height: 0; overflow: hidden; background: var(--bg-viewport); }
 .workspace-layout__resizer { position: relative; z-index: 10; background: var(--bg-app); cursor: ew-resize; }
-.workspace-layout__resizer:hover { background: var(--accent); }
-.collapsed-rail { width: 30px; height: 34px; border: 0; background: transparent; color: var(--text-secondary); cursor: pointer; }
+.workspace-layout__resizer::after { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--border-default); content: ''; transform: translateX(-50%); transition: 120ms ease; }
+.workspace-layout__resizer:hover::after { width: 2px; background: var(--accent); box-shadow: 0 0 0 2px var(--focus-ring); }
+.collapsed-rail { width: 30px; height: 34px; border: 0; border-bottom: 1px solid var(--border-default); background: var(--bg-toolbar); color: var(--text-secondary); cursor: pointer; }
 .collapsed-rail:hover { background: var(--bg-hover); color: var(--accent-strong); }
 :global(body.cae-resizing) { cursor: ew-resize; user-select: none; }
 

@@ -1,9 +1,8 @@
 <template>
   <div id="dataDock" class="bottom-workbench" :style="`min-height: ${props.height}px; overflow: hidden`">
-    <div class="bottom-workbench__tabs d-flex justify-space-between bg-primary">
+    <div class="bottom-workbench__tabs d-flex justify-space-between">
       <v-tabs
         v-model="appStore.bottomBarTab"
-        bg-color="primary"
         :show-arrows="false"
         height="36"
         :hide-slider="props.height === 36"
@@ -20,10 +19,10 @@
           <template v-if="'count' in tab && tab.count() > 0" #append>{{ tab.count() }}</template>
         </v-tab>
       </v-tabs>
-      <div class="bg-primary d-flex align-center bottom-workbench__toggle">
+      <div class="d-flex align-center bottom-workbench__toggle">
         <v-btn
-          color="primary"
           density="compact"
+          variant="text"
           :icon="'mdi-window-minimize'"
           @click="appStore.bottomBarOpen = !appStore.bottomBarOpen"
         ></v-btn>

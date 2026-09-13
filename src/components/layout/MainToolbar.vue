@@ -164,24 +164,27 @@ const solve = async () => {
 </template>
 
 <style scoped>
-.main-toolbar { display: flex; flex: 0 0 var(--toolbar-height); align-items: center; gap: 4px; min-width: 0; padding: 3px 6px; border-bottom: 1px solid var(--border-default); background: var(--bg-toolbar); color: var(--text-primary); }
-.main-toolbar__group { display: flex; align-items: center; gap: 2px; }
+.main-toolbar { display: flex; flex: 0 0 var(--toolbar-height); align-items: center; gap: 4px; min-width: 0; padding: 3px 7px; border-bottom: 1px solid var(--border-default); background: var(--bg-toolbar); color: var(--text-primary); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); }
+.main-toolbar__group { display: flex; align-items: center; gap: 1px; padding: 1px; border: 1px solid color-mix(in srgb, var(--border-default) 70%, transparent); border-radius: var(--radius-md); background: color-mix(in srgb, var(--bg-input) 46%, transparent); }
 .main-toolbar__spacer { flex: 1 1 auto; min-width: 8px; }
 .toolbar-separator { width: 1px; height: 22px; margin: 0 2px; background: var(--border-default); }
-.tool-button { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid transparent; border-radius: var(--radius-sm); background: transparent; color: var(--text-secondary); cursor: pointer; transition: 120ms ease; }
-.tool-button:hover:not(:disabled), .tool-button.active { border-color: var(--border-default); background: var(--bg-hover); color: var(--text-primary); }
-.tool-button.active { box-shadow: inset 0 -2px 0 var(--accent); color: var(--accent-strong); }
+.tool-button { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 28px; border: 1px solid transparent; border-radius: var(--radius-sm); background: transparent; color: var(--text-secondary); cursor: pointer; transition: 120ms ease; }
+.tool-button:hover:not(:disabled), .tool-button.active { border-color: var(--border-default); background: var(--bg-control-hover); color: var(--text-primary); }
+.tool-button.active { border-color: color-mix(in srgb, var(--accent) 45%, var(--border-default)); box-shadow: inset 0 -2px 0 var(--accent); color: var(--accent-strong); }
+.tool-button:active:not(:disabled), .solve-button:active:not(:disabled) { transform: translateY(1px); }
+.tool-button:focus-visible, .viewport-segment button:focus-visible, .solve-button:focus-visible { position: relative; z-index: 1; outline: 2px solid var(--accent); outline-offset: 1px; box-shadow: 0 0 0 3px var(--focus-ring); }
 .tool-button--load { color: var(--semantic-load); }
 .tool-button--danger:hover:not(:disabled) { color: var(--danger); }
 .tool-button:disabled { opacity: 0.34; cursor: not-allowed; }
 .viewport-segment { display: flex; height: 28px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); overflow: hidden; }
 .viewport-segment button { display: flex; align-items: center; gap: 4px; min-width: 34px; padding: 0 7px; border: 0; border-right: 1px solid var(--border-default); background: var(--bg-input); color: var(--text-secondary); font: 11px var(--font-mono); cursor: pointer; }
 .viewport-segment button:last-child { border-right: 0; }
-.viewport-segment button.active { background: var(--bg-selected); color: var(--accent-strong); }
+.viewport-segment button:hover { background: var(--bg-control-hover); color: var(--text-primary); }
+.viewport-segment button.active { background: var(--bg-selected); color: var(--accent-strong); box-shadow: inset 0 -2px 0 var(--accent); }
 .solve-button { display: flex; align-items: center; gap: 4px; height: 29px; padding: 0 10px; border: 1px solid #3d8b69; border-radius: var(--radius-sm); background: rgba(86, 181, 138, 0.12); color: var(--success); font-size: 12px; font-weight: 650; cursor: pointer; }
-.solve-button:hover:not(:disabled) { background: rgba(86, 181, 138, 0.2); }
+.solve-button:hover:not(:disabled) { border-color: var(--success); background: rgba(86, 181, 138, 0.2); }
 .solve-button:disabled { opacity: 0.5; }
-.result-toolbar { display: flex; align-items: center; gap: 4px; height: 30px; min-width: 180px; padding-left: 7px; border: 1px solid var(--border-default); border-radius: var(--radius-sm); background: var(--bg-input); }
+.result-toolbar { display: flex; align-items: center; gap: 4px; height: 30px; min-width: 180px; padding-left: 7px; border: 1px solid color-mix(in srgb, var(--semantic-result) 40%, var(--border-default)); border-radius: var(--radius-sm); background: var(--bg-input); box-shadow: inset 2px 0 0 var(--semantic-result); }
 .result-toolbar :deep(.v-select) { width: 118px; font-size: 11px; }
 .result-toolbar :deep(.v-field__input) { min-height: 28px; padding: 0 4px; }
 

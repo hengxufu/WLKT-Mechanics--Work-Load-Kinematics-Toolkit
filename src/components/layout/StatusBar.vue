@@ -56,13 +56,13 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame));
 </template>
 
 <style scoped>
-.status-bar { display: flex; flex: 0 0 var(--statusbar-height); align-items: center; gap: 0; min-width: 0; border-top: 1px solid var(--border-default); background: #1d2228; color: #aeb8c4; font-size: 10px; user-select: none; }
-[data-cae-theme='light'] .status-bar { background: #283441; color: #d4dae1; }
-.status-bar > span, .status-bar > button { display: inline-flex; align-items: center; gap: 4px; height: 100%; padding: 0 8px; border: 0; border-right: 1px solid #343c45; background: transparent; color: inherit; font: inherit; white-space: nowrap; }
+.status-bar { display: flex; flex: 0 0 var(--statusbar-height); align-items: center; gap: 0; min-width: 0; border-top: 1px solid var(--header-border); background: var(--status-bg); color: #b8c8d5; font-size: 10px; user-select: none; }
+.status-bar > span, .status-bar > button { display: inline-flex; align-items: center; gap: 4px; height: 100%; padding: 0 8px; border: 0; border-right: 1px solid rgba(194, 216, 232, 0.13); background: transparent; color: inherit; font: inherit; white-space: nowrap; }
 .status-bar > button { cursor: pointer; }
-.status-bar > button:hover { background: #303944; color: #fff; }
+.status-bar > button:hover { background: rgba(255, 255, 255, 0.09); color: #fff; }
+.status-bar > button:focus-visible { outline: 2px solid #8fc6ef; outline-offset: -3px; }
 .status-bar b { color: #e7ebef; font-family: var(--font-mono); font-weight: 500; }
-.status-bar__state { color: var(--success) !important; }
+.status-bar__state { min-width: 118px; color: var(--success) !important; box-shadow: inset 3px 0 0 currentColor; }
 .status-bar__state.solving { color: var(--warning) !important; }
 .status-bar__state.error { color: var(--danger) !important; }
 .status-bar__spacer { flex: 1 1 auto; border-right: 0 !important; }
