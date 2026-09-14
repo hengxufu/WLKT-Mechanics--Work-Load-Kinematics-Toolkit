@@ -485,17 +485,30 @@
   "tour": {
     "startTour": "开始导览",
     "skipTour": "暂时跳过",
+    "modelTree": {
+      "title": "从模型树掌握全局",
+      "description": "按几何、材料、截面、约束、载荷和结果组织模型；点击对象即可定位并编辑。"
+    },
     "viewerControls": {
       "title": "视图按钮",
       "description": "使用视图控制可将结构居中或适配屏幕，并选择需要显示的内容。"
     },
     "viewerSettings": {
       "title": "自定义显示选项",
-      "description": "可选择显示轴力、剪力、弯矩、变形图，或同时显示全部。"
+      "description": "这里编辑选中对象和求解参数，并控制变形、内力与结果图层的显示。"
+    },
+    "workspace": {
+      "title": "在工作区检查结构",
+      "description2d": "二维视口支持建模、选择、缩放和内力图检查，坐标与荷载方向均按当前单位显示。",
+      "description3d": "三维视口支持旋转、平移、缩放、标准视角和结果图层，用方向轴确认空间方位。"
     },
     "bottomBar": {
       "title": "添加、删除与修改对象",
       "description": "底部栏是编辑结构的核心区域，可快速管理节点、单元、荷载、材料和截面。"
+    },
+    "statusBar": {
+      "title": "确认求解状态",
+      "description": "状态栏集中显示节点、构件、自由度、本地计算后端和当前求解状态。"
     },
     "previousButton": "上一步",
     "nextButton": "下一步",
@@ -503,7 +516,33 @@
   },
   "welcome": {
     "title": "欢迎使用 <span class=\"edubeam\">拉压弯扭大师</span>！",
-    "description": "为了帮助你快速上手，我们准备了一个简短的入门导览，带你了解本地材料力学求解器的主要功能。"
+    "eyebrow": "拉压弯扭大师 2.0 · 本地材料力学工作台",
+    "heading": "从一个可计算的结构开始",
+    "description": "选择默认案例即可进入完整建模与求解流程，所有模型和计算均保留在本机。",
+    "examplesTitle": "默认学习案例",
+    "examplesDescription": "案例会替换对应维度的当前模型。",
+    "guideAfterLoad": "载入后开始界面导览",
+    "continueWorkspace": "继续当前工作区",
+    "steps": {
+      "model": "建立模型",
+      "modelDescription": "节点、构件、材料与截面",
+      "load": "施加条件",
+      "loadDescription": "约束、荷载与单位",
+      "solve": "本地求解",
+      "solveDescription": "校核自由度并计算",
+      "review": "检查结果",
+      "reviewDescription": "内力、变形与危险位置"
+    },
+    "example2d": {
+      "title": "简支梁弯曲案例",
+      "description": "6 m 简支梁承受跨中 18 kN 集中力，载入后自动完成二维求解。",
+      "focus": "学习重点：支反力、剪力图、弯矩图、挠度与危险截面。"
+    },
+    "example3d": {
+      "title": "空间悬臂刚架案例",
+      "description": "三段正交 Q235 空间刚架在自由端承受三向力和扭矩。",
+      "focus": "学习重点：六自由度、局部坐标、双向弯曲、扭转与组合应力。"
+    }
   },
   "confirmation": {
     "clearMesh": {

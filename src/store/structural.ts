@@ -1,4 +1,4 @@
-import { computed, ref } from 'vue';
+import { computed, ref, toRaw } from 'vue';
 import { defineStore } from 'pinia';
 import {
   ANALYSIS_CAPABILITIES,
@@ -8,6 +8,7 @@ import {
   validateStructuralModel,
 } from '@/utils/structuralModel';
 import { solveStructuralAnalysis } from '@/utils/structuralAdapters';
+import { createDefaultSpaceFrameExample } from '@/utils/defaultExamples';
 import type {
   AnalysisModelType,
   StructuralAnalysisModel,
@@ -19,7 +20,7 @@ import type {
   StructuralSection,
 } from '@/types/structuralAnalysis';
 
-const cloneModel = (model: StructuralAnalysisModel): StructuralAnalysisModel => structuredClone(model);
+const cloneModel = (model: StructuralAnalysisModel): StructuralAnalysisModel => structuredClone(toRaw(model));
 
 export const useStructuralStore = defineStore(
   'structural',
@@ -202,6 +203,10 @@ export const useStructuralStore = defineStore(
       selectedMemberId.value = null;
     };
 
+    const loadDefaultSpaceFrameExample = () => {
+      replaceModel(createDefaultSpaceFrameExample(model.value.revision + 1));
+    };
+
     return {
       model,
       result,
@@ -225,6 +230,7 @@ export const useStructuralStore = defineStore(
       invalidateResult,
       clear,
       loadSpaceTrussVerificationModel,
+      loadDefaultSpaceFrameExample,
     };
   },
   {

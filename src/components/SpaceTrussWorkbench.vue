@@ -257,7 +257,7 @@ const solve = async () => {
           <div class="text-caption text-medium-emphasis">模型版本 {{ structuralStore.model.revision }}</div>
         </div>
         <div class="space-workbench__actions">
-          <v-btn icon="mdi-flask-outline" size="small" variant="text" title="载入校核模型" @click="structuralStore.loadSpaceTrussVerificationModel" />
+          <v-btn icon="mdi-shape-plus-outline" size="small" variant="text" title="载入默认空间刚架案例" @click="structuralStore.loadDefaultSpaceFrameExample" />
           <v-btn icon="mdi-delete-outline" size="small" variant="text" title="清空空间模型" @click="structuralStore.clear" />
           <v-btn v-if="props.inspectorOnly" icon="mdi-chevron-double-right" size="small" variant="text" title="折叠属性面板" @click="uiStore.rightSidebarCollapsed = true" />
         </div>

@@ -81,8 +81,8 @@ const showResult = (result: 'model' | 'displacement' | 'normal' | 'shear' | 'mom
 </script>
 
 <template>
-  <section class="model-tree" aria-label="模型树">
-    <header class="cae-panel-header">
+  <section id="modelTree" class="model-tree" aria-label="模型树">
+    <header id="modelTreeGuideTarget" class="cae-panel-header">
       <span><v-icon size="15" class="mr-1">mdi-file-tree-outline</v-icon>模型树</span>
       <button class="panel-action" title="折叠模型树" @click="uiStore.leftSidebarCollapsed = true"><v-icon size="16">mdi-chevron-double-left</v-icon></button>
     </header>

@@ -485,17 +485,30 @@
   "tour": {
     "startTour": "Start the Tour",
     "skipTour": "Skip for Now",
+    "modelTree": {
+      "title": "Understand the model tree",
+      "description": "Browse geometry, materials, sections, constraints, loads, and results. Select an object to locate and edit it."
+    },
     "viewerControls": {
       "title": "Viewer buttons",
       "description": "The viewer controls are the way to center or fit the structure to screen, and to select what to display."
     },
     "viewerSettings": {
       "title": "Customize Display Options",
-      "description": "Choose what to display – be it normal force, shear force, bending moment, deformed shape, or everything together."
+      "description": "Edit the selected object and solver parameters, then control deformation, force, and result layers."
+    },
+    "workspace": {
+      "title": "Inspect the structure",
+      "description2d": "Use the 2D viewport to model, select, zoom, and inspect force diagrams in the active unit system.",
+      "description3d": "Use the 3D viewport to orbit, pan, zoom, select standard views, and verify orientation with the axis indicator."
     },
     "bottomBar": {
       "title": "Add, remove & modify entities",
       "description": "The central hub where every aspect of your structure can be effortlessly transformed. From nodes to elements, loads, materials, and cross-sections, it's the go-to place for swift and comprehensive changes."
+    },
+    "statusBar": {
+      "title": "Confirm the solve state",
+      "description": "Review node, member, degree-of-freedom, local backend, and current solve status information here."
     },
     "previousButton": "Previous",
     "nextButton": "Next",
@@ -503,7 +516,33 @@
   },
   "welcome": {
     "title": "Welcome to <span class=\"edubeam\">拉压弯扭大师</span>!",
-    "description": "To help you get started, we've prepared a quick onboarding tour that will guide you through the local mechanics solver."
+    "eyebrow": "Mechanics Studio 2.0 · Local learning workspace",
+    "heading": "Start with a solvable structure",
+    "description": "Choose a default example to enter the complete modeling and solving workflow. Models and calculations remain on this device.",
+    "examplesTitle": "Default learning examples",
+    "examplesDescription": "An example replaces the current model in the selected dimension.",
+    "guideAfterLoad": "Start the interface tour after loading",
+    "continueWorkspace": "Continue current workspace",
+    "steps": {
+      "model": "Build the model",
+      "modelDescription": "Nodes, members, materials, sections",
+      "load": "Apply conditions",
+      "loadDescription": "Constraints, loads, and units",
+      "solve": "Solve locally",
+      "solveDescription": "Validate DOFs and calculate",
+      "review": "Review results",
+      "reviewDescription": "Forces, deformation, critical points"
+    },
+    "example2d": {
+      "title": "Simply supported beam",
+      "description": "A 6 m beam with an 18 kN midspan point load, solved automatically in 2D.",
+      "focus": "Learn reactions, shear, moment, deflection, and critical sections."
+    },
+    "example3d": {
+      "title": "Spatial cantilever frame",
+      "description": "A three-segment orthogonal Q235 frame with a three-axis force and torque at its free end.",
+      "focus": "Learn six DOFs, local axes, biaxial bending, torsion, and combined stress."
+    }
   },
   "confirmation": {
     "clearMesh": {

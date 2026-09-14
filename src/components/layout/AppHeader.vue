@@ -25,6 +25,7 @@ const emit = defineEmits<{
   shareProject: [];
   clearProject: [];
   changelog: [];
+  guide: [];
 }>();
 
 const appStore = useAppStore();
@@ -142,6 +143,8 @@ const deleteSelection = () => {
       <v-menu location="bottom start">
         <template #activator="{ props: menuProps }"><button v-bind="menuProps">帮助</button></template>
         <v-list density="compact" class="cae-menu">
+          <v-list-item prepend-icon="mdi-compass-outline" title="使用指导与默认案例" @click="emit('guide')" />
+          <v-divider />
           <v-list-item prepend-icon="mdi-book-open-page-variant-outline" title="本地使用手册" :href="props.docsUrl" target="_blank" />
           <v-list-item prepend-icon="mdi-history" title="版本更新" @click="emit('changelog')" />
         </v-list>

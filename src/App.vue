@@ -29,6 +29,7 @@ import AppHeader from '@/components/layout/AppHeader.vue';
 import { useProjectStore } from './store/project';
 import { useAppStore } from './store/app';
 import { useUiStore } from './store/ui';
+import { useWorkspaceStore } from './store/workspace';
 
 import { VOnboardingWrapper, VOnboardingStep } from 'v-onboarding';
 import 'v-onboarding/dist/style.css';
@@ -38,35 +39,65 @@ import { eventBus, EventType } from './EventBus';
 const { t } = useI18n();
 
 const viewerStore = useViewerStore();
+const workspaceStore = useWorkspaceStore();
 
 const onboardingWrapper = ref(null);
 provide('onboardingWrapper', onboardingWrapper);
 
 const file = ref<HTMLInputElement | null>(null);
 
-const steps = computed(() => [
-  {
+const steps = computed(() => {
+  const spatial = workspaceStore.analysisDimension === '3d';
+  const result = [
+    {
+      attachTo: { element: '#modelTreeGuideTarget' },
+      content: {
+        title: t('tour.modelTree.title'),
+        description: t('tour.modelTree.description'),
+      },
+    },
+    {
     attachTo: { element: '#viewerControls' },
     content: {
       title: t('tour.viewerControls.title'),
       description: t('tour.viewerControls.description'),
     },
-  },
-  {
-    attachTo: { element: '#viewerSettings' },
+    },
+    {
+      attachTo: { element: '.workspace-layout__viewport' },
+      content: {
+        title: t('tour.workspace.title'),
+        description: spatial ? t('tour.workspace.description3d') : t('tour.workspace.description2d'),
+      },
+    },
+    {
+    attachTo: { element: spatial ? '#spatial-inspector' : '#viewerSettings' },
     content: {
       title: t('tour.viewerSettings.title'),
       description: t('tour.viewerSettings.description'),
     },
-  },
-  {
-    attachTo: { element: '#bottomBar' },
+    },
+  ];
+
+  if (!spatial) result.push({
+    attachTo: { element: '#dataDock' },
     content: {
       title: t('tour.bottomBar.title'),
       description: t('tour.bottomBar.description'),
     },
-  },
-]);
+  });
+
+  result.push({
+    attachTo: { element: '#bottomBar' },
+    content: {
+      title: t('tour.statusBar.title'),
+      description: t('tour.statusBar.description'),
+    },
+  });
+  return result;
+});
+
+const openGuide = () => openModal(Welcome);
 
 onMounted(() => {
   document.addEventListener('keydown', function (e) {
@@ -398,6 +429,7 @@ const localDocsUrl = `${import.meta.env.BASE_URL}docs/local-app.html`;
       @share-project="shareMesh"
       @clear-project="confirmClearMesh"
       @changelog="openChangelog"
+      @guide="openGuide"
     />
 
     <v-main class="cae-main">
