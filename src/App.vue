@@ -30,6 +30,8 @@ import { useProjectStore } from './store/project';
 import { useAppStore } from './store/app';
 import { useUiStore } from './store/ui';
 import { useWorkspaceStore } from './store/workspace';
+import { useStructuralStore } from './store/structural';
+import { parseStructuralProject, serializeStructuralProject } from './utils/structuralProject';
 
 import { VOnboardingWrapper, VOnboardingStep } from 'v-onboarding';
 import 'v-onboarding/dist/style.css';
@@ -317,49 +319,58 @@ onMounted(() => {
   });
 });
 
-function onDrop(e) {
-  for (let i = 0; i < e.dataTransfer.files.length; i++) {
-    const file = e.dataTransfer.files[i];
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const text = e.target.result.toString();
-      clearMesh(true, true);
+const loadProjectFile = async (projectFile: File) => {
+  try {
+    const data = JSON.parse(await projectFile.text());
+    if (data && typeof data === 'object' && 'schemaVersion' in data) {
+      const model = parseStructuralProject(data);
+      useStructuralStore().replaceModel(model);
+      workspaceStore.analysisDimension = '3d';
+      workspaceStore.setViewportMode('3d');
+      appStore.bottomBarOpen = false;
+    } else {
+      if (!data?.domain || typeof data.domain !== 'object') throw new Error(t('warnings.importFailed'));
+      const previous = exportJSON();
       try {
-        importJSON(JSON.parse(text));
+        clearMesh(true, true);
+        importJSON(data);
+      } catch (error) {
+        clearMesh(true, true);
+        importJSON(previous);
         solve();
-      } catch (e) {
-        alert(t('warnings.importFailed'));
+        throw error;
       }
-    };
-    reader.readAsText(file);
-  }
-}
-
-function openFile(e) {
-  // check if no file uploaded
-  if (!e.target.files.length) return;
-
-  const file = e.target.files[0];
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    const text = e.target.result.toString();
-    clearMesh(true, true);
-
-    try {
-      importJSON(JSON.parse(text));
+      workspaceStore.switchTo2DPreservingSpatialModel();
+      workspaceStore.setViewportMode('2d');
       solve();
-    } catch (e) {
-      alert(t('warnings.importFailed'));
     }
-
     appStore.tab = 0;
     appStore.drawerOpen = false;
-  };
-  reader.readAsText(file);
+    await nextTick();
+    eventBus.emit(EventType.FIT_CONTENT);
+  } catch (error) {
+    alert(`${t('warnings.importFailed')}\n${error instanceof Error ? error.message : ''}`);
+  }
+};
+
+function onDrop(e: DragEvent) {
+  const projectFile = e.dataTransfer?.files[0];
+  if (projectFile) void loadProjectFile(projectFile);
+}
+
+function openFile(e: Event) {
+  const input = e.target as HTMLInputElement;
+  const projectFile = input.files?.[0];
+  input.value = '';
+  if (projectFile) void loadProjectFile(projectFile);
 }
 
 const saveProject = () => {
-  download('project.json', JSON.stringify(exportJSON()));
+  if (workspaceStore.analysisDimension === '3d') {
+    download('project-3d.json', serializeStructuralProject(useStructuralStore().model));
+  } else {
+    download('project.json', JSON.stringify(exportJSON()));
+  }
 };
 
 const requestOpenProject = () => file.value?.click();

@@ -541,7 +541,7 @@
     "example3d": {
       "title": "Spatial cantilever frame",
       "description": "A three-segment orthogonal Q235 frame with a three-axis force and torque at its free end.",
-      "focus": "Learn six DOFs, local axes, biaxial bending, torsion, and combined stress."
+      "focus": "Learn six DOFs, local axes, biaxial bending, torsion, and combined response."
     }
   },
   "confirmation": {

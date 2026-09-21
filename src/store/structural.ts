@@ -60,7 +60,9 @@ export const useStructuralStore = defineStore(
     };
 
     const replaceModel = (next: StructuralAnalysisModel) => {
-      model.value = cloneModel(next);
+      const replacement = cloneModel(next);
+      replacement.revision = Math.max(model.value.revision + 1, replacement.revision);
+      model.value = replacement;
       result.value = null;
       selectedNodeId.value = null;
       selectedMemberId.value = null;
@@ -132,7 +134,9 @@ export const useStructuralStore = defineStore(
     };
 
     const setResult = (next: StructuralAnalysisResult | null) => {
-      result.value = next ? structuredClone(next) : null;
+      if (next && (next.modelRevision !== model.value.revision || next.modelType !== model.value.modelType)) return false;
+      result.value = next ? structuredClone(toRaw(next)) : null;
+      return true;
     };
 
     const invalidateResult = () => {

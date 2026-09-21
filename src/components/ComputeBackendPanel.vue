@@ -84,8 +84,11 @@ onMounted(() => {
   gap: 8px;
 }
 
-.backend-panel__row :deep(.v-select) { min-width: 190px; }
-.backend-panel__status { flex-wrap: wrap; margin-top: 8px; color: #38516e; font-size: 12px; }
-.backend-panel__status strong { color: #143b69; }
-.backend-panel__note { margin: 8px 0 0; color: #5b6e83; font-size: 11px; line-height: 1.5; }
+.backend-panel__row { flex-wrap: wrap; }
+.backend-panel__row :deep(.v-select) { min-width: 0; flex: 1 1 calc(100% - 48px); }
+.backend-panel__row :deep(.v-chip) { order: 3; max-width: 100%; height: auto; min-height: 24px; white-space: normal; }
+.backend-panel__row :deep(.v-chip__content) { white-space: normal; }
+.backend-panel__status { flex-wrap: wrap; margin-top: 8px; color: var(--text-secondary); font-size: 12px; }
+.backend-panel__status strong { color: var(--accent-strong); }
+.backend-panel__note { margin: 8px 0 0; color: var(--text-muted); font-size: 11px; line-height: 1.5; }
 </style>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref, watch } from 'vue';
+import StructuralResultsPanel from './StructuralResultsPanel.vue';
 import ComputeBackendPanel from './ComputeBackendPanel.vue';
 import StructuralViewportHost from './StructuralViewportHost.vue';
 import { useSolverStore } from '@/store/solver';
@@ -17,6 +18,10 @@ const solverStore = useSolverStore();
 const uiStore = useUiStore();
 const activePanel = ref<string[]>(['model', 'nodes', 'members', 'loads']);
 const uiError = ref('');
+const inspectorTab = ref('model');
+watch(() => structuralStore.result, (value) => {
+  if (value && structuralStore.resultIsCurrent && value.convergence.converged && !value.diagnostics.errors.length) inspectorTab.value = 'results';
+}, { immediate: true });
 
 const materialForm = reactive({
   id: 'steel',
@@ -263,7 +268,13 @@ const solve = async () => {
         </div>
       </header>
 
+      <v-tabs v-model="inspectorTab" density="compact" grow aria-label="空间分析面板">
+        <v-tab value="model">模型</v-tab>
+        <v-tab value="results">结果</v-tab>
+      </v-tabs>
       <div class="space-workbench__scroll">
+        <StructuralResultsPanel v-if="inspectorTab === 'results'" />
+        <div v-show="inspectorTab === 'model'">
         <ComputeBackendPanel />
 
         <v-select
@@ -429,6 +440,7 @@ const solve = async () => {
             </v-expansion-panel-text>
           </v-expansion-panel>
         </v-expansion-panels>
+        </div>
 
         <section class="solve-section">
           <div class="solve-section__status">
@@ -484,35 +496,6 @@ const solve = async () => {
           {{ message }}
         </v-alert>
 
-        <section v-if="result && result.diagnostics.errors.length === 0" class="results-section">
-          <h3>节点结果</h3>
-          <v-table density="compact" class="data-table">
-            <thead><tr><th>节点</th><th>Ux</th><th>Uy</th><th>Uz</th><th>Rxn X</th><th>Rxn Y</th><th>Rxn Z</th></tr></thead>
-            <tbody>
-              <tr v-for="(nodeResult, nodeId) in result.nodeResults" :key="nodeId">
-                <td>{{ nodeId }}</td>
-                <td>{{ formatNumber(nodeResult.displacement.ux) }}</td>
-                <td>{{ formatNumber(nodeResult.displacement.uy) }}</td>
-                <td>{{ formatNumber(nodeResult.displacement.uz) }}</td>
-                <td>{{ formatNumber(nodeResult.reaction?.fx) }}</td>
-                <td>{{ formatNumber(nodeResult.reaction?.fy) }}</td>
-                <td>{{ formatNumber(nodeResult.reaction?.fz) }}</td>
-              </tr>
-            </tbody>
-          </v-table>
-          <h3>杆件结果</h3>
-          <v-table density="compact" class="data-table">
-            <thead><tr><th>杆件</th><th>轴力 N / N</th><th>正应力 σ / Pa</th><th>安全系数</th></tr></thead>
-            <tbody>
-              <tr v-for="(memberResult, memberId) in result.memberResults" :key="memberId">
-                <td>{{ memberId }}</td>
-                <td>{{ formatNumber(memberResult.stations[0]?.axialForce) }}</td>
-                <td>{{ formatNumber(memberResult.stations[0]?.normalStress) }}</td>
-                <td>{{ formatNumber(memberResult.stations[0]?.safetyFactor) }}</td>
-              </tr>
-            </tbody>
-          </v-table>
-        </section>
       </div>
     </aside>
 
@@ -598,10 +581,13 @@ const solve = async () => {
 }
 
 .space-workbench__scroll {
+  flex: 1;
   min-height: 0;
   overflow: auto;
   padding: 12px;
 }
+
+.space-workbench__editor > :deep(.v-tabs) { flex: 0 0 auto; }
 
 .form-grid {
   display: grid;

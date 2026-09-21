@@ -22,6 +22,9 @@
     "src/utils/spacePostprocess3D.ts",
     "src/utils/structuralModel.ts",
     "src/utils/structuralAdapters.ts",
+    "src/utils/structuralProject.ts",
+    "src/utils/structuralResults.ts",
+    "src/utils/cameraFit3d.ts",
     "src/utils/webgpuCapability.ts",
     "src/store/solver.ts",
     "src/store/structural.ts",
@@ -31,6 +34,10 @@
     "src/tests/computeBackends.test.ts",
     "src/tests/modelDimension.test.ts",
     "src/tests/structuralModel.test.ts",
+    "src/tests/structuralProject.test.ts",
+    "src/tests/structuralResults.test.ts",
+    "src/tests/structuralStore.test.ts",
+    "src/tests/cameraFit3d.test.ts",
     "src/tests/spaceTrussAdapter.test.ts"
   ],
   "exclude": ["node_modules"]

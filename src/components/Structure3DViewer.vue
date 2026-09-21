@@ -11,6 +11,7 @@ import { useWorkspaceStore } from '@/store/workspace';
 import { createStructureSceneModel3D, calculateAutoDeformationScale, createMemberLocalAxes3D } from '@/utils/model3d';
 import { createStructureSceneModelFromStructuralAnalysis } from '@/utils/structuralAdapters';
 import { executeModelMutationWithUndo } from '@/utils';
+import { fitCameraToBounds } from '@/utils/cameraFit3d';
 import type { Member3D, Node3D, NodeConstraint3D, Vector3Data } from '@/types/model3d';
 
 const props = withDefaults(defineProps<{ id: string; showProperties?: boolean }>(), {
@@ -197,7 +198,7 @@ const addMember = (member: Member3D) => {
 
 const getMemberResultColor = (memberId: string) => {
   const mode = viewerStore.threeDResultMode;
-  if (mode === 'model' || mode === 'displacement') return 0x1c2737;
+  if (mode === 'model' || mode === 'displacement') return uiStore.theme === 'dark' ? 0xaebdce : 0x1c2737;
   const value = structureModel.value.memberForces
     .filter((force) => force.memberId === memberId)
     .reduce((maximum, force) => Math.max(maximum, Math.abs(mode === 'normal' ? force.axialForce : mode === 'shear' ? force.shearY : force.bendingZ)), 0);
@@ -253,7 +254,7 @@ const addNode = (node: Node3D) => {
     : projectStore.selection2.nodes.includes(node.id);
   const mesh = new THREE.Mesh(
     new THREE.SphereGeometry(selected ? 0.09 : 0.07, 16, 12),
-    new THREE.MeshStandardMaterial({ color: selected ? 0xffb300 : 0x0c4a85, roughness: 0.35, metalness: 0.15 })
+    new THREE.MeshStandardMaterial({ color: selected ? 0xffb300 : uiStore.theme === 'dark' ? 0x59aaf0 : 0x0c4a85, roughness: 0.35, metalness: 0.15 })
   );
   mesh.position.copy(toThree(node));
   mesh.name = `node-${node.id}`;
@@ -389,19 +390,13 @@ const updateCameraAspect = () => {
 
 const fitToStructure = () => {
   if (!camera || !controls || structureModel.value.nodes.length === 0) return;
-  const box = new THREE.Box3().setFromPoints(structureModel.value.nodes.map(toThree));
-  const size = box.getSize(new THREE.Vector3());
-  const center = box.getCenter(new THREE.Vector3());
-  const width = Math.max(host.value?.clientWidth ?? 1, 1);
-  const height = Math.max(host.value?.clientHeight ?? 1, 1);
-  const aspectAllowance = Math.sqrt(Math.max(1, height / width));
-  const controlAllowance = width < 680 ? 1.08 : 1;
-  const radius = Math.max(size.length() * 0.82, 2.5) * aspectAllowance * controlAllowance;
+  updateCameraAspect();
+  cameraAnimation = null;
+  const box = modelGroup ? new THREE.Box3().setFromObject(modelGroup) : new THREE.Box3();
+  structureModel.value.nodes.forEach((node) => box.expandByPoint(toThree(node)));
+  const center = fitCameraToBounds(camera, box);
   controls.target.copy(center);
   cameraTarget.copy(center);
-  camera.position.copy(center).add(new THREE.Vector3(radius, radius * 0.75, radius));
-  if (camera instanceof THREE.OrthographicCamera) camera.zoom = Math.max(0.1, 7 / radius);
-  camera.updateProjectionMatrix();
   controls.update();
 };
 
@@ -461,6 +456,7 @@ const toggleProjection = () => {
   controls.target.copy(target);
   controls.update();
   updateCameraAspect();
+  fitToStructure();
 };
 
 const eventPointer = (event: PointerEvent) => {
@@ -621,7 +617,9 @@ const setupScene = () => {
   try {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(uiStore.theme === 'dark' ? 0x181b20 : 0xf3f5f7);
-    camera = new THREE.PerspectiveCamera(42, 1, 0.01, 10000);
+    camera = projection.value === 'orthographic'
+      ? new THREE.OrthographicCamera(-4, 4, 4, -4, 0.01, 10000)
+      : new THREE.PerspectiveCamera(42, 1, 0.01, 10000);
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -685,6 +683,11 @@ watch(
 watch(() => uiStore.theme, () => {
   applyViewportTheme();
   nextTick(buildModel);
+});
+watch(() => structureModel.value.nodes.map((node) => `${node.id}:${node.x},${node.y},${node.z}`).join(';'), async () => {
+  await nextTick();
+  buildModel();
+  fitToStructure();
 });
 watch(selectedNode, syncSelectedNode, { immediate: true });
 watch(
@@ -877,7 +880,7 @@ onBeforeUnmount(() => {
 }
 
 .structure-3d-result-panel {
-  top: 92px;
+  top: 120px;
   right: 10px;
   width: 178px;
   padding: 8px;
