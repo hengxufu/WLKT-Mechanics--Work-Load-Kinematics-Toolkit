@@ -38,19 +38,6 @@
 - **2D 简支梁弯曲**：6 m 简支梁承受跨中 18 kN 集中力，用于学习支反力、剪力图、弯矩图、挠度与危险截面。
 - **3D 空间悬臂刚架**：三段正交 Q235 空间刚架在自由端承受三向力和扭矩，用于学习六自由度、局部坐标、双向弯曲、扭转与组合响应。
 
-## 三维结果与工程文件
-
-三维工作区求解成功后，右侧自动进入“结果”页。可切换“位移与转角”“支座反力”和“构件端力”（桁架为“杆件结果”），点击表内节点或构件编号可在视口中高亮对应对象；展开按钮用于查看完整宽表。
-
-- 位移使用 **mm**，转角使用 **rad**；反力、轴力和剪力使用 **kN**，力矩使用 **kN·m**。桁架正应力使用 **MPa**，安全系数无量纲。
-- 节点位移与支反力采用全局坐标系。刚架端力采用构件局部坐标系的两端节点力符号，`x/L = 0` 为起端、`1` 为终端，不应直接将端力正负号当作连续截面内力图的符号。
-- 最大位移摘要是**离散节点位移模长**的最大值，不等同于构件内部挠度的精确极值。未提供的结果显示为 `—`，不会当作零值处理。
-- 下载按钮将当前结果表导出为 UTF-8 CSV，包含单位、坐标说明、模型修订号和未按显示位数截断的数值。CSV 是结果快照，不能作为工程文件重新打开。
-- 在三维模式中选择 `文件 > 保存工程`，生成 `project-3d.json`，保存几何、约束、材料、截面和节点荷载。打开该文件会自动进入三维工作区；结果不随文件保存，需要重新求解。二维工程仍使用原有 JSON 格式。
-- 修改模型后旧结果失效；导入文件先校验格式，无效三维文件不会覆盖当前模型。求解期间切换或替换模型后，延迟返回的旧结果会被拒收。
-
-以上计算、校验、导入和导出均在使用者本机完成，不新增远程服务或数据上传。
-
 ## 快速开始
 
 项目需要 Node.js 20 或更高版本。仓库内也可使用 `.local-tools` 中的本地 Node 工具链。
@@ -60,13 +47,13 @@ npm install
 npm run dev
 ```
 
-开发服务默认运行在：
+bash开发服务默认运行在：
 
 ```text
 http://localhost:3000
 ```
 
-## 本地构建
+text## 本地构建
 
 生成生产版本：
 
@@ -74,19 +61,19 @@ http://localhost:3000
 npm run build
 ```
 
-预览生产版本：
+bash预览生产版本：
 
 ```bash
 npm run app:preview
 ```
 
-浏览器打开：
+bash浏览器打开：
 
 ```text
 http://127.0.0.1:4173
 ```
 
-## 生成 Windows 安装包
+text## 生成 Windows 安装包
 
 推荐使用项目内置 Node 工具链：
 
@@ -96,7 +83,7 @@ $env:Path = "$PWD\.local-tools\node-v22.22.2-win-x64;$env:Path"
 .\.local-tools\node-v22.22.2-win-x64\npm.cmd run release:checksums
 ```
 
-生成文件：
+powershell生成文件：
 
 ```text
 release/desktop/拉压弯扭大师-<version>-x64-Setup.exe
@@ -104,7 +91,7 @@ release/desktop/SHA256SUMS.txt
 release/desktop/release-manifest.json
 ```
 
-校验安装包：
+text校验安装包：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\release\desktop\verify-installer.ps1 .\release\desktop
@@ -112,7 +99,7 @@ Get-FileHash .\release\desktop\拉压弯扭大师-<version>-x64-Setup.exe -Algor
 Get-AuthenticodeSignature .\release\desktop\拉压弯扭大师-<version>-x64-Setup.exe
 ```
 
-没有正式代码签名证书时，安装包可以安装使用，但 Windows 不能证明发布者身份。公开分发前建议配置代码签名证书；没有证书时至少提供 SHA256 哈希，便于识别文件是否被篡改。
+powershell没有正式代码签名证书时，安装包可以安装使用，但 Windows 不能证明发布者身份。公开分发前建议配置代码签名证书；没有证书时至少提供 SHA256 哈希，便于识别文件是否被篡改。
 
 ## 分享与隐私
 
@@ -136,7 +123,7 @@ npm run desktop:dist:win # 生成 Windows 一键安装包
 npm run release:checksums # 生成 SHA256 校验文件
 ```
 
-## 技术栈
+bash## 技术栈
 
 - Vue 3
 - TypeScript
