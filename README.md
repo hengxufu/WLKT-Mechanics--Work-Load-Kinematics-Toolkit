@@ -2,7 +2,7 @@
 
 ![拉压弯扭大师图标](public/app-icon.png)
 
-**2.0.0 · 面向材料力学学习的本地离线求解与公式计算软件**
+**2.0.2 · 面向材料力学学习的本地离线求解与公式计算软件**
 
 拉压弯扭大师是一款面向材料力学、结构力学基础和杆系分析学习场景的桌面软件。软件围绕“拉伸压缩、弯曲、扭转、组合变形”四类核心问题组织功能，帮助使用者完成建模、求解、推导、危险截面识别和字母公式计算。
 
@@ -47,13 +47,13 @@ npm install
 npm run dev
 ```
 
-bash开发服务默认运行在：
+bashbash开发服务默认运行在：
 
 ```text
 http://localhost:3000
 ```
 
-text## 本地构建
+texttext## 本地构建
 
 生成生产版本：
 
@@ -61,19 +61,19 @@ text## 本地构建
 npm run build
 ```
 
-bash预览生产版本：
+bashbash预览生产版本：
 
 ```bash
 npm run app:preview
 ```
 
-bash浏览器打开：
+bashbash浏览器打开：
 
 ```text
 http://127.0.0.1:4173
 ```
 
-text## 生成 Windows 安装包
+texttext## 生成 Windows 安装包
 
 推荐使用项目内置 Node 工具链：
 
@@ -83,7 +83,7 @@ $env:Path = "$PWD\.local-tools\node-v22.22.2-win-x64;$env:Path"
 .\.local-tools\node-v22.22.2-win-x64\npm.cmd run release:checksums
 ```
 
-powershell生成文件：
+powershellpowershell生成文件：
 
 ```text
 release/desktop/拉压弯扭大师-<version>-x64-Setup.exe
@@ -91,15 +91,15 @@ release/desktop/SHA256SUMS.txt
 release/desktop/release-manifest.json
 ```
 
-text校验安装包：
+texttext校验安装包：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\release\desktop\verify-installer.ps1 .\release\desktop
+powershell -ExecutionPolicy Bypass -File .\scripts\verify-installer.ps1 .\release\desktop
 Get-FileHash .\release\desktop\拉压弯扭大师-<version>-x64-Setup.exe -Algorithm SHA256
 Get-AuthenticodeSignature .\release\desktop\拉压弯扭大师-<version>-x64-Setup.exe
 ```
 
-powershell没有正式代码签名证书时，安装包可以安装使用，但 Windows 不能证明发布者身份。公开分发前建议配置代码签名证书；没有证书时至少提供 SHA256 哈希，便于识别文件是否被篡改。
+powershellpowershell没有正式代码签名证书时，安装包可以安装使用，但 Windows 不能证明发布者身份。公开分发前建议配置代码签名证书；没有证书时至少提供 SHA256 哈希，便于识别文件是否被篡改。
 
 ## 分享与隐私
 
@@ -123,7 +123,7 @@ npm run desktop:dist:win # 生成 Windows 一键安装包
 npm run release:checksums # 生成 SHA256 校验文件
 ```
 
-bash## 技术栈
+bashbash## 技术栈
 
 - Vue 3
 - TypeScript
@@ -148,7 +148,7 @@ bash## 技术栈
 
 本项目保留原仓库许可证。使用、修改和分发前请阅读仓库中的 `LICENSE` 文件。
 
-## 2.0.0 三维有限元进展
+## 2.0.2 三维有限元进展
 
 当前三维有限元核心已扩展到三类本地求解模块：
 
@@ -162,9 +162,9 @@ bash## 技术栈
 
 1. 定义材料 `E/G`、屈服强度和截面 `A/Iy/Iz/J`。
 2. 输入节点真实 `X/Y/Z` 坐标和 `Ux/Uy/Uz/Rx/Ry/Rz` 约束。
-3. 连接空间杆件并施加 `Fx/Fy/Fz` 节点荷载。
+3. 连接空间杆件并施加 `Fx/Fy/Fz` 节点力；空间刚架还可施加 `Mx/My/Mz` 节点力矩。
 4. 通过模型检查后在本地 Worker 中执行 sparse LU 求解。
-5. 查看节点位移、支座反力、杆件轴力、正应力、安全系数和三维变形。
+5. 查看节点位移、支座反力、杆件轴力；空间刚架还可查看双向剪力、双向弯矩、扭矩、正应力、安全系数和三维变形。
 
 求解结果绑定模型修订号。几何、材料、截面、约束或载荷改变后，旧结果会标记为过期，不再作为当前模型结果显示。
 

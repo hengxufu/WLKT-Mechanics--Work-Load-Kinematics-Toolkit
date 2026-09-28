@@ -1,6 +1,6 @@
 {
   "name": "laya-wan-niu-master",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Offline axial-compression-bending-torsion mechanics learning and solving toolkit.",
   "author": "拉压弯扭大师 Contributors",
   "type": "module",
