@@ -6,7 +6,7 @@ node_modules
 .electron-builder-cache
 .desktop-app
 /dist
-/release
+
 
 # vitepress
 docs/.vitepress/cache

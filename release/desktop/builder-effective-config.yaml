@@ -1,0 +1,38 @@
+directories:
+  output: ../release/desktop
+  buildResources: public
+appId: cn.buaa.layawanniu.master
+productName: 拉压弯扭大师
+copyright: Copyright © 2026 拉压弯扭大师
+electronVersion: 43.0.0
+files:
+  - filter:
+      - dist/**/*
+      - electron/**/*
+      - package.json
+      - LICENSE
+      - README.md
+      - docs/windows-installer.md
+asar: true
+compression: maximum
+npmRebuild: false
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: public/favicon.ico
+  requestedExecutionLevel: highestAvailable
+  signAndEditExecutable: true
+  verifyUpdateCodeSignature: true
+  artifactName: 拉压弯扭大师-${version}-${arch}-Setup.${ext}
+nsis:
+  oneClick: true
+  perMachine: true
+  allowElevation: true
+  allowToChangeInstallationDirectory: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 拉压弯扭大师
+  runAfterFinish: true
+  deleteAppDataOnUninstall: false
