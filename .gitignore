@@ -6,8 +6,8 @@ node_modules
 .electron-builder-cache
 .desktop-app
 /dist
-
-
+\release\desktop
+/output/playwright
 # vitepress
 docs/.vitepress/cache
 docs/.vitepress/dist
