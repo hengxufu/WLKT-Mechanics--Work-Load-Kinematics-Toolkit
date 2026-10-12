@@ -1,0 +1,15 @@
+{
+  "schema": "ppt_element_manifest_v1",
+  "canvas": {
+    "width_in": 13.333,
+    "height_in": 7.5
+  },
+  "max_generated_asset_area_fraction": 0.55,
+  "native_objects": {
+    "text": true,
+    "charts": true,
+    "tables": true,
+    "formulas": true
+  },
+  "elements": []
+}

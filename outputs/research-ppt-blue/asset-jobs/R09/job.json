@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "transport": "chatgpt_web",
+  "requested_engine": "image-2.5",
+  "verified_engine": null,
+  "status": "integrated",
+  "spec": {
+    "asset_id": "LMB-A09",
+    "kind": "icon",
+    "slide_id": "S14",
+    "object_id": "web-rich-09",
+    "element": "金属盾牌与勾形镂空。突出可信度与边界意识，仅作为可信性概念装饰，不代表产品获得认证。",
+    "palette": "蓝银金属、青色高光、极少量橙色反射",
+    "style": "高级精密工程三维产品摄影；柔和左上棚拍光，精细拉丝金属边缘，单一独立完整主体",
+    "transparent": true,
+    "min_width": 1024,
+    "min_height": 1024,
+    "aspect": "1:1",
+    "visual_context": {
+      "slide_background": "纯白与浅冰蓝",
+      "avoid": "不画页面、数字、公式、其他独立物体、支座、受力箭头、数据结果"
+    }
+  },
+  "history": [
+    {
+      "at": "2026-10-11T09:35:19.897653+00:00",
+      "status": "prepared"
+    },
+    {
+      "at": "2026-10-11T09:56:37.382752+00:00",
+      "status": "submitted",
+      "note": "完整单主体提示词已实际出现网页消息。"
+    },
+    {
+      "at": "2026-10-11T09:58:18.561192+00:00",
+      "status": "received"
+    },
+    {
+      "at": "2026-10-11T09:58:53.032964+00:00",
+      "status": "accepted",
+      "note": "已实际查看透明原图：蓝银盾牌和内嵌勾形为单一主体，无认证文字和标志。仅作能力边界页小装饰，避免与工程认证混淆。"
+    },
+    {
+      "at": "2026-10-11T10:04:31.644730+00:00",
+      "status": "integrated",
+      "note": "已在最终PPT中核对独立对象名与原图SHA-256，最终渲染已查看。"
+    },
+    {
+      "at": "2026-10-11T10:26:24.807701+00:00",
+      "status": "integrated",
+      "note": "Reused previously accepted asset; actual named picture SHA256 verified in new green deck; final rendered placement reviewed."
+    },
+    {
+      "at": "2026-10-11T10:32:49.585065+00:00",
+      "status": "integrated",
+      "note": "Reused previously accepted asset; actual named picture SHA256 verified in new blue deck; final rendered placement reviewed."
+    }
+  ],
+  "session_url": "https://chatgpt.com/c/6acb587b-494c-83e8-9da9-561a860a5de7",
+  "asset_file": "LMB-A09-original.png",
+  "sha256": "bca6ce2edf8253445c3bb8fc91e810354c9b163bbb703c1003ce3e10cc5b47bd",
+  "technical_checks": {
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "has_transparent_pixels": true,
+    "has_visible_pixels": true,
+    "subject_bbox_px": [
+      174,
+      74,
+      1088,
+      1166
+    ],
+    "subject_box_area_fraction": 0.6347,
+    "size_ok": true,
+    "alpha_ok": true,
+    "warnings": []
+  },
+  "visual_review": {
+    "note": "已实际查看透明原图：蓝银盾牌和内嵌勾形为单一主体，无认证文字和标志。仅作能力边界页小装饰，避免与工程认证混淆。",
+    "at": "2026-10-11T09:58:53.032964+00:00"
+  },
+  "placement_file": "placement.json",
+  "integration": {
+    "pptx": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-blue\\拉压弯扭大师_蓝色技术路线增强版.pptx",
+    "pptx_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+    "shape_name": "S14/web-rich-09",
+    "at": "2026-10-11T10:32:49.585065+00:00"
+  }
+}

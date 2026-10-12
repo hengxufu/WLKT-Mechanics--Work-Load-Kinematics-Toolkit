@@ -1,0 +1,44 @@
+{
+  "final_deck_pages": 18,
+  "final_chart_values": [
+    [
+      [
+        15.0,
+        12.0,
+        9.0
+      ],
+      [
+        3.0,
+        6.0,
+        9.0
+      ]
+    ],
+    [
+      [
+        15.0,
+        24.0,
+        27.0
+      ]
+    ]
+  ],
+  "source_data_matches": true,
+  "speaker_notes_present": true,
+  "editing_demo": {
+    "title": "中文标题增加编辑演示",
+    "chart_first_value": 16,
+    "table_cell": "A*",
+    "viewed_render_pages": [
+      1,
+      6,
+      9
+    ],
+    "not_physical_result": true
+  },
+  "evidence_scope": [
+    "Actual screenshots reused from 2026-10-10",
+    "2D default magnitude comparison only",
+    "3D forces only, moments not fully checked",
+    "Parametric charts analytic prediction",
+    "No invented stress, safety factor, usage or performance benchmark"
+  ]
+}

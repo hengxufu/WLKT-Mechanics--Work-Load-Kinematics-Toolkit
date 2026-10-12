@@ -1,0 +1,23 @@
+{
+  "schema": "ppt_element_manifest_v1",
+  "elements": [
+    {
+      "request_id": "REQ01",
+      "slide_number": 1,
+      "kind": "concept",
+      "job_dir": "../asset-jobs/queue-v1/REQ01"
+    },
+    {
+      "request_id": "REQ03",
+      "slide_number": 3,
+      "kind": "concept",
+      "job_dir": "../asset-jobs/queue-v1/REQ03"
+    },
+    {
+      "request_id": "REQ16",
+      "slide_number": 16,
+      "kind": "ornament",
+      "job_dir": "../asset-jobs/queue-v1/REQ16"
+    }
+  ]
+}

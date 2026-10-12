@@ -1,0 +1,13 @@
+{
+  "schema": "research_ppt_session_v1",
+  "title": "拉压弯扭大师：让材料力学看得见",
+  "scenario": "同学软件分享",
+  "audience": "材料力学课程同学",
+  "duration_min": 10,
+  "project_root": "D:\\MACHANICS-OF-MATERIALS-main",
+  "created_at": "2026-10-10T07:43:44.707994+00:00",
+  "planning_owner": "chatgpt-web:gpt-6-astra",
+  "image_asset_owner": "chatgpt-web:gpt-image-2.5-sunburst",
+  "assembly_owner": "codex-local-script",
+  "connection_status": "pending"
+}

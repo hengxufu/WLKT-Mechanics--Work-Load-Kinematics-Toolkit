@@ -1,0 +1,20 @@
+{
+  "font_policy": {
+    "chinese": "Microsoft YaHei / 微软雅黑",
+    "western": "Times New Roman"
+  },
+  "counts": {
+    "latin": 331,
+    "east_asian": 331,
+    "office_equations": 0,
+    "latex_compatibility_pictures": 0
+  },
+  "mismatches": [],
+  "passed_explicit_font_check": true,
+  "parts_checked": 17,
+  "limits": [
+    "Bitmap labels, school logos and generated artistic glyphs have no editable font declaration.",
+    "Inherited theme styling still needs actual rendering review.",
+    "OMML count is structural evidence; verify native equations in the target PowerPoint version."
+  ]
+}

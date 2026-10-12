@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GPT-6 research deck plan",
+  "type": "object",
+  "required": [
+    "deck_thesis",
+    "audience",
+    "slides",
+    "evidence_gaps",
+    "review_checklist"
+  ],
+  "properties": {
+    "deck_thesis": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "slide_number",
+          "title",
+          "takeaway",
+          "content_blocks",
+          "speaker_notes",
+          "asset_requests"
+        ],
+        "properties": {
+          "slide_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "title": {
+            "type": "string"
+          },
+          "takeaway": {
+            "type": "string"
+          },
+          "content_blocks": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "speaker_notes": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "asset_requests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "purpose",
+                "single_subject_prompt"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "ornament",
+                    "concept",
+                    "art_text",
+                    "icon",
+                    "cutout"
+                  ]
+                },
+                "purpose": {
+                  "type": "string"
+                },
+                "single_subject_prompt": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_checklist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

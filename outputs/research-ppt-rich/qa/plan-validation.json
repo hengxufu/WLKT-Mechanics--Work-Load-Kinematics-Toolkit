@@ -1,0 +1,9 @@
+{
+  "structure_valid": true,
+  "geometry_synced_to": "build/deck-native.pptx",
+  "web_raw_reply": "planning/visual-assistant-reply.txt",
+  "web_review": "planning/web-density-review.txt",
+  "model_name_verified": false,
+  "user_exception": "允许用当前网页版完成规划和单元素生成，注明模型名未核验",
+  "receive_web_plan_cli_limit": "Requires observed GPT-6 label; used its validate function without inventing label"
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "single_element_placement_v1",
+  "slide_id": "S03",
+  "object_id": "torsion_small",
+  "shape_name": "S03/torsion_small",
+  "asset_file": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-redesign\\asset-jobs\\queue-v1\\REQ03\\TORSION_SHAFT-original.png",
+  "asset_sha256": "862e6263f46585e5601653d853b55de08917688a291fc5720453afb4754734bb",
+  "editable": false,
+  "semantic_text": null,
+  "target_box_inches": [
+    0.9,
+    4.95,
+    1.7,
+    1.3
+  ],
+  "image_box_inches": [
+    1.1,
+    4.95,
+    1.3,
+    1.3
+  ],
+  "effective_ppi": 964.6,
+  "resolution_ok": true,
+  "visible_subject_box_inches": [
+    1.174641,
+    5.216427,
+    1.162121,
+    0.787879
+  ],
+  "warnings": [],
+  "image_editing": "none; original preserved; contain without stretching",
+  "visual_review_required": [
+    "实际背景上的边缘",
+    "与文字和证据的间距",
+    "视觉大小和光照一致性"
+  ]
+}

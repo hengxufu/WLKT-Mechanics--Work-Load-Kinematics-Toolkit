@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "transport": "chatgpt_web",
+  "requested_engine": "image-2.5",
+  "verified_engine": null,
+  "status": "integrated",
+  "spec": {
+    "asset_id": "TORSION_SHAFT",
+    "kind": "concept",
+    "element": "仅一根独立完整的短金属圆轴，深蓝冷银拉丝材质，略带螺旋表面高光，柔和左上光照，真实Alpha透明背景。无文字、力矩箭头、公式、支座、拼贴、应力云图或页面设计。",
+    "slide_id": "S03",
+    "object_id": "torsion_small",
+    "palette": "深蓝 #174B70、青色 #008E98、少量橙色 #DA9253",
+    "transparent": true,
+    "min_width": 1024,
+    "min_height": 1024,
+    "aspect": "1:1",
+    "style": "科研汇报·证据与结构；清晰、精致、统一材质与光照",
+    "visual_context": {}
+  },
+  "history": [
+    {
+      "at": "2026-10-11T05:52:36.575912+00:00",
+      "status": "prepared"
+    },
+    {
+      "at": "2026-10-11T06:26:11.112539+00:00",
+      "status": "submitted",
+      "note": "同一专用对话第二次独立任务，已显示用户消息和生成中；不是修改上一张。"
+    },
+    {
+      "at": "2026-10-11T06:28:00.151890+00:00",
+      "status": "received"
+    },
+    {
+      "at": "2026-10-11T06:28:27.893471+00:00",
+      "status": "accepted",
+      "note": "已查看实际原图：独立完整圆轴，蓝银拉丝与左上光一致，无箭头文字和云图；螺旋状亮线仅材质，不作为真实扭转变形。"
+    },
+    {
+      "at": "2026-10-11T06:58:31.644383+00:00",
+      "status": "integrated",
+      "note": "最终第3页圆轴素材边缘完整，不遮挡原生公式。"
+    }
+  ],
+  "session_url": "https://chatgpt.com/c/6acb23d5-80a8-83e8-804b-3e64fa015d02",
+  "asset_file": "TORSION_SHAFT-original.png",
+  "sha256": "862e6263f46585e5601653d853b55de08917688a291fc5720453afb4754734bb",
+  "technical_checks": {
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "has_transparent_pixels": true,
+    "has_visible_pixels": true,
+    "subject_bbox_px": [
+      72,
+      257,
+      1193,
+      1017
+    ],
+    "subject_box_area_fraction": 0.5418,
+    "size_ok": true,
+    "alpha_ok": true,
+    "warnings": []
+  },
+  "visual_review": {
+    "note": "已查看实际原图：独立完整圆轴，蓝银拉丝与左上光一致，无箭头文字和云图；螺旋状亮线仅材质，不作为真实扭转变形。",
+    "at": "2026-10-11T06:28:27.893471+00:00"
+  },
+  "placement_file": "placement.json",
+  "integration": {
+    "pptx": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-redesign\\拉压弯扭大师_中国科研分享重制版.pptx",
+    "pptx_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+    "shape_name": "S03/torsion_small",
+    "at": "2026-10-11T06:58:31.644383+00:00"
+  }
+}

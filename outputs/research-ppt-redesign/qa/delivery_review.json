@@ -1,0 +1,342 @@
+{
+  "schema": "research_ppt_delivery_review_v1",
+  "pptx_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+  "web_planning": {
+    "session_url": "https://chatgpt.com/c/6acb21ae-4768-83ee-be28-8aa97bceb01e",
+    "response_file": "planning/assistant-reply.txt"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "render_file": "renders\\final\\幻灯片1.PNG",
+      "render_sha256": "18dcdbf2b3b20d4457416090c4497be7919f617f6eac78811c3914b9f8dd5be8",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "封面明确软件与学习目标，无实验结论"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "蓝白标题与独立杆件概念插画层级清晰，留白充足"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "概念图明确标注非实测"
+      }
+    },
+    {
+      "slide_number": 2,
+      "render_file": "renders\\final\\幻灯片2.PNG",
+      "render_sha256": "15250161453017875c207dbc1f1279ff18979a843fea7db2995de4a5b3dbd84d",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "三个具体学习问题连接建模与核验"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "左侧问题与右侧梁示意构成对照，无遮挡"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "教育目标不作为求解精度证据"
+      }
+    },
+    {
+      "slide_number": 3,
+      "render_file": "renders\\final\\幻灯片3.PNG",
+      "render_sha256": "f343e5da2e1a027944d7f5f631f3a718fa804548843e0acd54b9a691f9bfb4bc",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "四种基本变形附关系式与适用提示"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "四象限分区与局部圆轴插画可辨，公式为可编辑文本"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "公式来自本地资料，保留LaTeX源码"
+      }
+    },
+    {
+      "slide_number": 4,
+      "render_file": "renders\\final\\幻灯片4.PNG",
+      "render_sha256": "53a9d6ba6d21882c0008d7915e891d2cafec2b19945513797466802fd9b38546",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "五步技术路线含核对回路与两类验证"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "原生节点及箭头可辨，主次流程与底部检查区分明"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "路线依据软件实现资料，不宣称全工况通过"
+      }
+    },
+    {
+      "slide_number": 5,
+      "render_file": "renders\\final\\幻灯片5.PNG",
+      "render_sha256": "b52a25d33d68fc55609f8b1b5b5f49d5d1a6eb6ab9097faa7d19da6ca7841bc0",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "解释模型树、视图与属性栏分工"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "实际工作区大图配右侧三项标注，截图小图标缺字如实保留"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "复用10月10日本地软件实机截图"
+      }
+    },
+    {
+      "slide_number": 6,
+      "render_file": "renders\\final\\幻灯片6.PNG",
+      "render_sha256": "63c5073c0294e37d59a1fa22530b7302d906c7059260ae38204213143adeaba3",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "6m梁18kN跨中荷载与自由度表一致"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "梁图与右侧约束表清晰，荷载截图独立放大"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "两节点一单元与单元内集中力位置来自实机记录"
+      }
+    },
+    {
+      "slide_number": 7,
+      "render_file": "renders\\final\\幻灯片7.PNG",
+      "render_sha256": "1256ba8c30b0f89bba98cd1aa80b646db906697d35591970ce2a00a6ca20a865",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "剪力跳变和跨中弯矩峰值对应两图"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "同等大小截图便于比较，图中9与负27可读"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "截图符号与幅值分别解释"
+      }
+    },
+    {
+      "slide_number": 8,
+      "render_file": "renders\\final\\幻灯片8.PNG",
+      "render_sha256": "f2ca324d5cfd216c1836b15a73bf724fbc9fccf77d17fadecf232d54ee9bd1c7",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "9/9反力和27弯矩幅值对应解析公式"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "左证据图右数值摘要，符号说明与端弯矩说明清晰"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "仅默认案例幅值对比，端弯矩零不等于内部峰值零"
+      }
+    },
+    {
+      "slide_number": 9,
+      "render_file": "renders\\final\\幻灯片9.PNG",
+      "render_sha256": "ecff44cd0e559e1dd633f816942da32ad548e78b1f160bf42c089aa30a509a62",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "荷载位置变化使用给定参数解析预测"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "两个原生图表分别使用kN和kN·m，标签完整"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "明确为解析预测非新实机测量，a定义为距左支座距离"
+      }
+    },
+    {
+      "slide_number": 10,
+      "render_file": "renders\\final\\幻灯片10.PNG",
+      "render_sha256": "07012d5a2131f877e65f38ee03d2de56894a6520715b8edb14a791b2e26b2938",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "整体平衡、局部关系与危险位置形成解释链"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "真实推导截图与三段原生说明分层，底部提示独立"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "推导受符号和坐标约定约束"
+      }
+    },
+    {
+      "slide_number": 11,
+      "render_file": "renders\\final\\幻灯片11.PNG",
+      "render_sha256": "fe98379682c65431fbe2e2efe038240af147c66ffd32dc8b9dd8410ba52ab489",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "每节点六自由度与12阶单元刚度相连"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "空间截图左置，右侧六标签和刚度说明无重叠"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "Euler-Bernoulli假设和放大变形边界明确"
+      }
+    },
+    {
+      "slide_number": 12,
+      "render_file": "renders\\final\\幻灯片12.PNG",
+      "render_sha256": "ca0d3244292242e3b3745a0edbd14aa4980822dfc6303a381ac8037c7aa70fec",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "四节点三构件24自由度及三向力平衡核验"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "真实结果表与原生平衡表并列，数值单位一致"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "残差为界面报告；缺少力矩核验，未填造应力安全系数"
+      }
+    },
+    {
+      "slide_number": 13,
+      "render_file": "renders\\final\\幻灯片13.PNG",
+      "render_sha256": "7b5a6037612fafef59de607c041479b6d6a03a10b35671d06d9d952d0cb91d0d",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "三层架构与本地执行路径有具体组件"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "三层纵向关系与右侧部署模块清楚"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "GPU仅检测未启用数值内核，依据本地实现资料"
+      }
+    },
+    {
+      "slide_number": 14,
+      "render_file": "renders\\final\\幻灯片14.PNG",
+      "render_sha256": "aa8f5993015e6d5bb69c78381f583916cdebac185a09666e643c1467ae21ac58",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "能力与边界逐项对应"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "原生表格列宽可读，学习用途说明独立"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "不将功能存在等同充分验证，软件用途限制保留"
+      }
+    },
+    {
+      "slide_number": 15,
+      "render_file": "renders\\final\\幻灯片15.PNG",
+      "render_sha256": "ef0076b6403b07eb2b1621328a71748b33e41ff72d7b8a0637805527c950a70f",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "四步复现流程包含单参数核验和排错"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "截图与四步顺序配合，排错提示可读"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "入口及行为依据实机指导界面"
+      }
+    },
+    {
+      "slide_number": 16,
+      "render_file": "renders\\final\\幻灯片16.PNG",
+      "render_sha256": "fad7add0f7b97780db4fe423c8c1e020508f0d0d3780e53e1104d776648cd55e",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "结论区分已见结果、下一步验证与反馈"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "大标题、三列内容及独立蓝色环形成收束"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "未来工作不当作已完成验证"
+      }
+    },
+    {
+      "slide_number": 17,
+      "render_file": "renders\\final\\幻灯片17.PNG",
+      "render_sha256": "4a42e50d0dd8bb29aa5455835b42a65be5f458042b8cc22bf4efef4af9b1a3ec",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "公式与单位及条件逐行对应"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "原生表格内容完整，最后一行名称自然换行"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "公式为可编辑文本非OMML，LaTeX源码可追溯"
+      }
+    },
+    {
+      "slide_number": 18,
+      "render_file": "renders\\final\\幻灯片18.PNG",
+      "render_sha256": "721582e0ddf09bf2ce42f860ee4c7dc3a515e88aca0b1c2009ace662fc71c445",
+      "rendered_from_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+      "content_review": {
+        "status": "pass",
+        "note": "四类证据来源和验证边界完整"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "来源列表层级清楚，底部边界提示可读"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "明确网页模型未核验且用户授权继续"
+      }
+    }
+  ],
+  "unresolved_issues": [],
+  "accepted_limitations": [
+    "用户明确允许当前网页版完成规划和单元素生成，具体模型名称未核验；严格GPT-6型号门禁仍为draft。",
+    "公式使用可编辑文本，不是Office原生公式对象。",
+    "真实软件截图保留了当前软件部分图标显示缺字现象。"
+  ],
+  "no_generated_assets_reason": null,
+  "layout_repetition_reason": null
+}

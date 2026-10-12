@@ -1,0 +1,147 @@
+{
+  "run": "local existing dist build at 127.0.0.1:4173",
+  "ui_version": "2.0",
+  "package_version": "2.0.2",
+  "two_dimensional": {
+    "case": "6m simply supported beam, interior concentrated load 18kN at3m",
+    "nodes": 2,
+    "elements": 1,
+    "status": "二维求解完成",
+    "reaction_magnitudes_kN": [
+      9,
+      9
+    ],
+    "moment_graph_kNm": -27,
+    "derivation_summary_moment_magnitude_kNm": 27
+  },
+  "three_dimensional": {
+    "case": "default Q235 spatial frame",
+    "nodes": 4,
+    "elements": 3,
+    "DOF": 24,
+    "status": "求解结果OK",
+    "backend_display": "WebGPU数值内核尚未完成，本次使用Worker CPU高精度求解",
+    "displacement_visual_scale": 2.4
+  },
+  "limits": [
+    "Existing browser offline build was run, not installed Electron exe.",
+    "Some icon glyphs show boxes in the capture browser.",
+    "One default 2D case was compared with analytic magnitudes; not an exhaustive solver audit."
+  ],
+  "assets": [
+    {
+      "file": "01-workspace.jpg",
+      "sha256": "11e12e0f98cb40a42b31057e5baa327152c7a789307beec228ffea621d7df1ea",
+      "ppt_media": "ppt/media/image-4-1.jpg",
+      "captured_or_derived_time": "2026-10-10T22:40:01.576674"
+    },
+    {
+      "file": "02-guide.jpg",
+      "sha256": "b3b366625fb69c26731fc057ae3fa74731a64415e5be89893482cf40864602c8",
+      "ppt_media": "ppt/media/image-12-1.jpg",
+      "captured_or_derived_time": "2026-10-10T22:40:13.840239"
+    },
+    {
+      "file": "03-beam-moment.jpg",
+      "sha256": "72cdfb6ae4cc0878b41a56b30f67ec42272e304e64f9e779569a481e2bab9747",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:40:20.936071"
+    },
+    {
+      "file": "04-derivation.jpg",
+      "sha256": "af48af4e09cd195d6b812ee41e5e7a33697448ff208b4e0662fe672135de949a",
+      "ppt_media": "ppt/media/image-8-1.jpg",
+      "captured_or_derived_time": "2026-10-10T22:40:48.638980"
+    },
+    {
+      "file": "05-element-results.jpg",
+      "sha256": "06aa0b518ee77aad783a51964430c8ce3f0f1547124888dc50a84f0dbad95177",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:41:08.714107"
+    },
+    {
+      "file": "06-shear.jpg",
+      "sha256": "9dd0cded6a07b4d6bc5d12d31b05a14deb0908fa5ef51f4d1339da008bae9830",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:41:16.288470"
+    },
+    {
+      "file": "07-load-properties.jpg",
+      "sha256": "9a2cdcd99d2f2e46e9e72ace7e2e16fa907ff9e309aca4c6026326035a11ad96",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:41:27.939578"
+    },
+    {
+      "file": "08-space-frame.jpg",
+      "sha256": "361d33b4be6d6946fa1e52bd6fc62de6513e266c86d5b7eb5b0d59d3d79d2452",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:42:00.558475"
+    },
+    {
+      "file": "09-space-deformed.jpg",
+      "sha256": "6bda0caad77cf5c3caea095c72f632a9267f451781bba18b483000d8a37250b4",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:42:07.898028"
+    },
+    {
+      "file": "10-space-fitted.jpg",
+      "sha256": "408a20894dc4b8819fb69963205c872d71c76da5d4000886503a712736763613",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:42:35.626470"
+    },
+    {
+      "file": "11-space-results.jpg",
+      "sha256": "9d60c42fcabbadd80e537464a4b61a0899ecb6acd30ef2e3ee6e3208a5d89b2b",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:43:31.324493"
+    },
+    {
+      "file": "beam-model.png",
+      "sha256": "bb644c80eb92fb96f777dd4326fa64ac52f24f209f5c4b78eb25a02e14812583",
+      "ppt_media": "ppt/media/image-6-1.png",
+      "captured_or_derived_time": "2026-10-10T22:46:08.492953"
+    },
+    {
+      "file": "derivation-detail.png",
+      "sha256": "ec8c173ea7f0a325b94e95762f24af9f50fcc0583c83c947b4e049f1c750aa50",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:46:08.523524"
+    },
+    {
+      "file": "end-force-detail.png",
+      "sha256": "f0006b45f71ebcf0516fa2f80f55dadf5e2692b0eadfa1a96d9bca7381a975c5",
+      "ppt_media": null,
+      "captured_or_derived_time": "2026-10-10T22:46:08.545245"
+    },
+    {
+      "file": "load-detail.png",
+      "sha256": "05abb2c6d3348c223161d17719dc567712a9afab1d36fcea11cfceb2408d9ca7",
+      "ppt_media": "ppt/media/image-6-2.png",
+      "captured_or_derived_time": "2026-10-10T22:46:08.452804"
+    },
+    {
+      "file": "moment-detail.png",
+      "sha256": "5f345e476d705c90dfe33c7f19a1b74f64d0061d44ccdb8132c6b749a390871a",
+      "ppt_media": "ppt/media/image-7-1.png",
+      "captured_or_derived_time": "2026-10-10T22:46:08.404228"
+    },
+    {
+      "file": "shear-detail.png",
+      "sha256": "b369409350e068332d46eddc81e9f4afcc3e6d707485bfccd5ac4bb79087d75d",
+      "ppt_media": "ppt/media/image-5-1.png",
+      "captured_or_derived_time": "2026-10-10T22:46:08.433247"
+    },
+    {
+      "file": "space-detail.png",
+      "sha256": "9afed7e7b6fb7ac046ae0cef6fe13037f2d001c5d22c5f4e9b98761cf165ac32",
+      "ppt_media": "ppt/media/image-9-1.png",
+      "captured_or_derived_time": "2026-10-10T22:46:08.599705"
+    },
+    {
+      "file": "space-table.png",
+      "sha256": "ee2c1f4543b81d96efecb2da9532d2646b85ad406b869d0b4692dcebc256a2f3",
+      "ppt_media": "ppt/media/image-9-2.png",
+      "captured_or_derived_time": "2026-10-10T22:46:08.620199"
+    }
+  ]
+}

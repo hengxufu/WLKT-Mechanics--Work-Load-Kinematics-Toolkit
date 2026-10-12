@@ -1,0 +1,32 @@
+{
+  "schema": "ppt_bridge_session_v2",
+  "connection_id": "9c5a9af4-c022-4acd-8dbe-432a9feac518",
+  "project_root": "D:\\MACHANICS-OF-MATERIALS-main",
+  "allowed_roots": [
+    "D:\\MACHANICS-OF-MATERIALS-main"
+  ],
+  "created_at": "2026-10-11T13:39:21.380719+08:00",
+  "local_profile_configured": true,
+  "mcp_service_started": false,
+  "browser_connected": false,
+  "planning_model": "unverified: 思考强度 High",
+  "image_model": "unverified",
+  "image_tool_visible": true,
+  "evidence": [
+    {
+      "file": "qa\\web-observation.txt",
+      "sha256": "ab7fc0430e25bd136e0bf289ecc5a42b5d2d0a6abdc44c79530705a8f611db82"
+    }
+  ],
+  "ready": false,
+  "permission": "L1_READ_ONLY_ADVICE",
+  "public_tunnel": false,
+  "shell_access": false,
+  "workspace_write_access": false,
+  "status": "closed",
+  "session_url": "https://chatgpt.com/",
+  "observation_note": "已登录；当前菜单仅思考强度High；创建图像入口可见。用户允许两个型号未核验继续。",
+  "observed_connection_id": "9c5a9af4-c022-4acd-8dbe-432a9feac518",
+  "observed_at": "2026-10-11T05:42:37.792345+00:00",
+  "unverified_image_user_authorization": "允许用当前网页版完成规划和单元素生成，注明模型名未核验"
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "single_element_placement_v1",
+  "slide_id": "S01",
+  "object_id": "web-rich-10",
+  "shape_name": "S01/web-rich-10",
+  "asset_file": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-green\\asset-jobs\\R10\\LMB-A10-original.png",
+  "asset_sha256": "5e1964e58ec7623075b85b16b802c7f91f796e46c8bda04914050eaf19c654e9",
+  "editable": false,
+  "semantic_text": null,
+  "target_box_inches": [
+    8.05,
+    5.55,
+    4.1,
+    0.9
+  ],
+  "image_box_inches": [
+    8.75,
+    5.55,
+    2.7,
+    0.9
+  ],
+  "effective_ppi": 804.4,
+  "resolution_ok": true,
+  "visible_subject_box_inches": [
+    8.777348,
+    5.699171,
+    2.64779,
+    0.645166
+  ],
+  "warnings": [],
+  "image_editing": "none; original preserved; contain without stretching",
+  "visual_review_required": [
+    "实际背景上的边缘",
+    "与文字和证据的间距",
+    "视觉大小和光照一致性"
+  ]
+}

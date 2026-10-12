@@ -1,0 +1,609 @@
+{
+  "deck_thesis": "拉压弯扭大师v2.0.2通过结构建模、数值求解、结果可视化与公式推导，建立材料力学学习闭环。以二维梁解析核验和三维刚架实机记录证明具体能力，同时明确功能与验证边界。",
+  "audience": "已学习材料力学基础的高校本科生；12分钟课堂分享，16页主稿加2页附录。",
+  "evidence_gaps": [
+    "原始截图与证据JSON尚未在本次规划中独立打开，制作时须逐项核对。",
+    "a=1、2、3m的荷载位置比较仅有解析预测，没有新增软件实测。",
+    "三维刚架缺少完整力矩及反力矩记录，不能宣称六分量平衡通过。",
+    "123.4ms为单次记录，不构成性能基准；6e-14仅对应当前算例。",
+    "二维转角约±0.023144rad缺少完整参数支持独立解析核验。",
+    "已运行本地dist，不等于安装版exe经过验证。",
+    "应力、安全系数字段为空；Tet4实验不能代表成熟连续实体应力分析。",
+    "真实截图部分图标存在字体方框，必须保留原始证据。",
+    "缺少真实使用人数、教学效果和全面精度测试，不得推测。",
+    "空间杆长、节点坐标未完整提供，原生空间示意不能冒充精确实机模型。"
+  ],
+  "design_system": {
+    "canvas_inches": [13.333, 7.5],
+    "theme": "中国高校蓝白科研汇报·证据与结构",
+    "background": {
+      "main": "#FFFFFF",
+      "alternate": "#F3F8FB",
+      "evidence": "#EAF3F8",
+      "cover": "左白右浅蓝",
+      "appendix": "#FAFCFD"
+    },
+    "colors": {
+      "navigation": "#174B70",
+      "title": "#173C5A",
+      "accent": "#008E98",
+      "warning": "#DA9253",
+      "body": "#253746",
+      "secondary": "#587084",
+      "divider": "#B8CDDA"
+    },
+    "typography": {
+      "chinese": "Microsoft YaHei",
+      "western": "Times New Roman",
+      "cover_pt": 34,
+      "title_pt": 28,
+      "body_pt": 19,
+      "figure_pt": 17,
+      "key_number_pt": 29,
+      "caption_pt": 12,
+      "source_pt": 10
+    },
+    "geometry": {
+      "navigation_inches": [0, 0, 13.333, 0.54],
+      "title_inches": [0.72, 0.83, 11.85, 0.65],
+      "body_area_inches": [0.7, 1.85, 11.93, 4.65],
+      "conclusion_inches": [0.7, 6.76, 11.93, 0.43],
+      "horizontal_margin": 0.7,
+      "standard_gap": 0.3,
+      "connector_pt": 1.5,
+      "structural_line_pt": 2.5
+    },
+    "visual_rules": [
+      "顶部章节导航、深蓝结论标题、浅蓝证据区和底部结论条构成统一框架。",
+      "封面与结尾允许突破标准标题位置，其余页面遵守共同栅格。",
+      "标题和底部结论使用原生文字，不与content_blocks重复。",
+      "每页只能有一个主要视觉焦点。",
+      "科学图、公式、表格、坐标、连接线全部原生可编辑。",
+      "统计图必须为带嵌入数据的PowerPoint原生图表。",
+      "反力使用kN坐标轴，弯矩使用kN·m坐标轴，禁止混用。",
+      "真实截图可裁剪和标注，但截图内部像素不宣称可编辑。",
+      "生成素材使用冷调金属或轻薄科技材质、柔和侧光、透明背景。",
+      "不使用校徽、虚构照片、虚构证书、伪造界面或无意义装饰。"
+    ],
+    "visual_rhythm": "1封面低密度；2-4问题与方法中密度；5-8真实界面与二维核验高密度；9参数图表中密度；10推导解释；11-12空间原理与实机证据；13架构解释；14边界矩阵；15操作流程；16低密度结论；17-18附录备查。",
+    "layout_policy": "至少采用产品封面、问题受力图、变形图谱、技术流程、证据放大、左右对照、数值核验、双图表、空间拓扑、技术分层、状态矩阵和路线图等12类布局。连续证据页必须改变信息组织方式。",
+    "source_policy": "项目说明、实机截图、解析预测和待验证事项采用明确的不同来源标签。",
+    "editable_policy": "所有图形关系由独立原生形状组成；截图和透明概念素材仅作为可移动、可裁剪的图片对象。",
+    "asset_count": 3,
+    "asset_status": "仅规划生成请求，尚未生成"
+  },
+  "representative_slides": {
+    "1": {
+      "role": "封面",
+      "focus": "软件定位与单一金属杆件",
+      "composition": "左55%原生主标题和定位，右45%独立金属杆件，浅蓝背景与大面积留白。",
+      "primary": "拉压弯扭大师",
+      "secondary": "v2.0.2、本地离线、材料力学教学",
+      "annotation": "非官方产品；不用于工程认证",
+      "reference_translation": "保留深蓝标题和细顶部导航，不采用多卡片；右侧概念对象只传达力学主题。",
+      "risk": "不能将生成的金属杆件描述为软件仿真结果。"
+    },
+    "4": {
+      "role": "关键技术路线页",
+      "focus": "建模到解析核验的闭环",
+      "composition": "中央11.7英寸宽原生流程，下面分设输入条件和返回检查路径。",
+      "primary": "模型→约束荷载→CPU求解→结果→核验",
+      "secondary": "输入输出条件",
+      "annotation": "返回模型检查的青色箭头",
+      "reference_translation": "顶部章节导航与底部结论保留，中部浅蓝证据容器改造为连续技术流程。",
+      "risk": "不可把WebGPU绘入已经参与运算的主链。"
+    },
+    "8": {
+      "role": "最关键二维数值结果页",
+      "focus": "9kN、9kN、27kN·m的解析与实机对应",
+      "composition": "左侧宽表格，右侧端部与跨中位置解释；橙色只突出容易混淆的0与27。",
+      "primary": "原生数值对照表",
+      "secondary": "弯矩位置示意与真实端力截图",
+      "annotation": "符号约定、单位、解析幅值与实机范围",
+      "reference_translation": "浅蓝证据容器只服务核验关系；底部结论严格限制在特定算例。",
+      "risk": "禁止将端弯矩0理解为全梁最大弯矩0，禁止将-27与+27作有符号相等比较。"
+    }
+  },
+  "review_checklist": [
+    "页数为16页主稿加2页附录，主稿时间总计720秒。",
+    "每页具备具体论点、两个内容块、演讲提示和证据来源。",
+    "主标题不超过22字，结论不超过35字。",
+    "每页只有一个主要视觉焦点。",
+    "不存在连续复用通用三卡片布局。",
+    "至少8种布局，所有布局复杂性来自真实信息关系。",
+    "科学图、数据、坐标和公式必须原生可编辑。",
+    "真实截图必须保留来源和可追溯的局部裁剪。",
+    "二维反力按幅值核验，弯矩保留实机负号说明。",
+    "第9页必须标注解析预测，两个图使用独立单位坐标。",
+    "三维只证明三向合力对应，不扩大为完整力矩核验。",
+    "123.4ms不能用于性能宣传，2.4倍不能当真实变形值。",
+    "WebGPU仅检测，Tet4实验，应力空字段不得补造。",
+    "三个生成元素分别只出现在第1、3、16页且为单主体。",
+    "概念素材不得代替力学图、实测证据或软件截图。",
+    "不使用北航校徽或官方认证表述。",
+    "所有内容优先保证投影可读性，不为图形密度缩小关键字号。",
+    "制作前仍须核查所有原始文件，不能将本规划称为完成实机复验。"
+  ],
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_id": "S01",
+      "title": "拉压弯扭大师",
+      "takeaway": "本地离线的材料力学学习辅助软件",
+      "layout_family": "product-hero",
+      "visual_rationale": "左侧原生语义，右侧单根金属杆件；封面低密度。",
+      "content_blocks": [
+        {
+          "type": "native.text",
+          "text": "让结构建模、内力分析、结果可视化与公式推导形成学习闭环。",
+          "box_inches": [0.85, 2.65, 6.0, 1.4],
+          "source_ref": "README.md"
+        },
+        {
+          "type": "native.text",
+          "text": "v2.0.2｜本地离线｜教学辅助｜非高校官方产品｜不用于实际工程设计认证",
+          "box_inches": [0.85, 4.65, 5.95, 1.15],
+          "source_ref": "README.md"
+        }
+      ],
+      "speaker_notes": "30秒：介绍软件定位和版本，说明今天重点是用真实算例验证学习功能，而非宣传工程认证能力。",
+      "evidence": ["README.md", "用户提供的产品定位"],
+      "asset_requests": [
+        {
+          "request_id": "REQ01",
+          "asset_id": "METAL_BAR",
+          "object_id": "cover_bar",
+          "kind": "concept",
+          "purpose": "封面唯一工程概念主体",
+          "single_subject_prompt": "一根完整独立的细长矩形截面金属杆件，深蓝冷银拉丝钢材质，精致写实，柔和左上主光，科技青色边缘高光，三分之四视角，真实Alpha透明背景，主体完整居中。禁止文字、公式、受力箭头、云图、支座、其他物体、拼贴和整页设计。",
+          "box_inches": [7.55, 1.5, 4.75, 4.75]
+        }
+      ]
+    },
+    {
+      "slide_number": 2,
+      "slide_id": "S02",
+      "title": "为什么需要这样的学习工具？",
+      "takeaway": "课堂难点是把模型、计算与内力图联系起来",
+      "layout_family": "question-figure",
+      "visual_rationale": "原生梁受力图承担主焦点，问题指向具体结构关系。",
+      "content_blocks": [
+        {
+          "type": "native.figure",
+          "text": "6m简支梁，跨中18kN向下集中力；原生绘制支座、跨度和受力箭头。",
+          "box_inches": [5.45, 2.05, 7.05, 3.65],
+          "source_ref": "二维算例"
+        },
+        {
+          "type": "native.text",
+          "text": "三个学习问题：如何设置支座？如何得到剪力和弯矩？如何判断数值是否合理？",
+          "box_inches": [0.8, 2.0, 4.25, 3.85],
+          "source_ref": "课堂任务分析"
+        }
+      ],
+      "speaker_notes": "40秒：围绕一道具体简支梁题，解释建模、结果和解析公式之间的理解障碍，不虚构教学改善数据。",
+      "evidence": ["二维简支梁解析条件"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 3,
+      "slide_id": "S03",
+      "title": "四类基本变形与统一力学量",
+      "takeaway": "不同变形形式共享内力、材料与截面参数",
+      "layout_family": "structural-figure-strip",
+      "visual_rationale": "四组原生受力示意组成连续图谱，左下小圆轴仅作扭转概念辅助。",
+      "content_blocks": [
+        {
+          "type": "native.figure",
+          "text": "拉伸、压缩、弯曲、扭转四类原生示意；箭头、构件、截面和标注可编辑。",
+          "box_inches": [0.85, 2.0, 11.6, 2.6],
+          "source_ref": "README.md"
+        },
+        {
+          "type": "native.text",
+          "text": "内力：N、V、M、T；材料：E、G；截面：A、I、J、W、Wt。",
+          "box_inches": [2.95, 5.0, 9.3, 1.0],
+          "source_ref": "README.md"
+        }
+      ],
+      "speaker_notes": "40秒：介绍软件覆盖的基本变形与组合变形，强调力学量之间的联系，不把功能范围等同于全面测试。",
+      "evidence": ["README.md公式库及功能说明"],
+      "asset_requests": [
+        {
+          "request_id": "REQ03",
+          "asset_id": "TORSION_SHAFT",
+          "object_id": "torsion_small",
+          "kind": "concept",
+          "purpose": "左下扭转区域的小型圆轴概念",
+          "single_subject_prompt": "仅一根独立完整的短金属圆轴，深蓝冷银拉丝材质，略带螺旋表面高光，柔和左上光照，真实Alpha透明背景。无文字、力矩箭头、公式、支座、拼贴、应力云图或页面设计。",
+          "box_inches": [0.9, 4.95, 1.7, 1.3]
+        }
+      ]
+    },
+    {
+      "slide_number": 4,
+      "slide_id": "S04",
+      "title": "从建模到核验的完整流程",
+      "takeaway": "输入、求解、展示和解析核对形成学习闭环",
+      "layout_family": "method-process",
+      "visual_rationale": "中央五阶段原生流程为主，底部回查箭头建立验证闭环。",
+      "content_blocks": [
+        {
+          "type": "native.process",
+          "text": "节点/单元/材料/截面 → 支座和荷载 → Worker CPU求解 → 反力、N/V/M与变形 → 教学推导及解析核验。",
+          "box_inches": [0.8, 2.05, 11.75, 2.45],
+          "source_ref": "README.md"
+        },
+        {
+          "type": "native.process",
+          "text": "若结果不一致：检查边界条件、载荷位置、方向与单位，再执行计算；以青色原生回路连接输入端。",
+          "box_inches": [1.0, 4.95, 11.1, 1.25],
+          "source_ref": "算例验证逻辑"
+        }
+      ],
+      "speaker_notes": "45秒：讲清从模型输入到CPU求解，再到结果观察及解析核验的流程。出现差异时返回检查输入。",
+      "evidence": ["README.md", "用户提供的技术架构"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 5,
+      "slide_id": "S05",
+      "title": "真实工作区如何组织？",
+      "takeaway": "左模型树、中视图区、右属性面板协同操作",
+      "layout_family": "evidence-zoom",
+      "visual_rationale": "真实工作区占主体，右侧原生解读；用编号框与引线关联。",
+      "content_blocks": [
+        {
+          "type": "evidence.image",
+          "text": "真实工作区截图；原生编号标注模型树、主视图和属性面板。",
+          "box_inches": [0.75, 1.95, 7.85, 4.45],
+          "source_ref": "live/01-workspace.jpg"
+        },
+        {
+          "type": "native.process",
+          "text": "①选择对象 → ②查看模型或结果 → ③检查属性。截图中存在的图标方框如实保留。",
+          "box_inches": [8.95, 2.1, 3.55, 3.75],
+          "source_ref": "live/01-workspace.jpg"
+        }
+      ],
+      "speaker_notes": "40秒：使用真实截图说明工作区布局，重点展示模型对象与属性面板如何对应；图标字体异常不修饰。",
+      "evidence": ["live/01-workspace.jpg", "qa/live-run-evidence.json"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 6,
+      "slide_id": "S06",
+      "title": "6m简支梁的建模与荷载",
+      "takeaway": "两节点一单元也能描述跨中集中力",
+      "layout_family": "scenario-setup",
+      "visual_rationale": "左侧原生梁模型与右侧真实荷载属性相互验证。",
+      "content_blocks": [
+        {
+          "type": "native.figure",
+          "text": "节点A、B，单元AB，跨度6m；两端简支，单元跨中向下18kN载荷，不虚构跨中节点。",
+          "box_inches": [0.8, 2.0, 6.95, 3.95],
+          "source_ref": "二维算例"
+        },
+        {
+          "type": "evidence.image",
+          "text": "荷载属性真实截图，重点标记载荷数值、方向及作用位置。",
+          "box_inches": [8.2, 2.05, 4.2, 3.75],
+          "source_ref": "live/07-load-properties.jpg"
+        }
+      ],
+      "speaker_notes": "45秒：说明2节点1单元的梁模型如何设置支座与跨中集中荷载；重点检查位置和单位。",
+      "evidence": ["live/07-load-properties.jpg", "qa/live-run-evidence.json"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 7,
+      "slide_id": "S07",
+      "title": "剪力与弯矩为什么这样变化？",
+      "takeaway": "集中力引起剪力跃变和跨中弯矩极值",
+      "layout_family": "paired-comparison",
+      "visual_rationale": "左右对应真实剪力、弯矩结果；原生跨中线连接相同位置。",
+      "content_blocks": [
+        {
+          "type": "evidence.image",
+          "text": "真实剪力图；原生标记集中力位置及剪力跃变。",
+          "box_inches": [0.75, 2.0, 5.75, 4.1],
+          "source_ref": "live/06-shear.jpg"
+        },
+        {
+          "type": "evidence.image",
+          "text": "真实弯矩图；截图极值-27kN·m，解析比较采用幅值27kN·m。",
+          "box_inches": [6.82, 2.0, 5.7, 4.1],
+          "source_ref": "live/03-beam-moment.jpg"
+        }
+      ],
+      "speaker_notes": "55秒：解释剪力在集中载荷处跃变、弯矩在跨中达到最大幅值，并强调软件的负号约定。",
+      "evidence": ["live/06-shear.jpg", "live/03-beam-moment.jpg"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 8,
+      "slide_id": "S08",
+      "title": "反力与最大弯矩的数值核验",
+      "takeaway": "给定工况下反力与弯矩幅值符合解析结果",
+      "layout_family": "validation-evidence-table",
+      "visual_rationale": "宽表对照解析和实机数值，右侧说明端部值与全梁极值差异。",
+      "content_blocks": [
+        {
+          "type": "native.table",
+          "text": "量｜解析幅值｜实机幅值：RA｜9kN｜9kN；RB｜9kN｜9kN；Mmax｜27kN·m｜27kN·m。解析RA=RB=P/2，Mmax=PL/4。",
+          "box_inches": [0.8, 2.05, 7.2, 3.8],
+          "source_ref": "qa/live-run-evidence.json；静力学解析"
+        },
+        {
+          "type": "native.figure",
+          "text": "原生梁位置示意：两端弯矩0，跨中最大弯矩幅值27kN·m；附live/05-element-results.jpg真实端力局部证据引用。",
+          "box_inches": [8.4, 2.1, 4.05, 3.8],
+          "source_ref": "live/05-element-results.jpg"
+        }
+      ],
+      "speaker_notes": "65秒：逐项核验9、9、27三个幅值。解释截图的-27符号、端弯矩0与跨中极值不同。",
+      "evidence": ["live/03-beam-moment.jpg", "live/05-element-results.jpg", "qa/live-run-evidence.json", "RA=RB=P/2；Mmax=PL/4"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 9,
+      "slide_id": "S09",
+      "title": "荷载位置如何影响计算结果？",
+      "takeaway": "反力分配与弯矩峰值随荷载位置改变",
+      "layout_family": "dual-native-chart",
+      "visual_rationale": "左反力分组柱图，右弯矩折线图；分别使用独立单位坐标。",
+      "content_blocks": [
+        {
+          "type": "native.chart",
+          "text": "解析预测；P=18kN，L=6m。a(m):1,2,3；RA(kN):15,12,9；RB(kN):3,6,9。原生分组柱状图。",
+          "box_inches": [0.8, 2.25, 6.15, 3.95],
+          "source_ref": "RA=P(L-a)/L；RB=Pa/L"
+        },
+        {
+          "type": "native.chart",
+          "text": "解析预测；a(m):1,2,3；Mpeak(kN·m):15,24,27。原生折线图，独立kN·m纵轴。",
+          "box_inches": [7.35, 2.25, 5.1, 3.95],
+          "source_ref": "Mpeak=Pa(L-a)/L"
+        }
+      ],
+      "speaker_notes": "45秒：演示理论上载荷从左侧1米移至跨中时，反力分配及弯矩峰值的变化。这不是新增实测。",
+      "evidence": ["解析预测：P=18kN，L=6m，a=1/2/3m"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 10,
+      "slide_id": "S10",
+      "title": "教学推导与危险截面分析",
+      "takeaway": "计算结果需要返回公式和截面条件解释",
+      "layout_family": "derivation-evidence-zoom",
+      "visual_rationale": "左侧真实推导截图为主，右侧原生截面解释作为辅助。",
+      "content_blocks": [
+        {
+          "type": "evidence.image",
+          "text": "真实教学助手分步推导截图；局部放大只从真实源图裁剪。",
+          "box_inches": [0.75, 1.95, 7.45, 4.45],
+          "source_ref": "live/04-derivation.jpg"
+        },
+        {
+          "type": "native.figure",
+          "text": "跨中危险截面位置及基本弯曲关系σ=My/I；原生标记截面高度y和弯矩方向。",
+          "box_inches": [8.55, 2.0, 3.85, 3.95],
+          "source_ref": "材料力学基本公式"
+        }
+      ],
+      "speaker_notes": "50秒：从实机分步推导返回基本弯曲公式，说明危险截面判断依赖内力分布与截面条件。",
+      "evidence": ["live/04-derivation.jpg", "README.md公式库"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 11,
+      "slide_id": "S11",
+      "title": "空间刚架的六自由度建模",
+      "takeaway": "空间梁节点同时包含三平移与三转动",
+      "layout_family": "spatial-technical-figure",
+      "visual_rationale": "空间拓扑占主要区域，右侧放大一个节点的自由度和局部坐标。",
+      "content_blocks": [
+        {
+          "type": "native.figure",
+          "text": "非定尺寸空间正交拓扑：4节点3单元，A全约束，D受力；节点和杆件原生绘制。",
+          "box_inches": [0.8, 1.95, 7.3, 4.4],
+          "source_ref": "空间算例条件"
+        },
+        {
+          "type": "native.figure",
+          "text": "单节点6DOF：ux、uy、uz、θx、θy、θz；空间Euler-Bernoulli梁单元12×12刚度矩阵；总装配24DOF。",
+          "box_inches": [8.4, 2.05, 4.0, 4.1],
+          "source_ref": "用户提供的空间求解技术说明"
+        }
+      ],
+      "speaker_notes": "50秒：解释空间刚架如何从平面建模扩展到每节点6自由度，区分单元12×12和整体24自由度。",
+      "evidence": ["README.md", "空间刚架运行条件"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 12,
+      "slide_id": "S12",
+      "title": "空间刚架的实机结果核验",
+      "takeaway": "三向合力平衡成立，完整力矩核验仍缺失",
+      "layout_family": "validation-dashboard",
+      "visual_rationale": "左侧真实截图主导，右侧平衡表和限制说明组成最密集结果页。",
+      "content_blocks": [
+        {
+          "type": "evidence.image",
+          "text": "4节点3单元Q235刚架的真实模型和结果表。变形显示2.4×；应力、安全系数为空。",
+          "box_inches": [0.73, 1.92, 7.05, 4.48],
+          "source_ref": "live/11-space-results.jpg"
+        },
+        {
+          "type": "native.table",
+          "text": "方向｜D外力N｜A反力N｜合力N：X｜8000｜-8000｜0；Y｜-5000｜5000｜0；Z｜-12000｜12000｜0。相对残差6e-14；单次123.4ms。未核验完整力矩。",
+          "box_inches": [8.02, 1.98, 4.47, 4.35],
+          "source_ref": "qa/live-run-evidence.json"
+        }
+      ],
+      "speaker_notes": "55秒：逐项展示三向受力与支座反力相消。残差和单次耗时只描述当前运行，缺少力矩及应力核验。",
+      "evidence": ["live/11-space-results.jpg", "qa/live-run-evidence.json"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 13,
+      "slide_id": "S13",
+      "title": "本地求解软件的技术架构",
+      "takeaway": "当前数值求解主要运行于Worker CPU",
+      "layout_family": "technical-layers",
+      "visual_rationale": "原生技术分层展示输入、求解、展示及交付关系。",
+      "content_blocks": [
+        {
+          "type": "native.process",
+          "text": "Vue3＋TypeScript界面 → 模型数据 → Worker CPU异步计算／sparseLU → 结果数据 → Three.js可视化；Vite用于构建。",
+          "box_inches": [0.8, 2.0, 8.0, 4.15],
+          "source_ref": "项目架构说明"
+        },
+        {
+          "type": "native.text",
+          "text": "Electron与PWA提供交付形态；WebGPU仅能力检测、没有数值内核；Tet4仍为实验功能。",
+          "box_inches": [9.2, 2.15, 3.2, 3.75],
+          "source_ref": "项目能力边界"
+        }
+      ],
+      "speaker_notes": "40秒：讲解前端、Worker求解器和Three.js之间的数据流，明确计算不依靠尚未实现的GPU数值内核。",
+      "evidence": ["README.md", "用户提供的技术栈和求解能力说明"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 14,
+      "slide_id": "S14",
+      "title": "哪些能力已具备，哪些仍受限？",
+      "takeaway": "功能存在、实机观察与充分验证不是一回事",
+      "layout_family": "evidence-status-matrix",
+      "visual_rationale": "原生状态矩阵代替功能宣传列表，直接比较证据成熟度。",
+      "content_blocks": [
+        {
+          "type": "native.table",
+          "text": "二维梁反力/NVM：已有实机证据；教学推导：已有截图；空间刚架：已有实机记录；公式库其他功能：项目说明；Tet4：实验；WebGPU数值内核：未实现；连续实体应力云图：未具备。",
+          "box_inches": [0.8, 2.0, 9.1, 4.35],
+          "source_ref": "README.md及实机记录"
+        },
+        {
+          "type": "native.text",
+          "text": "四类状态：实机观察、项目说明、实验阶段、未实现。不等于工程可靠性认证。",
+          "box_inches": [10.2, 2.15, 2.3, 3.85],
+          "source_ref": "已确认能力边界"
+        }
+      ],
+      "speaker_notes": "45秒：把功能描述与真实运行证据分开。强调Tet4和WebGPU的现状，不利用单一算例推断整体可靠性。",
+      "evidence": ["README.md", "qa/live-run-evidence.json", "技术边界说明"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 15,
+      "slide_id": "S15",
+      "title": "如何复现一个简单学习算例？",
+      "takeaway": "从建模、结果查看到解析核对按顺序操作",
+      "layout_family": "guided-operation",
+      "visual_rationale": "操作序列为主，右侧排错说明帮助现场复现。",
+      "content_blocks": [
+        {
+          "type": "native.process",
+          "text": "①建立6m梁 → ②设置简支约束 → ③施加跨中18kN → ④执行求解 → ⑤查看反力及N/V/M → ⑥核验9、9、27。",
+          "box_inches": [0.8, 2.0, 8.0, 4.2],
+          "source_ref": "二维实机案例"
+        },
+        {
+          "type": "native.text",
+          "text": "排错顺序：检查支座约束、力的方向、载荷位置、单位、内力符号及端部/跨中取值位置。演示环境为本地dist。",
+          "box_inches": [9.18, 2.1, 3.18, 3.95],
+          "source_ref": "实机演示条件"
+        }
+      ],
+      "speaker_notes": "45秒：给同学一条最短复现路径，并用常见输入错误说明如何排查。明确尚未验证安装包部署。",
+      "evidence": ["live/01-workspace.jpg", "live/07-load-properties.jpg", "二维解析核验"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 16,
+      "slide_id": "S16",
+      "title": "让力学结果真正可理解",
+      "takeaway": "以可复算案例验证功能，再逐步扩展边界",
+      "layout_family": "conclusion-roadmap",
+      "visual_rationale": "左侧大结论与三阶段原生验证路线，右上小型轨迹装饰提供轻量收束。",
+      "content_blocks": [
+        {
+          "type": "native.text",
+          "text": "软件的价值不是替代材料力学理论，而是帮助学习者把结构模型、内力图、公式和计算结果联系起来。",
+          "box_inches": [0.85, 2.05, 8.0, 1.65],
+          "source_ref": "全篇二维与空间证据"
+        },
+        {
+          "type": "native.process",
+          "text": "下一步：①补充不同荷载位置的实机对照；②完善空间力矩及位移验证；③扩展多工况测试并记录可复现条件。",
+          "box_inches": [0.85, 4.05, 11.45, 1.85],
+          "source_ref": "现有证据缺口"
+        }
+      ],
+      "speaker_notes": "30秒：总结学习闭环，邀请同学通过简单算例复算结果。后续优先补齐参数扫描与空间完整平衡验证。",
+      "evidence": ["二维解析与实机记录", "三维实机记录", "证据缺口清单"],
+      "asset_requests": [
+        {
+          "request_id": "REQ16",
+          "asset_id": "BLUE_TRAJECTORY",
+          "object_id": "closing_trajectory",
+          "kind": "ornament",
+          "purpose": "结尾右上角轻薄科技轨迹，不承载数据",
+          "single_subject_prompt": "仅一条独立、轻薄、优雅的蓝青色三维弧形轨迹装饰，细线渐变，少量柔和冷白高光，单主体、通透克制，真实Alpha透明背景。不得包含行星、文字、数字、坐标、箭头、公式、拼贴、页面背景或其他元素。",
+          "box_inches": [10.0, 1.15, 2.3, 1.3]
+        }
+      ]
+    },
+    {
+      "slide_number": 17,
+      "slide_id": "S17",
+      "title": "附录：公式与单位速查",
+      "takeaway": "统一参数定义、单位和符号口径",
+      "layout_family": "formula-reference",
+      "visual_rationale": "左侧梁平衡公式，右侧材料与截面符号表；原生可编辑。",
+      "content_blocks": [
+        {
+          "type": "native.text",
+          "text": "集中力P作用于距左支座a处：RA=P(L-a)/L；RB=Pa/L；Mpeak=Pa(L-a)/L。跨中时RA=RB=P/2、Mmax=PL/4。",
+          "box_inches": [0.85, 2.0, 6.05, 4.2],
+          "source_ref": "静力学解析公式"
+        },
+        {
+          "type": "native.table",
+          "text": "F/N/V：N或kN；M/T：N·m或kN·m；E/G/fy：Pa；A：m²；I/J：m⁴；W/Wt：m³；L：m；转角：rad。比较前必须统一单位。",
+          "box_inches": [7.3, 2.05, 5.05, 4.1],
+          "source_ref": "材料力学符号约定"
+        }
+      ],
+      "speaker_notes": "附录备查，不计入12分钟。答疑时解释公式、单位与符号定义，尤其注意反力方向和弯矩幅值口径。",
+      "evidence": ["静力学公式", "README.md公式符号"],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 18,
+      "slide_id": "S18",
+      "title": "附录：证据索引与验证范围",
+      "takeaway": "每一项结论必须能够追溯到具体来源",
+      "layout_family": "evidence-index",
+      "visual_rationale": "原生来源表与验证边界并置，为课堂问答提供可核查索引。",
+      "content_blocks": [
+        {
+          "type": "native.table",
+          "text": "README.md：版本、功能及架构；01：工作区；03：弯矩；04：推导；05：端力；06：剪力；07：荷载属性；11：空间结果；qa/live-run-evidence.json：运行证据摘要。所有编号截图位于outputs/classmate-sharing/assets/live。",
+          "box_inches": [0.78, 1.95, 8.05, 4.48],
+          "source_ref": "已提供文件索引"
+        },
+        {
+          "type": "native.text",
+          "text": "验证范围：二维单一梁工况的反力与弯矩幅值；三维单一刚架的三向合力。参数扫描仅理论预测；非安装版验证；无完整力矩、实体应力及性能基准。",
+          "box_inches": [9.13, 2.0, 3.25, 4.1],
+          "source_ref": "qa/live-run-evidence.json及证据边界"
+        }
+      ],
+      "speaker_notes": "附录备查，不计入12分钟。供同学追溯实机截图、解析预测和技术说明，避免把一次运行扩大解释。",
+      "evidence": ["README.md", "outputs/classmate-sharing/assets/live/", "qa/live-run-evidence.json"],
+      "asset_requests": []
+    }
+  ]
+}

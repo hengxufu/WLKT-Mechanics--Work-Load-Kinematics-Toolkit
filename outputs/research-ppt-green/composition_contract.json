@@ -1,0 +1,31 @@
+{
+  "schema": "ppt_composition_contract_v1",
+  "generated_asset_policy": {
+    "one_independent_element_per_job": true,
+    "allowed_kinds": [
+      "ornament",
+      "concept",
+      "art_text",
+      "icon",
+      "cutout"
+    ],
+    "forbidden": [
+      "full_slide",
+      "slide_screenshot",
+      "complete_infographic",
+      "chart_or_table_as_image",
+      "formula_as_image",
+      "experimental_result_as_image",
+      "flattened_title_body_footer",
+      "multi_element_collage_for_cropping"
+    ]
+  },
+  "local_script_owns": [
+    "titles_and_body_text",
+    "citations_and_page_numbers",
+    "charts_tables_and_formulas",
+    "nodes_and_connectors",
+    "layout_and_picture_insertion",
+    "rendering_and_quality_assurance"
+  ]
+}

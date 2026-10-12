@@ -1,0 +1,32 @@
+{
+  "schema": "ppt_bridge_session_v2",
+  "connection_id": "6fd69d88-ff15-405d-8680-1b88461bcaef",
+  "project_root": "D:\\MACHANICS-OF-MATERIALS-main",
+  "allowed_roots": [
+    "D:\\MACHANICS-OF-MATERIALS-main"
+  ],
+  "created_at": "2026-10-11T17:31:26.63265+08:00",
+  "local_profile_configured": true,
+  "mcp_service_started": false,
+  "browser_connected": false,
+  "planning_model": "unverified: High",
+  "image_model": "unverified",
+  "image_tool_visible": true,
+  "evidence": [
+    {
+      "file": "qa\\web-observation.txt",
+      "sha256": "b38069b52e436bc2ade74aa5d574bb47fd7d532dc5c5ec855a975674ba52fd25"
+    }
+  ],
+  "ready": false,
+  "permission": "L1_READ_ONLY_ADVICE",
+  "public_tunnel": false,
+  "shell_access": false,
+  "workspace_write_access": false,
+  "status": "closed",
+  "session_url": "https://chatgpt.com/c/6acb57b2-2558-83ee-b982-ec6be3938863",
+  "observation_note": "已登录，High和创建图像可见。沿用用户明确型号例外。",
+  "observed_connection_id": "6fd69d88-ff15-405d-8680-1b88461bcaef",
+  "observed_at": "2026-10-11T09:33:18.996305+00:00",
+  "unverified_image_user_authorization": "允许用当前网页版完成规划和单元素生成，注明模型名未核验"
+}

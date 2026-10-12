@@ -1,0 +1,1 @@
+2026-10-11: Logged-in ChatGPT Plus UI. Model selector opens reasoning strength High only; no GPT-6 label. Add menu shows 创建图像; no Image 2.5 engine label. User explicitly authorized current web planner and image generation with both model names unverified. URL https://chatgpt.com/

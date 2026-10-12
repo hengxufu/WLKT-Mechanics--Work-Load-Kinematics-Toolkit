@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "transport": "chatgpt_web",
+  "requested_engine": "image-2.5",
+  "verified_engine": null,
+  "status": "integrated",
+  "spec": {
+    "asset_id": "METAL_BAR",
+    "kind": "concept",
+    "element": "一根完整独立的细长矩形截面金属杆件，深蓝冷银拉丝钢材质，精致写实，柔和左上主光，科技青色边缘高光，三分之四视角，真实Alpha透明背景，主体完整居中。禁止文字、公式、受力箭头、云图、支座、其他物体、拼贴和整页设计。",
+    "slide_id": "S01",
+    "object_id": "cover_bar",
+    "palette": "深蓝 #174B70、青色 #008E98、少量橙色 #DA9253",
+    "transparent": true,
+    "min_width": 1024,
+    "min_height": 1024,
+    "aspect": "1:1",
+    "style": "科研汇报·证据与结构；清晰、精致、统一材质与光照",
+    "visual_context": {}
+  },
+  "history": [
+    {
+      "at": "2026-10-11T05:52:36.555376+00:00",
+      "status": "prepared"
+    },
+    {
+      "at": "2026-10-11T05:52:51.431255+00:00",
+      "status": "submitted",
+      "note": "已通过创建图像实际提交同等封面金属杆件提示；实际发送prompt保存在asset-jobs/REQ01/prompt.txt，未重复提交。"
+    },
+    {
+      "at": "2026-10-11T06:26:12.293055+00:00",
+      "status": "received"
+    },
+    {
+      "at": "2026-10-11T06:26:27.312471+00:00",
+      "status": "accepted",
+      "note": "已实际查看本地1254px原图：单根矩形金属杆完整，蓝银拉丝材质，无文字/箭头/数据；alpha真实。只作概念主体。"
+    },
+    {
+      "at": "2026-10-11T06:58:15.762983+00:00",
+      "status": "integrated",
+      "note": "最终PPT第1页实际查看，透明杆件边缘清楚，与标题无重叠。"
+    }
+  ],
+  "session_url": "https://chatgpt.com/c/6acb23d5-80a8-83e8-804b-3e64fa015d02",
+  "asset_file": "METAL_BAR-original.png",
+  "sha256": "65181474072c499183df48f623c267aaa55fca15882e9dcc34a2660336836e5a",
+  "technical_checks": {
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "has_transparent_pixels": true,
+    "has_visible_pixels": true,
+    "subject_bbox_px": [
+      61,
+      204,
+      1204,
+      1088
+    ],
+    "subject_box_area_fraction": 0.6425,
+    "size_ok": true,
+    "alpha_ok": true,
+    "warnings": []
+  },
+  "visual_review": {
+    "note": "已实际查看本地1254px原图：单根矩形金属杆完整，蓝银拉丝材质，无文字/箭头/数据；alpha真实。只作概念主体。",
+    "at": "2026-10-11T06:26:27.312471+00:00"
+  },
+  "placement_file": "placement.json",
+  "integration": {
+    "pptx": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-redesign\\拉压弯扭大师_中国科研分享重制版.pptx",
+    "pptx_sha256": "4d37e330a2686a5a5af50b112ea36be2ec7e13ceb58558077e8c431b7353d7e5",
+    "shape_name": "S01/cover_bar",
+    "at": "2026-10-11T06:58:15.762983+00:00"
+  }
+}

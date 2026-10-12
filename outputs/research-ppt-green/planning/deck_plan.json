@@ -1,0 +1,4027 @@
+{
+  "deck_thesis": "拉压弯扭大师v2.0.2通过结构建模、数值求解、结果可视化与公式推导，建立材料力学学习闭环。以二维梁解析核验和三维刚架实机记录证明具体能力，同时明确功能与验证边界。",
+  "audience": "已学习材料力学基础的高校本科生；12分钟课堂分享，16页主稿加2页附录。",
+  "evidence_gaps": [
+    "原始截图与证据JSON尚未在本次规划中独立打开，制作时须逐项核对。",
+    "a=1、2、3m的荷载位置比较仅有解析预测，没有新增软件实测。",
+    "三维刚架缺少完整力矩及反力矩记录，不能宣称六分量平衡通过。",
+    "123.4ms为单次记录，不构成性能基准；6e-14仅对应当前算例。",
+    "二维转角约±0.023144rad缺少完整参数支持独立解析核验。",
+    "已运行本地dist，不等于安装版exe经过验证。",
+    "应力、安全系数字段为空；Tet4实验不能代表成熟连续实体应力分析。",
+    "真实截图部分图标存在字体方框，必须保留原始证据。",
+    "缺少真实使用人数、教学效果和全面精度测试，不得推测。",
+    "空间杆长、节点坐标未完整提供，原生空间示意不能冒充精确实机模型。"
+  ],
+  "design_system": {
+    "theme": "绿色工程技术路线：深绿模块、薄荷绿分层、橙色规划",
+    "palette": {
+      "navy": "#123A6B",
+      "blue": "#2475B5",
+      "cyan": "#008E98",
+      "silver": "#B8C9D8",
+      "orange": "#DA9253",
+      "background": "#F5F9FD"
+    },
+    "style": "蓝银金属材质、青色边缘高光、极少量暖橙强调、微弱投影与精细工程线条。",
+    "layout_rules": [
+      "每页采用主证据区、解释区、结论区三级信息结构。",
+      "避免连续重复左右双栏；交替使用非对称、横向分层、中心辐射与矩阵布局。",
+      "每页至少保留一个实质信息主体；装饰不得替代结果、公式或证据。",
+      "真实软件截图保持可辨识，不在截图内部伪造数值。",
+      "公式、数据、图表、图注使用PPT原生可编辑对象。",
+      "独立图像元素只用于局部，面积通常不超过页面20%。"
+    ],
+    "reference": "sources/green-reference.png"
+  },
+  "representative_slides": {
+    "1": {
+      "role": "封面",
+      "focus": "软件定位与单一金属杆件",
+      "composition": "左55%原生主标题和定位，右45%独立金属杆件，浅蓝背景与大面积留白。",
+      "primary": "拉压弯扭大师",
+      "secondary": "v2.0.2、本地离线、材料力学教学",
+      "annotation": "非官方产品；不用于工程认证",
+      "reference_translation": "保留深蓝标题和细顶部导航，不采用多卡片；右侧概念对象只传达力学主题。",
+      "risk": "不能将生成的金属杆件描述为软件仿真结果。"
+    },
+    "4": {
+      "role": "关键技术路线页",
+      "focus": "建模到解析核验的闭环",
+      "composition": "中央11.7英寸宽原生流程，下面分设输入条件和返回检查路径。",
+      "primary": "模型→约束荷载→CPU求解→结果→核验",
+      "secondary": "输入输出条件",
+      "annotation": "返回模型检查的青色箭头",
+      "reference_translation": "顶部章节导航与底部结论保留，中部浅蓝证据容器改造为连续技术流程。",
+      "risk": "不可把WebGPU绘入已经参与运算的主链。"
+    },
+    "8": {
+      "role": "最关键二维数值结果页",
+      "focus": "9kN、9kN、27kN·m的解析与实机对应",
+      "composition": "左侧宽表格，右侧端部与跨中位置解释；橙色只突出容易混淆的0与27。",
+      "primary": "原生数值对照表",
+      "secondary": "弯矩位置示意与真实端力截图",
+      "annotation": "符号约定、单位、解析幅值与实机范围",
+      "reference_translation": "浅蓝证据容器只服务核验关系；底部结论严格限制在特定算例。",
+      "risk": "禁止将端弯矩0理解为全梁最大弯矩0，禁止将-27与+27作有符号相等比较。"
+    }
+  },
+  "review_checklist": [
+    "页数为16页主稿加2页附录，主稿时间总计720秒。",
+    "每页具备具体论点、两个内容块、演讲提示和证据来源。",
+    "主标题不超过22字，结论不超过35字。",
+    "每页只有一个主要视觉焦点。",
+    "不存在连续复用通用三卡片布局。",
+    "至少8种布局，所有布局复杂性来自真实信息关系。",
+    "科学图、数据、坐标和公式必须原生可编辑。",
+    "真实截图必须保留来源和可追溯的局部裁剪。",
+    "二维反力按幅值核验，弯矩保留实机负号说明。",
+    "第9页必须标注解析预测，两个图使用独立单位坐标。",
+    "三维只证明三向合力对应，不扩大为完整力矩核验。",
+    "123.4ms不能用于性能宣传，2.4倍不能当真实变形值。",
+    "WebGPU仅检测，Tet4实验，应力空字段不得补造。",
+    "三个生成元素分别只出现在第1、3、16页且为单主体。",
+    "概念素材不得代替力学图、实测证据或软件截图。",
+    "不使用北航校徽或官方认证表述。",
+    "所有内容优先保证投影可读性，不为图形密度缩小关键字号。",
+    "制作前仍须核查所有原始文件，不能将本规划称为完成实机复验。"
+  ],
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_id": "S01",
+      "title": "拉压弯扭大师",
+      "takeaway": "本地离线的材料力学学习辅助软件",
+      "layout_family": "product-hero",
+      "visual_rationale": "左侧大标题与细线关键词，右侧放真实软件界面局部；一条透明蓝青飘带穿越两区，底部设置版本信息。",
+      "content_blocks": [
+        {
+          "object_id": "S01/object-9",
+          "box_inches": [
+            0.65,
+            2.02,
+            7.0,
+            0.68
+          ],
+          "type": "native.text",
+          "text": "从力学概念",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-10",
+          "box_inches": [
+            0.65,
+            2.86,
+            7.0,
+            0.76
+          ],
+          "type": "native.text",
+          "text": "到可验证计算",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-11",
+          "box_inches": [
+            0.69,
+            3.88,
+            6.7,
+            0.42
+          ],
+          "type": "native.text",
+          "text": "本地离线材料力学学习软件",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-13",
+          "box_inches": [
+            1.1,
+            4.5,
+            5.8,
+            0.31
+          ],
+          "type": "native.text",
+          "text": "模型：节点 / 材料 / 截面",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-15",
+          "box_inches": [
+            1.1,
+            4.93,
+            5.8,
+            0.31
+          ],
+          "type": "native.text",
+          "text": "响应：内力 / 变形 / 反力",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-17",
+          "box_inches": [
+            1.1,
+            5.36,
+            5.8,
+            0.31
+          ],
+          "type": "native.text",
+          "text": "解释：公式 / 推导 / 核验",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/cover-workspace",
+          "box_inches": [
+            8.01111,
+            2.43,
+            4.17778,
+            2.35
+          ],
+          "type": "source.image",
+          "source_ref": "S01/cover-workspace",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S01/object-20",
+          "box_inches": [
+            8.0,
+            5.08,
+            4.2,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "真实工作区 · 二维 / 空间杆系",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-22",
+          "box_inches": [
+            0.82,
+            6.07,
+            1.64,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "本地离线",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-24",
+          "box_inches": [
+            2.92,
+            6.07,
+            1.64,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "v2.0.2",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-26",
+          "box_inches": [
+            5.02,
+            6.07,
+            1.64,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "同学分享",
+          "source_ref": "README.md；用户提供的产品定位"
+        },
+        {
+          "object_id": "S01/object-27",
+          "box_inches": [
+            9.85,
+            6.58,
+            2.5,
+            0.17
+          ],
+          "type": "native.text",
+          "text": "概念飘带仅作装饰",
+          "source_ref": "README.md；用户提供的产品定位"
+        }
+      ],
+      "speaker_notes": "30秒：介绍软件定位和版本，说明今天重点是用真实算例验证学习功能，而非宣传工程认证能力。\n视觉与内容增强：增加副标题“本地离线材料力学学习软件”，明确v2.0.2、二维与三维分析及学习辅助定位。",
+      "evidence": [
+        {
+          "source_ref": "README.md"
+        },
+        {
+          "source_ref": "用户提供的产品定位"
+        }
+      ],
+      "asset_requests": [
+        {
+          "request_id": "R10",
+          "kind": "ornament",
+          "purpose": "形成封面主视觉流线；一条连续优雅曲线，银色高光和轻微橙色反射，不包含其他物体。",
+          "single_subject_prompt": "单条蓝青色空间飘带。形成封面主视觉流线；一条连续优雅曲线，银色高光和轻微橙色反射，不包含其他物体。",
+          "decision": "generate_web",
+          "object_id": "web-rich-10"
+        }
+      ]
+    },
+    {
+      "slide_number": 2,
+      "slide_id": "S02",
+      "title": "为什么需要这样的学习工具？",
+      "takeaway": "课堂难点是把模型、计算与内力图联系起来",
+      "layout_family": "question-figure",
+      "visual_rationale": "采用三组上下对应的问题—功能模块，中央用细线串联；下方增加“从看答案到理解过程”的教学目标。",
+      "content_blocks": [
+        {
+          "object_id": "S02/object-46",
+          "box_inches": [
+            0.85,
+            2.27,
+            1.0,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "01",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-47",
+          "box_inches": [
+            0.85,
+            2.99,
+            3.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "建模抽象",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-48",
+          "box_inches": [
+            0.85,
+            3.62,
+            3.42,
+            0.55
+          ],
+          "type": "native.text",
+          "text": "支座究竟约束什么？",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-50",
+          "box_inches": [
+            0.85,
+            4.61,
+            3.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "节点 / 单元 / 自由度",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-51",
+          "box_inches": [
+            0.85,
+            5.82,
+            3.42,
+            0.52
+          ],
+          "type": "native.text",
+          "text": "先画条件，再建立模型",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-63",
+          "box_inches": [
+            5.0,
+            2.27,
+            1.0,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "02",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-64",
+          "box_inches": [
+            5.0,
+            2.99,
+            3.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "符号难读",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-65",
+          "box_inches": [
+            5.0,
+            3.62,
+            3.42,
+            0.55
+          ],
+          "type": "native.text",
+          "text": "负弯矩是否表示错误？",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-67",
+          "box_inches": [
+            5.0,
+            4.61,
+            3.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "局部坐标 / 正负约定",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-68",
+          "box_inches": [
+            5.0,
+            5.82,
+            3.42,
+            0.52
+          ],
+          "type": "native.text",
+          "text": "先辨符号，再比较幅值",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-73",
+          "box_inches": [
+            9.15,
+            2.27,
+            1.0,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "03",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-74",
+          "box_inches": [
+            9.15,
+            2.99,
+            3.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "可信度判断",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-75",
+          "box_inches": [
+            9.15,
+            3.62,
+            3.42,
+            0.55
+          ],
+          "type": "native.text",
+          "text": "求解完成就足够吗？",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-77",
+          "box_inches": [
+            9.15,
+            4.61,
+            3.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "平衡关系 / 解析对照",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-78",
+          "box_inches": [
+            9.15,
+            5.82,
+            3.42,
+            0.52
+          ],
+          "type": "native.text",
+          "text": "先作预测，再核对结果",
+          "source_ref": "二维简支梁解析条件"
+        },
+        {
+          "object_id": "S02/object-79",
+          "box_inches": [
+            0.87,
+            6.48,
+            11.5,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "学习闭环：条件 → 模型 → 响应 → 解释 → 回到条件",
+          "source_ref": "二维简支梁解析条件"
+        }
+      ],
+      "speaker_notes": "40秒：围绕一道具体简支梁题，解释建模、结果和解析公式之间的理解障碍，不虚构教学改善数据。\n视觉与内容增强：围绕建模抽象、内力符号、结果核验三个困难，逐一对应可视建模、图形显示、分步推导。",
+      "evidence": [
+        {
+          "source_ref": "二维简支梁解析条件"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 3,
+      "slide_id": "S03",
+      "title": "四类基本变形与统一力学量",
+      "takeaway": "不同变形形式共享内力、材料与截面参数",
+      "layout_family": "structural-figure-strip",
+      "visual_rationale": "采用四张等宽工程知识卡；每张上方放独立三维构件素材，中部原生公式，下部标注物理意义。",
+      "content_blocks": [
+        {
+          "object_id": "S03/object-90",
+          "box_inches": [
+            0.82,
+            2.22,
+            0.55,
+            0.34
+          ],
+          "type": "native.text",
+          "text": "01",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-91",
+          "box_inches": [
+            1.55,
+            2.21,
+            1.7,
+            0.45
+          ],
+          "type": "native.text",
+          "text": "拉伸",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-92",
+          "box_inches": [
+            0.81,
+            4.1,
+            2.53,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "N → σ → ΔL",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-93",
+          "box_inches": [
+            0.81,
+            4.69,
+            2.53,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "σ = N / A",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-94",
+          "box_inches": [
+            0.81,
+            5.36,
+            2.53,
+            0.43
+          ],
+          "type": "native.text",
+          "text": "ΔL = NL / (EA)",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-96",
+          "box_inches": [
+            0.81,
+            6.18,
+            2.53,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "轴力与长度变化",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-99",
+          "box_inches": [
+            3.94,
+            2.22,
+            0.55,
+            0.34
+          ],
+          "type": "native.text",
+          "text": "02",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-100",
+          "box_inches": [
+            4.67,
+            2.21,
+            1.7,
+            0.45
+          ],
+          "type": "native.text",
+          "text": "压缩",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-101",
+          "box_inches": [
+            3.93,
+            4.1,
+            2.53,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "N → σ → ΔL",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-102",
+          "box_inches": [
+            3.93,
+            4.69,
+            2.53,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "σ = N / A",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-103",
+          "box_inches": [
+            3.93,
+            5.36,
+            2.53,
+            0.43
+          ],
+          "type": "native.text",
+          "text": "压缩取符号约定",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-105",
+          "box_inches": [
+            3.93,
+            6.18,
+            2.53,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "短柱概念，非失稳分析",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-108",
+          "box_inches": [
+            7.06,
+            2.22,
+            0.55,
+            0.34
+          ],
+          "type": "native.text",
+          "text": "03",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-109",
+          "box_inches": [
+            7.79,
+            2.21,
+            1.7,
+            0.45
+          ],
+          "type": "native.text",
+          "text": "弯曲",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-110",
+          "box_inches": [
+            7.05,
+            4.1,
+            2.53,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "V → M → σ、w",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-111",
+          "box_inches": [
+            7.05,
+            4.69,
+            2.53,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "σmax = M / W",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-112",
+          "box_inches": [
+            7.05,
+            5.36,
+            2.53,
+            0.43
+          ],
+          "type": "native.text",
+          "text": "EI 控制挠度",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-114",
+          "box_inches": [
+            7.05,
+            6.18,
+            2.53,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "关注危险截面位置",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-117",
+          "box_inches": [
+            10.18,
+            2.22,
+            0.55,
+            0.34
+          ],
+          "type": "native.text",
+          "text": "04",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-118",
+          "box_inches": [
+            10.91,
+            2.21,
+            1.7,
+            0.45
+          ],
+          "type": "native.text",
+          "text": "扭转",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-119",
+          "box_inches": [
+            10.17,
+            4.1,
+            2.53,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "T → τ → φ",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-120",
+          "box_inches": [
+            10.17,
+            4.69,
+            2.53,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "τmax = T / Wt",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-121",
+          "box_inches": [
+            10.17,
+            5.36,
+            2.53,
+            0.43
+          ],
+          "type": "native.text",
+          "text": "φ = TL / (GJ)",
+          "source_ref": "README.md公式库及功能说明"
+        },
+        {
+          "object_id": "S03/object-123",
+          "box_inches": [
+            10.17,
+            6.18,
+            2.53,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "均匀圆轴、小变形",
+          "source_ref": "README.md公式库及功能说明"
+        }
+      ],
+      "speaker_notes": "40秒：介绍软件覆盖的基本变形与组合变形，强调力学量之间的联系，不把功能范围等同于全面测试。\n视觉与内容增强：补充轴力与正应力、弯曲正应力、圆轴扭转切应力等基础关系，区分载荷类型、变形模式与适用条件。",
+      "evidence": [
+        {
+          "source_ref": "README.md公式库及功能说明"
+        }
+      ],
+      "asset_requests": [
+        {
+          "request_id": "R01",
+          "kind": "concept",
+          "purpose": "表现轴向拉伸与细颈试样的工程质感；单根试样，无箭头和标注。",
+          "single_subject_prompt": "蓝银金属拉伸试样。表现轴向拉伸与细颈试样的工程质感；单根试样，无箭头和标注。",
+          "decision": "generate_web",
+          "object_id": "web-rich-01"
+        },
+        {
+          "request_id": "R02",
+          "kind": "concept",
+          "purpose": "表现轴向压缩的结构概念；独立短柱主体，无外部压板或符号。",
+          "single_subject_prompt": "蓝银金属受压短柱。表现轴向压缩的结构概念；独立短柱主体，无外部压板或符号。",
+          "decision": "generate_web",
+          "object_id": "web-rich-02"
+        },
+        {
+          "request_id": "R03",
+          "kind": "concept",
+          "purpose": "以可辨识曲率呈现弯曲变形，避免夸张塑性折断造型。",
+          "single_subject_prompt": "轻微弯曲的金属梁。以可辨识曲率呈现弯曲变形，避免夸张塑性折断造型。",
+          "decision": "generate_web",
+          "object_id": "web-rich-03"
+        },
+        {
+          "request_id": "R04",
+          "kind": "concept",
+          "purpose": "利用轴表面的螺旋加工纹理体现扭转概念，不使用独立旋转箭头。",
+          "single_subject_prompt": "金属扭转轴。利用轴表面的螺旋加工纹理体现扭转概念，不使用独立旋转箭头。",
+          "decision": "generate_web",
+          "object_id": "web-rich-04"
+        }
+      ]
+    },
+    {
+      "slide_number": 4,
+      "slide_id": "S04",
+      "title": "材料力学教学软件技术路线",
+      "takeaway": "输入、求解、展示和解析核对形成学习闭环",
+      "layout_family": "layered_engineering_route",
+      "visual_rationale": "按用户绿色参考：顶部四类受力，中部五模块，底部验证反馈、边界与橙色规划层；全部原生对象。",
+      "content_blocks": [
+        {
+          "object_id": "S04/object-125",
+          "box_inches": [
+            1.16,
+            1.01,
+            2.4,
+            0.27
+          ],
+          "type": "native.text",
+          "text": "拉伸 / 压缩",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-129",
+          "box_inches": [
+            1.2,
+            1.4,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "P",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-130",
+          "box_inches": [
+            3.38,
+            1.4,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "P",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-132",
+          "box_inches": [
+            4.0,
+            1.01,
+            2.4,
+            0.27
+          ],
+          "type": "native.text",
+          "text": "弯曲",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-137",
+          "box_inches": [
+            5.265,
+            1.27,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "F",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-143",
+          "box_inches": [
+            6.84,
+            1.01,
+            2.4,
+            0.27
+          ],
+          "type": "native.text",
+          "text": "扭转",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-151",
+          "box_inches": [
+            6.88,
+            1.64,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "T",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-152",
+          "box_inches": [
+            9.09,
+            1.64,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "T",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-154",
+          "box_inches": [
+            9.68,
+            1.01,
+            2.4,
+            0.27
+          ],
+          "type": "native.text",
+          "text": "组合变形",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-177",
+          "box_inches": [
+            11.3163,
+            1.27,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "z",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-178",
+          "box_inches": [
+            11.8363,
+            1.888,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "x",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-184",
+          "box_inches": [
+            0.84,
+            2.49,
+            1.68,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "建模输入",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-185",
+          "box_inches": [
+            0.38,
+            3.04,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 二维梁 / 刚架",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-186",
+          "box_inches": [
+            0.38,
+            3.36,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 空间桁架 / 刚架",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-187",
+          "box_inches": [
+            0.38,
+            3.68,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 节点 / 材料 / 截面",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-188",
+          "box_inches": [
+            0.38,
+            4.0,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 约束与荷载输入",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-208",
+          "box_inches": [
+            3.45,
+            2.49,
+            1.68,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "统一模型",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-209",
+          "box_inches": [
+            2.99,
+            3.04,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 杆系单元统一表达",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-210",
+          "box_inches": [
+            2.99,
+            3.36,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 坐标变换 / 自由度",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-211",
+          "box_inches": [
+            2.99,
+            3.68,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 二维与空间模型组织",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-212",
+          "box_inches": [
+            2.99,
+            4.0,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 数据关联公式与显示",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-235",
+          "box_inches": [
+            4.59,
+            4.43,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "z",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-236",
+          "box_inches": [
+            5.11,
+            5.024,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "x",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-240",
+          "box_inches": [
+            6.06,
+            2.49,
+            1.68,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "本地求解",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-241",
+          "box_inches": [
+            5.6,
+            3.04,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• TypeScript + mathjs",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-242",
+          "box_inches": [
+            5.6,
+            3.36,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• sparse LU求解",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-243",
+          "box_inches": [
+            5.6,
+            3.68,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• Worker CPU异步计算",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-244",
+          "box_inches": [
+            5.6,
+            4.0,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 本地离线运行",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-245",
+          "box_inches": [
+            5.6,
+            4.32,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• Euler–Bernoulli梁",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-251",
+          "box_inches": [
+            8.67,
+            2.49,
+            1.68,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "结果与推导",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-252",
+          "box_inches": [
+            8.21,
+            3.04,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 位移、变形与内力",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-253",
+          "box_inches": [
+            8.21,
+            3.36,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 空间刚架：构件端力",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-254",
+          "box_inches": [
+            8.21,
+            3.68,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 公式库与分步推导",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-255",
+          "box_inches": [
+            8.21,
+            4.0,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 危险位置核查",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-256",
+          "box_inches": [
+            8.21,
+            4.32,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• SVG / Three.js显示",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-261",
+          "box_inches": [
+            8.8,
+            4.65,
+            0.2,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "F",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-289",
+          "box_inches": [
+            11.28,
+            2.49,
+            1.68,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "教学应用",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-290",
+          "box_inches": [
+            10.82,
+            3.04,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 课堂演示与例题",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-291",
+          "box_inches": [
+            10.82,
+            3.36,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 自主练习与校核",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-292",
+          "box_inches": [
+            10.82,
+            3.68,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 开卷辅助与概念",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-293",
+          "box_inches": [
+            10.82,
+            4.0,
+            2.15,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "• 先预测，再改参数",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-307",
+          "box_inches": [
+            3.48,
+            5.87,
+            2.17,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "解析解 / 案例验证",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-308",
+          "box_inches": [
+            5.88,
+            5.81,
+            2.26,
+            0.46
+          ],
+          "type": "native.text",
+          "text": "理论解析解对比\n典型案例对照与误差检查",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-313",
+          "box_inches": [
+            9.2,
+            5.78,
+            1.02,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "当前边界",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-314",
+          "box_inches": [
+            10.3,
+            5.72,
+            2.63,
+            0.68
+          ],
+          "type": "native.text",
+          "text": "Tet4实验；暂无成熟实体云图\nWASM未接入；WebGPU仅检测\n空间当前仅节点荷载、端内力",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-315",
+          "box_inches": [
+            0.38,
+            6.88,
+            1.05,
+            0.27
+          ],
+          "type": "native.text",
+          "text": "规划层",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-325",
+          "box_inches": [
+            2.19,
+            6.91,
+            2.7,
+            0.22
+          ],
+          "type": "native.text",
+          "text": "空间荷载补齐",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-327",
+          "box_inches": [
+            6.03,
+            6.91,
+            2.7,
+            0.22
+          ],
+          "type": "native.text",
+          "text": "实体分析完善",
+          "source_ref": "README.md；用户提供的技术架构"
+        },
+        {
+          "object_id": "S04/object-330",
+          "box_inches": [
+            9.87,
+            6.91,
+            2.7,
+            0.22
+          ],
+          "type": "native.text",
+          "text": "WASM / WebGPU验证",
+          "source_ref": "README.md；用户提供的技术架构"
+        }
+      ],
+      "speaker_notes": "用顶部四类变形交代软件对象，再按建模输入、统一模型、本地求解、结果与推导、教学应用五阶段讲解。验证路径回到输入和模型。明确空间梁Euler-Bernoulli、当前节点荷载与端内力；Tet4实验、WASM未接入、WebGPU仅检测。橙色虚线是未来计划。",
+      "evidence": [
+        {
+          "source_ref": "README.md"
+        },
+        {
+          "source_ref": "用户提供的技术架构"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 5,
+      "slide_id": "S05",
+      "title": "真实工作区如何组织？",
+      "takeaway": "左模型树、中视图区、右属性面板协同操作",
+      "layout_family": "evidence-zoom",
+      "visual_rationale": "真实工作区截图占页面约70%；周围布置三组编号引出线，底部增加一次典型交互的步骤条。",
+      "content_blocks": [
+        {
+          "object_id": "S05/object-348",
+          "box_inches": [
+            0.7,
+            1.74,
+            11.9,
+            0.22
+          ],
+          "type": "native.text",
+          "text": "典型交互：选中对象 → 修改属性 → 观察视图 → 核对结果",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/workspace-evidence",
+          "box_inches": [
+            1.14333,
+            2.08,
+            8.21333,
+            4.62
+          ],
+          "type": "source.image",
+          "source_ref": "S05/workspace-evidence",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S05/object-351",
+          "box_inches": [
+            10.08,
+            2.205,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "1",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/object-352",
+          "box_inches": [
+            10.56,
+            2.135,
+            2.17,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "模型树",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/object-353",
+          "box_inches": [
+            10.13,
+            2.73,
+            2.55,
+            0.58
+          ],
+          "type": "native.text",
+          "text": "节点、构件与条件",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/object-355",
+          "box_inches": [
+            10.08,
+            3.555,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "2",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/object-356",
+          "box_inches": [
+            10.56,
+            3.485,
+            2.17,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "工作视图",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/object-357",
+          "box_inches": [
+            10.13,
+            4.08,
+            2.55,
+            0.58
+          ],
+          "type": "native.text",
+          "text": "几何、荷载与结果",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/object-359",
+          "box_inches": [
+            10.08,
+            4.905,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "3",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/object-360",
+          "box_inches": [
+            10.56,
+            4.835,
+            2.17,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "属性栏",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S05/object-361",
+          "box_inches": [
+            10.13,
+            5.43,
+            2.55,
+            0.58
+          ],
+          "type": "native.text",
+          "text": "选中对象后检查参数",
+          "source_ref": "live/01-workspace.jpg；qa/live-run-evidence.json"
+        }
+      ],
+      "speaker_notes": "40秒：使用真实截图说明工作区布局，重点展示模型对象与属性面板如何对应；图标字体异常不修饰。\n视觉与内容增强：解释左侧模型树、中部视图区、右侧属性面板的职责，以及修改参数后如何形成建模—观察—调整闭环。",
+      "evidence": [
+        {
+          "source_ref": "live/01-workspace.jpg"
+        },
+        {
+          "source_ref": "qa/live-run-evidence.json"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 6,
+      "slide_id": "S06",
+      "title": "6m简支梁的建模与荷载",
+      "takeaway": "两节点一单元也能描述跨中集中力",
+      "layout_family": "scenario-setup",
+      "visual_rationale": "上部大幅原生梁模型示意，中部参数卡，下部为约束和计算目标；以橙色仅强调18kN载荷。",
+      "content_blocks": [
+        {
+          "object_id": "S06/object-386",
+          "box_inches": [
+            4.295,
+            2.75,
+            1.7,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "P = 18 kN",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/object-387",
+          "box_inches": [
+            1.05,
+            4.05,
+            0.3,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "A",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/object-388",
+          "box_inches": [
+            7.0,
+            4.05,
+            0.3,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "B",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/object-390",
+          "box_inches": [
+            3.575,
+            4.57,
+            1.2,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "L = 6 m",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/object-391",
+          "box_inches": [
+            2.48,
+            2.05,
+            4.0,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "单元 E1：A—B",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/object-392",
+          "box_inches": [
+            2.5,
+            5.18,
+            4.8,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "单元内集中力：a = 3 m",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/object-393",
+          "box_inches": [
+            0.95,
+            6.03,
+            6.55,
+            0.32
+          ],
+          "type": "native.text",
+          "text": "2 个节点 · 1 个梁单元 · 无需新增跨中节点",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/object-395",
+          "box_inches": [
+            8.15,
+            2.105,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "1",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/object-396",
+          "box_inches": [
+            8.63,
+            2.035,
+            3.92,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "边界条件与自由度",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/support-table",
+          "box_inches": [
+            8.1,
+            2.78,
+            4.58,
+            1.88
+          ],
+          "type": "native.table",
+          "text": "节点 | 受约束 | 自由 | A | Dx、Dz | Ry | B | Dz | Dx、Ry",
+          "source_ref": "sources/live-run-evidence.json"
+        },
+        {
+          "object_id": "S06/load-properties",
+          "box_inches": [
+            8.30492,
+            4.91,
+            2.14015,
+            1.77
+          ],
+          "type": "source.image",
+          "source_ref": "S06/load-properties",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S06/object-398",
+          "box_inches": [
+            10.91,
+            5.08,
+            1.85,
+            1.3
+          ],
+          "type": "native.text",
+          "text": "荷载属性\n−1.800×10⁴ N\n位置 3.000 m",
+          "source_ref": "live/07-load-properties.jpg；qa/live-run-evidence.json"
+        }
+      ],
+      "speaker_notes": "45秒：说明2节点1单元的梁模型如何设置支座与跨中集中荷载；重点检查位置和单位。\n视觉与内容增强：列明跨度6m、跨中集中力18kN、两端简支，以及目标输出支反力、剪力和弯矩，给出理论预测。",
+      "evidence": [
+        {
+          "source_ref": "live/07-load-properties.jpg"
+        },
+        {
+          "source_ref": "qa/live-run-evidence.json"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 7,
+      "slide_id": "S07",
+      "title": "剪力与弯矩为什么这样变化？",
+      "takeaway": "集中力引起剪力跃变和跨中弯矩极值",
+      "layout_family": "paired-comparison",
+      "visual_rationale": "左侧放真实剪力和弯矩截图，右侧设置27kN·m大数与符号说明，下方增加沿梁位置阅读提示。",
+      "content_blocks": [
+        {
+          "object_id": "S07/object-416",
+          "box_inches": [
+            0.7,
+            1.72,
+            12.0,
+            0.2
+          ],
+          "type": "native.text",
+          "text": "沿梁读取：A端 → 集中力左侧 → 集中力右侧 → B端；先辨符号，再比较幅值。",
+          "source_ref": "live/06-shear.jpg；live/03-beam-moment.jpg"
+        },
+        {
+          "object_id": "S07/object-418",
+          "box_inches": [
+            0.65,
+            2.005,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "1",
+          "source_ref": "live/06-shear.jpg；live/03-beam-moment.jpg"
+        },
+        {
+          "object_id": "S07/object-419",
+          "box_inches": [
+            1.13,
+            1.935,
+            5.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "剪力：集中力处发生跳变",
+          "source_ref": "live/06-shear.jpg；live/03-beam-moment.jpg"
+        },
+        {
+          "object_id": "S07/object-421",
+          "box_inches": [
+            6.95,
+            2.005,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "2",
+          "source_ref": "live/06-shear.jpg；live/03-beam-moment.jpg"
+        },
+        {
+          "object_id": "S07/object-422",
+          "box_inches": [
+            7.43,
+            1.935,
+            5.32,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "弯矩：跨中达到幅值峰值",
+          "source_ref": "live/06-shear.jpg；live/03-beam-moment.jpg"
+        },
+        {
+          "object_id": "S07/shear-evidence",
+          "box_inches": [
+            0.65434,
+            2.65,
+            5.74133,
+            3.23
+          ],
+          "type": "source.image",
+          "source_ref": "S07/shear-evidence",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S07/moment-evidence",
+          "box_inches": [
+            6.95434,
+            2.65,
+            5.74133,
+            3.23
+          ],
+          "type": "source.image",
+          "source_ref": "S07/moment-evidence",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S07/object-426",
+          "box_inches": [
+            0.95,
+            6.2,
+            2.86,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "左右段幅值 9 kN",
+          "source_ref": "live/06-shear.jpg；live/03-beam-moment.jpg"
+        },
+        {
+          "object_id": "S07/object-428",
+          "box_inches": [
+            7.25,
+            6.2,
+            3.36,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "跨中标注 −27 kN·m",
+          "source_ref": "live/06-shear.jpg；live/03-beam-moment.jpg"
+        },
+        {
+          "object_id": "S07/object-429",
+          "box_inches": [
+            4.55,
+            6.2,
+            2.1,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "同一模型 / 同一荷载",
+          "source_ref": "live/06-shear.jpg；live/03-beam-moment.jpg"
+        }
+      ],
+      "speaker_notes": "55秒：解释剪力在集中载荷处跃变、弯矩在跨中达到最大幅值，并强调软件的负号约定。\n视觉与内容增强：结合真实结果说明剪力在跨中跳变、弯矩在跨中达到最大幅值27kN·m；软件显示负27，须解释符号约定。",
+      "evidence": [
+        {
+          "source_ref": "live/06-shear.jpg"
+        },
+        {
+          "source_ref": "live/03-beam-moment.jpg"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 8,
+      "slide_id": "S08",
+      "title": "反力与最大弯矩的数值核验",
+      "takeaway": "给定工况下反力与弯矩幅值符合解析结果",
+      "layout_family": "validation-evidence-table",
+      "visual_rationale": "中央设计大尺寸核验表，左右两侧设置理论与软件结果；角部放金属放大镜素材，突出证据检查。",
+      "content_blocks": [
+        {
+          "object_id": "S08/validation-evidence",
+          "box_inches": [
+            0.65,
+            2.08191,
+            6.25,
+            3.51617
+          ],
+          "type": "source.image",
+          "source_ref": "S08/validation-evidence",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S08/object-439",
+          "box_inches": [
+            7.24,
+            2.1,
+            4.1,
+            0.42
+          ],
+          "type": "native.text",
+          "text": "解析期望 ↔ 实机读数",
+          "source_ref": "live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        },
+        {
+          "object_id": "S08/validation-table",
+          "box_inches": [
+            7.24,
+            2.9,
+            5.28,
+            2.42
+          ],
+          "type": "native.table",
+          "text": "核验项 | 解析幅值 | 界面幅值 | A端反力 | 9 kN | 9 kN | B端反力 | 9 kN | 9 kN | 跨中弯矩 | 27 kN·m | 27 kN·m",
+          "source_ref": "sources/live-run-evidence.json"
+        },
+        {
+          "object_id": "S08/object-441",
+          "box_inches": [
+            0.82,
+            6.06,
+            0.59,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "条件",
+          "source_ref": "live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        },
+        {
+          "object_id": "S08/object-442",
+          "box_inches": [
+            1.72,
+            6.02,
+            2.89,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "6 m / 跨中18 kN",
+          "source_ref": "live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        },
+        {
+          "object_id": "S08/object-444",
+          "box_inches": [
+            4.97,
+            6.06,
+            0.59,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "符号",
+          "source_ref": "live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        },
+        {
+          "object_id": "S08/object-445",
+          "box_inches": [
+            5.87,
+            6.02,
+            2.89,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "图中−27遵循软件约定",
+          "source_ref": "live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        },
+        {
+          "object_id": "S08/object-447",
+          "box_inches": [
+            9.12,
+            6.06,
+            0.59,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "位置",
+          "source_ref": "live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        },
+        {
+          "object_id": "S08/object-448",
+          "box_inches": [
+            10.02,
+            6.02,
+            2.89,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "端弯矩0，内部峰值27",
+          "source_ref": "live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        },
+        {
+          "object_id": "S08/object-449",
+          "box_inches": [
+            0.85,
+            6.63,
+            11.6,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "结论限于默认案例的显示幅值对照，尚非全工况精度认证。",
+          "source_ref": "live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        }
+      ],
+      "speaker_notes": "65秒：逐项核验9、9、27三个幅值。解释截图的-27符号、端弯矩0与跨中极值不同。\n视觉与内容增强：以左右反力各9kN、最大弯矩幅值27kN·m进行对照；严格区分解析期望、实际读数和误差判断。",
+      "evidence": [
+        {
+          "source_ref": "live/03-beam-moment.jpg"
+        },
+        {
+          "source_ref": "live/05-element-results.jpg"
+        },
+        {
+          "source_ref": "qa/live-run-evidence.json"
+        },
+        {
+          "source_ref": "RA=RB=P/2；Mmax=PL/4"
+        }
+      ],
+      "asset_requests": [
+        {
+          "request_id": "R08",
+          "kind": "icon",
+          "purpose": "隐喻数值核验和结果审查；镜片清澈，不放入公式、文字或图表。",
+          "single_subject_prompt": "精密金属放大镜。隐喻数值核验和结果审查；镜片清澈，不放入公式、文字或图表。",
+          "decision": "generate_web",
+          "object_id": "web-rich-08"
+        }
+      ]
+    },
+    {
+      "slide_number": 9,
+      "slide_id": "S09",
+      "title": "荷载位置如何影响计算结果？",
+      "takeaway": "反力分配与弯矩峰值随荷载位置改变",
+      "layout_family": "dual-native-chart",
+      "visual_rationale": "上下排列两个独立原生图表，分别展示反力分配与最大弯矩；右侧公式区标注“解析预测，非新增实测”。",
+      "content_blocks": [
+        {
+          "object_id": "S09/object-459",
+          "box_inches": [
+            0.84,
+            1.93,
+            3.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "a=1m：反力偏向左端",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-461",
+          "box_inches": [
+            4.99,
+            1.93,
+            3.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "a=2m：分配逐渐均衡",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-463",
+          "box_inches": [
+            9.14,
+            1.93,
+            3.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "a=3m：对称且弯矩幅值最大",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-464",
+          "box_inches": [
+            0.75,
+            2.4,
+            5.5,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "反力幅值 / kN",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-465",
+          "box_inches": [
+            6.95,
+            2.4,
+            5.5,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "弯矩峰值幅值 / kN·m",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/reaction-chart",
+          "box_inches": [
+            0.7,
+            2.95,
+            5.65,
+            3.12
+          ],
+          "type": "native.chart",
+          "data_ref": "sources/native-data.json",
+          "text": "解析预测；非新增实机测量"
+        },
+        {
+          "object_id": "S09/moment-chart",
+          "box_inches": [
+            6.95,
+            2.95,
+            5.65,
+            3.12
+          ],
+          "type": "native.chart",
+          "data_ref": "sources/native-data.json",
+          "text": "解析预测；非新增实机测量"
+        },
+        {
+          "object_id": "S09/object-467",
+          "box_inches": [
+            0.87,
+            6.31,
+            0.96,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "固定荷载",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-468",
+          "box_inches": [
+            2.09,
+            6.3,
+            2.63,
+            0.26
+          ],
+          "type": "native.text",
+          "text": "P = 18 kN",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-470",
+          "box_inches": [
+            5.02,
+            6.31,
+            0.96,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "固定跨度",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-471",
+          "box_inches": [
+            6.24,
+            6.3,
+            2.63,
+            0.26
+          ],
+          "type": "native.text",
+          "text": "L = 6 m",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-473",
+          "box_inches": [
+            9.17,
+            6.31,
+            0.96,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "位置变量",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-474",
+          "box_inches": [
+            10.39,
+            6.3,
+            2.63,
+            0.26
+          ],
+          "type": "native.text",
+          "text": "a距左端：1 / 2 / 3 m",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_id": "S09/object-475",
+          "box_inches": [
+            0.75,
+            6.66,
+            12.0,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "解析预测，非新增实机测量。先预测，再在软件中改变位置并核对。",
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        }
+      ],
+      "speaker_notes": "45秒：演示理论上载荷从左侧1米移至跨中时，反力分配及弯矩峰值的变化。这不是新增实测。\n视觉与内容增强：固定18kN荷载，将作用位置设为距左端1、2、3m；解析预测左右反力分别为15/3、12/6、9/9kN，最大弯矩幅值15、24、27kN·m。",
+      "evidence": [
+        {
+          "source_ref": "解析预测：P=18kN，L=6m，a=1/2/3m"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 10,
+      "slide_id": "S10",
+      "title": "教学推导与危险截面分析",
+      "takeaway": "计算结果需要返回公式和截面条件解释",
+      "layout_family": "derivation-evidence-zoom",
+      "visual_rationale": "左侧竖向四步推导阶梯，右侧真实公式库或分步推导截图；以细青色连接线强调计算逻辑。",
+      "content_blocks": [
+        {
+          "object_id": "S10/derivation-evidence",
+          "box_inches": [
+            4.66,
+            2.31507,
+            7.83,
+            1.16986
+          ],
+          "type": "source.image",
+          "source_ref": "S10/derivation-evidence",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S10/object-496",
+          "box_inches": [
+            0.86,
+            2.385,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "1",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-497",
+          "box_inches": [
+            1.34,
+            2.315,
+            2.62,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "受力分析",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-499",
+          "box_inches": [
+            4.8,
+            4.15,
+            7.1,
+            0.32
+          ],
+          "type": "native.text",
+          "text": "隔离结构，列出外力与支座",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-502",
+          "box_inches": [
+            0.86,
+            3.465,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "2",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-503",
+          "box_inches": [
+            1.34,
+            3.395,
+            2.62,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "整体平衡",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-505",
+          "box_inches": [
+            4.8,
+            4.72,
+            7.1,
+            0.32
+          ],
+          "type": "native.text",
+          "text": "ΣFx=0，ΣFz=0，ΣMy=0",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-508",
+          "box_inches": [
+            0.86,
+            4.545,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "3",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-509",
+          "box_inches": [
+            1.34,
+            4.475,
+            2.62,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "截面内力",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-511",
+          "box_inches": [
+            4.8,
+            5.29,
+            7.1,
+            0.32
+          ],
+          "type": "native.text",
+          "text": "dV/dx+qz=0；dM/dx−V=0",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-514",
+          "box_inches": [
+            0.86,
+            5.625,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "4",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-515",
+          "box_inches": [
+            1.34,
+            5.555,
+            2.62,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "结果检查",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-516",
+          "box_inches": [
+            4.8,
+            5.86,
+            7.1,
+            0.32
+          ],
+          "type": "native.text",
+          "text": "比较边界值、峰值与单位",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_id": "S10/object-517",
+          "box_inches": [
+            4.8,
+            3.82,
+            7.0,
+            0.3
+          ],
+          "type": "native.text",
+          "text": "教学助手：让每一步都有可核对的物理含义",
+          "source_ref": "live/04-derivation.jpg；README.md公式库"
+        }
+      ],
+      "speaker_notes": "50秒：从实机分步推导返回基本弯曲公式，说明危险截面判断依赖内力分布与截面条件。\n视觉与内容增强：通过受力分析、平衡方程、内力求解、结果检查四步串联静力学知识，说明公式助手的学习价值。",
+      "evidence": [
+        {
+          "source_ref": "live/04-derivation.jpg"
+        },
+        {
+          "source_ref": "README.md公式库"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 11,
+      "slide_id": "S11",
+      "title": "空间刚架的六自由度建模",
+      "takeaway": "空间梁节点同时包含三平移与三转动",
+      "layout_family": "spatial-technical-figure",
+      "visual_rationale": "左侧放立体桁架装饰和实际空间模型，右侧采用六方向示意与4×6=24的原生数字关系。",
+      "content_blocks": [
+        {
+          "object_id": "S11/object-526",
+          "box_inches": [
+            6.2,
+            1.71,
+            6.3,
+            0.22
+          ],
+          "type": "native.text",
+          "text": "4 × 6 = 24：约束处理前节点自由度总数，不等于24个有效自由度。",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/space-model",
+          "box_inches": [
+            0.65,
+            1.98203,
+            5.1,
+            4.47595
+          ],
+          "type": "source.image",
+          "source_ref": "S11/space-model",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S11/object-529",
+          "box_inches": [
+            6.12,
+            2.155,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "1",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-530",
+          "box_inches": [
+            6.6,
+            2.085,
+            3.32,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "每节点六自由度",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-532",
+          "box_inches": [
+            6.34,
+            3.52,
+            1.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "Ux",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-534",
+          "box_inches": [
+            8.48,
+            3.52,
+            1.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "Uy",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-536",
+          "box_inches": [
+            10.62,
+            3.52,
+            1.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "Uz",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-538",
+          "box_inches": [
+            6.34,
+            4.25,
+            1.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "Rx",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-540",
+          "box_inches": [
+            8.48,
+            4.25,
+            1.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "Ry",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-542",
+          "box_inches": [
+            10.62,
+            4.25,
+            1.56,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "Rz",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-543",
+          "box_inches": [
+            6.22,
+            4.98,
+            6.2,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "两端共 12 自由度 → 12×12 单元刚度",
+          "source_ref": "README.md；空间刚架运行条件"
+        },
+        {
+          "object_id": "S11/object-544",
+          "box_inches": [
+            6.22,
+            5.69,
+            6.2,
+            0.93
+          ],
+          "type": "native.text",
+          "text": "EA/L：轴向  ·  GJ/L：扭转\n局部 y / z：双向弯曲\nEuler–Bernoulli 梁，不含剪切变形修正",
+          "source_ref": "README.md；空间刚架运行条件"
+        }
+      ],
+      "speaker_notes": "50秒：解释空间刚架如何从平面建模扩展到每节点6自由度，区分单元12×12和整体24自由度。\n视觉与内容增强：解释三向平移与三向转动，并以四节点三构件模型说明未施加约束前共有24个节点自由度，避免误解为24个有效自由度。",
+      "evidence": [
+        {
+          "source_ref": "README.md"
+        },
+        {
+          "source_ref": "空间刚架运行条件"
+        }
+      ],
+      "asset_requests": [
+        {
+          "request_id": "R05",
+          "kind": "concept",
+          "purpose": "作为单体空间杆系结构示意，呈现节点与构件的三维关系，不冒充真实求解模型。",
+          "single_subject_prompt": "空间桁架。作为单体空间杆系结构示意，呈现节点与构件的三维关系，不冒充真实求解模型。",
+          "decision": "generate_web",
+          "object_id": "web-rich-05"
+        }
+      ]
+    },
+    {
+      "slide_number": 12,
+      "slide_id": "S12",
+      "title": "空间刚架的实机结果核验",
+      "takeaway": "三向合力平衡成立，完整力矩核验仍缺失",
+      "layout_family": "validation-dashboard",
+      "visual_rationale": "中央真实结果表，右侧三向力平衡表，左上放独立坐标立方体概念素材；底部增加核验范围说明。",
+      "content_blocks": [
+        {
+          "object_id": "S12/object-553",
+          "box_inches": [
+            0.7,
+            1.73,
+            11.9,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "核验步骤：读取外力 → 读取总反力 → 逐方向求和 → 明确未检查的力矩。",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/space-results",
+          "box_inches": [
+            0.65,
+            2.07062,
+            3.35,
+            4.30875
+          ],
+          "type": "source.image",
+          "source_ref": "S12/space-results",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S12/object-556",
+          "box_inches": [
+            4.54,
+            2.16,
+            1.04,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "4",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/object-557",
+          "box_inches": [
+            5.63,
+            2.43,
+            1.25,
+            0.34
+          ],
+          "type": "native.text",
+          "text": "节点",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/object-559",
+          "box_inches": [
+            7.39,
+            2.16,
+            1.04,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "3",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/object-560",
+          "box_inches": [
+            8.48,
+            2.43,
+            1.25,
+            0.34
+          ],
+          "type": "native.text",
+          "text": "构件",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/object-562",
+          "box_inches": [
+            10.24,
+            2.16,
+            1.04,
+            0.5
+          ],
+          "type": "native.text",
+          "text": "24",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/object-563",
+          "box_inches": [
+            11.33,
+            2.43,
+            1.25,
+            0.34
+          ],
+          "type": "native.text",
+          "text": "总自由度",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/space-balance-table",
+          "box_inches": [
+            4.36,
+            3.47,
+            8.34,
+            2.25
+          ],
+          "type": "native.table",
+          "text": "方向 | D点外力 / N | A点反力 / N | 平衡 | x | 8000 | −8000 | 0 | y | −5000 | 5000 | 0 | z | −12000 | 12000 | 0",
+          "source_ref": "sources/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/object-564",
+          "box_inches": [
+            4.4,
+            6.08,
+            8.2,
+            0.43
+          ],
+          "type": "native.text",
+          "text": "本次界面报告：Worker CPU；残差约 6×10⁻¹⁴；变形显示放大 2.4 倍。",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S12/object-565",
+          "box_inches": [
+            4.4,
+            6.59,
+            8.2,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "仅核对三向力平衡；扭矩数值未捕获，应力 / 安全系数未补填。",
+          "source_ref": "live/11-space-results.jpg；qa/live-run-evidence.json"
+        }
+      ],
+      "speaker_notes": "55秒：逐项展示三向受力与支座反力相消。残差和单次耗时只描述当前运行，缺少力矩及应力核验。\n视觉与内容增强：展示三向外力8000、-5000、-12000N与相反总反力的对应关系；仅声称三向外力平衡已核验，不推及力矩平衡。",
+      "evidence": [
+        {
+          "source_ref": "live/11-space-results.jpg"
+        },
+        {
+          "source_ref": "qa/live-run-evidence.json"
+        }
+      ],
+      "asset_requests": [
+        {
+          "request_id": "R07",
+          "kind": "concept",
+          "purpose": "表现三维空间方向关系，仅保留立方体线框与短方向线，不添加字母或刻度。",
+          "single_subject_prompt": "蓝青色空间坐标概念立方体。表现三维空间方向关系，仅保留立方体线框与短方向线，不添加字母或刻度。",
+          "decision": "generate_web",
+          "object_id": "web-rich-07"
+        }
+      ]
+    },
+    {
+      "slide_number": 13,
+      "slide_id": "S13",
+      "title": "本地求解软件的技术架构",
+      "takeaway": "当前数值求解主要运行于Worker CPU",
+      "layout_family": "technical-layers",
+      "visual_rationale": "采用中央计算核心向四周辐射的架构图，芯片图标居中偏上；连接线按数据流而非装饰随意布置。",
+      "content_blocks": [
+        {
+          "object_id": "S13/object-575",
+          "box_inches": [
+            5.05,
+            4.6,
+            3.12,
+            0.42
+          ],
+          "type": "native.text",
+          "text": "本地计算核心",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-576",
+          "box_inches": [
+            5.05,
+            5.29,
+            3.12,
+            0.64
+          ],
+          "type": "native.text",
+          "text": "单元组装 / 约束分块\n位移 → 反力与端力",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-578",
+          "box_inches": [
+            0.9,
+            2.29,
+            3.25,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "模型数据",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-579",
+          "box_inches": [
+            0.9,
+            2.88,
+            3.25,
+            0.63
+          ],
+          "type": "native.text",
+          "text": "节点、材料、截面\n约束与荷载",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-582",
+          "box_inches": [
+            9.15,
+            2.29,
+            3.25,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "可视交互",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-583",
+          "box_inches": [
+            9.15,
+            2.88,
+            3.25,
+            0.63
+          ],
+          "type": "native.text",
+          "text": "Vue 3 / TypeScript\nThree.js 视图",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-586",
+          "box_inches": [
+            0.9,
+            4.82,
+            3.25,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "学习解释",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-587",
+          "box_inches": [
+            0.9,
+            5.41,
+            3.25,
+            0.63
+          ],
+          "type": "native.text",
+          "text": "公式库 / 分步推导\n内力与结果表",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-590",
+          "box_inches": [
+            9.15,
+            4.82,
+            3.25,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "离线交付",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-591",
+          "box_inches": [
+            9.15,
+            5.41,
+            3.25,
+            0.63
+          ],
+          "type": "native.text",
+          "text": "Electron / PWA\nWorker CPU + sparse LU",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_id": "S13/object-593",
+          "box_inches": [
+            0.85,
+            6.55,
+            11.8,
+            0.24
+          ],
+          "type": "native.text",
+          "text": "WebGPU 仅设备检测；未启用 GPU 数值内核。Worker不可用时回退主线程CPU。",
+          "source_ref": "README.md；用户提供的技术栈和求解能力说明"
+        }
+      ],
+      "speaker_notes": "40秒：讲解前端、Worker求解器和Three.js之间的数据流，明确计算不依靠尚未实现的GPU数值内核。\n视觉与内容增强：介绍模型数据、求解模块、可视化界面、公式知识库及Windows/PWA交付形态；WebGPU目前仅检测设备能力。",
+      "evidence": [
+        {
+          "source_ref": "README.md"
+        },
+        {
+          "source_ref": "用户提供的技术栈和求解能力说明"
+        }
+      ],
+      "asset_requests": [
+        {
+          "request_id": "R06",
+          "kind": "icon",
+          "purpose": "强化本地计算核心的视觉识别；仅一枚芯片，不暗示GPU计算能力。",
+          "single_subject_prompt": "精密计算芯片。强化本地计算核心的视觉识别；仅一枚芯片，不暗示GPU计算能力。",
+          "decision": "generate_web",
+          "object_id": "web-rich-06"
+        }
+      ]
+    },
+    {
+      "slide_number": 14,
+      "slide_id": "S14",
+      "title": "哪些能力已具备，哪些仍受限？",
+      "takeaway": "功能存在、实机观察与充分验证不是一回事",
+      "layout_family": "evidence-status-matrix",
+      "visual_rationale": "三列能力分级矩阵，文字说明成熟度与用途；右上放盾牌勾素材，底部强调不可替代专业校核。",
+      "content_blocks": [
+        {
+          "object_id": "S14/object-604",
+          "box_inches": [
+            0.83,
+            2.28,
+            3.47,
+            0.55
+          ],
+          "type": "native.text",
+          "text": "已实现 · 学习功能",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-605",
+          "box_inches": [
+            0.85,
+            3.15,
+            3.44,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "二维梁 / 刚架",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-606",
+          "box_inches": [
+            0.85,
+            3.7,
+            3.44,
+            0.56
+          ],
+          "type": "native.text",
+          "text": "反力、N / V / M、变形",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-607",
+          "box_inches": [
+            0.85,
+            4.33,
+            3.44,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "空间杆系",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-608",
+          "box_inches": [
+            0.85,
+            4.88,
+            3.44,
+            0.56
+          ],
+          "type": "native.text",
+          "text": "节点自由度、构件端力",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-609",
+          "box_inches": [
+            0.85,
+            6.09,
+            3.44,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "使用前检查条件与符号",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-612",
+          "box_inches": [
+            4.99,
+            2.28,
+            3.47,
+            0.55
+          ],
+          "type": "native.text",
+          "text": "实验中 · 继续验证",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-613",
+          "box_inches": [
+            5.01,
+            3.15,
+            3.44,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "Tet4实验内核",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-614",
+          "box_inches": [
+            5.01,
+            3.7,
+            3.44,
+            0.56
+          ],
+          "type": "native.text",
+          "text": "与主编辑器实体链仍待完善",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-615",
+          "box_inches": [
+            5.01,
+            4.33,
+            3.44,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "WebGPU能力检测",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-616",
+          "box_inches": [
+            5.01,
+            4.88,
+            3.44,
+            0.56
+          ],
+          "type": "native.text",
+          "text": "不等于GPU数值求解",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-617",
+          "box_inches": [
+            5.01,
+            6.09,
+            3.44,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "不把界面入口当作成熟能力",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-620",
+          "box_inches": [
+            9.15,
+            2.28,
+            3.47,
+            0.55
+          ],
+          "type": "native.text",
+          "text": "用途边界 · 如实说明",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-621",
+          "box_inches": [
+            9.17,
+            3.15,
+            3.44,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "课堂学习与训练",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-622",
+          "box_inches": [
+            9.17,
+            3.7,
+            3.44,
+            0.56
+          ],
+          "type": "native.text",
+          "text": "解析对照、可视化理解",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-623",
+          "box_inches": [
+            9.17,
+            4.33,
+            3.44,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "尚非工程认证",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-624",
+          "box_inches": [
+            9.17,
+            4.88,
+            3.44,
+            0.56
+          ],
+          "type": "native.text",
+          "text": "不用于设计、鉴定或商业用途",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_id": "S14/object-625",
+          "box_inches": [
+            9.17,
+            6.09,
+            3.44,
+            0.35
+          ],
+          "type": "native.text",
+          "text": "功能存在 ≠ 充分验证",
+          "source_ref": "README.md；qa/live-run-evidence.json；技术边界说明"
+        }
+      ],
+      "speaker_notes": "45秒：把功能描述与真实运行证据分开。强调Tet4和WebGPU的现状，不利用单一算例推断整体可靠性。\n视觉与内容增强：区分已实现的梁刚架学习功能、实验中的Tet4模块，以及尚未实现的实体连续应力云图；明确非工程设计认证。",
+      "evidence": [
+        {
+          "source_ref": "README.md"
+        },
+        {
+          "source_ref": "qa/live-run-evidence.json"
+        },
+        {
+          "source_ref": "技术边界说明"
+        }
+      ],
+      "asset_requests": [
+        {
+          "request_id": "R09",
+          "kind": "icon",
+          "purpose": "突出可信度与边界意识，仅作为可信性概念装饰，不代表产品获得认证。",
+          "single_subject_prompt": "金属盾牌与勾形镂空。突出可信度与边界意识，仅作为可信性概念装饰，不代表产品获得认证。",
+          "decision": "generate_web",
+          "object_id": "web-rich-09"
+        }
+      ]
+    },
+    {
+      "slide_number": 15,
+      "slide_id": "S15",
+      "title": "如何复现一个简单学习算例？",
+      "takeaway": "从建模、结果查看到解析核对按顺序操作",
+      "layout_family": "guided-operation",
+      "visual_rationale": "用五个连续步骤的原生操作卡与对应界面截图构成横向时间线，突出可跟随操作的关键输入。",
+      "content_blocks": [
+        {
+          "object_id": "S15/guide-evidence",
+          "box_inches": [
+            0.65,
+            2.00063,
+            6.7,
+            3.76875
+          ],
+          "type": "source.image",
+          "source_ref": "S15/guide-evidence",
+          "text": "真实程序截图；对象来源见assets/live与sources/image-dimensions.json"
+        },
+        {
+          "object_id": "S15/object-637",
+          "box_inches": [
+            7.72,
+            2.055,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "1",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-638",
+          "box_inches": [
+            8.2,
+            1.985,
+            4.32,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "载入案例",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-639",
+          "box_inches": [
+            8.2,
+            2.5,
+            4.48,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "帮助 → 使用指导与默认案例",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-641",
+          "box_inches": [
+            7.72,
+            3.125,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "2",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-642",
+          "box_inches": [
+            8.2,
+            3.055,
+            4.32,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "检查条件",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-643",
+          "box_inches": [
+            8.2,
+            3.57,
+            4.48,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "单位、截面、约束、荷载方向",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-645",
+          "box_inches": [
+            7.72,
+            4.195,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "3",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-646",
+          "box_inches": [
+            8.2,
+            4.125,
+            4.32,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "求解与核对",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-647",
+          "box_inches": [
+            8.2,
+            4.64,
+            4.48,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "二维自动求解；三维点本地求解",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-649",
+          "box_inches": [
+            7.72,
+            5.265,
+            0.34,
+            0.21
+          ],
+          "type": "native.text",
+          "text": "4",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-650",
+          "box_inches": [
+            8.2,
+            5.195,
+            4.32,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "改变单参数",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-651",
+          "box_inches": [
+            8.2,
+            5.71,
+            4.48,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "先预测，改位置，再比较结果",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_id": "S15/object-652",
+          "box_inches": [
+            0.75,
+            6.28,
+            11.9,
+            0.44
+          ],
+          "type": "native.text",
+          "text": "排错线索：不稳定→约束；量级异常→单位；图形异常→方向与局部坐标。",
+          "source_ref": "live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        }
+      ],
+      "speaker_notes": "45秒：给同学一条最短复现路径，并用常见输入错误说明如何排查。明确尚未验证安装包部署。\n视觉与内容增强：以新建工程、建立6m梁、添加支座、施加18kN集中力、求解并比对反力为完整教学流程，不虚构下载地址。",
+      "evidence": [
+        {
+          "source_ref": "live/01-workspace.jpg"
+        },
+        {
+          "source_ref": "live/07-load-properties.jpg"
+        },
+        {
+          "source_ref": "二维解析核验"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 16,
+      "slide_id": "S16",
+      "title": "让力学结果真正可理解",
+      "takeaway": "以可复算案例验证功能，再逐步扩展边界",
+      "layout_family": "conclusion-roadmap",
+      "visual_rationale": "中心主结论配三块递进式能力面板，右下留出后续改进方向；避免空泛口号占据整页。",
+      "content_blocks": [
+        {
+          "object_id": "S16/object-670",
+          "box_inches": [
+            0.75,
+            2.1,
+            11.8,
+            0.65
+          ],
+          "type": "native.text",
+          "text": "把“看见结果”推进到“解释结果”",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-673",
+          "box_inches": [
+            0.9,
+            3.44,
+            0.7,
+            0.42
+          ],
+          "type": "native.text",
+          "text": "01",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-674",
+          "box_inches": [
+            0.9,
+            4.12,
+            3.4,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "可视化建模",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-675",
+          "box_inches": [
+            0.9,
+            4.77,
+            3.4,
+            0.57
+          ],
+          "type": "native.text",
+          "text": "把条件转成节点与构件",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-676",
+          "box_inches": [
+            0.9,
+            5.43,
+            3.4,
+            0.26
+          ],
+          "type": "native.text",
+          "text": "已见：二维与空间工作区",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-679",
+          "box_inches": [
+            5.05,
+            3.44,
+            0.7,
+            0.42
+          ],
+          "type": "native.text",
+          "text": "02",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-680",
+          "box_inches": [
+            5.05,
+            4.12,
+            3.4,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "结果解释",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-681",
+          "box_inches": [
+            5.05,
+            4.77,
+            3.4,
+            0.57
+          ],
+          "type": "native.text",
+          "text": "联系内力图、公式与危险位置",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-682",
+          "box_inches": [
+            5.05,
+            5.43,
+            3.4,
+            0.26
+          ],
+          "type": "native.text",
+          "text": "已见：默认梁幅值对照",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-685",
+          "box_inches": [
+            9.2,
+            3.44,
+            0.7,
+            0.42
+          ],
+          "type": "native.text",
+          "text": "03",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-686",
+          "box_inches": [
+            9.2,
+            4.12,
+            3.4,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "独立核验",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-687",
+          "box_inches": [
+            9.2,
+            4.77,
+            3.4,
+            0.57
+          ],
+          "type": "native.text",
+          "text": "平衡关系与解析解交叉检查",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-688",
+          "box_inches": [
+            9.2,
+            5.43,
+            3.4,
+            0.26
+          ],
+          "type": "native.text",
+          "text": "已见：空间三向力平衡",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-689",
+          "box_inches": [
+            0.82,
+            6.18,
+            1.3,
+            0.34
+          ],
+          "type": "native.text",
+          "text": "下一步",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_id": "S16/object-690",
+          "box_inches": [
+            2.25,
+            6.16,
+            10.2,
+            0.48
+          ],
+          "type": "native.text",
+          "text": "补充边界与荷载组合 → 建立回归算例 → 完善空间分析与完整力矩核验",
+          "source_ref": "二维解析与实机记录；三维实机记录；证据缺口清单"
+        }
+      ],
+      "speaker_notes": "30秒：总结学习闭环，邀请同学通过简单算例复算结果。后续优先补齐参数扫描与空间完整平衡验证。\n视觉与内容增强：归纳可视化建模、结果解释、解析对照三项教学价值，并指出进一步完善验证体系和空间分析的方向。",
+      "evidence": [
+        {
+          "source_ref": "二维解析与实机记录"
+        },
+        {
+          "source_ref": "三维实机记录"
+        },
+        {
+          "source_ref": "证据缺口清单"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 17,
+      "slide_id": "S17",
+      "title": "附录：公式与单位速查",
+      "takeaway": "统一参数定义、单位和符号口径",
+      "layout_family": "formula-reference",
+      "visual_rationale": "采用密度适中的两列公式手册排版；原生公式与微型结构示意配对，编号颜色对应第3页四类变形。",
+      "content_blocks": [
+        {
+          "object_id": "S17/object-706",
+          "box_inches": [
+            0.95,
+            2.28,
+            0.26,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "1",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-707",
+          "box_inches": [
+            1.55,
+            2.21,
+            4.7,
+            0.37
+          ],
+          "type": "native.text",
+          "text": "轴向拉压",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-708",
+          "box_inches": [
+            0.85,
+            2.81,
+            5.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "σ=N/A；ΔL=NL/(EA)",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-709",
+          "box_inches": [
+            0.85,
+            3.38,
+            5.42,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "N：轴力；A：面积；E：弹性模量",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-710",
+          "box_inches": [
+            0.85,
+            3.79,
+            5.42,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "均匀等截面、线弹性；统一N/m/Pa",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-714",
+          "box_inches": [
+            7.15,
+            2.28,
+            0.26,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "2",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-715",
+          "box_inches": [
+            7.75,
+            2.21,
+            4.7,
+            0.37
+          ],
+          "type": "native.text",
+          "text": "弯曲响应",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-716",
+          "box_inches": [
+            7.05,
+            2.81,
+            5.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "σmax=M/W；EI控制挠度",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-717",
+          "box_inches": [
+            7.05,
+            3.38,
+            5.42,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "M：弯矩；W：抗弯截面系数",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-718",
+          "box_inches": [
+            7.05,
+            3.79,
+            5.42,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "线弹性、小变形；截面与边界须匹配",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-722",
+          "box_inches": [
+            0.95,
+            4.6,
+            0.26,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "3",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-723",
+          "box_inches": [
+            1.55,
+            4.53,
+            4.7,
+            0.37
+          ],
+          "type": "native.text",
+          "text": "圆轴扭转",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-724",
+          "box_inches": [
+            0.85,
+            5.13,
+            5.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "τmax=T/Wt；φ=TL/(GJ)",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-725",
+          "box_inches": [
+            0.85,
+            5.7,
+            5.42,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "T：扭矩；J：极惯性矩；G：剪切模量",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-726",
+          "box_inches": [
+            0.85,
+            6.11,
+            5.42,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "均匀圆轴、小变形；角度按rad",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-730",
+          "box_inches": [
+            7.15,
+            4.6,
+            0.26,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "4",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-731",
+          "box_inches": [
+            7.75,
+            4.53,
+            4.7,
+            0.37
+          ],
+          "type": "native.text",
+          "text": "集中力简支梁",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-732",
+          "box_inches": [
+            7.05,
+            5.13,
+            5.42,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "RA=P(L−a)/L；Mpeak=Pa(L−a)/L",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-733",
+          "box_inches": [
+            7.05,
+            5.7,
+            5.42,
+            0.28
+          ],
+          "type": "native.text",
+          "text": "a：距左支座位置；0<a<L",
+          "source_ref": "静力学公式；README.md公式符号"
+        },
+        {
+          "object_id": "S17/object-734",
+          "box_inches": [
+            7.05,
+            6.11,
+            5.42,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "本稿P=18kN，L=6m；仅解析预测",
+          "source_ref": "静力学公式；README.md公式符号"
+        }
+      ],
+      "speaker_notes": "附录备查，不计入12分钟。答疑时解释公式、单位与符号定义，尤其注意反力方向和弯矩幅值口径。\n视觉与内容增强：补充拉压、弯曲、扭转及平衡方程的适用前提、变量含义与典型使用场景，使页面具有独立复习价值。",
+      "evidence": [
+        {
+          "source_ref": "静力学公式"
+        },
+        {
+          "source_ref": "README.md公式符号"
+        }
+      ],
+      "asset_requests": []
+    },
+    {
+      "slide_number": 18,
+      "slide_id": "S18",
+      "title": "附录：证据索引与验证范围",
+      "takeaway": "每一项结论必须能够追溯到具体来源",
+      "layout_family": "evidence-index",
+      "visual_rationale": "左侧证据等级矩阵，右侧真实截图缩略图和结论索引，底部保留简洁致谢与交流入口，不使用虚构二维码。",
+      "content_blocks": [
+        {
+          "object_id": "S18/object-746",
+          "box_inches": [
+            0.82,
+            2.09,
+            0.31,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "01",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-747",
+          "box_inches": [
+            1.45,
+            2.03,
+            2.2,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "实机已观察",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-748",
+          "box_inches": [
+            3.9,
+            2.03,
+            8.4,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "二维梁9/9kN与27kN·m幅值；空间三向力平衡",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-749",
+          "box_inches": [
+            3.9,
+            2.6,
+            8.4,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "本地实机截图与运行记录",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-752",
+          "box_inches": [
+            0.82,
+            3.17,
+            0.31,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "02",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-753",
+          "box_inches": [
+            1.45,
+            3.11,
+            2.2,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "解析预测",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-754",
+          "box_inches": [
+            3.9,
+            3.11,
+            8.4,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "荷载位置a=1/2/3m的反力与弯矩趋势",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-755",
+          "box_inches": [
+            3.9,
+            3.68,
+            8.4,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "sources/native-data.json，非新增测量",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-758",
+          "box_inches": [
+            0.82,
+            4.25,
+            0.31,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "03",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-759",
+          "box_inches": [
+            1.45,
+            4.19,
+            2.2,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "实验与缺项",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-760",
+          "box_inches": [
+            3.9,
+            4.19,
+            8.4,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "Tet4实验；完整力矩核验待补；GPU仅检测",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-761",
+          "box_inches": [
+            3.9,
+            4.76,
+            8.4,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "README及求解能力审计",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-764",
+          "box_inches": [
+            0.82,
+            5.33,
+            0.31,
+            0.25
+          ],
+          "type": "native.text",
+          "text": "04",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-765",
+          "box_inches": [
+            1.45,
+            5.27,
+            2.2,
+            0.38
+          ],
+          "type": "native.text",
+          "text": "视觉协作",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-766",
+          "box_inches": [
+            3.9,
+            5.27,
+            8.4,
+            0.4
+          ],
+          "type": "native.text",
+          "text": "网页规划与逐项独立素材生成，模型名未核验",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-767",
+          "box_inches": [
+            3.9,
+            5.84,
+            8.4,
+            0.23
+          ],
+          "type": "native.text",
+          "text": "用户授权当前网页版继续",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_id": "S18/object-769",
+          "box_inches": [
+            0.85,
+            6.49,
+            11.7,
+            0.29
+          ],
+          "type": "native.text",
+          "text": "欢迎带着模型、单位和截图交流：先定位条件，再判断差异。",
+          "source_ref": "README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        }
+      ],
+      "speaker_notes": "附录备查，不计入12分钟。供同学追溯实机截图、解析预测和技术说明，避免把一次运行扩大解释。\n视觉与内容增强：建立已核验结果、解析预测、实验功能、尚未实现功能四级证据分类；再次注明GPU仅检测，不能证明GPU求解。",
+      "evidence": [
+        {
+          "source_ref": "README.md"
+        },
+        {
+          "source_ref": "outputs/classmate-sharing/assets/live/"
+        },
+        {
+          "source_ref": "qa/live-run-evidence.json"
+        }
+      ],
+      "asset_requests": []
+    }
+  ]
+}

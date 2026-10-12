@@ -1,0 +1,144 @@
+{
+  "schema": "ppt_element_composition_report_v1",
+  "source_pptx": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\build\\deck-native-clean.pptx",
+  "source_sha256": "d9eb4bce084d8cea20b894a6dc1ff2a4e9f27589045a4e21d5c5761220b5a0bf",
+  "output_pptx": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\build\\deck-composed-v2.pptx",
+  "output_sha256": "0df312a517331945b7f07c0b12dfa46eb60db8068ff349b6e1ae9e0b7a3c6f40",
+  "manifest": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\assets\\asset_manifest.json",
+  "inserted_count": 10,
+  "delivery_status": "draft_requires_delivery_gate",
+  "warning": "Composition alone does not establish that planned assets, content or visual review are complete.",
+  "inserted": [
+    {
+      "slide_number": 3,
+      "shape_name": "S03/web-rich-01",
+      "kind": "concept",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R01\\LMB-A01-original.png",
+      "image_sha256": "dc2af86829bcb3b581c0028ff9aca7a69673be3c6b53b4ac61016c3bf96f22f2",
+      "placement_in": {
+        "x": 1.49,
+        "y": 2.8,
+        "width": 1.17,
+        "height": 1.17
+      }
+    },
+    {
+      "slide_number": 3,
+      "shape_name": "S03/web-rich-02",
+      "kind": "concept",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R02\\LMB-A02-original.png",
+      "image_sha256": "1d89bfc612bfe06d536c62378f5d93c05dd8cb1e858087469ac598fbc565d456",
+      "placement_in": {
+        "x": 4.61,
+        "y": 2.8,
+        "width": 1.17,
+        "height": 1.17
+      }
+    },
+    {
+      "slide_number": 3,
+      "shape_name": "S03/web-rich-03",
+      "kind": "concept",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R03\\LMB-A03-original.png",
+      "image_sha256": "a39b3f4935ee4dd51afda4280479e0fd859ccff7159de3b7b9642679d36f4422",
+      "placement_in": {
+        "x": 7.73,
+        "y": 2.8,
+        "width": 1.17,
+        "height": 1.17
+      }
+    },
+    {
+      "slide_number": 3,
+      "shape_name": "S03/web-rich-04",
+      "kind": "concept",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R04\\LMB-A04-original.png",
+      "image_sha256": "0ac29514cfe88aea1b3a412ce7dac11041e221e56cf845596f68f1892d294d3c",
+      "placement_in": {
+        "x": 10.85,
+        "y": 2.8,
+        "width": 1.17,
+        "height": 1.17
+      }
+    },
+    {
+      "slide_number": 11,
+      "shape_name": "S11/web-rich-05",
+      "kind": "concept",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R05\\LMB-A05-original.png",
+      "image_sha256": "af217bb32630993ae49d9698e8a3765b5d21037a8ac6b3e67ecdb1491576290b",
+      "placement_in": {
+        "x": 10.775,
+        "y": 2.12,
+        "width": 1.25,
+        "height": 1.25
+      }
+    },
+    {
+      "slide_number": 13,
+      "shape_name": "S13/web-rich-06",
+      "kind": "icon",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R06\\LMB-A06-original.png",
+      "image_sha256": "7219270d1872eace0e5871a166736f61451423463dd6701f9a72c9e46c26f9d9",
+      "placement_in": {
+        "x": 5.775,
+        "y": 2.65,
+        "width": 1.65,
+        "height": 1.65
+      }
+    },
+    {
+      "slide_number": 12,
+      "shape_name": "S12/web-rich-07",
+      "kind": "concept",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R07\\LMB-A07-original.png",
+      "image_sha256": "881ed38959dd1970746da1196b1f0d4df3f603add426666e0168b158b198e0e5",
+      "placement_in": {
+        "x": 11.79,
+        "y": 0.88,
+        "width": 0.72,
+        "height": 0.72
+      }
+    },
+    {
+      "slide_number": 8,
+      "shape_name": "S08/web-rich-08",
+      "kind": "icon",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R08\\LMB-A08-original.png",
+      "image_sha256": "335f02bc4e64c0769d0d80118ea35490b9f563e909154409f5af418e3cabfc61",
+      "placement_in": {
+        "x": 11.7,
+        "y": 1.88,
+        "width": 0.75,
+        "height": 0.75
+      }
+    },
+    {
+      "slide_number": 14,
+      "shape_name": "S14/web-rich-09",
+      "kind": "icon",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R09\\LMB-A09-original.png",
+      "image_sha256": "bca6ce2edf8253445c3bb8fc91e810354c9b163bbb703c1003ce3e10cc5b47bd",
+      "placement_in": {
+        "x": 11.795,
+        "y": 0.89,
+        "width": 0.75,
+        "height": 0.75
+      }
+    },
+    {
+      "slide_number": 1,
+      "shape_name": "S01/web-rich-10",
+      "kind": "ornament",
+      "image_path": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-rich\\asset-jobs\\R10\\LMB-A10-original.png",
+      "image_sha256": "5e1964e58ec7623075b85b16b802c7f91f796e46c8bda04914050eaf19c654e9",
+      "placement_in": {
+        "x": 8.75,
+        "y": 5.55,
+        "width": 2.7,
+        "height": 0.9
+      }
+    }
+  ],
+  "whole_slide_generation_used": false
+}

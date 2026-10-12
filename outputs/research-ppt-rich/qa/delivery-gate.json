@@ -1,0 +1,24 @@
+{
+  "ready": false,
+  "status": "draft",
+  "pptx_sha256": "d793731b522a00be004bd441ea16b94ea3c501ae9db3376d3be097c644e2234a",
+  "problems": [
+    "Connection: GPT-6 must be observed in the actual model selector"
+  ],
+  "warnings": [
+    "R10: actual image engine unverified; label it honestly",
+    "R01: actual image engine unverified; label it honestly",
+    "R02: actual image engine unverified; label it honestly",
+    "R03: actual image engine unverified; label it honestly",
+    "R04: actual image engine unverified; label it honestly",
+    "R08: actual image engine unverified; label it honestly",
+    "R05: actual image engine unverified; label it honestly",
+    "R07: actual image engine unverified; label it honestly",
+    "R06: actual image engine unverified; label it honestly",
+    "R09: actual image engine unverified; label it honestly"
+  ],
+  "limits": [
+    "Review notes are human/agent attestations, not automatic proof of aesthetics or factual accuracy.",
+    "Run editability, typography and source audits separately."
+  ]
+}

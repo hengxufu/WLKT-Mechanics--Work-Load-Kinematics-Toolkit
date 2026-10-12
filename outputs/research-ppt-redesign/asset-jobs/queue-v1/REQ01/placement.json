@@ -1,0 +1,37 @@
+{
+  "schema": "single_element_placement_v1",
+  "slide_id": "S01",
+  "object_id": "cover_bar",
+  "shape_name": "S01/cover_bar",
+  "asset_file": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-redesign\\asset-jobs\\queue-v1\\REQ01\\METAL_BAR-original.png",
+  "asset_sha256": "65181474072c499183df48f623c267aaa55fca15882e9dcc34a2660336836e5a",
+  "editable": false,
+  "semantic_text": null,
+  "target_box_inches": [
+    8.23,
+    2.05,
+    4.4,
+    4.05
+  ],
+  "image_box_inches": [
+    8.405,
+    2.05,
+    4.05,
+    4.05
+  ],
+  "effective_ppi": 309.6,
+  "resolution_ok": true,
+  "visible_subject_box_inches": [
+    8.60201,
+    2.708852,
+    3.691507,
+    2.855024
+  ],
+  "warnings": [],
+  "image_editing": "none; original preserved; contain without stretching",
+  "visual_review_required": [
+    "实际背景上的边缘",
+    "与文字和证据的间距",
+    "视觉大小和光照一致性"
+  ]
+}

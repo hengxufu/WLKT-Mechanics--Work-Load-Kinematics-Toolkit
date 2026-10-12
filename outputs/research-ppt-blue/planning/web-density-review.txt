@@ -1,0 +1,633 @@
+Browser tab: 1, Title: "拉压弯扭视觉重设计", URL: "https://chatgpt.com/c/6acb57b2-2558-83ee-b982-ec6be3938863".
+0 AXWebArea 拉压弯扭视觉重设计, URL: chatgpt.com/c/6acb57b2-2558-83ee-b982-ec6be3938863
+	1 container
+		2 container
+			3 link Description: 跳转到内容, Value: chatgpt.com/c/6acb57b2-2558-83ee-b982-ec6be3938863#_R_trcuktdbntccgud5dl75_
+			4 container
+				5 container
+					6 pop up button (collapsed) Description: 切换模式，当前模式：ChatGPT, ID: radix-_r_84_, Secondary Actions: Expand
+					7 button 搜索
+					8 button (expanded) Description: 隐藏侧边栏, Secondary Actions: Collapse
+					9 container 聊天记录
+						10 button 新聊天
+						11 container
+							12 button 定时任务
+							13 button 资料库
+							14 button 插件
+							15 pop up button (collapsed) 探索, ID: radix-_R_16atqdajemktdbntccgud5dl75_, Secondary Actions: Expand
+							16 sortable (expanded) 置顶, Secondary Actions: Collapse
+							17 content list
+								18 container 推送前沿研究问题
+									19 link Description: 推送前沿研究问题, Value: chatgpt.com/c/6a9e17b5-440c-83ee-a977-a9c27dda63f4
+									20 container
+										21 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_8d_, Secondary Actions: Expand
+										22 button 取消置顶聊天
+								23 container 全球局势简报（06/14/22）
+									24 link Description: 全球局势简报（06/14/22）, Value: chatgpt.com/c/6aa63c41-5300-83e8-9834-7bdbd1cd2a75
+									25 container
+										26 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_8j_, Secondary Actions: Expand
+										27 button 取消置顶聊天
+								28 container 每日推送研究问题
+									29 link Description: 每日推送研究问题, Value: chatgpt.com/c/6ab49da9-55d4-83ee-8242-24cfba92bde5
+									30 container
+										31 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_8p_, Secondary Actions: Expand
+										32 button 取消置顶聊天
+								33 container 规划低价出国路线
+									34 link Description: 规划低价出国路线, Value: chatgpt.com/c/6aca2472-ad50-83e8-aeaa-28613dca54b6
+									35 container
+										36 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_8v_, Secondary Actions: Expand
+										37 button 取消置顶聊天
+							38 container
+								39 sortable (expanded) 项目, Secondary Actions: Collapse
+								40 pop up button (collapsed) Description: 项目侧边栏选项, ID: radix-_r_94_, Secondary Actions: Expand
+								41 button 添加新项目
+									42 image
+							43 content list
+								44 button (collapsed) 轨道动力学, Secondary Actions: Expand
+									45 image
+									46 text 轨道动力学
+									47 container
+										48 pop up button (collapsed) Description: 轨道动力学 的项目操作, ID: radix-_r_9c_, Secondary Actions: Expand
+										49 button 在 轨道动力学 中开启新聊天
+											50 image
+								51 button (collapsed) 信息论, Secondary Actions: Expand
+									52 image
+									53 text 信息论
+									54 container
+										55 pop up button (collapsed) Description: 信息论 的项目操作, ID: radix-_r_9h_, Secondary Actions: Expand
+										56 button 在 信息论 中开启新聊天
+											57 image
+								58 button (collapsed) 数字电路与微处理器, Secondary Actions: Expand
+									59 image
+									60 text 数字电路与微处理器
+									61 container
+										62 pop up button (collapsed) Description: 数字电路与微处理器 的项目操作, ID: radix-_r_9m_, Secondary Actions: Expand
+										63 button 在 数字电路与微处理器 中开启新聊天
+											64 image
+								65 button (collapsed) 数值计算, Secondary Actions: Expand
+									66 image
+									67 text 数值计算
+									68 container
+										69 pop up button (collapsed) Description: 数值计算 的项目操作, ID: radix-_r_9r_, Secondary Actions: Expand
+										70 button 在 数值计算 中开启新聊天
+											71 image
+								72 button (collapsed) 自动控制原理, Secondary Actions: Expand
+									73 image
+									74 text 自动控制原理
+									75 container
+										76 pop up button (collapsed) Description: 自动控制原理 的项目操作, ID: radix-_r_a0_, Secondary Actions: Expand
+										77 button 在 自动控制原理 中开启新聊天
+											78 image
+								79 button 展开显示
+							80 container
+								81 sortable (expanded) 最近, Secondary Actions: Collapse
+								82 pop up button (collapsed) Description: 聊天侧边栏选项, ID: radix-_r_a4_, Secondary Actions: Expand
+								83 checkbox (collapsed) Description: 筛选聊天和工作, Value: 0, ID: radix-_r_a7_, Secondary Actions: Expand
+									84 image
+								85 button 新聊天
+							86 content list
+								92 container 拉压弯扭视觉重设计
+									93 link Description: 拉压弯扭视觉重设计, Value: chatgpt.com/c/6acb57b2-2558-83ee-b982-ec6be3938863
+									94 container
+										95 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_af_, Secondary Actions: Expand
+										96 button 置顶聊天
+								185 container 生成图片
+									186 link Description: 生成图片, Value: chatgpt.com/c/6acb587b-494c-83e8-9da9-561a860a5de7
+									187 container
+										188 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_cb_, Secondary Actions: Expand
+										189 button 置顶聊天
+								97 container 规划科研汇报PPT
+									98 link Description: 规划科研汇报PPT, Value: chatgpt.com/c/6acb21ae-4768-83ee-be28-8aa97bceb01e
+									99 container
+										100 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_al_, Secondary Actions: Expand
+										101 button 置顶聊天
+								102 container 生成金属杆件图像
+									103 link Description: 生成金属杆件图像, Value: chatgpt.com/c/6acb23d5-80a8-83e8-804b-3e64fa015d02
+									104 container
+										105 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_ar_, Secondary Actions: Expand
+										106 button 置顶聊天
+								107 container 网页收发测试成功
+									108 link Description: 网页收发测试成功, Value: chatgpt.com/c/6acb1c5f-3f58-83ee-a425-b9380a101e79
+									109 container
+										110 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_b1_, Secondary Actions: Expand
+										111 button 置顶聊天
+								112 container 规划分享PPT
+									113 link Description: 规划分享PPT, Value: chatgpt.com/c/6ac9ed68-6164-83ee-97f7-e2ccb8203ec9
+									114 container
+										115 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_b7_, Secondary Actions: Expand
+										116 button 置顶聊天
+								117 container 分析与路线图生成
+									118 link Description: 分析与路线图生成, Value: chatgpt.com/c/6ac9e5bf-0438-83ec-b1bd-f3f4333c426e
+									119 container
+										120 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_bd_, Secondary Actions: Expand
+										121 button 置顶聊天
+								122 container 整理轨道动力学讲义
+									123 link Description: 整理轨道动力学讲义, Value: chatgpt.com/g/g-p-6ac85cac58688191884ce25d3b60978f/c/6ac85cd9-4930-83ec-b3de-6e8758ab3beb
+									124 container
+										125 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_bj_, Secondary Actions: Expand
+										126 button 置顶聊天
+								127 container 自动控制原理总结
+									128 link Description: 自动控制原理总结, Value: chatgpt.com/g/g-p-6aa3f93721fc819192a2fa4ee8a91313/c/6ac84538-87fc-83ee-ad0c-312879b6dbf5
+									129 container
+										130 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_bp_, Secondary Actions: Expand
+										131 button 置顶聊天
+								132 container 数字电路教材总结
+									133 link Description: 数字电路教材总结, Value: chatgpt.com/g/g-p-6ac844078198819199bb5106630db869/c/6ac841d8-7d38-83e8-a17f-35678d69e38d
+									134 container
+										135 pop up button (collapsed) Description: 聊天操作, ID: radix-_r_bv_, Secondary Actions: Expand
+										136 button 置顶聊天
+					137 container
+						138 pop up button (collapsed) Description: 打开个人资料菜单, ID: radix-_R_8mjdajemktdbntccgud5dl75_, Secondary Actions: Expand
+						139 container
+							140 text HENGXU FU Plus
+			141 container
+				142 container
+					143 button 分享
+					144 pop up button (collapsed) Description: 更多, ID: radix-_r_l_, Secondary Actions: Expand
+				145 container
+					146 container 对话
+						147 container
+							148 heading 你说：, Value: 4
+								149 text 你说：
+							150 text ROUTE_CHATGPT_PLAN；L0提示词建议，无本地文件访问。请为拉压弯扭大师18页同学分享PPT提出视觉重设计，用户认为旧版单调空洞，要求更多网页版独立装饰元素。保留中国科研蓝白风格，但需要更复杂优美的视觉、丰富实质内容。旧页顺序：1封面2学习问题3拉压弯扭公式4技术路线5真实工作区6简支梁条件7剪力弯矩8数值核验9荷载位置解析图表10教学推导11六自由度12三维平衡13架构14能力边界15复现16总结17公式18证据。事实：6m梁18kN跨中，反力9/9kN，弯矩幅值27kN·m，软件标负27；四节点三构件24自由度；三向外力8000/-5000/-12000N与反力相抵；仅力平衡已核验。图表是解析预测不是新增实测，GPU仅检测。要求：给18页各一句具体内容增强和布局建议；选10个额外独立单主体图像元素，每个含asset_id、kind、page、element、purpose；统一蓝银金属、青色高光、少量橙色，alpha透明，无正文公式坐标图表，不整页图、不拼贴。至少包括拉伸试样、受压短柱、弯曲梁、扭转轴、桁架、芯片、立方体坐标概念、放大镜、盾牌勾、单条飘带。请输出紧凑JSON，约3000中文字符，别生成图像。
+							151 button 复制消息
+								152 image
+							153 button 共享提示
+							199 button 编辑消息
+								200 image
+							156 heading ChatGPT 说：, Value: 4
+								157 text ChatGPT 说：
+							158 container
+								159 text JSON
+								160 checkbox Description: 启用自动换行, Value: 0
+								161 button 复制
+								162 container
+									163 text 
+{
+  "deck_title":  "拉压弯扭大师 v2.0.2｜18页视觉重设计" ,
+  "deck_thesis":  "以真实软件证据为核心，用精致科研视觉解释材料力学从建模、求解到验证的完整学习过程。" ,
+  "audience":  "高校同学，兼顾材料力学初学者与软件开发兴趣者" ,
+  "duration":  "12分钟左右" ,
+  "visual_system": {
+    "theme":  "中国科研蓝白风格·精密工程与计算力学" ,
+    "palette": {
+      "navy":  "#123A6B" ,
+      "blue":  "#2475B5" ,
+      "cyan":  "#008E98" ,
+      "silver":  "#B8C9D8" ,
+      "orange":  "#DA9253" ,
+      "background":  "#F5F9FD" 
+    },
+    "style":  "蓝银金属材质、青色边缘高光、极少量暖橙强调、微弱投影与精细工程线条。" ,
+    "layout_rules": [
+       "每页采用主证据区、解释区、结论区三级信息结构。" ,
+       "避免连续重复左右双栏；交替使用非对称、横向分层、中心辐射与矩阵布局。" ,
+       "每页至少保留一个实质信息主体；装饰不得替代结果、公式或证据。" ,
+       "真实软件截图保持可辨识，不在截图内部伪造数值。" ,
+       "公式、数据、图表、图注使用PPT原生可编辑对象。" ,
+       "独立图像元素只用于局部，面积通常不超过页面20%。" 
+    ]
+  },
+  "pages": [
+    {
+      "page":  1 ,
+      "title":  "封面｜让力学从公式走向直观" ,
+      "content":  "增加副标题“本地离线材料力学学习软件”，明确v2.0.2、二维与三维分析及学习辅助定位。" ,
+      "layout":  "左侧大标题与细线关键词，右侧放真实软件界面局部；一条透明蓝青飘带穿越两区，底部设置版本信息。" 
+    },
+    {
+      "page":  2 ,
+      "title":  "学习问题｜为什么需要它" ,
+      "content":  "围绕建模抽象、内力符号、结果核验三个困难，逐一对应可视建模、图形显示、分步推导。" ,
+      "layout":  "采用三组上下对应的问题—功能模块，中央用细线串联；下方增加“从看答案到理解过程”的教学目标。" 
+    },
+    {
+      "page":  3 ,
+      "title":  "拉压弯扭｜四类基本变形" ,
+      "content":  "补充轴力与正应力、弯曲正应力、圆轴扭转切应力等基础关系，区分载荷类型、变形模式与适用条件。" ,
+      "layout":  "采用四张等宽工程知识卡；每张上方放独立三维构件素材，中部原生公式，下部标注物理意义。" 
+    },
+    {
+      "page":  4 ,
+      "title":  "技术路线｜从结构到结果" ,
+      "content":  "明确模型创建、材料截面、约束荷载、求解计算、结果展示、教学解释六阶段，区分软件功能与验证环节。" ,
+      "layout":  "采用横向六阶段流程图，中央突出计算核心，背景辅以淡蓝工程网格；流程和箭头均为原生形状。" 
+    },
+    {
+      "page":  5 ,
+      "title":  "真实工作区｜三栏协同" ,
+      "content":  "解释左侧模型树、中部视图区、右侧属性面板的职责，以及修改参数后如何形成建模—观察—调整闭环。" ,
+      "layout":  "真实工作区截图占页面约70%；周围布置三组编号引出线，底部增加一次典型交互的步骤条。" 
+    },
+    {
+      "page":  6 ,
+      "title":  "简支梁｜标准验证案例" ,
+      "content":  "列明跨度6m、跨中集中力18kN、两端简支，以及目标输出支反力、剪力和弯矩，给出理论预测。" ,
+      "layout":  "上部大幅原生梁模型示意，中部参数卡，下部为约束和计算目标；以橙色仅强调18kN载荷。" 
+    },
+    {
+      "page":  7 ,
+      "title":  "剪力与弯矩｜从结果读规律" ,
+      "content":  "结合真实结果说明剪力在跨中跳变、弯矩在跨中达到最大幅值27kN·m；软件显示负27，须解释符号约定。" ,
+      "layout":  "左侧放真实剪力和弯矩截图，右侧设置27kN·m大数与符号说明，下方增加沿梁位置阅读提示。" 
+    },
+    {
+      "page":  8 ,
+      "title":  "数值核验｜与解析解对照" ,
+      "content":  "以左右反力各9kN、最大弯矩幅值27kN·m进行对照；严格区分解析期望、实际读数和误差判断。" ,
+      "layout":  "中央设计大尺寸核验表，左右两侧设置理论与软件结果；角部放金属放大镜素材，突出证据检查。" 
+    },
+    {
+      "page":  9 ,
+      "title":  "荷载位置｜解析预测规律" ,
+      "content":  "固定18kN荷载，将作用位置设为距左端1、2、3m；解析预测左右反力分别为15/3、12/6、9/9kN，最大弯矩幅值15、24、27kN·m。" ,
+      "layout":  "上下排列两个独立原生图表，分别展示反力分配与最大弯矩；右侧公式区标注“解析预测，非新增实测”。" 
+    },
+    {
+      "page":  10 ,
+      "title":  "教学推导｜不仅给出答案" ,
+      "content":  "通过受力分析、平衡方程、内力求解、结果检查四步串联静力学知识，说明公式助手的学习价值。" ,
+      "layout":  "左侧竖向四步推导阶梯，右侧真实公式库或分步推导截图；以细青色连接线强调计算逻辑。" 
+    },
+    {
+      "page":  11 ,
+      "title":  "空间结构｜六自由度与节点" ,
+      "content":  "解释三向平移与三向转动，并以四节点三构件模型说明未施加约束前共有24个节点自由度，避免误解为24个有效自由度。" ,
+      "layout":  "左侧放立体桁架装饰和实际空间模型，右侧采用六方向示意与4×6=24的原生数字关系。" 
+    },
+    {
+      "page":  12 ,
+      "title":  "三维平衡｜验证到什么程度" ,
+      "content":  "展示三向外力8000、-5000、-12000N与相反总反力的对应关系；仅声称三向外力平衡已核验，不推及力矩平衡。" ,
+      "layout":  "中央真实结果表，右侧三向力平衡表，左上放独立坐标立方体概念素材；底部增加核验范围说明。" 
+    },
+    {
+      "page":  13 ,
+      "title":  "软件架构｜本地计算与交互" ,
+      "content":  "介绍模型数据、求解模块、可视化界面、公式知识库及Windows/PWA交付形态；WebGPU目前仅检测设备能力。" ,
+      "layout":  "采用中央计算核心向四周辐射的架构图，芯片图标居中偏上；连接线按数据流而非装饰随意布置。" 
+    },
+    {
+      "page":  14 ,
+      "title":  "能力边界｜可信比炫技重要" ,
+      "content":  "区分已实现的梁刚架学习功能、实验中的Tet4模块，以及尚未实现的实体连续应力云图；明确非工程设计认证。" ,
+      "layout":  "三列能力分级矩阵，文字说明成熟度与用途；右上放盾牌勾素材，底部强调不可替代专业校核。" 
+    },
+    {
+      "page":  15 ,
+      "title":  "复现流程｜同学如何上手" ,
+      "content":  "以新建工程、建立6m梁、添加支座、施加18kN集中力、求解并比对反力为完整教学流程，不虚构下载地址。" ,
+      "layout":  "用五个连续步骤的原生操作卡与对应界面截图构成横向时间线，突出可跟随操作的关键输入。" 
+    },
+    {
+      "page":  16 ,
+      "title":  "总结｜从工具回到力学" ,
+      "content":  "归纳可视化建模、结果解释、解析对照三项教学价值，并指出进一步完善验证体系和空间分析的方向。" ,
+      "layout":  "中心主结论配三块递进式能力面板，右下留出后续改进方向；避免空泛口号占据整页。" 
+    },
+    {
+      "page":  17 ,
+      "title":  "公式速览｜课堂知识的组织" ,
+      "content":  "补充拉压、弯曲、扭转及平衡方程的适用前提、变量含义与典型使用场景，使页面具有独立复习价值。" ,
+      "layout":  "采用密度适中的两列公式手册排版；原生公式与微型结构示意配对，编号颜色对应第3页四类变形。" 
+    },
+    {
+      "page":  18 ,
+      "title":  "证据与结论｜哪些已被验证" ,
+      "content":  "建立已核验结果、解析预测、实验功能、尚未实现功能四级证据分类；再次注明GPU仅检测，不能证明GPU求解。" ,
+      "layout":  "左侧证据等级矩阵，右侧真实截图缩略图和结论索引，底部保留简洁致谢与交流入口，不使用虚构二维码。" 
+    }
+  ],
+  "additional_assets": [
+    {
+      "asset_id":  "LMB-A01" ,
+      "kind":  "transparent_3d_object" ,
+      "page":  3 ,
+      "element":  "蓝银金属拉伸试样" ,
+      "purpose":  "表现轴向拉伸与细颈试样的工程质感；单根试样，无箭头和标注。" 
+    },
+    {
+      "asset_id":  "LMB-A02" ,
+      "kind":  "transparent_3d_object" ,
+      "page":  3 ,
+      "element":  "蓝银金属受压短柱" ,
+      "purpose":  "表现轴向压缩的结构概念；独立短柱主体，无外部压板或符号。" 
+    },
+    {
+      "asset_id":  "LMB-A03" ,
+      "kind":  "transparent_3d_object" ,
+      "page":  3 ,
+      "element":  "轻微弯曲的金属梁" ,
+      "purpose":  "以可辨识曲率呈现弯曲变形，避免夸张塑性折断造型。" 
+    },
+    {
+      "asset_id":  "LMB-A04" ,
+      "kind":  "transparent_3d_object" ,
+      "page":  3 ,
+      "element":  "金属扭转轴" ,
+      "purpose":  "利用轴表面的螺旋加工纹理体现扭转概念，不使用独立旋转箭头。" 
+    },
+    {
+      "asset_id":  "LMB-A05" ,
+      "kind":  "transparent_3d_structure" ,
+      "page":  11 ,
+      "element":  "空间桁架" ,
+      "purpose":  "作为单体空间杆系结构示意，呈现节点与构件的三维关系，不冒充真实求解模型。" 
+    },
+    {
+      "asset_id":  "LMB-A06" ,
+      "kind":  "transparent_3d_object" ,
+      "page":  13 ,
+      "element":  "精密计算芯片" ,
+      "purpose":  "强化本地计算核心的视觉识别；仅一枚芯片，不暗示GPU计算能力。" 
+    },
+    {
+      "asset_id":  "LMB-A07" ,
+      "kind":  "transparent_3d_concept" ,
+      "page":  12 ,
+      "element":  "蓝青色空间坐标概念立方体" ,
+      "purpose":  "表现三维空间方向关系，仅保留立方体线框与短方向线，不添加字母或刻度。" 
+    },
+    {
+      "asset_id":  "LMB-A08" ,
+      "kind":  "transparent_3d_object" ,
+      "page":  8 ,
+      "element":  "精密金属放大镜" ,
+      "purpose":  "隐喻数值核验和结果审查；镜片清澈，不放入公式、文字或图表。" 
+    },
+    {
+      "asset_id":  "LMB-A09" ,
+      "kind":  "transparent_3d_icon" ,
+      "page":  14 ,
+      "element":  "金属盾牌与勾形镂空" ,
+      "purpose":  "突出可信度与边界意识，仅作为可信性概念装饰，不代表产品获得认证。" 
+    },
+    {
+      "asset_id":  "LMB-A10" ,
+      "kind":  "transparent_3d_ribbon" ,
+      "page":  1 ,
+      "element":  "单条蓝青色空间飘带" ,
+      "purpose":  "形成封面主视觉流线；一条连续优雅曲线，银色高光和轻微橙色反射，不包含其他物体。" 
+    }
+  ],
+  "asset_generation_contract": {
+    "count":  10 ,
+    "independent":  true ,
+    "subjects_per_asset":  1 ,
+    "background":  "真实Alpha透明" ,
+    "material":  "统一蓝银金属、青色高光、极少量橙色反射" ,
+    "lighting":  "统一柔和冷白棚拍光照" ,
+    "quality":  "精细三维材质，完整轮廓，适用于科研PPT局部排版" ,
+    "safe_margin":  "四周约10%" ,
+    "preferred_resolution":  "至少1024×1024像素" ,
+    "forbidden": [
+       "整页PPT" ,
+       "拼贴及多个候选变体" ,
+       "正文文字与公式" ,
+       "坐标图表及数据" ,
+       "水印与品牌标识" ,
+       "棋盘格模拟透明" ,
+       "大面积背景装饰" ,
+       "虚构的真实软件功能" 
+    ]
+  },
+  "review_checklist": [
+     "18页主题与既定顺序保持一致。" ,
+     "截图、原生数据图表和装饰素材明确区分。" ,
+     "6m、18kN、9/9kN、27kN·m与负号解释一致。" ,
+     "荷载移动数据仅标注解析预测。" ,
+     "24自由度明确为约束处理前节点自由度总数。" ,
+     "三维案例仅声明已核验三向力平衡。" ,
+     "Tet4属于实验功能，WebGPU仅设备检测。" ,
+     "不虚构性能、工程认证、实测数据或下载链接。" ,
+     "每页包含可讲述的实质内容，装饰不得喧宾夺主。" ,
+     "十项素材均为单主体、独立透明图像，不整页生成。" 
+  ]
+}
+
+							164 button 复制
+								165 image
+							166 button 分享
+							167 checkbox Description: 朗读, Value: 0
+							201 pop up button (collapsed) Description: 重新生成回复, ID: radix-_r_d8_, Secondary Actions: Expand
+							169 pop up button (collapsed) Description: 回应, Secondary Actions: Expand
+							170 pop up button (collapsed) Description: 更多操作, ID: radix-_r_1n_, Secondary Actions: Expand
+							190 heading 你说：, Value: 4
+								191 text 你说：
+							192 text 请对已经采用的18页拉压弯扭大师汇报做最后一轮设计审查：用户新增硬要求，每一页正文至少15个可独立编辑或替换的对象，公共导航页码背景不计入；不能靠无意义小点凑数。当前用了四类变形四栏、五阶段路线及验证回路、真实软件截图加原生解读、原生参数曲线、空间模型六自由度、模块架构、能力边界分级、公式手册等布局。已实际生成拉伸试样、压缩试样、弯曲梁、扭转轴和空间桁架单主体素材，正在补芯片、坐标立方体、放大镜、盾牌、飘带。请给出按页的具体阅读风险和内容深化建议，尤其避免装饰压住真实证据；禁止添加虚构测量和能力。用简洁中文输出。
+							193 button 复制消息
+								194 image
+							195 button 共享提示
+							202 button 编辑消息
+								203 image
+							204 heading ChatGPT 说：, Value: 4
+								205 text ChatGPT 说：
+							206 container
+								207 text 以下是基于现有18页结构的最终设计预审。 核心要求：每页正文至少15个独立可编辑或替换的有效对象，同时不能牺牲证据可读性。 目前未检查实际PPT源文件，因此以下对象数为建议配置，而非已核实数量。
+							208 heading 一、18页逐页审查, Value: 2
+								209 text 一、18页逐页审查
+							210 table
+								211 row
+									212 cell
+										213 text 页码
+									214 cell
+										215 text 主要阅读风险
+									216 cell
+										217 text 内容深化与对象配置建议
+								218 row
+									219 cell
+										220 container
+											221 text 01  封面
+									222 cell
+										223 text 飘带、金属构件过大，遮挡标题或真实软件界面。
+									224 cell
+										225 text 采用上疏下密布局。配置3处真实界面局部、3项核心能力、3项对应解释、3个流程节点、3项版本与使用定位信息，共15个正文对象。飘带置于远离文字的边缘。
+								226 row
+									227 cell
+										228 container
+											229 text 02  学习问题
+									230 cell
+										231 text 三栏过于概念化，像产品广告。
+									232 cell
+										233 text 建立“3个学习难点—3个典型现象—3个软件功能—3个操作实例—3项学习收益”的15对象对应关系，让问题有具体课堂依据。
+								234 row
+									235 cell
+										236 container
+											237 text 03  四类变形
+									238 cell
+										239 text 四个金属素材视觉突出，但公式被挤小。
+									240 cell
+										241 text 四类构件分别配置独立素材、原生公式、适用条件和物理解释，共16个对象。四栏统一尺寸，保证公式字号优先。
+								242 row
+									243 cell
+										244 container
+											245 text 04  技术路线
+									246 cell
+										247 text 五阶段流程与验证回路交叉，造成阅读方向混乱。
+									248 cell
+										249 text 设置5个阶段模块、5项关键输入输出、5条带明确方向的数据流、1个独立验证回路，共16个对象。验证回路置于主流程下方。
+								250 row
+									251 cell
+										252 container
+											253 text 05  真实工作区
+									254 cell
+										255 text 标注线过密，真实软件截图无法辨认。
+									256 cell
+										257 text 一张主截图配3个区域标注、3项操作、3项输入反馈、3项交互解释、2条使用提示，共15个对象。解释尽量布置在截图外侧。
+								258 row
+									259 cell
+										260 container
+											261 text 06  简支梁条件
+									262 cell
+										263 text 支座类型、载荷位置或符号缺少说明。
+									264 cell
+										265 text 使用1个模型、2个支座、1个载荷、3项参数、3项解析关系、3个输出目标、2项模型假设，共15个对象。尺寸与荷载必须醒目。
+								266 row
+									267 cell
+										268 container
+											269 text 07  剪力弯矩
+									270 cell
+										271 text 软件显示负27，容易被理解为计算错误。
+									272 cell
+										273 text 保留2张真实结果图，补充符号约定、跨中变化、端部与极值解释及解析对照；至少15个对象。明确“27kN·m为幅值，软件显示−27kN·m”。
+								274 row
+									275 cell
+										276 container
+											277 text 08  数值核验
+									278 cell
+										279 text 大数字夺目，却缺少核验依据。
+									280 cell
+										281 text 真实截图1个、理论量3个、软件读数3个、逐项对照解释3个、单位与符号说明3个、验证边界2个，共15个对象。不得补造误差测量。
+								282 row
+									283 cell
+										284 container
+											285 text 09  荷载位置
+									286 cell
+										287 text 两个曲线图容易被误认为软件新实验。
+									288 cell
+										289 text 两张原生图表、3个荷载位置标签、6个左右反力数据标注、3个弯矩幅值标注、1条“解析预测”说明，共15个对象。
+								290 row
+									291 cell
+										292 container
+											293 text 10  教学推导
+									294 cell
+										295 text 推导过于密集，同学来不及阅读。
+									296 cell
+										297 text 4个求解步骤、4条对应方程、4条物理解释、2项案例示意、1条前提说明，共15个对象。只高亮当前推导的关键式。
+								298 row
+									299 cell
+										300 container
+											301 text 11  六自由度
+									302 cell
+										303 text 装饰桁架与真实空间模型混淆；24自由度表述不严谨。
+									304 cell
+										305 text 真实模型1个、概念桁架1个、6个自由度方向、4个节点标识、3个构件标识，共15个对象。明确24是约束施加前的节点自由度总数。
+								306 row
+									307 cell
+										308 container
+											309 text 12  三维平衡
+									310 cell
+										311 text 三向力平衡被错误延伸成完整六自由度平衡验证。
+									312 cell
+										313 text 真实结果截图1个、外力分量3个、总反力分量3个、平衡式3个、方向解释3个、证据限制2个，共15个对象。只宣称三向合力核验。
+								314 row
+									315 cell
+										316 container
+											317 text 13  模块架构
+									318 cell
+										319 text 芯片素材与连接线过多，看不清计算流程。
+									320 cell
+										321 text 采用5个功能模块、5项真实数据输入输出、5条有物理意义的数据流，共15个对象。芯片仅是装饰，不暗示GPU求解。
+								322 row
+									323 cell
+										324 container
+											325 text 14  能力边界
+									326 cell
+										327 text 盾牌勾可能被误读为工程认证标志。
+									328 cell
+										329 text 3个能力等级、3组功能说明、3项实现状态、3条使用建议、3个证据出处，共15个对象。盾牌缩小并远离“认证”相关文字。
+								330 row
+									331 cell
+										332 container
+											333 text 15  复现流程
+									334 cell
+										335 text 截图太多且步骤太碎，课堂无法跟随。
+									336 cell
+										337 text 5个操作步骤、5项具体输入、5项预期可检查反馈，共15个对象。突出6m、18kN与9/9kN，不虚构运行时间。
+								338 row
+									339 cell
+										340 container
+											341 text 16  总结
+									342 cell
+										343 text 只有口号与艺术装饰，信息密度不足。
+									344 cell
+										345 text 组织3项教学价值、3项证据依据、3条能力边界、3个课堂应用场景、3个改进方向，共15个对象。结论必须可追溯到前文。
+								346 row
+									347 cell
+										348 container
+											349 text 17  公式手册
+									350 cell
+										351 text 类别过多、字号过小，难以作为复习材料。
+									352 cell
+										353 text 4类问题、4组公式、4条适用前提、4组符号解释，共16个对象。优先排版公式的层级与对齐。
+								354 row
+									355 cell
+										356 container
+											357 text 18  证据总结
+									358 cell
+										359 text 与第8页重复，或用装饰代替证据。
+									360 cell
+										361 text 4类证据等级、4项对应事实、4个截图或页码索引、3条使用边界，共15个对象。形成可追溯的最终结论页。
+							362 heading 二、必须执行的全局规则, Value: 2
+								363 text 二、必须执行的全局规则
+							364 container
+								365 text 1.  对象数量必须按PPT实际结构计算。
+							366 text 一张截图计1个对象；一个完整文本框计1个对象，即使内部有多个项目符号；一个整体图表通常计1个对象。独立文字、图形、公式、数据标签可以分别计数，但不能通过无意义拆分凑数。
+							367 container
+								368 text 建议每页实际配置 17—20个有信息价值的对象 ，留出修改余量。公共导航、页码、背景纹理、纯装饰线条均不计入15个对象。
+							369 container
+								370 text 2.  建立明确的证据视觉优先级。
+							371 text 第一优先
+							372 text 真实软件截图、数值、原生图表
+							373 text 第二优先
+							374 text 解释性标注、公式、教学说明
+							375 text 第三优先
+							376 text 金属构件、芯片、飘带等装饰
+							377 text 所有装饰素材不得覆盖数据曲线、坐标刻度、操作控件、数值表格或公式正文。第5、7、8、9、12页尤其需要限制装饰面积。
+							378 container
+								379 text 3.  统一标明证据性质。
+							380 text 使用简洁文字区分“软件实际结果”“解析预测”“概念示意”“实验功能”“尚未实现”。其中第9页的15/12/9kN、3/6/9kN和15/24/27kN·m属于解析预测；第12页仅完成三向力平衡核验；第13页不得将WebGPU设备检测描述为GPU加速计算。
+							381 container
+								382 text 4.  提高信息密度，不等于提高视觉拥挤度。
+							383 text 建议所有页面采用“主视觉区约55%—65%、解释区约25%—35%、证据或结论区约10%—15%”的参考比例。15个对象应组织成3—5个信息群组，而不是15个视觉焦点。
+							384 heading 三、最终验收优先级, Value: 2
+								385 text 三、最终验收优先级
+							386 container
+								387 text 最需要人工复核的是 第1、5、7、8、9、12、13、18页 ：第1页容易因15对象要求破坏封面质感；第5、7、8、12页存在遮挡真实证据的风险；第9页必须排除虚构实验的暗示；第13页容易夸大计算能力；第18页必须避免结论重复。
+							388 container
+								389 text 最终逐页验收同时满足三个条件： 有效对象不少于15个、核心证据完整可读、每项能力与结果均有事实依据。 不应为满足对象数量而牺牲任何一项。
+							390 button 复制
+								391 image
+							392 button 分享
+							393 checkbox Description: 朗读, Value: 0
+							394 pop up button (collapsed) Description: 重新生成回复, ID: radix-_r_dg_, Secondary Actions: Expand
+							395 pop up button (collapsed) Description: 回应, Secondary Actions: Expand
+							396 pop up button (collapsed) Description: 更多操作, ID: radix-_r_dn_, Secondary Actions: Expand
+						171 container
+							172 text ChatGPT 可能会出错。请核查重要信息。
+						173 container
+							397 button 滚动到底部
+							174 heading 最新一条回复, Value: 4
+								175 text 最新一条回复
+							176 container
+								177 button (collapsed) Description: 添加文件等内容, Secondary Actions: Expand
+								178 text entry area (settable) Description: 询问 ChatGPT, Value: 
+
+									197 container
+										198 text 询问 ChatGPT
+								181 pop up button (collapsed) Description: 选择 ChatGPT 模型, ID: radix-_r_2b_, Secondary Actions: Expand
+								182 button 听写
+								398 button 开始语音
+		399 text 回答已完成
+
+The focused UI element is 178 text entry area (settable) Description: 询问 ChatGPT, Value: 

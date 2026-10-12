@@ -1,0 +1,69 @@
+\": \"45秒：给同学一条最短复现路径，并用常见输入错误说明如何排查。明确尚未验证安装包部署。\", \"evidence\": [\"live/01-workspace.jpg\", \"live/07-load-properties.jpg\", \"二维解析核验\"], \"asset_requests\": [] }, { \"slide_number\": 16, \"slide_id\": \"S16\", \"title\": \"让力学结果真正可理解\", \"takeaway\": \"以可复算案例验证功能，再逐步扩展边界\", \"layout_family\": \"conclusion-roadmap\", \"visual_rationale\": \"左侧大结论与三阶段原生验证路线，右上小型轨迹装饰提供轻量收束。\", \"content_blocks\": [ { \"type\": \"native.text\", \"text\": \"软件的价值不是替代材料力学理论，而是帮助学习者把结构模型、内力图、公式和计算结果联系起来。\", \"box_inches\": [0.85, 2.05, 8.0, 1.65], \"source_ref\": \"全篇二维与空间证据\" }, { \"type\": \"native.process\", \"text\": \"下一步：①补充不同荷载位置的实机对照；②完善空间力矩及位移验证；③扩展多工况测试并记录可复现条件。\", \"box_inches\": [0.85, 4.05, 11.45, 1.85], \"source_ref\": \"现有证据缺口\" } ], \"speaker_notes\": \"30秒：总结学习闭环，邀请同学通过简单算例复算结果。后续优先补齐参数扫描与空间完整平衡验证。\", \"evidence\": [\"二维解析与实机记录\", \"三维实机记录\", \"证据缺口清单\"], \"asset_requests\": [ { \"request_id\": \"REQ16\", \"asset_id\": \"BLUE_TRAJECTORY\", \"object_id\": \"closing_trajectory\", \"kind\": \"ornament\", \"purpose\": \"结尾右上角轻薄科技轨迹，不承载数据\", \"single_subject_prompt\": \"仅一条独立、轻薄、优雅的蓝青色三维弧形轨迹装饰，细线渐变，少量柔和冷白高光，单主体、通透克制，真实Alpha透明背景。不得包含行星、文字、数字、坐标、箭头、公式、拼贴、页面背景或其他元素。\", \"box_inches\": [10.0, 1.15, 2.3, 1.3] } ] }, { \"slide_number\": 17, \"slide_id\": \"S17\", \"title\": \"附录：公式与单位速查\", \"takeaway\": \"统一参数定义、单位和符号口径\", \"layout_family\": \"formula-reference\", \"visual_rationale\": \"左侧梁平衡公式，右侧材料与截面符号表；原生可编辑。\", \"content_blocks\": [ { \"type\": \"native.text\", \"text\": \"集中力P作用于距左支座a处：RA=P(L-a)/L；RB=Pa/L；Mpeak=Pa(L-a)/L。跨中时RA=RB=P/2、Mmax=PL/4。\", \"box_inches\": [0.85, 2.0, 6.05, 4.2], \"source_ref\": \"静力学解析公式\" }, { \"type\": \"native.table\", \"text\": \"F/N/V：N或kN；M/T：N·m或kN·m；E/G/fy：Pa；A：m²；I/J：m⁴；W/Wt：m³；L：m；转角：rad。比较前必须统一单位。\", \"box_inches\": [7.3, 2.05, 5.05, 4.1], \"source_ref\": \"材料力学符号约定\" } ], \"speaker_notes\": \"附录备查，不计入12分钟。答疑时解释公式、单位与符号定义，尤其注意反力方向和弯矩幅值口径。\", \"evidence\": [\"静力学公式\", \"README.md公式符号\"], \"asset_requests\": [] }, { \"slide_number\": 18, \"slide_id\": \"S18\", \"title\": \"附录：证据索引与验证范围\", \"takeaway\": \"每一项结论必须能够追溯到具体来源\", \"layout_family\": \"evidence-index\", \"visual_rationale\": \"原生来源表与验证边界并置，为课堂问答提供可核查索引。\", \"content_blocks\": [ { \"type\": \"native.table\", \"text\": \"README.md：版本、功能及架构；01：工作区；03：弯矩；04：推导；05：端力；06：剪力；07：荷载属性；11：空间结果；qa/live-run-evidence.json：运行证据摘要。所有编号截图位于outputs/classmate-sharing/assets/live。\", \"box_inches\": [0.78, 1.95, 8.05, 4.48], \"source_ref\": \"已提供文件索引\" }, { \"type\": \"native.text\", \"text\": \"验证范围：二维单一梁工况的反力与弯矩幅值；三维单一刚架的三向合力。参数扫描仅理论预测；非安装版验证；无完整力矩、实体应力及性能基准。\", \"box_inches\": [9.13, 2.0, 3.25, 4.1], \"source_ref\": \"qa/live-run-evidence.json及证据边界\" } ], \"speaker_notes\": \"附录备查，不计入12分钟。供同学追溯实机截图、解析预测和技术说明，避免把一次运行扩大解释。\", \"evidence\": [\"README.md\", \"outputs/classmate-sharing/assets/live/\", \"qa/live-run-evidence.json\"], \"asset_requests\": [] } ] }"
+    - button:
+    - button "复制":
+    - button "分享":
+    - button "朗读":
+    - button "重新生成回复":
+    - button "回应":
+    - button "更多操作":
+    - heading "你说：" [level=4]
+    - generic: 本地正在按18页组装。请对全稿内容做最终批评，短答不超过500字：第8页主图采用真实弯矩截图，右侧原生大数9/9kN与27kNm及端弯矩0解释；第9页两个独立原生图表反力15/12/9与3/6/9kN、弯矩15/24/27kNm，明确解析预测非新实测；第12页真实结果表配三向力平衡表，单次耗时不宣传；公式目前为可编辑原生文字，非OMML专业公式；部分实机图标方框如实保留。三个概念素材分别放1/3/16页。请核查结论边界、易误导处、12分钟节奏和应修改的必要事项，不宣称看过尚未提供的渲染。
+    - button "复制消息":
+    - button "共享提示":
+    - button "编辑消息":
+    - heading "ChatGPT 说：" [level=4]
+    - paragraph:
+      - generic: 最终评审：内容逻辑基本成立，建议有条件通过。
+      - text: 以下仅依据组装说明评审，未查看实际渲染。
+    - paragraph:
+      - generic: 1. 结论边界
+    - paragraph:
+      - text: 第8页只能证明特定简支梁工况下，反力和最大弯矩的
+      - generic: 幅值与解析结果一致
+      - text: ；第12页只能证明三向合力平衡，不能推广至完整力矩平衡、数值精度或工程可靠性。
+    - paragraph:
+      - generic: 2. 必须修改或确认的事项
+    - list:
+      - paragraph:
+        - generic: 第8页：
+        - text: 弯矩截图的−27kN·m与解析幅值27kN·m须明确区分；端弯矩0是端部取值，不代表全梁最大弯矩为0。
+      - paragraph:
+        - generic: 第9页：
+        - text: 明确横轴a为距左支座距离，P=18kN、L=6m；反力与弯矩分别使用kN、kN·m纵轴。保留“解析预测，非软件实测”。
+      - paragraph:
+        - generic: 第12页：
+        - text: 残差6×10⁻¹⁴仅为该次运行的界面报告值；123.4ms不能代表平均性能，2.4×仅为显示放大倍率。应力及安全系数空字段不得补值。
+      - paragraph:
+        - generic: 公式：
+        - text: 原生文字满足基本可编辑要求，但不等于专业公式对象。检查上下标、希腊字母及单位排版；不必为此强制重制OMML。
+      - paragraph:
+        - generic: 证据：
+        - text: 图标方框保留正确。三个概念素材须与实机证据明确区分。
+    - paragraph:
+      - generic: 3. 12分钟节奏
+    - paragraph: 第7—9页、第11—12页是证据核心，应优先保证讲解时间；第3、13、14页可以适当压缩。现场操作建议采用预录或截图备用方案。
+    - paragraph:
+      - generic: 最终意见：
+      - text: 优先修正第8、9、12页的标注与证据边界。正式导出前检查投影字号、图片裁剪、公式显示及来源标注。未见实际渲染，暂不能认定视觉质量或排版已通过验收。
+    - button "复制":
+    - button "分享":
+    - button "朗读":
+    - button "重新生成回复":
+    - button "回应":
+    - button "更多操作":
+    - generic: ChatGPT 可能会出错。请核查重要信息。
+    - button "滚动到底部":
+    - heading "最新一条回复" [level=4]
+    - status
+    - button "添加文件等内容":
+    - textbox "询问 ChatGPT" [active]:
+      - paragraph: 询问 ChatGPT
+    - button "选择 ChatGPT 模型":
+      - generic: 高
+    - button "听写":
+    - button "开始语音":
+- status
+- status
+- status
+- status
+- status: 回答已完成

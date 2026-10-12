@@ -1,0 +1,7965 @@
+{
+  "pptx_sha256": "d793731b522a00be004bd441ea16b94ea3c501ae9db3376d3be097c644e2234a",
+  "counting_rule": "One independently selectable shape/picture/text/table/chart counts once. Fourteen common canvas/navigation/title/footer/source objects excluded; table cells and chart points are not separately counted. No hidden padding objects.",
+  "minimum_body_objects": 15,
+  "native_chart_parts": 2,
+  "embedded_workbooks": 2,
+  "pages": [
+    {
+      "slide_number": 1,
+      "total_objects": 35,
+      "excluded_common_objects": 14,
+      "body_objects": 21,
+      "objects": [
+        {
+          "object_name": "S01/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-1",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S01/object-2",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S01/object-3",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S01/object-4",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S01/object-5",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S01/object-6",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-7",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S01/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "本地离线的材料力学学习辅助软件"
+        },
+        {
+          "object_name": "S01/object-8",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "01"
+        },
+        {
+          "object_name": "S01/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：README.md；用户提供的产品定位"
+        },
+        {
+          "object_name": "S01/object-9",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.02,
+            7.0,
+            0.68
+          ],
+          "text": "从力学概念"
+        },
+        {
+          "object_name": "S01/object-10",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.86,
+            7.0,
+            0.76
+          ],
+          "text": "到可验证计算"
+        },
+        {
+          "object_name": "S01/object-11",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.69,
+            3.88,
+            6.7,
+            0.42
+          ],
+          "text": "本地离线材料力学学习软件"
+        },
+        {
+          "object_name": "S01/object-12",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.72,
+            4.64,
+            0.23,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-13",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.1,
+            4.5,
+            5.8,
+            0.31
+          ],
+          "text": "模型：节点 / 材料 / 截面"
+        },
+        {
+          "object_name": "S01/object-14",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.72,
+            5.07,
+            0.23,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-15",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.1,
+            4.93,
+            5.8,
+            0.31
+          ],
+          "text": "响应：内力 / 变形 / 反力"
+        },
+        {
+          "object_name": "S01/object-16",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.72,
+            5.5,
+            0.23,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-17",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.1,
+            5.36,
+            5.8,
+            0.31
+          ],
+          "text": "解释：公式 / 推导 / 核验"
+        },
+        {
+          "object_name": "S01/object-18",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.7,
+            1.98,
+            4.82,
+            3.78
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-19",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.975,
+            2.405,
+            4.25,
+            2.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/cover-workspace",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            8.0111,
+            2.43,
+            4.1778,
+            2.35
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S01/object-20",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.0,
+            5.08,
+            4.2,
+            0.3
+          ],
+          "text": "真实工作区 · 二维 / 空间杆系"
+        },
+        {
+          "object_name": "S01/object-21",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            6.0,
+            1.88,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-22",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            6.07,
+            1.64,
+            0.25
+          ],
+          "text": "本地离线"
+        },
+        {
+          "object_name": "S01/object-23",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.8,
+            6.0,
+            1.88,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-24",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.92,
+            6.07,
+            1.64,
+            0.25
+          ],
+          "text": "v2.0.2"
+        },
+        {
+          "object_name": "S01/object-25",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.9,
+            6.0,
+            1.88,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S01/object-26",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.02,
+            6.07,
+            1.64,
+            0.25
+          ],
+          "text": "同学分享"
+        },
+        {
+          "object_name": "S01/object-27",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.85,
+            6.58,
+            2.5,
+            0.17
+          ],
+          "text": "概念飘带仅作装饰"
+        },
+        {
+          "object_name": "S01/web-rich-10",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            8.75,
+            5.55,
+            2.7,
+            0.9
+          ],
+          "text": null
+        }
+      ]
+    },
+    {
+      "slide_number": 2,
+      "total_objects": 36,
+      "excluded_common_objects": 14,
+      "body_objects": 22,
+      "objects": [
+        {
+          "object_name": "S02/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/object-28",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S02/object-29",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S02/object-30",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S02/object-31",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S02/object-32",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S02/object-33",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/object-34",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "为什么需要这样的学习工具？"
+        },
+        {
+          "object_name": "S02/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "课堂难点是把模型、计算与内力图联系起来"
+        },
+        {
+          "object_name": "S02/object-35",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "02"
+        },
+        {
+          "object_name": "S02/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：二维简支梁解析条件"
+        },
+        {
+          "object_name": "S02/object-36",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.05,
+            3.85,
+            3.45
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/object-37",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            2.27,
+            1.0,
+            0.5
+          ],
+          "text": "01"
+        },
+        {
+          "object_name": "S02/object-38",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            2.99,
+            3.42,
+            0.4
+          ],
+          "text": "建模抽象"
+        },
+        {
+          "object_name": "S02/object-39",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            3.62,
+            3.42,
+            0.55
+          ],
+          "text": "支座究竟约束什么？"
+        },
+        {
+          "object_name": "S02/object-40",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.87,
+            4.34,
+            3.3,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/object-41",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            4.61,
+            3.42,
+            0.4
+          ],
+          "text": "节点 / 单元 / 自由度"
+        },
+        {
+          "object_name": "S02/object-42",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            5.82,
+            3.42,
+            0.52
+          ],
+          "text": "先画条件，再建立模型"
+        },
+        {
+          "object_name": "S02/object-43",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.8,
+            2.05,
+            3.85,
+            3.45
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/object-44",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.0,
+            2.27,
+            1.0,
+            0.5
+          ],
+          "text": "02"
+        },
+        {
+          "object_name": "S02/object-45",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.0,
+            2.99,
+            3.42,
+            0.4
+          ],
+          "text": "符号难读"
+        },
+        {
+          "object_name": "S02/object-46",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.0,
+            3.62,
+            3.42,
+            0.55
+          ],
+          "text": "负弯矩是否表示错误？"
+        },
+        {
+          "object_name": "S02/object-47",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.02,
+            4.34,
+            3.3,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/object-48",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.0,
+            4.61,
+            3.42,
+            0.4
+          ],
+          "text": "局部坐标 / 正负约定"
+        },
+        {
+          "object_name": "S02/object-49",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.0,
+            5.82,
+            3.42,
+            0.52
+          ],
+          "text": "先辨符号，再比较幅值"
+        },
+        {
+          "object_name": "S02/object-50",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.95,
+            2.05,
+            3.85,
+            3.45
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/object-51",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            2.27,
+            1.0,
+            0.5
+          ],
+          "text": "03"
+        },
+        {
+          "object_name": "S02/object-52",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            2.99,
+            3.42,
+            0.4
+          ],
+          "text": "可信度判断"
+        },
+        {
+          "object_name": "S02/object-53",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            3.62,
+            3.42,
+            0.55
+          ],
+          "text": "求解完成就足够吗？"
+        },
+        {
+          "object_name": "S02/object-54",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.17,
+            4.34,
+            3.3,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S02/object-55",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            4.61,
+            3.42,
+            0.4
+          ],
+          "text": "平衡关系 / 解析对照"
+        },
+        {
+          "object_name": "S02/object-56",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            5.82,
+            3.42,
+            0.52
+          ],
+          "text": "先作预测，再核对结果"
+        },
+        {
+          "object_name": "S02/object-57",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.87,
+            6.48,
+            11.5,
+            0.25
+          ],
+          "text": "学习闭环：条件 → 模型 → 响应 → 解释 → 回到条件"
+        }
+      ]
+    },
+    {
+      "slide_number": 3,
+      "total_objects": 50,
+      "excluded_common_objects": 14,
+      "body_objects": 36,
+      "objects": [
+        {
+          "object_name": "S03/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-58",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S03/object-59",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S03/object-60",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S03/object-61",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S03/object-62",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S03/object-63",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-64",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "四类基本变形与统一力学量"
+        },
+        {
+          "object_name": "S03/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "不同变形形式共享内力、材料与截面参数"
+        },
+        {
+          "object_name": "S03/object-65",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "03"
+        },
+        {
+          "object_name": "S03/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：README.md公式库及功能说明"
+        },
+        {
+          "object_name": "S03/object-66",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.04,
+            2.85,
+            4.57
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-67",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            2.22,
+            0.55,
+            0.34
+          ],
+          "text": "01"
+        },
+        {
+          "object_name": "S03/object-68",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.55,
+            2.21,
+            1.7,
+            0.45
+          ],
+          "text": "拉伸"
+        },
+        {
+          "object_name": "S03/object-69",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.81,
+            4.1,
+            2.53,
+            0.35
+          ],
+          "text": "N → σ → ΔL"
+        },
+        {
+          "object_name": "S03/object-70",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.81,
+            4.69,
+            2.53,
+            0.4
+          ],
+          "text": "σ = N / A"
+        },
+        {
+          "object_name": "S03/object-71",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.81,
+            5.36,
+            2.53,
+            0.43
+          ],
+          "text": "ΔL = NL / (EA)"
+        },
+        {
+          "object_name": "S03/object-72",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            5.98,
+            2.5,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-73",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.81,
+            6.18,
+            2.53,
+            0.28
+          ],
+          "text": "轴力与长度变化"
+        },
+        {
+          "object_name": "S03/object-74",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.77,
+            2.04,
+            2.85,
+            4.57
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-75",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.94,
+            2.22,
+            0.55,
+            0.34
+          ],
+          "text": "02"
+        },
+        {
+          "object_name": "S03/object-76",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.67,
+            2.21,
+            1.7,
+            0.45
+          ],
+          "text": "压缩"
+        },
+        {
+          "object_name": "S03/object-77",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.93,
+            4.1,
+            2.53,
+            0.35
+          ],
+          "text": "N → σ → ΔL"
+        },
+        {
+          "object_name": "S03/object-78",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.93,
+            4.69,
+            2.53,
+            0.4
+          ],
+          "text": "σ = N / A"
+        },
+        {
+          "object_name": "S03/object-79",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.93,
+            5.36,
+            2.53,
+            0.43
+          ],
+          "text": "压缩取符号约定"
+        },
+        {
+          "object_name": "S03/object-80",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.94,
+            5.98,
+            2.5,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-81",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.93,
+            6.18,
+            2.53,
+            0.28
+          ],
+          "text": "短柱概念，非失稳分析"
+        },
+        {
+          "object_name": "S03/object-82",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.89,
+            2.04,
+            2.85,
+            4.57
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-83",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.06,
+            2.22,
+            0.55,
+            0.34
+          ],
+          "text": "03"
+        },
+        {
+          "object_name": "S03/object-84",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.79,
+            2.21,
+            1.7,
+            0.45
+          ],
+          "text": "弯曲"
+        },
+        {
+          "object_name": "S03/object-85",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            4.1,
+            2.53,
+            0.35
+          ],
+          "text": "V → M → σ、w"
+        },
+        {
+          "object_name": "S03/object-86",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            4.69,
+            2.53,
+            0.4
+          ],
+          "text": "σmax = M / W"
+        },
+        {
+          "object_name": "S03/object-87",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            5.36,
+            2.53,
+            0.43
+          ],
+          "text": "EI 控制挠度"
+        },
+        {
+          "object_name": "S03/object-88",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.06,
+            5.98,
+            2.5,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-89",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            6.18,
+            2.53,
+            0.28
+          ],
+          "text": "关注危险截面位置"
+        },
+        {
+          "object_name": "S03/object-90",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.01,
+            2.04,
+            2.85,
+            4.57
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-91",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.18,
+            2.22,
+            0.55,
+            0.34
+          ],
+          "text": "04"
+        },
+        {
+          "object_name": "S03/object-92",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.91,
+            2.21,
+            1.7,
+            0.45
+          ],
+          "text": "扭转"
+        },
+        {
+          "object_name": "S03/object-93",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.17,
+            4.1,
+            2.53,
+            0.35
+          ],
+          "text": "T → τ → φ"
+        },
+        {
+          "object_name": "S03/object-94",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.17,
+            4.69,
+            2.53,
+            0.4
+          ],
+          "text": "τmax = T / Wt"
+        },
+        {
+          "object_name": "S03/object-95",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.17,
+            5.36,
+            2.53,
+            0.43
+          ],
+          "text": "φ = TL / (GJ)"
+        },
+        {
+          "object_name": "S03/object-96",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.18,
+            5.98,
+            2.5,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S03/object-97",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.17,
+            6.18,
+            2.53,
+            0.28
+          ],
+          "text": "均匀圆轴、小变形"
+        },
+        {
+          "object_name": "S03/web-rich-01",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            1.49,
+            2.8,
+            1.17,
+            1.17
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S03/web-rich-02",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            4.61,
+            2.8,
+            1.17,
+            1.17
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S03/web-rich-03",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            7.73,
+            2.8,
+            1.17,
+            1.17
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S03/web-rich-04",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            10.85,
+            2.8,
+            1.17,
+            1.17
+          ],
+          "text": null
+        }
+      ]
+    },
+    {
+      "slide_number": 4,
+      "total_objects": 50,
+      "excluded_common_objects": 14,
+      "body_objects": 36,
+      "objects": [
+        {
+          "object_name": "S04/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-98",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S04/object-99",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S04/object-100",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S04/object-101",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S04/object-102",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S04/object-103",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-104",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "从建模到核验的完整流程"
+        },
+        {
+          "object_name": "S04/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "输入、求解、展示和解析核对形成学习闭环"
+        },
+        {
+          "object_name": "S04/object-105",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "04"
+        },
+        {
+          "object_name": "S04/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：README.md；用户提供的技术架构"
+        },
+        {
+          "object_name": "S04/object-106",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.15,
+            2.16,
+            1.35
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-107",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.81,
+            2.3,
+            0.55,
+            0.3
+          ],
+          "text": "01"
+        },
+        {
+          "object_name": "S04/object-108",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.81,
+            2.75,
+            1.88,
+            0.35
+          ],
+          "text": "题目 / 物理条件"
+        },
+        {
+          "object_name": "S04/object-109",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.77,
+            3.19,
+            1.95,
+            0.22
+          ],
+          "text": "单位、几何、受力"
+        },
+        {
+          "object_name": "S04/object-110",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.83,
+            2.82,
+            0.25,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-111",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.11,
+            2.15,
+            2.16,
+            1.35
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-112",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.27,
+            2.3,
+            0.55,
+            0.3
+          ],
+          "text": "02"
+        },
+        {
+          "object_name": "S04/object-113",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.27,
+            2.75,
+            1.88,
+            0.35
+          ],
+          "text": "离散结构模型"
+        },
+        {
+          "object_name": "S04/object-114",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.23,
+            3.19,
+            1.95,
+            0.22
+          ],
+          "text": "节点、构件、材料"
+        },
+        {
+          "object_name": "S04/object-115",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.29,
+            2.82,
+            0.25,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-116",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.57,
+            2.15,
+            2.16,
+            1.35
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-117",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.73,
+            2.3,
+            0.55,
+            0.3
+          ],
+          "text": "03"
+        },
+        {
+          "object_name": "S04/object-118",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.73,
+            2.75,
+            1.88,
+            0.35
+          ],
+          "text": "约束与荷载"
+        },
+        {
+          "object_name": "S04/object-119",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.69,
+            3.19,
+            1.95,
+            0.22
+          ],
+          "text": "自由度、等效作用"
+        },
+        {
+          "object_name": "S04/object-120",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.75,
+            2.82,
+            0.25,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-121",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.03,
+            2.15,
+            2.16,
+            1.35
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-122",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.19,
+            2.3,
+            0.55,
+            0.3
+          ],
+          "text": "04"
+        },
+        {
+          "object_name": "S04/object-123",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.19,
+            2.75,
+            1.88,
+            0.35
+          ],
+          "text": "局部到整体"
+        },
+        {
+          "object_name": "S04/object-124",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.15,
+            3.19,
+            1.95,
+            0.22
+          ],
+          "text": "单元刚度、坐标变换"
+        },
+        {
+          "object_name": "S04/object-125",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.21,
+            2.82,
+            0.25,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-126",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.49,
+            2.15,
+            2.16,
+            1.35
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-127",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.65,
+            2.3,
+            0.55,
+            0.3
+          ],
+          "text": "05"
+        },
+        {
+          "object_name": "S04/object-128",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.65,
+            2.75,
+            1.88,
+            0.35
+          ],
+          "text": "本地求解"
+        },
+        {
+          "object_name": "S04/object-129",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.61,
+            3.19,
+            1.95,
+            0.22
+          ],
+          "text": "位移、反力、端力"
+        },
+        {
+          "object_name": "S04/object-130",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            11.55,
+            3.52,
+            0.0,
+            0.58
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-131",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.15,
+            4.15,
+            5.55,
+            1.15
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-132",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.4,
+            4.35,
+            4.95,
+            0.33
+          ],
+          "text": "结果解释与可视化"
+        },
+        {
+          "object_name": "S04/object-133",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.4,
+            4.89,
+            4.95,
+            0.24
+          ],
+          "text": "N / V / M、变形、结果表与教学推导"
+        },
+        {
+          "object_name": "S04/object-134",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            4.15,
+            5.85,
+            1.15
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-135",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.88,
+            4.39,
+            5.4,
+            0.57
+          ],
+          "text": "独立校核：平衡关系 + 解析解 + 参数实验"
+        },
+        {
+          "object_name": "S04/object-136",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.52,
+            4.72,
+            0.6,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-137",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.55,
+            3.55,
+            0.0,
+            0.57
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S04/object-138",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.75,
+            5.78,
+            2.0,
+            0.3
+          ],
+          "text": "输入校核"
+        },
+        {
+          "object_name": "S04/object-139",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.8,
+            5.72,
+            9.7,
+            0.43
+          ],
+          "text": "约束是否足够 / 单位是否一致 / 荷载方向是否正确"
+        },
+        {
+          "object_name": "S04/object-140",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.75,
+            6.37,
+            2.0,
+            0.3
+          ],
+          "text": "闭环原则"
+        },
+        {
+          "object_name": "S04/object-141",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.8,
+            6.3,
+            9.7,
+            0.42
+          ],
+          "text": "不只确认“求解完成”，还要解释结果是否符合物理预期"
+        }
+      ]
+    },
+    {
+      "slide_number": 5,
+      "total_objects": 29,
+      "excluded_common_objects": 14,
+      "body_objects": 15,
+      "objects": [
+        {
+          "object_name": "S05/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/object-142",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S05/object-143",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S05/object-144",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S05/object-145",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S05/object-146",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S05/object-147",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/object-148",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "真实工作区如何组织？"
+        },
+        {
+          "object_name": "S05/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "左模型树、中视图区、右属性面板协同操作"
+        },
+        {
+          "object_name": "S05/object-149",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "05"
+        },
+        {
+          "object_name": "S05/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：live/01-workspace.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_name": "S05/object-150",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            1.74,
+            11.9,
+            0.22
+          ],
+          "text": "典型交互：选中对象 → 修改属性 → 观察视图 → 核对结果"
+        },
+        {
+          "object_name": "S05/object-151",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.625,
+            2.055,
+            9.25,
+            4.67
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/workspace-evidence",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            1.1433,
+            2.08,
+            8.2133,
+            4.62
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S05/object-152",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.08,
+            2.15,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/object-153",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.08,
+            2.205,
+            0.34,
+            0.21
+          ],
+          "text": "1"
+        },
+        {
+          "object_name": "S05/object-154",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.56,
+            2.135,
+            2.17,
+            0.4
+          ],
+          "text": "模型树"
+        },
+        {
+          "object_name": "S05/object-155",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.13,
+            2.73,
+            2.55,
+            0.58
+          ],
+          "text": "节点、构件与条件"
+        },
+        {
+          "object_name": "S05/object-156",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.08,
+            3.5,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/object-157",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.08,
+            3.555,
+            0.34,
+            0.21
+          ],
+          "text": "2"
+        },
+        {
+          "object_name": "S05/object-158",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.56,
+            3.485,
+            2.17,
+            0.4
+          ],
+          "text": "工作视图"
+        },
+        {
+          "object_name": "S05/object-159",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.13,
+            4.08,
+            2.55,
+            0.58
+          ],
+          "text": "几何、荷载与结果"
+        },
+        {
+          "object_name": "S05/object-160",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.08,
+            4.85,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S05/object-161",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.08,
+            4.905,
+            0.34,
+            0.21
+          ],
+          "text": "3"
+        },
+        {
+          "object_name": "S05/object-162",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.56,
+            4.835,
+            2.17,
+            0.4
+          ],
+          "text": "属性栏"
+        },
+        {
+          "object_name": "S05/object-163",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.13,
+            5.43,
+            2.55,
+            0.58
+          ],
+          "text": "选中对象后检查参数"
+        }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "total_objects": 36,
+      "excluded_common_objects": 14,
+      "body_objects": 22,
+      "objects": [
+        {
+          "object_name": "S06/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-164",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S06/object-165",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S06/object-166",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S06/object-167",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S06/object-168",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S06/object-169",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-170",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "6m简支梁的建模与荷载"
+        },
+        {
+          "object_name": "S06/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "两节点一单元也能描述跨中集中力"
+        },
+        {
+          "object_name": "S06/object-171",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "06"
+        },
+        {
+          "object_name": "S06/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：live/07-load-properties.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_name": "S06/object-172",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.0,
+            7.1,
+            4.65
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-173",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.2,
+            3.55,
+            5.95,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/support-0-173",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.04,
+            3.6,
+            0.32,
+            0.27
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-175",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.95,
+            3.93,
+            0.5,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/support-1-175",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.99,
+            3.6,
+            0.32,
+            0.27
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-177",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.9,
+            3.93,
+            0.5,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-178",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.175,
+            2.8,
+            0.0,
+            0.69
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-179",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.295,
+            2.75,
+            1.7,
+            0.3
+          ],
+          "text": "P = 18 kN"
+        },
+        {
+          "object_name": "S06/object-180",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.05,
+            4.05,
+            0.3,
+            0.3
+          ],
+          "text": "A"
+        },
+        {
+          "object_name": "S06/object-181",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.0,
+            4.05,
+            0.3,
+            0.3
+          ],
+          "text": "B"
+        },
+        {
+          "object_name": "S06/object-182",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.2,
+            4.49,
+            5.95,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-183",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.575,
+            4.57,
+            1.2,
+            0.3
+          ],
+          "text": "L = 6 m"
+        },
+        {
+          "object_name": "S06/object-184",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.48,
+            2.05,
+            4.0,
+            0.4
+          ],
+          "text": "单元 E1：A—B"
+        },
+        {
+          "object_name": "S06/object-185",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.5,
+            5.18,
+            4.8,
+            0.4
+          ],
+          "text": "单元内集中力：a = 3 m"
+        },
+        {
+          "object_name": "S06/object-186",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.95,
+            6.03,
+            6.55,
+            0.32
+          ],
+          "text": "2 个节点 · 1 个梁单元 · 无需新增跨中节点"
+        },
+        {
+          "object_name": "S06/object-187",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.15,
+            2.05,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/object-188",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.15,
+            2.105,
+            0.34,
+            0.21
+          ],
+          "text": "1"
+        },
+        {
+          "object_name": "S06/object-189",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.63,
+            2.035,
+            3.92,
+            0.4
+          ],
+          "text": "边界条件与自由度"
+        },
+        {
+          "object_name": "S06/support-table",
+          "kind": "TABLE (19)",
+          "public_chrome": false,
+          "box_inches": [
+            8.1,
+            2.78,
+            4.58,
+            1.88
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S06/object-190",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.075,
+            4.885,
+            2.6,
+            1.82
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S06/load-properties",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            8.3049,
+            4.91,
+            2.1402,
+            1.77
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S06/object-191",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.91,
+            5.08,
+            1.85,
+            1.3
+          ],
+          "text": "荷载属性\n−1.800×10⁴ N\n位置 3.000 m"
+        }
+      ]
+    },
+    {
+      "slide_number": 7,
+      "total_objects": 30,
+      "excluded_common_objects": 14,
+      "body_objects": 16,
+      "objects": [
+        {
+          "object_name": "S07/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/object-192",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S07/object-193",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S07/object-194",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S07/object-195",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S07/object-196",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S07/object-197",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/object-198",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "剪力与弯矩为什么这样变化？"
+        },
+        {
+          "object_name": "S07/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "集中力引起剪力跃变和跨中弯矩极值"
+        },
+        {
+          "object_name": "S07/object-199",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "07"
+        },
+        {
+          "object_name": "S07/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：live/06-shear.jpg；live/03-beam-moment.jpg"
+        },
+        {
+          "object_name": "S07/object-200",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            1.72,
+            12.0,
+            0.2
+          ],
+          "text": "沿梁读取：A端 → 集中力左侧 → 集中力右侧 → B端；先辨符号，再比较幅值。"
+        },
+        {
+          "object_name": "S07/object-201",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            1.95,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/object-202",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.005,
+            0.34,
+            0.21
+          ],
+          "text": "1"
+        },
+        {
+          "object_name": "S07/object-203",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.13,
+            1.935,
+            5.42,
+            0.4
+          ],
+          "text": "剪力：集中力处发生跳变"
+        },
+        {
+          "object_name": "S07/object-204",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.95,
+            1.95,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/object-205",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.95,
+            2.005,
+            0.34,
+            0.21
+          ],
+          "text": "2"
+        },
+        {
+          "object_name": "S07/object-206",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.43,
+            1.935,
+            5.32,
+            0.4
+          ],
+          "text": "弯矩：跨中达到幅值峰值"
+        },
+        {
+          "object_name": "S07/object-207",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.625,
+            2.625,
+            5.8,
+            3.28
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/shear-evidence",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            0.6543,
+            2.65,
+            5.7413,
+            3.23
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S07/object-208",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.925,
+            2.625,
+            5.8,
+            3.28
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/moment-evidence",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            6.9543,
+            2.65,
+            5.7413,
+            3.23
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S07/object-209",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.83,
+            6.13,
+            3.1,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/object-210",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.95,
+            6.2,
+            2.86,
+            0.25
+          ],
+          "text": "左右段幅值 9 kN"
+        },
+        {
+          "object_name": "S07/object-211",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.13,
+            6.13,
+            3.6,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S07/object-212",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.25,
+            6.2,
+            3.36,
+            0.25
+          ],
+          "text": "跨中标注 −27 kN·m"
+        },
+        {
+          "object_name": "S07/object-213",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.55,
+            6.2,
+            2.1,
+            0.28
+          ],
+          "text": "同一模型 / 同一荷载"
+        }
+      ]
+    },
+    {
+      "slide_number": 8,
+      "total_objects": 29,
+      "excluded_common_objects": 14,
+      "body_objects": 15,
+      "objects": [
+        {
+          "object_name": "S08/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/object-214",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S08/object-215",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S08/object-216",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S08/object-217",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S08/object-218",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S08/object-219",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/object-220",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "反力与最大弯矩的数值核验"
+        },
+        {
+          "object_name": "S08/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "给定工况下反力与弯矩幅值符合解析结果"
+        },
+        {
+          "object_name": "S08/object-221",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "08"
+        },
+        {
+          "object_name": "S08/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：live/03-beam-moment.jpg；live/05-element-results.jpg；qa/live-run-evidence.json；RA=RB=P/2；Mmax=PL/4"
+        },
+        {
+          "object_name": "S08/object-222",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.625,
+            2.055,
+            6.3,
+            3.57
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/validation-evidence",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.0819,
+            6.25,
+            3.5162
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S08/object-223",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.24,
+            2.1,
+            4.1,
+            0.42
+          ],
+          "text": "解析期望 ↔ 实机读数"
+        },
+        {
+          "object_name": "S08/validation-table",
+          "kind": "TABLE (19)",
+          "public_chrome": false,
+          "box_inches": [
+            7.24,
+            2.9,
+            5.28,
+            2.42
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S08/object-224",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            5.99,
+            0.83,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/object-225",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            6.06,
+            0.59,
+            0.25
+          ],
+          "text": "条件"
+        },
+        {
+          "object_name": "S08/object-226",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.72,
+            6.02,
+            2.89,
+            0.5
+          ],
+          "text": "6 m / 跨中18 kN"
+        },
+        {
+          "object_name": "S08/object-227",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.85,
+            5.99,
+            0.83,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/object-228",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.97,
+            6.06,
+            0.59,
+            0.25
+          ],
+          "text": "符号"
+        },
+        {
+          "object_name": "S08/object-229",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.87,
+            6.02,
+            2.89,
+            0.5
+          ],
+          "text": "图中−27遵循软件约定"
+        },
+        {
+          "object_name": "S08/object-230",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.0,
+            5.99,
+            0.83,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S08/object-231",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.12,
+            6.06,
+            0.59,
+            0.25
+          ],
+          "text": "位置"
+        },
+        {
+          "object_name": "S08/object-232",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.02,
+            6.02,
+            2.89,
+            0.5
+          ],
+          "text": "端弯矩0，内部峰值27"
+        },
+        {
+          "object_name": "S08/object-233",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            6.63,
+            11.6,
+            0.21
+          ],
+          "text": "结论限于默认案例的显示幅值对照，尚非全工况精度认证。"
+        },
+        {
+          "object_name": "S08/web-rich-08",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            11.7,
+            1.88,
+            0.75,
+            0.75
+          ],
+          "text": null
+        }
+      ]
+    },
+    {
+      "slide_number": 9,
+      "total_objects": 34,
+      "excluded_common_objects": 14,
+      "body_objects": 20,
+      "objects": [
+        {
+          "object_name": "S09/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/object-234",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S09/object-235",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S09/object-236",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S09/object-237",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S09/object-238",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S09/object-239",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/object-240",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "荷载位置如何影响计算结果？"
+        },
+        {
+          "object_name": "S09/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "反力分配与弯矩峰值随荷载位置改变"
+        },
+        {
+          "object_name": "S09/object-241",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "09"
+        },
+        {
+          "object_name": "S09/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：解析预测：P=18kN，L=6m，a=1/2/3m"
+        },
+        {
+          "object_name": "S09/object-242",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.72,
+            1.86,
+            3.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/object-243",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.84,
+            1.93,
+            3.56,
+            0.25
+          ],
+          "text": "a=1m：反力偏向左端"
+        },
+        {
+          "object_name": "S09/object-244",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.87,
+            1.86,
+            3.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/object-245",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.99,
+            1.93,
+            3.56,
+            0.25
+          ],
+          "text": "a=2m：分配逐渐均衡"
+        },
+        {
+          "object_name": "S09/object-246",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.02,
+            1.86,
+            3.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/object-247",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.14,
+            1.93,
+            3.56,
+            0.25
+          ],
+          "text": "a=3m：对称且弯矩幅值最大"
+        },
+        {
+          "object_name": "S09/object-248",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.75,
+            2.4,
+            5.5,
+            0.4
+          ],
+          "text": "反力幅值 / kN"
+        },
+        {
+          "object_name": "S09/object-249",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.95,
+            2.4,
+            5.5,
+            0.4
+          ],
+          "text": "弯矩峰值幅值 / kN·m"
+        },
+        {
+          "object_name": "S09/reaction-chart",
+          "kind": "CHART (3)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            2.95,
+            5.65,
+            3.12
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S09/moment-chart",
+          "kind": "CHART (3)",
+          "public_chrome": false,
+          "box_inches": [
+            6.95,
+            2.95,
+            5.65,
+            3.12
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S09/object-250",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.75,
+            6.24,
+            1.2,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/object-251",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.87,
+            6.31,
+            0.96,
+            0.25
+          ],
+          "text": "固定荷载"
+        },
+        {
+          "object_name": "S09/object-252",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.09,
+            6.3,
+            2.63,
+            0.26
+          ],
+          "text": "P = 18 kN"
+        },
+        {
+          "object_name": "S09/object-253",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.9,
+            6.24,
+            1.2,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/object-254",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.02,
+            6.31,
+            0.96,
+            0.25
+          ],
+          "text": "固定跨度"
+        },
+        {
+          "object_name": "S09/object-255",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.24,
+            6.3,
+            2.63,
+            0.26
+          ],
+          "text": "L = 6 m"
+        },
+        {
+          "object_name": "S09/object-256",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.05,
+            6.24,
+            1.2,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S09/object-257",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.17,
+            6.31,
+            0.96,
+            0.25
+          ],
+          "text": "位置变量"
+        },
+        {
+          "object_name": "S09/object-258",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.39,
+            6.3,
+            2.63,
+            0.26
+          ],
+          "text": "a距左端：1 / 2 / 3 m"
+        },
+        {
+          "object_name": "S09/object-259",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.75,
+            6.66,
+            12.0,
+            0.23
+          ],
+          "text": "解析预测，非新增实机测量。先预测，再在软件中改变位置并核对。"
+        }
+      ]
+    },
+    {
+      "slide_number": 10,
+      "total_objects": 40,
+      "excluded_common_objects": 14,
+      "body_objects": 26,
+      "objects": [
+        {
+          "object_name": "S10/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-260",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S10/object-261",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S10/object-262",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S10/object-263",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S10/object-264",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S10/object-265",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-266",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "教学推导与危险截面分析"
+        },
+        {
+          "object_name": "S10/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "计算结果需要返回公式和截面条件解释"
+        },
+        {
+          "object_name": "S10/object-267",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "10"
+        },
+        {
+          "object_name": "S10/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：live/04-derivation.jpg；README.md公式库"
+        },
+        {
+          "object_name": "S10/object-268",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.635,
+            2.075,
+            7.88,
+            1.65
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/derivation-evidence",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            4.66,
+            2.3151,
+            7.83,
+            1.1699
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S10/object-269",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.67,
+            2.13,
+            3.55,
+            0.87
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-270",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.86,
+            2.33,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-271",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.86,
+            2.385,
+            0.34,
+            0.21
+          ],
+          "text": "1"
+        },
+        {
+          "object_name": "S10/object-272",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.34,
+            2.315,
+            2.62,
+            0.4
+          ],
+          "text": "受力分析"
+        },
+        {
+          "object_name": "S10/object-273",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.4,
+            3.02,
+            0.0,
+            0.16
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-274",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.8,
+            4.15,
+            7.1,
+            0.32
+          ],
+          "text": "隔离结构，列出外力与支座"
+        },
+        {
+          "object_name": "S10/object-275",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.67,
+            3.21,
+            3.55,
+            0.87
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-276",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.86,
+            3.41,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-277",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.86,
+            3.465,
+            0.34,
+            0.21
+          ],
+          "text": "2"
+        },
+        {
+          "object_name": "S10/object-278",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.34,
+            3.395,
+            2.62,
+            0.4
+          ],
+          "text": "整体平衡"
+        },
+        {
+          "object_name": "S10/object-279",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.4,
+            4.1,
+            0.0,
+            0.16
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-280",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.8,
+            4.72,
+            7.1,
+            0.32
+          ],
+          "text": "ΣFx=0，ΣFz=0，ΣMy=0"
+        },
+        {
+          "object_name": "S10/object-281",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.67,
+            4.29,
+            3.55,
+            0.87
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-282",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.86,
+            4.49,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-283",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.86,
+            4.545,
+            0.34,
+            0.21
+          ],
+          "text": "3"
+        },
+        {
+          "object_name": "S10/object-284",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.34,
+            4.475,
+            2.62,
+            0.4
+          ],
+          "text": "截面内力"
+        },
+        {
+          "object_name": "S10/object-285",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.4,
+            5.18,
+            0.0,
+            0.16
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-286",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.8,
+            5.29,
+            7.1,
+            0.32
+          ],
+          "text": "dV/dx+qz=0；dM/dx−V=0"
+        },
+        {
+          "object_name": "S10/object-287",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.67,
+            5.37,
+            3.55,
+            0.87
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-288",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.86,
+            5.57,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S10/object-289",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.86,
+            5.625,
+            0.34,
+            0.21
+          ],
+          "text": "4"
+        },
+        {
+          "object_name": "S10/object-290",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.34,
+            5.555,
+            2.62,
+            0.4
+          ],
+          "text": "结果检查"
+        },
+        {
+          "object_name": "S10/object-291",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.8,
+            5.86,
+            7.1,
+            0.32
+          ],
+          "text": "比较边界值、峰值与单位"
+        },
+        {
+          "object_name": "S10/object-292",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.8,
+            3.82,
+            7.0,
+            0.3
+          ],
+          "text": "教学助手：让每一步都有可核对的物理含义"
+        }
+      ]
+    },
+    {
+      "slide_number": 11,
+      "total_objects": 35,
+      "excluded_common_objects": 14,
+      "body_objects": 21,
+      "objects": [
+        {
+          "object_name": "S11/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-293",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S11/object-294",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S11/object-295",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S11/object-296",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S11/object-297",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S11/object-298",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-299",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "空间刚架的六自由度建模"
+        },
+        {
+          "object_name": "S11/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "空间梁节点同时包含三平移与三转动"
+        },
+        {
+          "object_name": "S11/object-300",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "11"
+        },
+        {
+          "object_name": "S11/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：README.md；空间刚架运行条件"
+        },
+        {
+          "object_name": "S11/object-301",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.2,
+            1.71,
+            6.3,
+            0.22
+          ],
+          "text": "4 × 6 = 24：约束处理前节点自由度总数，不等于24个有效自由度。"
+        },
+        {
+          "object_name": "S11/object-302",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.625,
+            1.955,
+            5.15,
+            4.53
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/space-model",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            1.982,
+            5.1,
+            4.4759
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S11/object-303",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.12,
+            2.1,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-304",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.12,
+            2.155,
+            0.34,
+            0.21
+          ],
+          "text": "1"
+        },
+        {
+          "object_name": "S11/object-305",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.6,
+            2.085,
+            3.32,
+            0.4
+          ],
+          "text": "每节点六自由度"
+        },
+        {
+          "object_name": "S11/object-306",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.22,
+            3.45,
+            1.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-307",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.34,
+            3.52,
+            1.56,
+            0.25
+          ],
+          "text": "Ux"
+        },
+        {
+          "object_name": "S11/object-308",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.36,
+            3.45,
+            1.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-309",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.48,
+            3.52,
+            1.56,
+            0.25
+          ],
+          "text": "Uy"
+        },
+        {
+          "object_name": "S11/object-310",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.5,
+            3.45,
+            1.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-311",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.62,
+            3.52,
+            1.56,
+            0.25
+          ],
+          "text": "Uz"
+        },
+        {
+          "object_name": "S11/object-312",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.22,
+            4.18,
+            1.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-313",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.34,
+            4.25,
+            1.56,
+            0.25
+          ],
+          "text": "Rx"
+        },
+        {
+          "object_name": "S11/object-314",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.36,
+            4.18,
+            1.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-315",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.48,
+            4.25,
+            1.56,
+            0.25
+          ],
+          "text": "Ry"
+        },
+        {
+          "object_name": "S11/object-316",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.5,
+            4.18,
+            1.8,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S11/object-317",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.62,
+            4.25,
+            1.56,
+            0.25
+          ],
+          "text": "Rz"
+        },
+        {
+          "object_name": "S11/object-318",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.22,
+            4.98,
+            6.2,
+            0.5
+          ],
+          "text": "两端共 12 自由度 → 12×12 单元刚度"
+        },
+        {
+          "object_name": "S11/object-319",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.22,
+            5.69,
+            6.2,
+            0.93
+          ],
+          "text": "EA/L：轴向  ·  GJ/L：扭转\n局部 y / z：双向弯曲\nEuler–Bernoulli 梁，不含剪切变形修正"
+        },
+        {
+          "object_name": "S11/web-rich-05",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            10.775,
+            2.12,
+            1.25,
+            1.25
+          ],
+          "text": null
+        }
+      ]
+    },
+    {
+      "slide_number": 12,
+      "total_objects": 30,
+      "excluded_common_objects": 14,
+      "body_objects": 16,
+      "objects": [
+        {
+          "object_name": "S12/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/object-320",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S12/object-321",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S12/object-322",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S12/object-323",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S12/object-324",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S12/object-325",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/object-326",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "空间刚架的实机结果核验"
+        },
+        {
+          "object_name": "S12/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "三向合力平衡成立，完整力矩核验仍缺失"
+        },
+        {
+          "object_name": "S12/object-327",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "12"
+        },
+        {
+          "object_name": "S12/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：live/11-space-results.jpg；qa/live-run-evidence.json"
+        },
+        {
+          "object_name": "S12/object-328",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            1.73,
+            11.9,
+            0.21
+          ],
+          "text": "核验步骤：读取外力 → 读取总反力 → 逐方向求和 → 明确未检查的力矩。"
+        },
+        {
+          "object_name": "S12/object-329",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.625,
+            1.975,
+            3.4,
+            4.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/space-results",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.0706,
+            3.35,
+            4.3088
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S12/object-330",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.36,
+            2.0,
+            2.64,
+            1.08
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/object-331",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.54,
+            2.16,
+            1.04,
+            0.5
+          ],
+          "text": "4"
+        },
+        {
+          "object_name": "S12/object-332",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.63,
+            2.43,
+            1.25,
+            0.34
+          ],
+          "text": "节点"
+        },
+        {
+          "object_name": "S12/object-333",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.21,
+            2.0,
+            2.64,
+            1.08
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/object-334",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.39,
+            2.16,
+            1.04,
+            0.5
+          ],
+          "text": "3"
+        },
+        {
+          "object_name": "S12/object-335",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.48,
+            2.43,
+            1.25,
+            0.34
+          ],
+          "text": "构件"
+        },
+        {
+          "object_name": "S12/object-336",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.06,
+            2.0,
+            2.64,
+            1.08
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S12/object-337",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            10.24,
+            2.16,
+            1.04,
+            0.5
+          ],
+          "text": "24"
+        },
+        {
+          "object_name": "S12/object-338",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            11.33,
+            2.43,
+            1.25,
+            0.34
+          ],
+          "text": "总自由度"
+        },
+        {
+          "object_name": "S12/space-balance-table",
+          "kind": "TABLE (19)",
+          "public_chrome": false,
+          "box_inches": [
+            4.36,
+            3.47,
+            8.34,
+            2.25
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S12/object-339",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.4,
+            6.08,
+            8.2,
+            0.43
+          ],
+          "text": "本次界面报告：Worker CPU；残差约 6×10⁻¹⁴；变形显示放大 2.4 倍。"
+        },
+        {
+          "object_name": "S12/object-340",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.4,
+            6.59,
+            8.2,
+            0.23
+          ],
+          "text": "仅核对三向力平衡；扭矩数值未捕获，应力 / 安全系数未补填。"
+        },
+        {
+          "object_name": "S12/web-rich-07",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            11.79,
+            0.88,
+            0.72,
+            0.72
+          ],
+          "text": null
+        }
+      ]
+    },
+    {
+      "slide_number": 13,
+      "total_objects": 35,
+      "excluded_common_objects": 14,
+      "body_objects": 21,
+      "objects": [
+        {
+          "object_name": "S13/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-341",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S13/object-342",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S13/object-343",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S13/object-344",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S13/object-345",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S13/object-346",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-347",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "本地求解软件的技术架构"
+        },
+        {
+          "object_name": "S13/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "当前数值求解主要运行于Worker CPU"
+        },
+        {
+          "object_name": "S13/object-348",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "13"
+        },
+        {
+          "object_name": "S13/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：README.md；用户提供的技术栈和求解能力说明"
+        },
+        {
+          "object_name": "S13/object-349",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.85,
+            2.23,
+            3.55,
+            3.98
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-350",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.05,
+            4.6,
+            3.12,
+            0.42
+          ],
+          "text": "本地计算核心"
+        },
+        {
+          "object_name": "S13/object-351",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.05,
+            5.29,
+            3.12,
+            0.64
+          ],
+          "text": "单元组装 / 约束分块\n位移 → 反力与端力"
+        },
+        {
+          "object_name": "S13/object-352",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            2.12,
+            3.67,
+            1.59
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-353",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.9,
+            2.29,
+            3.25,
+            0.35
+          ],
+          "text": "模型数据"
+        },
+        {
+          "object_name": "S13/object-354",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.9,
+            2.88,
+            3.25,
+            0.63
+          ],
+          "text": "节点、材料、截面\n约束与荷载"
+        },
+        {
+          "object_name": "S13/object-355",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.38,
+            2.91,
+            0.42,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-356",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.95,
+            2.12,
+            3.67,
+            1.59
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-357",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            2.29,
+            3.25,
+            0.35
+          ],
+          "text": "可视交互"
+        },
+        {
+          "object_name": "S13/object-358",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            2.88,
+            3.25,
+            0.63
+          ],
+          "text": "Vue 3 / TypeScript\nThree.js 视图"
+        },
+        {
+          "object_name": "S13/object-359",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.4,
+            2.91,
+            0.5,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-360",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            4.65,
+            3.67,
+            1.59
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-361",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.9,
+            4.82,
+            3.25,
+            0.35
+          ],
+          "text": "学习解释"
+        },
+        {
+          "object_name": "S13/object-362",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.9,
+            5.41,
+            3.25,
+            0.63
+          ],
+          "text": "公式库 / 分步推导\n内力与结果表"
+        },
+        {
+          "object_name": "S13/object-363",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.38,
+            5.44,
+            0.42,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-364",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.95,
+            4.65,
+            3.67,
+            1.59
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-365",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            4.82,
+            3.25,
+            0.35
+          ],
+          "text": "离线交付"
+        },
+        {
+          "object_name": "S13/object-366",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            5.41,
+            3.25,
+            0.63
+          ],
+          "text": "Electron / PWA\nWorker CPU + sparse LU"
+        },
+        {
+          "object_name": "S13/object-367",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.4,
+            5.44,
+            0.5,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S13/object-368",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            6.55,
+            11.8,
+            0.24
+          ],
+          "text": "WebGPU 仅设备检测；未启用 GPU 数值内核。Worker不可用时回退主线程CPU。"
+        },
+        {
+          "object_name": "S13/web-rich-06",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            5.775,
+            2.65,
+            1.65,
+            1.65
+          ],
+          "text": null
+        }
+      ]
+    },
+    {
+      "slide_number": 14,
+      "total_objects": 36,
+      "excluded_common_objects": 14,
+      "body_objects": 22,
+      "objects": [
+        {
+          "object_name": "S14/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S14/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S14/object-369",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S14/object-370",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S14/object-371",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S14/object-372",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S14/object-373",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S14/object-374",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S14/object-375",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S14/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "哪些能力已具备，哪些仍受限？"
+        },
+        {
+          "object_name": "S14/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S14/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "功能存在、实机观察与充分验证不是一回事"
+        },
+        {
+          "object_name": "S14/object-376",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "14"
+        },
+        {
+          "object_name": "S14/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：README.md；qa/live-run-evidence.json；技术边界说明"
+        },
+        {
+          "object_name": "S14/object-377",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.06,
+            3.84,
+            4.56
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S14/object-378",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.83,
+            2.28,
+            3.47,
+            0.55
+          ],
+          "text": "已实现 · 学习功能"
+        },
+        {
+          "object_name": "S14/object-379",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            3.15,
+            3.44,
+            0.38
+          ],
+          "text": "二维梁 / 刚架"
+        },
+        {
+          "object_name": "S14/object-380",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            3.7,
+            3.44,
+            0.56
+          ],
+          "text": "反力、N / V / M、变形"
+        },
+        {
+          "object_name": "S14/object-381",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            4.33,
+            3.44,
+            0.38
+          ],
+          "text": "空间杆系"
+        },
+        {
+          "object_name": "S14/object-382",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            4.88,
+            3.44,
+            0.56
+          ],
+          "text": "节点自由度、构件端力"
+        },
+        {
+          "object_name": "S14/object-383",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            6.09,
+            3.44,
+            0.35
+          ],
+          "text": "使用前检查条件与符号"
+        },
+        {
+          "object_name": "S14/object-384",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.81,
+            2.06,
+            3.84,
+            4.56
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S14/object-385",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.99,
+            2.28,
+            3.47,
+            0.55
+          ],
+          "text": "实验中 · 继续验证"
+        },
+        {
+          "object_name": "S14/object-386",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.01,
+            3.15,
+            3.44,
+            0.38
+          ],
+          "text": "Tet4实验内核"
+        },
+        {
+          "object_name": "S14/object-387",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.01,
+            3.7,
+            3.44,
+            0.56
+          ],
+          "text": "与主编辑器实体链仍待完善"
+        },
+        {
+          "object_name": "S14/object-388",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.01,
+            4.33,
+            3.44,
+            0.38
+          ],
+          "text": "WebGPU能力检测"
+        },
+        {
+          "object_name": "S14/object-389",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.01,
+            4.88,
+            3.44,
+            0.56
+          ],
+          "text": "不等于GPU数值求解"
+        },
+        {
+          "object_name": "S14/object-390",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.01,
+            6.09,
+            3.44,
+            0.35
+          ],
+          "text": "不把界面入口当作成熟能力"
+        },
+        {
+          "object_name": "S14/object-391",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.97,
+            2.06,
+            3.84,
+            4.56
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S14/object-392",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.15,
+            2.28,
+            3.47,
+            0.55
+          ],
+          "text": "用途边界 · 如实说明"
+        },
+        {
+          "object_name": "S14/object-393",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.17,
+            3.15,
+            3.44,
+            0.38
+          ],
+          "text": "课堂学习与训练"
+        },
+        {
+          "object_name": "S14/object-394",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.17,
+            3.7,
+            3.44,
+            0.56
+          ],
+          "text": "解析对照、可视化理解"
+        },
+        {
+          "object_name": "S14/object-395",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.17,
+            4.33,
+            3.44,
+            0.38
+          ],
+          "text": "尚非工程认证"
+        },
+        {
+          "object_name": "S14/object-396",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.17,
+            4.88,
+            3.44,
+            0.56
+          ],
+          "text": "不用于设计、鉴定或商业用途"
+        },
+        {
+          "object_name": "S14/object-397",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.17,
+            6.09,
+            3.44,
+            0.35
+          ],
+          "text": "功能存在 ≠ 充分验证"
+        },
+        {
+          "object_name": "S14/web-rich-09",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            11.795,
+            0.89,
+            0.75,
+            0.75
+          ],
+          "text": null
+        }
+      ]
+    },
+    {
+      "slide_number": 15,
+      "total_objects": 33,
+      "excluded_common_objects": 14,
+      "body_objects": 19,
+      "objects": [
+        {
+          "object_name": "S15/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/object-398",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S15/object-399",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S15/object-400",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S15/object-401",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S15/object-402",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S15/object-403",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/object-404",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "如何复现一个简单学习算例？"
+        },
+        {
+          "object_name": "S15/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "从建模、结果查看到解析核对按顺序操作"
+        },
+        {
+          "object_name": "S15/object-405",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "15"
+        },
+        {
+          "object_name": "S15/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：live/01-workspace.jpg；live/07-load-properties.jpg；二维解析核验"
+        },
+        {
+          "object_name": "S15/object-406",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.625,
+            1.975,
+            6.75,
+            3.82
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/guide-evidence",
+          "kind": "PICTURE (13)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.0006,
+            6.7,
+            3.7687
+          ],
+          "text": null
+        },
+        {
+          "object_name": "S15/object-407",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.72,
+            2.0,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/object-408",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.72,
+            2.055,
+            0.34,
+            0.21
+          ],
+          "text": "1"
+        },
+        {
+          "object_name": "S15/object-409",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.2,
+            1.985,
+            4.32,
+            0.4
+          ],
+          "text": "载入案例"
+        },
+        {
+          "object_name": "S15/object-410",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.2,
+            2.5,
+            4.48,
+            0.4
+          ],
+          "text": "帮助 → 使用指导与默认案例"
+        },
+        {
+          "object_name": "S15/object-411",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.72,
+            3.07,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/object-412",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.72,
+            3.125,
+            0.34,
+            0.21
+          ],
+          "text": "2"
+        },
+        {
+          "object_name": "S15/object-413",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.2,
+            3.055,
+            4.32,
+            0.4
+          ],
+          "text": "检查条件"
+        },
+        {
+          "object_name": "S15/object-414",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.2,
+            3.57,
+            4.48,
+            0.4
+          ],
+          "text": "单位、截面、约束、荷载方向"
+        },
+        {
+          "object_name": "S15/object-415",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.72,
+            4.14,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/object-416",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.72,
+            4.195,
+            0.34,
+            0.21
+          ],
+          "text": "3"
+        },
+        {
+          "object_name": "S15/object-417",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.2,
+            4.125,
+            4.32,
+            0.4
+          ],
+          "text": "求解与核对"
+        },
+        {
+          "object_name": "S15/object-418",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.2,
+            4.64,
+            4.48,
+            0.4
+          ],
+          "text": "二维自动求解；三维点本地求解"
+        },
+        {
+          "object_name": "S15/object-419",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.72,
+            5.21,
+            0.34,
+            0.34
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S15/object-420",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.72,
+            5.265,
+            0.34,
+            0.21
+          ],
+          "text": "4"
+        },
+        {
+          "object_name": "S15/object-421",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.2,
+            5.195,
+            4.32,
+            0.4
+          ],
+          "text": "改变单参数"
+        },
+        {
+          "object_name": "S15/object-422",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            8.2,
+            5.71,
+            4.48,
+            0.4
+          ],
+          "text": "先预测，改位置，再比较结果"
+        },
+        {
+          "object_name": "S15/object-423",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.75,
+            6.28,
+            11.9,
+            0.44
+          ],
+          "text": "排错线索：不稳定→约束；量级异常→单位；图形异常→方向与局部坐标。"
+        }
+      ]
+    },
+    {
+      "slide_number": 16,
+      "total_objects": 32,
+      "excluded_common_objects": 14,
+      "body_objects": 18,
+      "objects": [
+        {
+          "object_name": "S16/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S16/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S16/object-424",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S16/object-425",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S16/object-426",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S16/object-427",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S16/object-428",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S16/object-429",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S16/object-430",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S16/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "让力学结果真正可理解"
+        },
+        {
+          "object_name": "S16/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S16/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "以可复算案例验证功能，再逐步扩展边界"
+        },
+        {
+          "object_name": "S16/object-431",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "16"
+        },
+        {
+          "object_name": "S16/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：二维解析与实机记录；三维实机记录；证据缺口清单"
+        },
+        {
+          "object_name": "S16/object-432",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.75,
+            2.1,
+            11.8,
+            0.65
+          ],
+          "text": "把“看见结果”推进到“解释结果”"
+        },
+        {
+          "object_name": "S16/object-433",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            3.25,
+            3.82,
+            2.56
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S16/object-434",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.9,
+            3.44,
+            0.7,
+            0.42
+          ],
+          "text": "01"
+        },
+        {
+          "object_name": "S16/object-435",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.9,
+            4.12,
+            3.4,
+            0.4
+          ],
+          "text": "可视化建模"
+        },
+        {
+          "object_name": "S16/object-436",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.9,
+            4.77,
+            3.4,
+            0.57
+          ],
+          "text": "把条件转成节点与构件"
+        },
+        {
+          "object_name": "S16/object-437",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.9,
+            5.43,
+            3.4,
+            0.26
+          ],
+          "text": "已见：二维与空间工作区"
+        },
+        {
+          "object_name": "S16/object-438",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            4.85,
+            3.25,
+            3.82,
+            2.56
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S16/object-439",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.05,
+            3.44,
+            0.7,
+            0.42
+          ],
+          "text": "02"
+        },
+        {
+          "object_name": "S16/object-440",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.05,
+            4.12,
+            3.4,
+            0.4
+          ],
+          "text": "结果解释"
+        },
+        {
+          "object_name": "S16/object-441",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.05,
+            4.77,
+            3.4,
+            0.57
+          ],
+          "text": "联系内力图、公式与危险位置"
+        },
+        {
+          "object_name": "S16/object-442",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            5.05,
+            5.43,
+            3.4,
+            0.26
+          ],
+          "text": "已见：默认梁幅值对照"
+        },
+        {
+          "object_name": "S16/object-443",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.0,
+            3.25,
+            3.82,
+            2.56
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S16/object-444",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.2,
+            3.44,
+            0.7,
+            0.42
+          ],
+          "text": "03"
+        },
+        {
+          "object_name": "S16/object-445",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.2,
+            4.12,
+            3.4,
+            0.4
+          ],
+          "text": "独立核验"
+        },
+        {
+          "object_name": "S16/object-446",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.2,
+            4.77,
+            3.4,
+            0.57
+          ],
+          "text": "平衡关系与解析解交叉检查"
+        },
+        {
+          "object_name": "S16/object-447",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            9.2,
+            5.43,
+            3.4,
+            0.26
+          ],
+          "text": "已见：空间三向力平衡"
+        },
+        {
+          "object_name": "S16/object-448",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            6.18,
+            1.3,
+            0.34
+          ],
+          "text": "下一步"
+        },
+        {
+          "object_name": "S16/object-449",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            2.25,
+            6.16,
+            10.2,
+            0.48
+          ],
+          "text": "补充边界与荷载组合 → 建立回归算例 → 完善空间分析与完整力矩核验"
+        }
+      ]
+    },
+    {
+      "slide_number": 17,
+      "total_objects": 42,
+      "excluded_common_objects": 14,
+      "body_objects": 28,
+      "objects": [
+        {
+          "object_name": "S17/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-450",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S17/object-451",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S17/object-452",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S17/object-453",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S17/object-454",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S17/object-455",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-456",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "附录：公式与单位速查"
+        },
+        {
+          "object_name": "S17/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "统一参数定义、单位和符号口径"
+        },
+        {
+          "object_name": "S17/object-457",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "17"
+        },
+        {
+          "object_name": "S17/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：静力学公式；README.md公式符号"
+        },
+        {
+          "object_name": "S17/object-458",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            2.04,
+            5.85,
+            2.05
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-459",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.83,
+            2.21,
+            0.5,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-460",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.95,
+            2.28,
+            0.26,
+            0.25
+          ],
+          "text": "1"
+        },
+        {
+          "object_name": "S17/object-461",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.55,
+            2.21,
+            4.7,
+            0.37
+          ],
+          "text": "轴向拉压"
+        },
+        {
+          "object_name": "S17/object-462",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            2.81,
+            5.42,
+            0.4
+          ],
+          "text": "σ=N/A；ΔL=NL/(EA)"
+        },
+        {
+          "object_name": "S17/object-463",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            3.38,
+            5.42,
+            0.28
+          ],
+          "text": "N：轴力；A：面积；E：弹性模量"
+        },
+        {
+          "object_name": "S17/object-464",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            3.79,
+            5.42,
+            0.23
+          ],
+          "text": "均匀等截面、线弹性；统一N/m/Pa"
+        },
+        {
+          "object_name": "S17/object-465",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.85,
+            2.04,
+            5.85,
+            2.05
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-466",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.03,
+            2.21,
+            0.5,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-467",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.15,
+            2.28,
+            0.26,
+            0.25
+          ],
+          "text": "2"
+        },
+        {
+          "object_name": "S17/object-468",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.75,
+            2.21,
+            4.7,
+            0.37
+          ],
+          "text": "弯曲响应"
+        },
+        {
+          "object_name": "S17/object-469",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            2.81,
+            5.42,
+            0.4
+          ],
+          "text": "σmax=M/W；EI控制挠度"
+        },
+        {
+          "object_name": "S17/object-470",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            3.38,
+            5.42,
+            0.28
+          ],
+          "text": "M：弯矩；W：抗弯截面系数"
+        },
+        {
+          "object_name": "S17/object-471",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            3.79,
+            5.42,
+            0.23
+          ],
+          "text": "线弹性、小变形；截面与边界须匹配"
+        },
+        {
+          "object_name": "S17/object-472",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.65,
+            4.36,
+            5.85,
+            2.05
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-473",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.83,
+            4.53,
+            0.5,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-474",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.95,
+            4.6,
+            0.26,
+            0.25
+          ],
+          "text": "3"
+        },
+        {
+          "object_name": "S17/object-475",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.55,
+            4.53,
+            4.7,
+            0.37
+          ],
+          "text": "圆轴扭转"
+        },
+        {
+          "object_name": "S17/object-476",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            5.13,
+            5.42,
+            0.4
+          ],
+          "text": "τmax=T/Wt；φ=TL/(GJ)"
+        },
+        {
+          "object_name": "S17/object-477",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            5.7,
+            5.42,
+            0.28
+          ],
+          "text": "T：扭矩；J：极惯性矩；G：剪切模量"
+        },
+        {
+          "object_name": "S17/object-478",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            6.11,
+            5.42,
+            0.23
+          ],
+          "text": "均匀圆轴、小变形；角度按rad"
+        },
+        {
+          "object_name": "S17/object-479",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            6.85,
+            4.36,
+            5.85,
+            2.05
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-480",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.03,
+            4.53,
+            0.5,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S17/object-481",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.15,
+            4.6,
+            0.26,
+            0.25
+          ],
+          "text": "4"
+        },
+        {
+          "object_name": "S17/object-482",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.75,
+            4.53,
+            4.7,
+            0.37
+          ],
+          "text": "集中力简支梁"
+        },
+        {
+          "object_name": "S17/object-483",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            5.13,
+            5.42,
+            0.4
+          ],
+          "text": "RA=P(L−a)/L；Mpeak=Pa(L−a)/L"
+        },
+        {
+          "object_name": "S17/object-484",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            5.7,
+            5.42,
+            0.28
+          ],
+          "text": "a：距左支座位置；0<a<L"
+        },
+        {
+          "object_name": "S17/object-485",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            7.05,
+            6.11,
+            5.42,
+            0.23
+          ],
+          "text": "本稿P=18kN，L=6m；仅解析预测"
+        }
+      ]
+    },
+    {
+      "slide_number": 18,
+      "total_objects": 39,
+      "excluded_common_objects": 14,
+      "body_objects": 25,
+      "objects": [
+        {
+          "object_name": "S18/content-canvas",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.35,
+            1.86,
+            12.63,
+            4.96
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/navigation",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            0.0,
+            13.333,
+            0.7
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-486",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.4,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "01 研究背景"
+        },
+        {
+          "object_name": "S18/object-487",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            2.85,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "02 技术路线"
+        },
+        {
+          "object_name": "S18/object-488",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            5.3,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "03 实机验证"
+        },
+        {
+          "object_name": "S18/object-489",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            7.75,
+            0.18,
+            2.35,
+            0.34
+          ],
+          "text": "04 分享展望"
+        },
+        {
+          "object_name": "S18/object-490",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            10.35,
+            0.18,
+            2.55,
+            0.32
+          ],
+          "text": "拉压弯扭大师"
+        },
+        {
+          "object_name": "S18/object-491",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            1.63,
+            0.57,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-492",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            1.13,
+            1.63,
+            11.72,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/title",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            0.98,
+            12.4,
+            0.62
+          ],
+          "text": "附录：证据索引与验证范围"
+        },
+        {
+          "object_name": "S18/conclusion-background",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.0,
+            7.0,
+            13.333,
+            0.5
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/takeaway",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.45,
+            7.1,
+            11.95,
+            0.27
+          ],
+          "text": "每一项结论必须能够追溯到具体来源"
+        },
+        {
+          "object_name": "S18/object-493",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            12.65,
+            7.13,
+            0.34,
+            0.22
+          ],
+          "text": "18"
+        },
+        {
+          "object_name": "S18/sources",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": true,
+          "box_inches": [
+            0.48,
+            6.85,
+            12.3,
+            0.13
+          ],
+          "text": "来源：README.md；outputs/classmate-sharing/assets/live/；qa/live-run-evidence.json"
+        },
+        {
+          "object_name": "S18/object-494",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            2.02,
+            0.55,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-495",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            2.09,
+            0.31,
+            0.25
+          ],
+          "text": "01"
+        },
+        {
+          "object_name": "S18/object-496",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.45,
+            2.03,
+            2.2,
+            0.38
+          ],
+          "text": "实机已观察"
+        },
+        {
+          "object_name": "S18/object-497",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.9,
+            2.03,
+            8.4,
+            0.4
+          ],
+          "text": "二维梁9/9kN与27kN·m幅值；空间三向力平衡"
+        },
+        {
+          "object_name": "S18/object-498",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.9,
+            2.6,
+            8.4,
+            0.23
+          ],
+          "text": "本地实机截图与运行记录"
+        },
+        {
+          "object_name": "S18/object-499",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.45,
+            2.91,
+            11.07,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-500",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            3.1,
+            0.55,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-501",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            3.17,
+            0.31,
+            0.25
+          ],
+          "text": "02"
+        },
+        {
+          "object_name": "S18/object-502",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.45,
+            3.11,
+            2.2,
+            0.38
+          ],
+          "text": "解析预测"
+        },
+        {
+          "object_name": "S18/object-503",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.9,
+            3.11,
+            8.4,
+            0.4
+          ],
+          "text": "荷载位置a=1/2/3m的反力与弯矩趋势"
+        },
+        {
+          "object_name": "S18/object-504",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.9,
+            3.68,
+            8.4,
+            0.23
+          ],
+          "text": "sources/native-data.json，非新增测量"
+        },
+        {
+          "object_name": "S18/object-505",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.45,
+            3.99,
+            11.07,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-506",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            4.18,
+            0.55,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-507",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            4.25,
+            0.31,
+            0.25
+          ],
+          "text": "03"
+        },
+        {
+          "object_name": "S18/object-508",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.45,
+            4.19,
+            2.2,
+            0.38
+          ],
+          "text": "实验与缺项"
+        },
+        {
+          "object_name": "S18/object-509",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.9,
+            4.19,
+            8.4,
+            0.4
+          ],
+          "text": "Tet4实验；完整力矩核验待补；GPU仅检测"
+        },
+        {
+          "object_name": "S18/object-510",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.9,
+            4.76,
+            8.4,
+            0.23
+          ],
+          "text": "README及求解能力审计"
+        },
+        {
+          "object_name": "S18/object-511",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.45,
+            5.07,
+            11.07,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-512",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.7,
+            5.26,
+            0.55,
+            0.4
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-513",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.82,
+            5.33,
+            0.31,
+            0.25
+          ],
+          "text": "04"
+        },
+        {
+          "object_name": "S18/object-514",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.45,
+            5.27,
+            2.2,
+            0.38
+          ],
+          "text": "视觉协作"
+        },
+        {
+          "object_name": "S18/object-515",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.9,
+            5.27,
+            8.4,
+            0.4
+          ],
+          "text": "网页规划与逐项独立素材生成，模型名未核验"
+        },
+        {
+          "object_name": "S18/object-516",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            3.9,
+            5.84,
+            8.4,
+            0.23
+          ],
+          "text": "用户授权当前网页版继续"
+        },
+        {
+          "object_name": "S18/object-517",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            1.45,
+            6.15,
+            11.07,
+            0.0
+          ],
+          "text": ""
+        },
+        {
+          "object_name": "S18/object-518",
+          "kind": "AUTO_SHAPE (1)",
+          "public_chrome": false,
+          "box_inches": [
+            0.85,
+            6.49,
+            11.7,
+            0.29
+          ],
+          "text": "欢迎带着模型、单位和截图交流：先定位条件，再判断差异。"
+        }
+      ]
+    }
+  ]
+}

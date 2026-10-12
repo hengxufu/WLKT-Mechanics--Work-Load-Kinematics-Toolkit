@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "ppt_bridge_connection_v1",
+    "status":  "failed",
+    "connected":  false,
+    "workspace":  "D:\\MACHANICS-OF-MATERIALS-main",
+    "capability":  "Auto",
+    "output":  [
+
+               ],
+    "created_at":  "2026-10-10T07:43:44.8772710+00:00"
+}

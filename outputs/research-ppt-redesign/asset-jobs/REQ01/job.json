@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "transport": "chatgpt_web",
+  "requested_engine": "image-2.5",
+  "verified_engine": null,
+  "status": "prepared",
+  "spec": {
+    "asset_id": "METAL_BAR",
+    "slide_id": "S01",
+    "object_id": "cover_bar",
+    "kind": "concept",
+    "element": "一根完整独立的细长矩形截面金属杆件，深蓝冷银拉丝钢材质，精致写实，柔和左上主光，科技青色边缘高光，三分之四视角。禁止文字、公式、受力箭头、云图、支座、其他物体、拼贴和整页设计。",
+    "transparent": true,
+    "min_width": 1024,
+    "min_height": 1024,
+    "aspect": "1:1",
+    "palette": "深蓝075FAF，冷银，青008D9C",
+    "visual_context": {
+      "slide_background": "白色与浅蓝ECF5FE",
+      "lighting": "柔和左上主光",
+      "material": "冷银拉丝钢",
+      "placement": "封面右侧局部独立主体",
+      "avoid": "文字数字、箭头、图表、整页"
+    }
+  },
+  "history": [
+    {
+      "at": "2026-10-11T05:50:49.837245+00:00",
+      "status": "prepared"
+    }
+  ]
+}

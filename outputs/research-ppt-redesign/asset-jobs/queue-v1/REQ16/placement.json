@@ -1,0 +1,37 @@
+{
+  "schema": "single_element_placement_v1",
+  "slide_id": "S16",
+  "object_id": "closing_trajectory",
+  "shape_name": "S16/closing_trajectory",
+  "asset_file": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-redesign\\asset-jobs\\queue-v1\\REQ16\\BLUE_TRAJECTORY-original.png",
+  "asset_sha256": "de25be020edaaa6c98452fa540d675e9607c484979a4e46b7688fff62161d48d",
+  "editable": false,
+  "semantic_text": null,
+  "target_box_inches": [
+    10.4,
+    1.85,
+    2.2,
+    1.2
+  ],
+  "image_box_inches": [
+    10.9,
+    1.85,
+    1.2,
+    1.2
+  ],
+  "effective_ppi": 1045.0,
+  "resolution_ok": true,
+  "visible_subject_box_inches": [
+    10.95933,
+    2.052871,
+    1.084211,
+    0.751196
+  ],
+  "warnings": [],
+  "image_editing": "none; original preserved; contain without stretching",
+  "visual_review_required": [
+    "实际背景上的边缘",
+    "与文字和证据的间距",
+    "视觉大小和光照一致性"
+  ]
+}

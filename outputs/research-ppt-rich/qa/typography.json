@@ -1,0 +1,23 @@
+{
+  "font_policy": {
+    "chinese": "Microsoft YaHei / 微软雅黑",
+    "western": "Times New Roman"
+  },
+  "counts": {
+    "latin": 1046,
+    "east_asian": 1046,
+    "office_equations": 0,
+    "latex_compatibility_pictures": 0,
+    "text_runs": 499
+  },
+  "mismatches": [],
+  "missing_run_fonts": [],
+  "passed_explicit_font_check": true,
+  "parts_checked": 42,
+  "limits": [
+    "Inherited fonts are flagged for explicit normalization, not declared visually incorrect.",
+    "Chart auto-generated labels can inherit chart/theme defaults; rendering is still required.",
+    "Bitmap lettering, installed fonts and scientific correctness are not verified.",
+    "OMML is counted structurally; inspect equations in the target PowerPoint version."
+  ]
+}

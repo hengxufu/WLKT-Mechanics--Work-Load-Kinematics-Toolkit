@@ -1,0 +1,347 @@
+{
+  "schema": "research_ppt_delivery_review_v1",
+  "pptx_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+  "web_planning": {
+    "session_url": "https://chatgpt.com/c/6acb57b2-2558-83ee-b982-ec6be3938863",
+    "response_file": "planning/visual-assistant-reply.txt",
+    "second_review_file": "planning/web-density-review.txt"
+  },
+  "model_exception": {
+    "instruction": "允许用当前网页版完成规划和单元素生成，注明模型名未核验",
+    "observed": "High / 创建图像",
+    "verified_model": null
+  },
+  "review_method": "Viewed both contact sheets covering all 18 final blue pages; examined content-changed pages 2,11,13,15,16 at full resolution. Earlier green version separately reviewed. No fresh web planning or generation in this local revision.",
+  "slides": [
+    {
+      "slide_number": 1,
+      "render_file": "renders\\final\\幻灯片1.PNG",
+      "render_sha256": "d0c5e5864a9ec0fa22f1be2017cdb2f9cc2b04834365f18e2341a87b9a6dd738",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "本地离线的材料力学学习辅助软件；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "封面左右主次明确，真实工作区与飘带分区，三项能力及定位标签清楚，无遮挡。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "软件定位与版本来自README；封面无实验结论。"
+      }
+    },
+    {
+      "slide_number": 2,
+      "render_file": "renders\\final\\幻灯片2.PNG",
+      "render_sha256": "79eb8019444b7402d3c3f89c60fdd91ec954e4b303aa75681f12b4a296831326",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "课堂难点是把模型、计算与内力图联系起来；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "三类学习问题各有具体疑问、术语与行动，深蓝标题带与浅蓝正文分层，底部闭环可读。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "课堂困难为问题归纳；未编教学提升数据。"
+      }
+    },
+    {
+      "slide_number": 3,
+      "render_file": "renders\\final\\幻灯片3.PNG",
+      "render_sha256": "eff410719e0218f5c77ebd99a8a20d9000e22b3012f4c2ad9617fc4337fa214a",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "不同变形形式共享内力、材料与截面参数；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "四栏等宽，四个透明工程概念素材独立，公式和适用条件保持阅读优先。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "公式为基础线弹性关系；AI金属对象仅概念，不是试验照片或模拟结果。"
+      }
+    },
+    {
+      "slide_number": 4,
+      "render_file": "renders\\final\\幻灯片4.PNG",
+      "render_sha256": "6fb9a1486d5b6e06dc00f8f4e26d2db1ecdf11e979ea9d30ac8e43645870e659",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "输入、求解、展示和解析核对形成学习闭环；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "顶部四类受力示意、五栏流程、校核反馈、当前边界与橙色规划层均为原生对象；缩短长句后无叠字或裁切。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "技术路线来自软件说明及能力审计，校核环节独立于软件求解。"
+      }
+    },
+    {
+      "slide_number": 5,
+      "render_file": "renders\\final\\幻灯片5.PNG",
+      "render_sha256": "a0c79cba7016d57808003347ecf823510ff60cd619ef02a3a5d5972fc2b61ca1",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "左模型树、中视图区、右属性面板协同操作；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "修正截图高度后来源行完整露出；截图外侧三项区域解释没有压住真实控件。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "复用2026-10-10真实程序截图，图标字体异常保留，未宣称本轮重新运行。"
+      }
+    },
+    {
+      "slide_number": 6,
+      "render_file": "renders\\final\\幻灯片6.PNG",
+      "render_sha256": "77d5493dae16dca482384cd16146d87a25f91e876dd194065455bdfd4212171c",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "两节点一单元也能描述跨中集中力；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "6m梁、跨中18kN及支座自由度表清楚；荷载属性证据与说明相邻。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "跨度、荷载、位置及约束与实机记录一致。"
+      }
+    },
+    {
+      "slide_number": 7,
+      "render_file": "renders\\final\\幻灯片7.PNG",
+      "render_sha256": "9952687c4bdb0a761dcef8b3da39d3a625c819bbd8c65b9ad2d2722dd188ba73",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "集中力引起剪力跃变和跨中弯矩极值；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "剪力与弯矩截图等尺度并列，9及负27标注清楚，下侧解释独立。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "真实剪力与弯矩证据保留软件负号约定，不篡改结果。"
+      }
+    },
+    {
+      "slide_number": 8,
+      "render_file": "renders\\final\\幻灯片8.PNG",
+      "render_sha256": "7d22b6d65290690f01b7c06bc573a051572496ec00aa4e4f0370eb2b9a054dcb",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "给定工况下反力与弯矩幅值符合解析结果；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "左侧真实证据、右侧原生对照表，放大镜仅占角落；条件、符号、位置说明可读。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "仅默认算例幅值对照；9/9kN、27kN·m有解析与实机来源。"
+      }
+    },
+    {
+      "slide_number": 9,
+      "render_file": "renders\\final\\幻灯片9.PNG",
+      "render_sha256": "0001bbb3cf1e0b76f1ab94d450a8b65e56c985504e73a1cc4b8cd04c35a9b427",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "反力分配与弯矩峰值随荷载位置改变；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "两张原生图表分开单位，15/12/9及3/6/9反力和15/24/27弯矩正确；解析预测标识可读。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "图表为解析预测，数据源与嵌入工作簿保留，非新增实机测量。"
+      }
+    },
+    {
+      "slide_number": 10,
+      "render_file": "renders\\final\\幻灯片10.PNG",
+      "render_sha256": "2545d6af881fc4753499e644410c94f3b187d40318fcb81228add63d62d54205",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "计算结果需要返回公式和截面条件解释；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "四步阶梯及箭头置左，推导截图和解释置右，正文顺序连贯。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "推导来自真实软件截图与静力学关系，没有虚构应力结果。"
+      }
+    },
+    {
+      "slide_number": 11,
+      "render_file": "renders\\final\\幻灯片11.PNG",
+      "render_sha256": "01a423fc666ccfe73a8300707b7d21df2756c4c212b28a6fc1c2dcc4755fccb5",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "空间梁节点同时包含三平移与三转动；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "真实空间截图与概念桁架独立；六自由度标签两行排列，24自由度说明清楚。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "24为约束处理前总自由度；概念桁架不冒充实机模型。"
+      }
+    },
+    {
+      "slide_number": 12,
+      "render_file": "renders\\final\\幻灯片12.PNG",
+      "render_sha256": "cbf9e2ad783c3fd4a7462577b96e3da0ac0914158337be1acd1f792f6396aa30",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "三向合力平衡成立，完整力矩核验仍缺失；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "结果截图、三项结构参数、三向力平衡表分区；残差与未核对力矩说明均完整。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "8000/−5000/−12000N与反力逐向抵消；未宣称完整力矩平衡。"
+      }
+    },
+    {
+      "slide_number": 13,
+      "render_file": "renders\\final\\幻灯片13.PNG",
+      "render_sha256": "77f626b58ad28c14f45adf5d00ce168fa9be62e039a5d3cc927e75787f43214e",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "当前数值求解主要运行于Worker CPU；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "计算核心与四模块形成中心构图，修正后箭头从计算核心指向学习解释，芯片不压文字。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "Worker CPU及主线程回退有能力审计；WebGPU仅检测。"
+      }
+    },
+    {
+      "slide_number": 14,
+      "render_file": "renders\\final\\幻灯片14.PNG",
+      "render_sha256": "24f656b587cec764cf431a056acc5b50aff404698fc31c91de840f3e4973b41b",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "功能存在、实机观察与充分验证不是一回事；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "实现、实验、用途三栏分级清楚；盾牌远离认证文字，边界说明充分。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "Tet4标为实验、软件标为学习用途；盾牌不表示认证。"
+      }
+    },
+    {
+      "slide_number": 15,
+      "render_file": "renders\\final\\幻灯片15.PNG",
+      "render_sha256": "c4091489a2aba432bdf9ebe1ba935738834274730a3763b88a64cbee520c9854",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "从建模、结果查看到解析核对按顺序操作；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "操作指导真实截图与四步说明并列，排错提示独立，字号与间距合适。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "流程来自真实指导界面与默认案例，不编运行时间。"
+      }
+    },
+    {
+      "slide_number": 16,
+      "render_file": "renders\\final\\幻灯片16.PNG",
+      "render_sha256": "1b79b786e737db44d038fd2551889f990a825d69aaecd9d2f6a1281e58d87576",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "以可复算案例验证功能，再逐步扩展边界；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "三个学习价值对应具体已见证据，下一步列表可读，没有空口号代替论证。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "价值对应已展示功能与算例；改进方向表述为未来工作。"
+      }
+    },
+    {
+      "slide_number": 17,
+      "render_file": "renders\\final\\幻灯片17.PNG",
+      "render_sha256": "f58fa9698b3fd2eadce0fb058d8b68d236564a226de82f32716de0052de54091",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "统一参数定义、单位和符号口径；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "四格公式手册，符号定义和前提独立，正文可编辑文字公式，无裁切。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "公式有单位及适用前提，LaTeX源另存，未宣称OMML方程。"
+      }
+    },
+    {
+      "slide_number": 18,
+      "render_file": "renders\\final\\幻灯片18.PNG",
+      "render_sha256": "4f0a0ec12e71bf499caf75f1282ca08ba0d77dea763ad6d3ce517202651ebefe",
+      "rendered_from_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+      "content_review": {
+        "status": "pass",
+        "note": "每一项结论必须能够追溯到具体来源；已核对具体解释及来源，非仅标题。"
+      },
+      "visual_review": {
+        "status": "pass",
+        "note": "四类证据采用分行索引，来源及局限独立；末行交流提示完整。"
+      },
+      "evidence_review": {
+        "status": "pass",
+        "note": "实际观察、解析预测、实验缺项、视觉协作明确区分；模型名未核验。"
+      }
+    }
+  ],
+  "unresolved_issues": [],
+  "limitations": [
+    "Strict GPT-6 selector evidence unavailable; user authorized current web model. Current web follow-up timed out after submission; previous verified planning and 10 accepted visual assets reused.",
+    "Real screenshots are reused from 2026-10-10; icon font boxes retained.",
+    "Formulas are editable text, not structured Office equations."
+  ]
+}

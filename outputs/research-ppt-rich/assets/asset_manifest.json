@@ -1,0 +1,65 @@
+{
+  "schema": "ppt_element_manifest_v1",
+  "elements": [
+    {
+      "request_id": "R01",
+      "slide_number": 3,
+      "kind": "concept",
+      "job_dir": "../asset-jobs/R01"
+    },
+    {
+      "request_id": "R02",
+      "slide_number": 3,
+      "kind": "concept",
+      "job_dir": "../asset-jobs/R02"
+    },
+    {
+      "request_id": "R03",
+      "slide_number": 3,
+      "kind": "concept",
+      "job_dir": "../asset-jobs/R03"
+    },
+    {
+      "request_id": "R04",
+      "slide_number": 3,
+      "kind": "concept",
+      "job_dir": "../asset-jobs/R04"
+    },
+    {
+      "request_id": "R05",
+      "slide_number": 11,
+      "kind": "concept",
+      "job_dir": "../asset-jobs/R05"
+    },
+    {
+      "request_id": "R06",
+      "slide_number": 13,
+      "kind": "icon",
+      "job_dir": "../asset-jobs/R06"
+    },
+    {
+      "request_id": "R07",
+      "slide_number": 12,
+      "kind": "concept",
+      "job_dir": "../asset-jobs/R07"
+    },
+    {
+      "request_id": "R08",
+      "slide_number": 8,
+      "kind": "icon",
+      "job_dir": "../asset-jobs/R08"
+    },
+    {
+      "request_id": "R09",
+      "slide_number": 14,
+      "kind": "icon",
+      "job_dir": "../asset-jobs/R09"
+    },
+    {
+      "request_id": "R10",
+      "slide_number": 1,
+      "kind": "ornament",
+      "job_dir": "../asset-jobs/R10"
+    }
+  ]
+}

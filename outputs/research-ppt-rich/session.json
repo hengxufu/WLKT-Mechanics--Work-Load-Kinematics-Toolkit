@@ -1,0 +1,18 @@
+{
+  "schema": "research_ppt_session_v1",
+  "title": "拉压弯扭大师：视觉与内容增强版",
+  "scenario": "科研工作汇报",
+  "audience": "课题组与同行专家",
+  "duration_min": 20,
+  "profile": "research",
+  "project_root": "D:\\MACHANICS-OF-MATERIALS-main",
+  "created_at": "2026-10-11T09:31:26.248976+00:00",
+  "planning_owner": "chatgpt-web:gpt-6-astra",
+  "image_asset_owner": "chatgpt-web:gpt-image-2.5-sunburst",
+  "assembly_owner": "codex-local-script",
+  "connection_status": "pending",
+  "delivery_status": "draft",
+  "observed_planning_model": null,
+  "observed_image_model": null,
+  "bridge_contract_required": true
+}

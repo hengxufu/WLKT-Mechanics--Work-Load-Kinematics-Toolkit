@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GPT-6 research deck plan",
+  "type": "object",
+  "required": [
+    "deck_thesis",
+    "audience",
+    "slides",
+    "evidence_gaps",
+    "review_checklist"
+  ],
+  "properties": {
+    "deck_thesis": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "slide_number",
+          "title",
+          "takeaway",
+          "layout_family",
+          "visual_rationale",
+          "content_blocks",
+          "speaker_notes",
+          "asset_requests"
+        ],
+        "properties": {
+          "slide_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "title": {
+            "type": "string"
+          },
+          "takeaway": {
+            "type": "string"
+          },
+          "layout_family": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual_rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content_blocks": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "speaker_notes": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "asset_requests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "request_id",
+                "kind",
+                "purpose",
+                "single_subject_prompt"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "ornament",
+                    "concept",
+                    "art_text",
+                    "icon",
+                    "cutout"
+                  ]
+                },
+                "request_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "decision": {
+                  "enum": [
+                    "generate_web",
+                    "native_or_source"
+                  ]
+                },
+                "decision_reason": {
+                  "type": "string"
+                },
+                "replacement_object": {
+                  "type": "string"
+                },
+                "purpose": {
+                  "type": "string"
+                },
+                "single_subject_prompt": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_checklist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

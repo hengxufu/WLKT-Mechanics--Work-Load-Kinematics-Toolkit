@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "transport": "chatgpt_web",
+  "requested_engine": "image-2.5",
+  "verified_engine": null,
+  "status": "integrated",
+  "spec": {
+    "asset_id": "LMB-A05",
+    "kind": "concept",
+    "slide_id": "S11",
+    "object_id": "web-rich-05",
+    "element": "空间桁架。作为单体空间杆系结构示意，呈现节点与构件的三维关系，不冒充真实求解模型。",
+    "palette": "蓝银金属、青色高光、极少量橙色反射",
+    "style": "高级精密工程三维产品摄影；柔和左上棚拍光，精细拉丝金属边缘，单一独立完整主体",
+    "transparent": true,
+    "min_width": 1024,
+    "min_height": 1024,
+    "aspect": "1:1",
+    "visual_context": {
+      "slide_background": "纯白与浅冰蓝",
+      "avoid": "不画页面、数字、公式、其他独立物体、支座、受力箭头、数据结果"
+    }
+  },
+  "history": [
+    {
+      "at": "2026-10-11T09:35:19.015345+00:00",
+      "status": "prepared"
+    },
+    {
+      "at": "2026-10-11T09:46:54.890632+00:00",
+      "status": "submitted",
+      "note": "完整单主体提示词已实际出现网页消息。"
+    },
+    {
+      "at": "2026-10-11T09:50:17.564031+00:00",
+      "status": "received"
+    },
+    {
+      "at": "2026-10-11T09:50:17.895790+00:00",
+      "status": "accepted",
+      "note": "已实际查看本地原图，单主体完整、透明背景、无文字或数据；配色及材质一致，仅概念装饰。"
+    },
+    {
+      "at": "2026-10-11T10:04:29.381725+00:00",
+      "status": "integrated",
+      "note": "已在最终PPT中核对独立对象名与原图SHA-256，最终渲染已查看。"
+    },
+    {
+      "at": "2026-10-11T10:26:24.757617+00:00",
+      "status": "integrated",
+      "note": "Reused previously accepted asset; actual named picture SHA256 verified in new green deck; final rendered placement reviewed."
+    },
+    {
+      "at": "2026-10-11T10:32:49.525067+00:00",
+      "status": "integrated",
+      "note": "Reused previously accepted asset; actual named picture SHA256 verified in new blue deck; final rendered placement reviewed."
+    }
+  ],
+  "session_url": "https://chatgpt.com/c/6acb587b-494c-83e8-9da9-561a860a5de7",
+  "asset_file": "LMB-A05-original.png",
+  "sha256": "af217bb32630993ae49d9698e8a3765b5d21037a8ac6b3e67ecdb1491576290b",
+  "technical_checks": {
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "has_transparent_pixels": true,
+    "has_visible_pixels": true,
+    "subject_bbox_px": [
+      126,
+      73,
+      1127,
+      1162
+    ],
+    "subject_box_area_fraction": 0.6932,
+    "size_ok": true,
+    "alpha_ok": true,
+    "warnings": []
+  },
+  "visual_review": {
+    "note": "已实际查看本地原图，单主体完整、透明背景、无文字或数据；配色及材质一致，仅概念装饰。",
+    "at": "2026-10-11T09:50:17.895790+00:00"
+  },
+  "placement_file": "placement.json",
+  "integration": {
+    "pptx": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-blue\\拉压弯扭大师_蓝色技术路线增强版.pptx",
+    "pptx_sha256": "860a14b5bc8c14db8890e78fc7cc0956f08dedad84ebef32ff484e548c3460ed",
+    "shape_name": "S11/web-rich-05",
+    "at": "2026-10-11T10:32:49.525067+00:00"
+  }
+}

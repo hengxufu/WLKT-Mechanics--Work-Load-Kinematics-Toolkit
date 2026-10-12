@@ -1,0 +1,14 @@
+{
+  "asset_id": "METAL_BAR",
+  "kind": "concept",
+  "element": "一根完整独立的细长矩形截面金属杆件，深蓝冷银拉丝钢材质，精致写实，柔和左上主光，科技青色边缘高光，三分之四视角，真实Alpha透明背景，主体完整居中。禁止文字、公式、受力箭头、云图、支座、其他物体、拼贴和整页设计。",
+  "slide_id": "S01",
+  "object_id": "cover_bar",
+  "palette": "深蓝 #174B70、青色 #008E98、少量橙色 #DA9253",
+  "transparent": true,
+  "min_width": 1024,
+  "min_height": 1024,
+  "aspect": "1:1",
+  "style": "科研汇报·证据与结构；清晰、精致、统一材质与光照",
+  "visual_context": {}
+}

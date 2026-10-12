@@ -1,0 +1,15 @@
+{
+  "actual_render_review": [
+    1,
+    6,
+    9
+  ],
+  "changes": {
+    "slide_1": "Chinese title changed to 拉压弯扭大师（编辑演示）",
+    "slide_6": "native support table A -> A*",
+    "slide_9": "native reaction chart first value 15 -> 16"
+  },
+  "delivery_data_unchanged": true,
+  "route_drawio_native_cells": 247,
+  "drawio_limit": "Shape-level XML export, not a separately rendered visual acceptance; PPT route is visually reviewed."
+}

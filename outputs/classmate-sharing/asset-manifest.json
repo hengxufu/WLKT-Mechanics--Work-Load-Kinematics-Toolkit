@@ -1,0 +1,8 @@
+{
+  "generated_assets": [],
+  "reason": "采用真实仓库图与原生可编辑对象，未使用生成整页图。",
+  "source_assets": [
+    "public/app-icon.png",
+    "docs/public/simply_supported.png"
+  ]
+}

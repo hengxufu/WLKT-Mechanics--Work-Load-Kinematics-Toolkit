@@ -1,0 +1,14 @@
+{
+  "asset_id": "BLUE_TRAJECTORY",
+  "kind": "ornament",
+  "element": "仅一条独立、轻薄、优雅的蓝青色三维弧形轨迹装饰，细线渐变，少量柔和冷白高光，单主体、通透克制，真实Alpha透明背景。不得包含行星、文字、数字、坐标、箭头、公式、拼贴、页面背景或其他元素。",
+  "slide_id": "S16",
+  "object_id": "closing_trajectory",
+  "palette": "深蓝 #174B70、青色 #008E98、少量橙色 #DA9253",
+  "transparent": true,
+  "min_width": 1024,
+  "min_height": 1024,
+  "aspect": "1:1",
+  "style": "科研汇报·证据与结构；清晰、精致、统一材质与光照",
+  "visual_context": {}
+}

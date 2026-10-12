@@ -1,0 +1,9 @@
+{
+  "provenance": "解析预测，非新增实机测量；静力平衡及简支梁集中力解析式",
+  "conditions": {"P_kN":18,"L_m":6,"load_positions_m":[1,2,3]},
+  "reaction_chart": {"categories":["1 m","2 m","3 m"],"unit":"kN","series":[{"name":"A端反力","values":[15,12,9]},{"name":"B端反力","values":[3,6,9]}]},
+  "moment_chart": {"categories":["1 m","2 m","3 m"],"unit":"kN·m","series":[{"name":"峰值弯矩幅值","values":[15,24,27]}]},
+  "validation_table":[["检查量","解析值","实机显示","解释"],["A端反力幅值","9 kN","9 kN","整体平衡"],["B端反力幅值","9 kN","9 kN","对称条件"],["跨中弯矩幅值","27 kN·m","27 kN·m","截图原符号为−27"],["两端弯矩","0","0","端值≠内部峰值"]],
+  "formula_source": "静力平衡：RA=P(L-a)/L；RB=Pa/L；Mpeak=Pa(L-a)/L",
+  "editing_demo": "演示副本允许改chart第1点15→16以验证嵌入数据更新，禁止将该副本当作正确物理结果。"
+}

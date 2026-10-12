@@ -1,0 +1,34 @@
+{
+  "status": "actual_web_reply_validated_under_user_model_exception",
+  "observed_model": "unverified / High",
+  "session_url": "https://chatgpt.com/c/6acb21ae-4768-83ee-be28-8aa97bceb01e",
+  "response_file": "assistant-reply.txt",
+  "response_sha256": "db10b14784e48ae88bff82af3b36ec54c6f502e7f3626478e58b92424f7826e6",
+  "local_normalizations": [
+    "evidence string -> object with source_ref; raw reply unchanged"
+  ],
+  "user_instruction": "允许用当前网页版完成规划和单元素生成，注明模型名未核验",
+  "installed_receiver_limit": "Requires literal observed GPT-6 label; not bypassed or falsely marked pass",
+  "schema_valid": true,
+  "content_boxes_valid": true,
+  "layout_families": [
+    "product-hero",
+    "question-figure",
+    "structural-figure-strip",
+    "method-process",
+    "evidence-zoom",
+    "scenario-setup",
+    "paired-comparison",
+    "validation-evidence-table",
+    "dual-native-chart",
+    "derivation-evidence-zoom",
+    "spatial-technical-figure",
+    "validation-dashboard",
+    "technical-layers",
+    "evidence-status-matrix",
+    "guided-operation",
+    "conclusion-roadmap",
+    "formula-reference",
+    "evidence-index"
+  ]
+}

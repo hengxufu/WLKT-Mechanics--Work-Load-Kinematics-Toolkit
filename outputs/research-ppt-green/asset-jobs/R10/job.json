@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "transport": "chatgpt_web",
+  "requested_engine": "image-2.5",
+  "verified_engine": null,
+  "status": "integrated",
+  "spec": {
+    "asset_id": "LMB-A10",
+    "kind": "ornament",
+    "slide_id": "S01",
+    "object_id": "web-rich-10",
+    "element": "单条蓝青色空间飘带。形成封面主视觉流线；一条连续优雅曲线，银色高光和轻微橙色反射，不包含其他物体。",
+    "palette": "蓝银金属、青色高光、极少量橙色反射",
+    "style": "高级精密工程三维产品摄影；柔和左上棚拍光，精细拉丝金属边缘，单一独立完整主体",
+    "transparent": true,
+    "min_width": 1024,
+    "min_height": 512,
+    "aspect": "3:1",
+    "visual_context": {
+      "slide_background": "纯白与浅冰蓝",
+      "avoid": "不画页面、数字、公式、其他独立物体、支座、受力箭头、数据结果"
+    }
+  },
+  "history": [
+    {
+      "at": "2026-10-11T09:56:51.989591+00:00",
+      "status": "prepared"
+    },
+    {
+      "at": "2026-10-11T09:58:18.836467+00:00",
+      "status": "submitted",
+      "note": "完整单主体提示词已实际出现网页消息。"
+    },
+    {
+      "at": "2026-10-11T10:00:01.018661+00:00",
+      "status": "received"
+    },
+    {
+      "at": "2026-10-11T10:00:36.477268+00:00",
+      "status": "accepted",
+      "note": "已实际查看2172×724透明原图：一条连续蓝银金属流线，无文字、数字和其他独立物体，适合封面下侧留白。"
+    },
+    {
+      "at": "2026-10-11T10:04:32.199960+00:00",
+      "status": "integrated",
+      "note": "已在最终PPT中核对独立对象名与原图SHA-256，最终渲染已查看。"
+    },
+    {
+      "at": "2026-10-11T10:26:24.820719+00:00",
+      "status": "integrated",
+      "note": "Reused previously accepted asset; actual named picture SHA256 verified in new green deck; final rendered placement reviewed."
+    }
+  ],
+  "session_url": "https://chatgpt.com/c/6acb587b-494c-83e8-9da9-561a860a5de7",
+  "asset_file": "LMB-A10-original.png",
+  "sha256": "5e1964e58ec7623075b85b16b802c7f91f796e46c8bda04914050eaf19c654e9",
+  "technical_checks": {
+    "width": 2172,
+    "height": 724,
+    "format": "PNG",
+    "has_transparent_pixels": true,
+    "has_visible_pixels": true,
+    "subject_bbox_px": [
+      22,
+      120,
+      2152,
+      639
+    ],
+    "subject_box_area_fraction": 0.703,
+    "size_ok": true,
+    "alpha_ok": true,
+    "warnings": []
+  },
+  "visual_review": {
+    "note": "已实际查看2172×724透明原图：一条连续蓝银金属流线，无文字、数字和其他独立物体，适合封面下侧留白。",
+    "at": "2026-10-11T10:00:36.477268+00:00"
+  },
+  "placement_file": "placement.json",
+  "integration": {
+    "pptx": "D:\\MACHANICS-OF-MATERIALS-main\\outputs\\research-ppt-green\\拉压弯扭大师_绿色技术路线增强版.pptx",
+    "pptx_sha256": "a5e2419c5fedc27f374bfc088ffe9ae0cfbb35f5c12f241e8e5fc21a3af8fd78",
+    "shape_name": "S01/web-rich-10",
+    "at": "2026-10-11T10:26:24.820719+00:00"
+  }
+}

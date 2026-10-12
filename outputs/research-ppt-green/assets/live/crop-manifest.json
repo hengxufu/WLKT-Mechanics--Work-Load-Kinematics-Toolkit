@@ -1,0 +1,98 @@
+[
+  {
+    "file": "moment-detail.png",
+    "source": "03-beam-moment.jpg",
+    "crop_xyxy": [
+      246,
+      70,
+      957,
+      470
+    ],
+    "sha256": "5f345e476d705c90dfe33c7f19a1b74f64d0061d44ccdb8132c6b749a390871a",
+    "review": "source screenshot inspected; content unchanged"
+  },
+  {
+    "file": "shear-detail.png",
+    "source": "06-shear.jpg",
+    "crop_xyxy": [
+      246,
+      70,
+      957,
+      470
+    ],
+    "sha256": "b369409350e068332d46eddc81e9f4afcc3e6d707485bfccd5ac4bb79087d75d",
+    "review": "source screenshot inspected; content unchanged"
+  },
+  {
+    "file": "load-detail.png",
+    "source": "07-load-properties.jpg",
+    "crop_xyxy": [
+      962,
+      72,
+      1280,
+      335
+    ],
+    "sha256": "05abb2c6d3348c223161d17719dc567712a9afab1d36fcea11cfceb2408d9ca7",
+    "review": "source screenshot inspected; content unchanged"
+  },
+  {
+    "file": "beam-model.png",
+    "source": "07-load-properties.jpg",
+    "crop_xyxy": [
+      246,
+      70,
+      957,
+      695
+    ],
+    "sha256": "bb644c80eb92fb96f777dd4326fa64ac52f24f209f5c4b78eb25a02e14812583",
+    "review": "source screenshot inspected; content unchanged"
+  },
+  {
+    "file": "derivation-detail.png",
+    "source": "04-derivation.jpg",
+    "crop_xyxy": [
+      8,
+      505,
+      1273,
+      694
+    ],
+    "sha256": "ec8c173ea7f0a325b94e95762f24af9f50fcc0583c83c947b4e049f1c750aa50",
+    "review": "source screenshot inspected; content unchanged"
+  },
+  {
+    "file": "end-force-detail.png",
+    "source": "05-element-results.jpg",
+    "crop_xyxy": [
+      6,
+      506,
+      1273,
+      600
+    ],
+    "sha256": "f0006b45f71ebcf0516fa2f80f55dadf5e2692b0eadfa1a96d9bca7381a975c5",
+    "review": "source screenshot inspected; content unchanged"
+  },
+  {
+    "file": "space-detail.png",
+    "source": "11-space-results.jpg",
+    "crop_xyxy": [
+      247,
+      70,
+      958,
+      694
+    ],
+    "sha256": "9afed7e7b6fb7ac046ae0cef6fe13037f2d001c5d22c5f4e9b98761cf165ac32",
+    "review": "source screenshot inspected; content unchanged"
+  },
+  {
+    "file": "space-table.png",
+    "source": "11-space-results.jpg",
+    "crop_xyxy": [
+      968,
+      297,
+      1265,
+      679
+    ],
+    "sha256": "ee2c1f4543b81d96efecb2da9532d2646b85ad406b869d0b4692dcebc256a2f3",
+    "review": "source screenshot inspected; content unchanged"
+  }
+]
