@@ -104,6 +104,8 @@ export const computeSpaceTruss3DElementStiffness = (
   const m = dy / length;
   const n = dz / length;
   const direction: [number, number, number] = [l, m, n];
+  // 三维桁架只传递轴力。a 是沿杆轴的两端投影向量，k = EA/L * a^T a。
+  // 单元没有转角自由度，也不提供剪力、弯矩或扭矩刚度。
   const a = [l, m, n, -l, -m, -n];
   const factor = (E * A) / length;
   const stiffness = zeroMatrix(6, 6);
@@ -129,6 +131,7 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
   const displacement = Array.from({ length: totalDofs }, () => 0);
 
   model.nodes.forEach((node, nodeIndex) => {
+    // 保持每个节点 [x, y, z] 连续编号，便于按单元端点直接建立 6 个位置数组。
     dofs.forEach((dof, localIndex) => {
       dofIndex.set(`${node.label}:${dof}`, nodeIndex * 3 + localIndex);
     });
@@ -183,6 +186,7 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
     const { E, A, yieldStrength } = getElementProperties(element);
     const { length, direction, stiffness } = computeSpaceTruss3DElementStiffness(start, end, E, A);
     const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => resolveDofIndex(nodeLabel, dof)));
+    // 将单元 6x6 刚度散装进全局 K；GlobalMatrix 根据后端决定稠密或稀疏存储。
     globalK.addSubmatrix(location, stiffness);
     elementGeometry.set(element.label, { length, direction, E, A, yieldStrength });
   }
@@ -222,6 +226,7 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
   }
 
   const internalForce = globalK.matVec(displacement);
+  // r = Ku - F。在受约束自由度上它就是支座反力；自由自由度上的范数用于检验平衡残差。
   const residual = internalForce.map((value, index) => value - force[index]);
   const reactions: Record<string, [number, number, number]> = {};
   const displacements: Record<string, [number, number, number]> = {};
@@ -258,6 +263,7 @@ export const solveSpaceTruss3D = (model: SpaceTrussModelInput): SpaceTruss3DResu
       geometry.direction[0] * (u2[0] - u1[0]) +
       geometry.direction[1] * (u2[1] - u1[1]) +
       geometry.direction[2] * (u2[2] - u1[2]);
+    // 两端相对位移在杆轴上的投影即轴向伸长；正值对应拉伸。
     const axialForce = (geometry.E * geometry.A * relativeAxial) / geometry.length;
     const stress = axialForce / geometry.A;
     const safetyFactor =

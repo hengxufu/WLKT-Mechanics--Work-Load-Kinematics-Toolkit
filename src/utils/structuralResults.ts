@@ -17,6 +17,7 @@ export interface ResultTable {
 }
 
 const scaled = (value: number | undefined, factor: number) =>
+  // undefined 表示内核未提供该分量，不能在界面或 CSV 中伪装为零。
   value === undefined || !Number.isFinite(value) ? undefined : value * factor;
 
 export const createStructuralResultTables = (result: StructuralAnalysisResult): ResultTable[] => {
@@ -74,6 +75,7 @@ const csvCell = (value: ResultCell): string => {
 };
 
 export const exportStructuralResultsCsv = (model: StructuralAnalysisModel, result: StructuralAnalysisResult, tableId: ResultTableId): string => {
+  // 仅导出已经收敛、没有错误且匹配当前模型版本的结果快照。
   if (model.revision !== result.modelRevision || model.modelType !== result.modelType ||
       !result.convergence.converged || result.diagnostics.errors.length > 0) {
     throw new Error('当前模型没有有效的求解结果，请重新求解。');

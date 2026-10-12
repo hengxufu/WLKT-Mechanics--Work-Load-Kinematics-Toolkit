@@ -5,6 +5,7 @@ export const fitCameraToBounds = (
   bounds: Box3,
   direction = new Vector3(1, 0.75, 1)
 ): Vector3 => {
+  // 以包围球拟合而非仅使用坐标范围：任意视角下都能给模型留出统一边距。
   const sphere = bounds.getBoundingSphere(new Sphere());
   const radius = Math.max(sphere.radius, 0.1);
   const padding = 1.35;
@@ -14,6 +15,7 @@ export const fitCameraToBounds = (
     const horizontalHalfFov = Math.atan(Math.tan(verticalHalfFov) * camera.aspect);
     distance = radius * padding / Math.sin(Math.min(verticalHalfFov, horizontalHalfFov));
   } else {
+    // 正交相机通过 zoom 控制视野尺寸，不使用透视距离参与取景缩放。
     camera.zoom = Math.min(camera.right - camera.left, camera.top - camera.bottom) / (2 * radius * padding);
   }
   camera.near = Math.max(radius * 1e-4, 1e-6);

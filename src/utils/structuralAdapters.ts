@@ -43,6 +43,7 @@ const cpuMetadata = (absoluteResidual: number, forceNorm: number, converged = tr
 });
 
 const stableVectorNorm = (values: Iterable<number>) => {
+  // 缩放累加避免载荷数量较多、量级差异很大时直接平方导致溢出或精度损失。
   let scale = 0;
   let sumSquares = 1;
   for (const value of values) {
@@ -84,6 +85,7 @@ export const createSpaceTrussInput = (model: StructuralAnalysisModel): SpaceTrus
         if (prescribed !== undefined) constraints[trussDofMap[dof]] = prescribed;
         else if (node.constraints[dof]) constraints[trussDofMap[dof]] = true;
       }
+      // 桁架内核只有三个平动自由度，旋转约束不会下传，避免把二维/刚架语义误带入桁架计算。
       return {
         label: node.id,
         coords: [node.x, node.y, node.z],
@@ -210,6 +212,7 @@ export const mapSpaceTrussResult = (
       ...(element.safetyFactor !== null ? { safetyFactor: element.safetyFactor } : {}),
     };
     memberResults[element.label] = {
+      // 桁架轴力在无分布荷载的线性单元内恒定，仍写成两个端站以统一结果表结构。
       stations: [
         { position: 0, ...station },
         { position: 1, ...station },
@@ -287,6 +290,7 @@ export const mapSpaceFrameResult = (
     });
     memberResults[element.label] = {
       stations: [
+        // 端力保留求解器的局部节点力符号；它不是连续截面内力图的正负号约定。
         toStation(0, element.localEndForces.start),
         toStation(1, element.localEndForces.end),
       ],
@@ -350,6 +354,7 @@ export class SpaceFrameStructuralSolver
 
 export const solveStructuralAnalysis = (model: StructuralAnalysisModel): StructuralAnalysisResult => {
   const validation = validateStructuralModel(model);
+  // 校验失败不进入数值内核，统一返回可展示的诊断信息而不是抛出未处理异常。
   if (!validation.valid) {
     return {
       modelType: model.modelType,
@@ -405,6 +410,7 @@ export const createStructureSceneModelFromStructuralAnalysis = (
   model: StructuralAnalysisModel,
   result: StructuralAnalysisResult | null
 ): StructureSceneModel3D => {
+  // 结果与模型修订号不一致时只显示原模型，避免用户把旧结果当成当前模型的变形或内力。
   const current = isResultCurrent(model, result);
   const resultValue = current ? result : null;
   const dofLabels: Record<StructuralDof, 'Ux' | 'Uy' | 'Uz' | 'Rx' | 'Ry' | 'Rz'> = {

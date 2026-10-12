@@ -97,6 +97,7 @@ export const migrateLegacyNode = (
   modelType: AnalysisModelType = 'planar-frame'
 ): StructuralNode => {
   const coords = node.coords ?? [];
+  // 旧二维数据的 coords 通常按 [x, ?, y] 存储；空间模型才按 [x, y, z] 解读。
   const isLegacyPlanar = modelType === 'planar-frame' || modelType === 'planar-truss';
   const x = Number(node.x ?? coords[0] ?? 0);
   const y = Number(node.y ?? (isLegacyPlanar ? coords[2] : coords[1]) ?? 0);
@@ -191,6 +192,7 @@ export const validateStructuralModel = (model: StructuralAnalysisModel): SolverV
       const a = model.nodes[first];
       const b = model.nodes[second];
       if (Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z) <= 1e-10) {
+        // 重合节点未必立即导致格式错误，但经常造成零长度单元或意外的机构，因此保留为警告。
         warnings.push(issue('DUPLICATE_NODE_POSITION', `节点 "${a.id}" 与 "${b.id}" 位于同一位置。`, a.id));
       }
     }

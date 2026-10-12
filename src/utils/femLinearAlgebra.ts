@@ -62,6 +62,7 @@ export class DenseGlobalMatrix implements GlobalMatrix {
 }
 
 export class SparseAssemblyMatrix implements GlobalMatrix {
+  // 稀疏刚度矩阵只保存非零项，键采用“行:列”以避免大模型在组装阶段占用完整 n² 内存。
   private readonly entries = new Map<string, number>();
 
   constructor(
@@ -121,6 +122,7 @@ export class SparseAssemblyMatrix implements GlobalMatrix {
   }
 
   toSparseReduced(indices: number[]) {
+    // 将全局自由度重新编号为约化方程的 0..n-1，下游 sparse LU 不需要感知原始编号。
     const reducedIndexByGlobal = new Map(indices.map((globalIndex, reducedIndex) => [globalIndex, reducedIndex]));
     const reduced = sparse();
     reduced.resize([indices.length, indices.length]);
@@ -194,9 +196,12 @@ export const solveReducedSystem = (
 ) => {
   if (free.length === 0) return [];
 
+  // 已知位移自由度的影响移至右端：Kff * uf = Ff - Kfc * uc。
+  // 这同时支持零位移约束和给定位移边界条件，而不是简单删除约束行列。
   const rhs = free.map((row) => force[row] - fixed.reduce((sum, col) => sum + globalK.get(row, col) * displacement[col], 0));
 
   if (globalK.backend === 'sparse-lu' && globalK.toSparseReduced) {
+    // 只有显式选择 sparse-lu 时才保留稀疏形态直到求解，其他后端仍按稠密约化矩阵处理。
     return solveSparseLinearSystem(globalK.toSparseReduced(free), rhs, options);
   }
 

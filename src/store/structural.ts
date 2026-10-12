@@ -20,6 +20,7 @@ import type {
   StructuralSection,
 } from '@/types/structuralAnalysis';
 
+// Pinia 会把对象包装为 Proxy；克隆前取原始对象，保证编辑草稿和异步结果都不会共享可变引用。
 const cloneModel = (model: StructuralAnalysisModel): StructuralAnalysisModel => structuredClone(toRaw(model));
 
 export const useStructuralStore = defineStore(
@@ -61,6 +62,7 @@ export const useStructuralStore = defineStore(
 
     const replaceModel = (next: StructuralAnalysisModel) => {
       const replacement = cloneModel(next);
+      // 即使导入模型携带旧 revision，也必须向前推进，才能拒绝此前异步求解迟到返回的结果。
       replacement.revision = Math.max(model.value.revision + 1, replacement.revision);
       model.value = replacement;
       result.value = null;
@@ -134,6 +136,7 @@ export const useStructuralStore = defineStore(
     };
 
     const setResult = (next: StructuralAnalysisResult | null) => {
+      // Worker 求解可能在用户修改/导入模型后才结束；模型类型和 revision 都匹配才允许写入结果。
       if (next && (next.modelRevision !== model.value.revision || next.modelType !== model.value.modelType)) return false;
       result.value = next ? structuredClone(toRaw(next)) : null;
       return true;

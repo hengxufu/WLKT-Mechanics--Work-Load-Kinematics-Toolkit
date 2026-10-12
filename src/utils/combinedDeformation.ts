@@ -51,6 +51,7 @@ export const calculateCombinedDeformation = (
 ): CombinedDeformationResult => {
   const values = evaluateInputs(inputs, scope);
 
+  // 正应力采用 σ = N/A ± M/W，取绝对值更大的边缘纤维参与 von Mises 强度校核。
   const axialStress = values.N / values.A;
   const bendingStress = values.M / values.W;
   const maxTensileStress = axialStress + Math.abs(bendingStress);
@@ -58,6 +59,7 @@ export const calculateCombinedDeformation = (
   const criticalNormalStress =
     Math.abs(maxTensileStress) >= Math.abs(maxCompressiveStress) ? maxTensileStress : maxCompressiveStress;
   const torsionalShearStress = values.T / values.Wt;
+  // 组合拉弯扭采用 σ_vm = sqrt(σ² + 3τ²)；适用于等效应力教学计算，不替代规范验算。
   const vonMisesStress = Math.sqrt(criticalNormalStress ** 2 + 3 * torsionalShearStress ** 2);
   const utilization = vonMisesStress / values.fy;
 

@@ -160,6 +160,7 @@ export const computeSpaceFrame3DLocalAxes = (
   const x = normalize([end[0] - start[0], end[1] - start[1], end[2] - start[2]]);
   let ref = localAxisRef ?? [0, 0, 1];
 
+  // 参考向量若与杆轴平行，叉乘会退化。改用与杆轴夹角足够大的全局轴，保证局部 y/z 的唯一性和数值稳定性。
   if (vectorNorm(cross(ref, x)) <= 1e-8) {
     ref = Math.abs(dot(x, [0, 1, 0])) < 0.95 ? [0, 1, 0] : [1, 0, 0];
   }
@@ -197,6 +198,8 @@ export const computeSpaceFrame3DLocalStiffness = (properties: {
   const EIy = E * Iy;
   const EIz = E * Iz;
 
+  // 局部自由度顺序为 [ux, uy, uz, rx, ry, rz, ux2, uy2, uz2, rx2, ry2, rz2]。
+  // 该 12x12 Euler-Bernoulli 梁柱刚度包含轴向、绕局部 x 的扭转和双向弯曲。
   setSym(k, 0, 0, EA);
   setSym(k, 0, 6, -EA);
   setSym(k, 6, 6, EA);
@@ -238,6 +241,7 @@ export const computeSpaceFrame3DTransformation = (localAxes: {
   const rotation = [localAxes.x, localAxes.y, localAxes.z];
   const t = zeroMatrix(12, 12);
 
+  // 平移和转角都按同一 3x3 方向余弦矩阵旋转，因此两端共放置四个相同块。
   for (const offset of [0, 3, 6, 9]) {
     for (let row = 0; row < 3; row++) {
       for (let col = 0; col < 3; col++) {
@@ -250,6 +254,7 @@ export const computeSpaceFrame3DTransformation = (localAxes: {
 };
 
 export const transformSpaceFrame3DStiffnessToGlobal = (localStiffness: number[][], transformation: number[][]) => {
+  // u_local = T * u_global，故 K_global = T^T * K_local * T。
   return multiplyMatrix(transpose(transformation), multiplyMatrix(localStiffness, transformation));
 };
 
@@ -265,6 +270,7 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
   const displacement = Array.from({ length: totalDofs }, () => 0);
 
   model.nodes.forEach((node, nodeIndex) => {
+    // 每个空间刚架节点固定占 6 个自由度，编号与 dofs 数组严格对应。
     dofs.forEach((dof, localIndex) => {
       dofIndex.set(`${node.label}:${dof}`, nodeIndex * 6 + localIndex);
     });
@@ -336,6 +342,7 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
     const stiffness = transformSpaceFrame3DStiffnessToGlobal(localStiffness, transformation);
     const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => resolveDofIndex(nodeLabel, dof)));
     globalK.addSubmatrix(location, stiffness);
+    // 保留后处理所需的局部状态，避免求解后再次解析材料、截面和坐标表达式。
     elementState.set(element.label, {
       length,
       localAxes,
@@ -385,6 +392,7 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
   }
 
   const internalForce = globalK.matVec(displacement);
+  // 在约束自由度，Ku-F 是支座反力/反力矩；在自由自由度，它应接近零。
   const residual = internalForce.map((value, index) => value - force[index]);
   const displacements: SpaceFrame3DResult['displacements'] = {};
   const reactions: SpaceFrame3DResult['reactions'] = {};
@@ -418,6 +426,7 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
     }
     const location = element.nodes.flatMap((nodeLabel) => dofs.map((dof) => resolveDofIndex(nodeLabel, dof)));
     const globalElementDisplacement = location.map((index) => displacement[index]);
+    // 端力必须用局部坐标计算，结果数组的每 6 项仍遵循 [N, Vy, Vz, T, My, Mz]。
     const localElementDisplacement = matVecDense(state.transformation, globalElementDisplacement);
     const localEndForceVector = matVecDense(state.localStiffness, localElementDisplacement);
     const start = localEndForceVector.slice(0, 6) as [number, number, number, number, number, number];
@@ -429,6 +438,7 @@ export const solveSpaceFrame3D = (model: SpaceFrameModelInput): SpaceFrame3DResu
             Math.abs(end[0] / state.A) + Math.abs(end[4] / state.Wy) + Math.abs(end[5] / state.Wz)
           )
         : null;
+    // 该剪应力为教学用近似：横向剪力采用 1.5V/A，若有 Wt 再叠加扭转剪应力。
     const maxShearStress = Math.max(
       (1.5 * Math.hypot(start[1], start[2])) / state.A + (state.Wt ? Math.abs(start[3]) / state.Wt : 0),
       (1.5 * Math.hypot(end[1], end[2])) / state.A + (state.Wt ? Math.abs(end[3]) / state.Wt : 0)

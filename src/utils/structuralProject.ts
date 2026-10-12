@@ -13,6 +13,8 @@ const partialDofs = (value: unknown, check: (value: unknown) => boolean) =>
   value === undefined || (record(value) && Object.entries(value).every(([key, item]) => dofs.includes(key) && check(item)));
 
 export const parseStructuralProject = (value: unknown): StructuralAnalysisModel => {
+  // 导入文件来自用户磁盘：先完成全部形状与数值校验，再交给调用方替换当前模型。
+  // 这样损坏或过期文件不会造成“先清空、后导入失败”的数据丢失。
   const invalid = () => { throw new Error('三维工程文件格式无效，当前模型未被替换。'); };
   if (!record(value)) return invalid();
   if (value.schemaVersion !== STRUCTURAL_SCHEMA_VERSION) throw new Error('不支持该三维工程文件版本。');
@@ -38,12 +40,13 @@ export const parseStructuralProject = (value: unknown): StructuralAnalysisModel 
         (m.releases === undefined || (record(m.releases) && partialDofs(m.releases.start, (v) => typeof v === 'boolean') && partialDofs(m.releases.end, (v) => typeof v === 'boolean')))) ||
       !collection('nodalLoads', (l) => text(l.nodeId) && text(l.loadCaseId) && vector(l.force) && vector(l.moment) && ['global', 'local'].includes(String(l.coordinateSystem)))) return invalid();
 
-  // Incomplete but well-formed models remain editable; solver validation handles physical consistency.
+  // 允许保存尚未连接完整的草稿；几何连通性、材料引用和约束充分性由求解前校验负责。
   return structuredClone(toRaw(model)) as unknown as StructuralAnalysisModel;
 };
 
 export const serializeStructuralProject = (model: StructuralAnalysisModel): string => {
   const file: VersionedProjectFile = { schemaVersion: STRUCTURAL_SCHEMA_VERSION, modelType: model.modelType, model: toRaw(model) };
+  // 保存前复用导入校验，保证软件自身永远不会写出不能再次打开的三维工程文件。
   parseStructuralProject(file);
   return JSON.stringify(file, null, 2);
 };
